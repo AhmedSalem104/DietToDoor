@@ -1,0 +1,334 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    .button-5 {
+        align-items: center;
+        background-clip: padding-box;
+        background-color: #003d68;
+        border: 1px solid transparent;
+        border-radius: .25rem;
+        box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        justify-content: center;
+        line-height: 1.25;
+        margin: 0;
+        min-height: 3rem;
+        padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+        position: relative;
+        text-decoration: none;
+        transition: all 250ms;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: baseline;
+        width: auto;
+        font-weight: bold;
+    }
+
+        .button-5:hover,
+        .button-5:focus {
+            background-color: #003d68;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+        }
+
+        .button-5:hover {
+            transform: translateY(-1px);
+        }
+
+        .button-5:active {
+            background-color: #c85000;
+            box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+            transform: translateY(0);
+        }
+</style>
+<div class="container">
+    <button class="button-5" id="exampleModalCenterTitle" role="button" type="button" data-toggle="modal" data-target="#myModal" onclick="showPopupCreate()">
+        Send Email
+
+    </button><br /><br />
+
+    <span style="text-align: center; font-size: xx-large; font-weight: bold; margin-right: 380px; ">@DataMapping.Resources.Resource.DiteToDoor</span>
+
+
+</div>
+@*<div class="row"  >
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 margin_bottom_20px">
+            <div class="card">
+                <div class="card-statistic-4">
+                    <div class="align-items-center justify-content-between">
+                        <div class="row ">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                                <div class="card-content">
+                                    <h5 class="font-15">حجز جديد</h5>
+                                    <h2 class="mb-3 font-18">258</h2>
+                                    <p class="mb-0"><span class="col-green">10%</span> زيادة</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                                <div class="banner-img">
+                                    <img src="~/Design/assets/img/banner/1.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 margin_bottom_20px">
+            <div class="card">
+                <div class="card-statistic-4">
+                    <div class="align-items-center justify-content-between">
+                        <div class="row ">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                                <div class="card-content">
+                                    <h5 class="font-15"> العملاء</h5>
+                                    <h2 class="mb-3 font-18">1,287</h2>
+                                    <p class="mb-0"><span class="col-orange">09%</span> تخفيض</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                                <div class="banner-img">
+                                    <img src="~/Design/assets/img/banner/2.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 margin_bottom_20px">
+            <div class="card">
+                <div class="card-statistic-4">
+                    <div class="align-items-center justify-content-between">
+                        <div class="row ">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                                <div class="card-content">
+                                    <h5 class="font-15">مشروع جديد</h5>
+                                    <h2 class="mb-3 font-18">128</h2>
+                                    <p class="mb-0">
+                                        <span class="col-green">18%</span> زيادة
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                                <div class="banner-img">
+                                    <img src="~/Design/assets/img/banner/3.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 margin_bottom_20px">
+            <div class="card">
+                <div class="card-statistic-4">
+                    <div class="align-items-center justify-content-between">
+                        <div class="row ">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                                <div class="card-content">
+                                    <h5 class="font-15">إيرادات</h5>
+                                    <h2 class="mb-3 font-18">$48,697</h2>
+                                    <p class="mb-0"><span class="col-green">42%</span> زيادة</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                                <div class="banner-img">
+                                    <img src="~/Design/assets/img/banner/4.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12 margin_bottom_20px">
+            <div class="card ">
+                <div class="card-header">
+                    <h4>مخطط الإيرادات</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div id="chart1"></div>
+                            <div class="row mb-0">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="list-inline text-center">
+                                        <div class="list-inline-item p-r-30">
+                                            <i data-feather="arrow-up-circle" class="col-green"></i>
+                                            <h5 class="m-b-0">$675</h5>
+                                            <p class="text-muted font-14 m-b-0">ارباح اسبوعية</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="list-inline text-center">
+                                        <div class="list-inline-item p-r-30">
+                                            <i data-feather="arrow-down-circle" class="col-orange"></i>
+                                            <h5 class="m-b-0">$1,587</h5>
+                                            <p class="text-muted font-14 m-b-0">ارباح شهرية</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="list-inline text-center">
+                                        <div class="list-inline-item p-r-30">
+                                            <i data-feather="arrow-up-circle" class="col-green"></i>
+                                            <h5 class="mb-0 m-b-0">$45,965</h5>
+                                            <p class="text-muted font-14 m-b-0">ارباح سنويا</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="row mt-5">
+                                <div class="col-7 col-xl-7 mb-3">إجمالي العملاء</div>
+                                <div class="col-5 col-xl-5 mb-3">
+                                    <span class="text-big">8,257</span>
+                                    <sup class="col-green">+09%</sup>
+                                </div>
+                                <div class="col-7 col-xl-7 mb-3">إجمالي الدخل</div>
+                                <div class="col-5 col-xl-5 mb-3">
+                                    <span class="text-big">$9,857</span>
+                                    <sup class="text-danger">-18%</sup>
+                                </div>
+                                <div class="col-7 col-xl-7 mb-3">اكتمل المشروع</div>
+                                <div class="col-5 col-xl-5 mb-3">
+                                    <span class="text-big">28</span>
+                                    <sup class="col-green">+16%</sup>
+                                </div>
+                                <div class="col-7 col-xl-7 mb-3">المصاريف الكلية</div>
+                                <div class="col-5 col-xl-5 mb-3">
+                                    <span class="text-big">$6,287</span>
+                                    <sup class="col-green">+09%</sup>
+                                </div>
+                                <div class="col-7 col-xl-7 mb-3">العملاء الجدد</div>
+                                <div class="col-5 col-xl-5 mb-3">
+                                    <span class="text-big">684</span>
+                                    <sup class="col-green">+22%</sup>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-4 margin_bottom_20px">
+            <div class="card">
+                <div class="card-header">
+                    <h4>مخطط 1</h4>
+                </div>
+                <div class="card-body">
+                    <div id="chart4" class="chartsh"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-4 margin_bottom_20px">
+            <div class="card">
+                <div class="card-header">
+                    <h4>مخطط 2</h4>
+                </div>
+                <div class="card-body">
+                    <div class="summary">
+                        <div class="summary-chart active" data-tab-group="summary-tab" id="summary-chart">
+                            <div id="chart3" class="chartsh"></div>
+                        </div>
+                        <div data-tab-group="summary-tab" id="summary-text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-4 margin_bottom_20px">
+            <div class="card">
+                <div class="card-header">
+                    <h4>مخطط 3</h4>
+                </div>
+                <div class="card-body">
+                    <div id="chart2" class="chartsh"></div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+@section ModelPopup{
+    <div id="mainDiv"></div>
+    <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 text-center warning_icon">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 confirm_text">
+                            <h3>@DataMapping.Resources.Resource.Alert</h3>
+                            <p>@DataMapping.Resources.Resource.Confirm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+                        <div class="col-6 text-right">
+                            <button id="btnContinueDelete" type="button" class="btn btn-danger">حذف</button>
+                        </div>
+                        <div class="col-6 text-left">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">رجوع</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section JavaScriptSection{
+    <script>
+        function showPopupCreate() {
+            $.ajax({
+                type: "Get",
+                url: "/Home/SendMessage",
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+
+
+
+
+
+
+    </script>
+}
+
+
+

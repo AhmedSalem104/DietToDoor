@@ -1,0 +1,254 @@
+﻿@model DataMapping.Entites.LicenseTypes_Tbl
+
+
+@{
+    ViewData["Title"] =@DataMapping.Resources.Resource.Branches;
+}
+<div class="row no-gutters">
+    <div class="col-md-12">
+        <div class="card text-white navigation-border mb-3 custom-table">
+            <div class="card-header navigation-bg">أنواع الرخص</div>
+            <div class="card-body text-white">
+                <form asp-action="AddOrEdit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.Code</label>
+                                </div>
+                                <div class="col-md-8">
+                                    
+                                    @if (ViewBag.autocode!=null)
+                                    {
+                                   <input asp-for="Code" class="form-control"value="@ViewBag.autocode" readonly="readonly" />
+                                    }
+                                    else
+                                    {
+                                        <input asp-for="Code" class="form-control" />
+                                    }
+                                    <span asp-validation-for="Code" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.NameEn</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input asp-for="NameEn" class="form-control" />
+                                    <span asp-validation-for="NameEn" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.NameAr</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input asp-for="NameAr" class="form-control" />
+                                    <span asp-validation-for="NameAr" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.IsMainBranch</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input asp-for="IsMainBranch" class="form-control" />
+                                    <span asp-validation-for="IsMainBranch" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.MainBranch</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <select asp-for="MainBranchId" class="form-control" asp-items="ViewBag.MainBranchId">
+                                        <option disabled selected>--------------</option>
+                                    </select>
+                                    <span asp-validation-for="MainBranchId" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.Manager</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <select asp-for="ManagerId" class="form-control" asp-items="ViewBag.ManagerId">
+                                        <option disabled selected>--------------</option>
+
+                                    </select>
+                                    <span asp-validation-for="ManagerId" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.Country</label>
+                                </div>
+                                <div class="col-md-8">
+                                    @Html.DropDownList("CountryId", null, " -------- ", htmlAttributes: new { @id = "ParentId", @class = "CountryId form-control" })
+                           
+
+                                    </select>
+                                     
+                                    
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.ZipCode</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input asp-for="ZipCode" class="form-control" />
+                                    <span asp-validation-for="ZipCode" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.Phone</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input asp-for="Phone1" class="form-control" />
+                                    <span asp-validation-for="Phone1" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.Phone</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input asp-for="Phone2" class="form-control" />
+                                    <span asp-validation-for="Phone2" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.Mobile</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input asp-for="Mobile" class="form-control" />
+                                    <span asp-validation-for="Mobile" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.Email</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input asp-for="Email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.IsActive</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input asp-for="IsActive" class="form-control" />
+                                    <span asp-validation-for="IsActive" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.AddressEn</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input asp-for="AddressEn" class="form-control" />
+                                    <span asp-validation-for="AddressEn" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.AddressAr</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input asp-for="AddressAr" class="form-control" />
+                                    <span asp-validation-for="AddressAr" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.NotesEn</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input asp-for="NotesEn" class="form-control" />
+                                    <span asp-validation-for="NotesEn" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">@DataMapping.Resources.Resource.NotesAr</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input asp-for="NotesAr" class="form-control" />
+                                    <span asp-validation-for="NotesAr" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 text-center adjustrowSec">
+                                    <a asp-action="Index" class="newbtn waves-effect btn-edit-or-del">@DataMapping.Resources.Resource.back</a>
+                                    <button type="submit" id="save" class="newbtn waves-effect btn-add">
+                                       @DataMapping.Resources.Resource.save
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

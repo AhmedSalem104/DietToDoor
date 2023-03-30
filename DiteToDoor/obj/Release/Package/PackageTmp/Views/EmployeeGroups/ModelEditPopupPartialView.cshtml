@@ -1,0 +1,152 @@
+﻿@using DataMapping.Entites
+@model DataMapping.Entites.EmployeeGroups
+ @{ 
+     ApplicationDbContext db = new ApplicationDbContext();
+     var UserName = db.User.SingleOrDefault(a => a.Id == Model.UsersId);
+
+     SelectList UsersId = new SelectList(db.User.ToList(), "Id", "Code", UserName.Id);
+
+     var GroupName = db.Group.SingleOrDefault(a => a.Id == Model.GroupId);
+
+     SelectList GroupId = new SelectList(db.Group.ToList(), "Id", "NameInArabic", GroupName.Id);
+
+
+
+
+     }
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">@DataMapping.Resources.Resource.Edit</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal", @id = "ModalForm" }))
+
+            {
+                @Html.HiddenFor(x => x.Id)
+        <div class="modal-body">
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label>@DataMapping.Resources.Resource.LoginName</label>
+                    @Html.DropDownList("UsersId", UsersId, "اختر", new { @id = "UsersId", @class = "select2 form-control" , @readonly = "readonly" })
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label>@DataMapping.Resources.Resource.UserName</label>
+                    @*@Html.DropDownList("UsersId", null, " اختر ", htmlAttributes: new { @id = "UsersId", @class = "select2 form-control" })*@
+                    <input type="text" id="userName" class="form-control" disabled>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label>@DataMapping.Resources.Resource.Group</label>
+                    @*@Html.DropDownList("CountryId", CountryName, " -------- ", htmlAttributes: new { @id = "ParentId", @class = "select2 form-control" })*@
+                    @Html.DropDownList("GroupId", GroupId, "اختر", new { @id = "GroupId", @class = "select2 form-control" })
+
+                </div>
+            </div>
+
+            @*<div class="form-group col-md-12">
+            <label>@DataMapping.Resources.Resource.Notes</label>
+            @Html.TextBoxFor(x => x.Notes, new { @class = "form-control" })
+        </div>*@
+        </div>
+                    
+                
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+                        <div class="col-6 text-right">
+                            <button type="button" class="btn btn-success" onclick="Edit()">@DataMapping.Resources.Resource.save</button>
+                        </div>
+                        <div class="col-6 text-left">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">@DataMapping.Resources.Resource.Close</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    function Edit() {
+        var GroupId = document.getElementById("GroupId").value;
+        var Employeeld = document.getElementById("UsersId").value;
+        var Isvalid = true;
+        
+        if ($("#GroupId").val() == "" || $("#GroupId").val() == null && $("#GroupId").val() == 0 || Employeeld == "" || Employeeld == null) {
+            Isvalid = false;
+
+            toastr.warning('ادخل البيانات')
+        }
+        else {
+            $.ajax({
+
+                type: "POST",
+                url: '/EmployeeGroups/AddOrEdit',     //your action
+                data: $('#ModalForm').serialize(),   //your form name.it takes all the values of model
+                dataType: 'json',
+                success: function (result) {
+                    loadData();
+                    $('#exampleModalCenter').modal('hide');
+                    //location.reload();
+                },
+
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('oops, something bad happened')
+                }
+
+            });
+        }
+    }
+
+    $(document).ready(function () {
+
+        $.ajax({
+
+            type: "GET",
+            url: '/EmployeeGroups/GetUserName/' + $("#UsersId").val(),     //your action
+            /* data: $("#UsersId").val(),*/   //your form name.it takes all the values of model
+            dataType: 'json',
+            success: function (result) {
+                $("#userName").val(result);
+                /*  $('#exampleModalCenter').modal('hide');*/
+                //location.reload();
+            },
+
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert('oops, something bad happened')
+            }
+
+        });
+    });
+    $("#UsersId").change(function () {
+        $.ajax({
+
+            type: "GET",
+            url: '/EmployeeGroups/GetUserName/' + $("#UsersId").val(),     //your action
+            /* data: $("#UsersId").val(),*/   //your form name.it takes all the values of model
+            dataType: 'json',
+            success: function (result) {
+                $("#userName").val(result);
+                /*  $('#exampleModalCenter').modal('hide');*/
+                //location.reload();
+            },
+
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert('oops, something bad happened')
+            }
+
+        });
+    });
+    //$(document).ready(function () {
+    //    $("#UsersId").attr('readonly', 'readonly');
+    //})
+</script>
+
+

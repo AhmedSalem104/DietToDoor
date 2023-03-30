@@ -1,0 +1,266 @@
+﻿@using DataMapping.Entites
+
+@model DataMapping.Entites.AssetClassifcation
+
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+    ViewBag.Title = DataMapping.Resources.Resource.AssetClassifcation;
+}
+<style>
+    .col-form-label {
+        font-size: 14px !important;
+        font-weight: 600;
+        color: #34395e !important;
+        margin-bottom: 8px;
+    }
+</style>
+@using (Html.BeginForm("AddOrEdit", "AssetClassifcation", FormMethod.Post, new { @class = "form-horizontal", @id = "ModalForm" }))
+
+{
+
+    <div class="row heder_title">
+        <div class="col-6">
+            <h3 class="blockquote">@DataMapping.Resources.Resource.AssetClassifcation</h3>
+        </div>
+        <div class="col-6 text-left">
+            @*<button type="submit" class="btn btn-icon icon-left btn-info">
+                @DataMapping.Resources.Resource.save <i class="fa fa-save" aria-hidden="true"></i>
+            </button>*@
+
+            <a href="~/Customer/Index" class="btn btn-icon icon-left btn-outline-warning">
+                رجوع <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+
+
+    @*<div class="modal-content">*@
+    @*<div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">@DataMapping.Resources.Resource.Customers</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>*@
+
+   
+            <div class="card-layout">
+                <p style="color:red;font-size:10px;">@Session["msgErr"]</p>
+                <div class="row">
+                    <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.AssetClassifcationNo</label>
+
+                    <div class="col-sm-4">
+                        <label class="col-sm-2 col-form-label">@Model.AssetClassifcationNo</label>
+
+                    </div>
+                    <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.AssetClassifcationNamedAr</label>
+
+                    <div class="col-sm-4">
+                        <label class="col-sm-2 col-form-label"> @Model.AssetClassifcationNamedAr</label>
+
+                    </div>
+
+
+                    <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.AssetClassifcationNamedEn</label>
+
+                    <div class="col-sm-4">
+
+                        <label class="col-sm-2 col-form-label">@Model.AssetClassifcationNamedEn</label>
+                    </div>
+
+                    <label class="col-sm-1 col-form-label">
+                        @DataMapping.Resources.Resource.Depreciable
+                    </label>
+                    <div class="col-sm-2">
+
+                        @if (Model.Depreciable == true)
+                        {
+
+                            <label class="col-sm-2 col-form-label">نعم</label>
+                        }
+                        else
+                        {
+                            <label class="col-sm-2 col-form-label">لا</label>
+                        }
+
+                    </div>
+
+
+                    <label class="col-sm-1 col-form-label">@DataMapping.Resources.Resource.SaveDepreciation</label>
+
+                    <div class="col-sm-2">
+
+                        @if (Model.DepreciationType == true)
+                        {
+                            <label class="col-sm-2 col-form-label">نعم</label>
+
+                        }
+                        else
+                        {
+                            <label class="col-sm-2 col-form-label">لا</label>
+
+                        }
+                    </div>
+
+
+
+
+
+
+
+
+                    @*<div class="col-md-2" style="margin-top: 32px;">
+            <div class="form-group mycheckboxdiv">
+                <label>
+                    @DataMapping.Resources.Resource.Block
+                    @Html.CheckBox("Block", htmlAttributes: new { @class = "pull-right mycheckbox" })
+                    @Html.ValidationMessageFor(model => model.Block, "", new { @class = "text-danger" })
+                </label>
+            </div>
+        </div>*@
+
+
+                    <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.LifeCycle</label>
+
+                    <div class="col-sm-4">
+                        @if (Model.LifeCycleType == "سنوات")
+                        {
+                            <label class="col-sm-3 col-form-label">@Model.LifeCycle  سنوات</label>
+                        }
+                        else
+                        {
+                            <label class="col-sm-3 col-form-label">@Model.LifeCycle  %</label>
+                        }
+
+                    </div>
+                    @*<div class="form-group col-md-2" style="margin-top: 26px;">
+            @Html.EditorFor(model => model.LifeCycle, new { htmlAttributes = new { @id = "LifeCycle", @class = "form-control", type = "number" } })
+
+
+        </div>
+        <div class="form-group col-md-2" style="margin-top: 26px;">
+
+            <label id="lifeType"></label>
+        </div>*@
+
+
+                    <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.AssetAccount</label>
+                    <div class="col-sm-4">
+                        @if (Model.AssetAccount != null)
+                        {
+                            var AccountName = db.Accounts.FirstOrDefault(a => a.AccountId == Model.AssetAccount).AccountName;
+                            <label class="col-sm-6 col-form-label">@AccountName</label>
+                        }
+                        @*@Html.DropDownList("AssetAccount", null, " اختر ", htmlAttributes: new { @id = "AssetAccount", @class = "select2 form-control" })
+            @Html.ValidationMessageFor(model => model.AssetAccount, "", new { @class = "text-danger" })*@
+                    </div>
+
+
+                    <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.DepreciationEcpenseAccount</label>
+
+                    <div class="col-sm-4">
+                        @if (Model.DepreciationEcpenseAccount != null)
+                        {
+                            var AccountName = db.Accounts.FirstOrDefault(a => a.AccountId == Model.DepreciationEcpenseAccount).AccountName;
+                            <label class="col-sm-6 col-form-label">@AccountName</label>
+                        }
+                    </div>
+
+
+                    <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.AccumulatedDepreciationAccount</label>
+
+                    <div class="col-sm-4">
+                        @if (Model.AccumulatedDepreciationAccount != null)
+                        {
+                            var AccountName = db.Accounts.FirstOrDefault(a => a.AccountId == Model.AccumulatedDepreciationAccount).AccountName;
+                            <label class="col-sm-6 col-form-label">@AccountName</label>
+                        }
+                    </div>
+
+
+                    
+
+
+                </div>
+            </div>
+       
+
+
+    @*<div class="bg-whitesmoke br">
+            <div class="row">
+                <div class="col-6 text-right">
+
+                </div>
+                <div class="col-6 text-left">
+
+
+                </div>
+            </div>
+        </div>*@
+}
+@*</div>*@
+
+@section ModelPopup{
+
+}
+@section JavaScriptSection{
+
+
+    @*تحويل القيمة الى رقم عشرى*@
+    <script>
+        $(document).ready(function () {
+            if ($("#LifeCycleType").val() == "اختر النوع") {
+                $("#LifeCycle").hide();
+            }
+
+        });
+
+        $("#LifeCycleType").change(function () {
+
+
+            if ($("#LifeCycleType").val() == "سنوات") {
+                $("#LifeCycle").show();
+                $("#lifeType").text("سنة/سنوات");
+            }
+            else if ($("#LifeCycleType").val() == "نسبة مئوية") {
+                $("#LifeCycle").show();
+                $("#lifeType").text("%");
+            }
+            else {
+                $("#LifeCycle").hide();
+                $("#lifeType").hide();
+            }
+        })
+    </script>
+
+    @*<script>
+            $(document).ready(function () {
+                var DoubleVal = (0).toFixed(2);
+                $("#openCridt").val(DoubleVal);
+            });
+
+            $("#openCridt").focusout(function () {
+                var strVal = $("#openCridt").val();
+                var intVal = parseInt(strVal);
+                var DoubleVal = (intVal).toFixed(2);
+                $("#openCridt").val(DoubleVal);
+            });
+
+            $(document).ready(function () {
+
+                $("#CityId").prop("disabled", true);
+            })
+
+            $("#GovernateId").change(function () {
+                $("#CityId").prop("disabled", false);
+                $.get("/Customer/GetCitiesList/", { ID: $("#GovernateId").val() }, function (data) {
+                    $("#CityId").empty();
+                    $("#CityId").append("<option> اختر اسم المدينة </option>")
+                    $.each(data, function (index, row) {
+
+                        $("#CityId").append("<option value='" + row.Id + "'>" + row.CityName + "</option>")
+
+                    });
+                });
+            })
+        </script>*@
+}

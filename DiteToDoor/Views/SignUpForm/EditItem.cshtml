@@ -1,0 +1,957 @@
+﻿@using DataMapping.Entites
+@model DataMapping.Entites.Item
+
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+
+    ViewBag.ItemTypeId = new SelectList(db.ItemType.ToList(), "Id", "ItemTypeName",Model.ItemTypeId);
+    ViewBag.ItemGroupId = new SelectList(db.Itemgroups.Where(a=>a.IsDeleted==false && a.Id==Model.ItemGroupId).ToList(), "Id", "ItemgroupsName",Model.ItemGroupId);
+    ViewBag.ItemGategoriesId = new SelectList(db.ItemCategories.ToList(), "Id", "ItemCatName",Model.ItemGategoriesId);
+    ViewBag.VendorId = new SelectList(db.Vendor.ToList(), "Id", "Name",Model.VendorId);
+    ViewBag.ExchangecontrolId = new SelectList(db.Exchangecontrol.ToList(), "Id", "ExchangecontrolName",Model.ExchangecontrolId);
+    ViewBag.StoreId = new SelectList(db.StoresInformations.ToList(), "Id", "Name",Model.StoreId);
+    ViewBag.UintID = new SelectList(db.Unit.ToList(), "Id", "UnitName",Model.UintID);
+
+
+
+}
+<style>
+    #Code, #ItemCode, #GroupCode {
+        border: 2px solid #ebebeb;
+    }
+</style>
+    <div class="row heder_title">
+        <div class="col-6">
+            <h3 class="blockquote">@DataMapping.Resources.Resource.Items</h3>
+        </div>
+        <div class="col-6 text-left">
+            <a href="#" class="btn btn-icon icon-left btn-info" onclick="AddItem()">
+                @DataMapping.Resources.Resource.save <i class="fa fa-save" aria-hidden="true"></i>
+            </a>
+            <a href="~/Item/AddOrEdit" class="btn btn-icon icon-left btn-outline-warning">
+                @DataMapping.Resources.Resource.back <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </a>
+
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-12">
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal", @id = "ItemModalForm" }))
+
+        {
+            @Html.HiddenFor(x => x.Id)
+            <input type="text" value="@Model.Id" id="SuperItemId" hidden />
+            <div class="card-layout">
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.ItemNo</label>
+                        @Html.TextBoxFor(x => x.Code, new { @id = "Code", @class = "form-control", @readonly = "readonly" })
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.ItemGroup</label>
+                        @Html.DropDownList("ItemGroupId", null, htmlAttributes: new { @id = "ItemGroupId", @class = "select2 form-control", @readonly = "readonly" })
+
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label>كود المجموعة</label>
+                        <input class="form-control" id="GroupCode" type="text" disabled>
+                    </div>
+                  
+
+                    
+                    <div class="form-group col-md-3" style="margin-top:auto">
+
+                        <img src="" alt="" id="barcode" />
+
+                    </div>
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.ItemCode</label>
+                        @Html.TextBoxFor(x => x.ItemCode, new { @id = "ItemCode", @class = "form-control", @MaxLength = 10 ,@readonly ="readonly"})
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.ItemNameAr</label>
+                        @Html.TextBoxFor(x => x.ItemNameAr, new { @id = "ItemName", @class = "form-control" })
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.ItemNameEn</label>
+                        @Html.TextBoxFor(x => x.ItemNameEn, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.ItemType</label>
+                        @Html.DropDownList("ItemTypeId", null, " اختر ", htmlAttributes: new { @id = "ItemTypeId", @class = "select2 form-control" })
+
+                    </div>
+
+                
+
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.ItemCat</label>
+                        @Html.DropDownList("ItemGategoriesId", null, " اختر ", htmlAttributes: new { @id = "ItemGategoriesId", @class = "select2 form-control" })
+
+                    </div>
+                    @*<div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.Vendor</label>
+                        @Html.DropDownList("VendorId", null, " اختر ", htmlAttributes: new { @id = "VendorId", @class = "select2 form-control" })
+
+                    </div>*@
+                    <div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.StoreName</label>
+                        @Html.DropDownList("StoreId", null, " اختر ", htmlAttributes: new { @id = "StoreId", @class = "select2 form-control" })
+
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.itemCost</label>
+                        @Html.TextBoxFor(x => x.ItemCost, new { @class = "form-control" })
+                    </div>
+                  
+                </div>
+
+                <div class="form-row">
+
+                    @*<div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.UnitId</label>
+                        @Html.DropDownList("UintID", null, " اختر ", htmlAttributes: new { @id = "StoreId", @class = "select2 form-control" })
+
+                    </div>*@
+
+                    @*<div class="form-group col-md-3">
+                        <label> @DataMapping.Resources.Resource.ExchangeControl</label>
+                        @Html.DropDownList("ExchangecontrolId", null, " اختر ", htmlAttributes: new { @id = "StoreId", @class = "select2 form-control" })
+
+                    </div>*@
+
+                    <div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.Tax</label>
+                        @Html.TextBoxFor(x => x.ItemTax, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>@DataMapping.Resources.Resource.ItemDescription</label>
+
+                        @Html.TextBoxFor(x => x.Descripation, new { @rows = "1", @class = "form-control" })
+                    </div>
+                </div>
+
+              
+                <div class="form-row">
+                   
+                    <div class="form-group col-md-9">
+                        <label>@DataMapping.Resources.Resource.Notes</label>
+                        @Html.TextBoxFor(x => x.Notes, new { @rows = "1", @class = "form-control" })
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.ItemImage</label>
+                        <input type="file" class="form-control">
+                    </div>
+                    <div class="form-group col-md-2 text-center custody_show">
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="tab">
+            <ul class="tabs">
+                <li><a href="#">وحدات القياس الفرعية</a></li>
+                @*<li><a href="#">الأرصدة الإفتتاحية</a></li>*@
+                <li><a href="#">مواصفات إضافية</a></li>
+                <li><a href="#">حد الطلب </a></li>
+                <li><a href="#"> بدائل الصنف</a></li>
+            </ul>
+
+            <div class="tab_content" id="AllTabes">
+                <div class="tabs_item">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="#" class="btn btn-icon icon-left success_butn tab_button" onclick="showPopupCreateSubUint()">
+                                @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover table-bordered" id="save-stage" style="width:100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>@DataMapping.Resources.Resource.UnitNo</th>
+                                            <th>@DataMapping.Resources.Resource.Name</th>
+                                            <th>@DataMapping.Resources.Resource.Notes</th>
+                                            <th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                                            <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                                        </tr>
+                                    </thead>
+                                    @*@Html.Action("GetItemSubUintList")*@
+                                    <tbody class="SubUinttbody">
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tabs_item">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="#" class="btn btn-icon icon-left success_butn tab_button" onclick="showPopupCreateOpeningBlance()">
+                                @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    @*<div class="row ">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover table-bordered" id="save-stage" style="width:100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>@DataMapping.Resources.Resource.Store</th>
+                                            <th>@DataMapping.Resources.Resource.Quantity</th>
+                                            <th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                                            <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="OpeningBalancetbody">
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>*@
+                </div>
+
+                <div class="tabs_item">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="#" class="btn btn-icon icon-left success_butn tab_button" onclick="showPopupCreateAddational()">
+                                @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover table-bordered" id="save-stage" style="width:100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>@DataMapping.Resources.Resource.Name</th>
+                                            <th>@DataMapping.Resources.Resource.Value</th>
+                                            <th>@DataMapping.Resources.Resource.others</th>
+                                            <th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                                            <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="AddtionalSpecificationtbody">
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tabs_item">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="#" class="btn btn-icon icon-left success_butn tab_button" onclick="showPopupCreateRequestLimit()">
+                                @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover table-bordered" id="save-stage" style="width:100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>@DataMapping.Resources.Resource.Store</th>
+                                            <th>@DataMapping.Resources.Resource.MaxLimit</th>
+                                            <th>@DataMapping.Resources.Resource.MinLimit</th>
+                                            <th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                                            <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="RequestLimittbody">
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tabs_item">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="#" class="btn btn-icon icon-left success_butn tab_button" onclick="showPopupCreateDefualtItem()">
+                                @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover table-bordered" id="save-stage" style="width:100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>@DataMapping.Resources.Resource.Item</th>
+                                            <th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                                            <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="ItemDefualttbody">
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section ModelPopup{
+
+    <div id="mainDiv"></div>
+    <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 text-center warning_icon">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 confirm_text">
+                            <h3>@DataMapping.Resources.Resource.Alert</h3>
+                            <p>@DataMapping.Resources.Resource.Confirm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+                        <div class="col-6 text-right">
+                            <button id="btnContinueDelete" type="button" class="btn btn-icon icon-left btn-danger">
+                                حذف <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="col-6 text-left">
+                            <button type="button" class="btn btn-icon icon-left btn-warning" data-dismiss="modal">
+                                رجوع <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section JavaScriptSection
+    {
+
+    @*حفظ الصنف*@
+    <script>
+        //$("#AllTabes").hide();
+    </script>
+    <script type="text/javascript">
+        function AddItem() {
+            var Code = $("#Code").val();
+            var ItemName = $("#ItemName").val();
+            var ItemTypeId = document.getElementById("ItemTypeId").value;
+            var ItemGroupId = document.getElementById("ItemGroupId").value;
+            var ItemGategoriesId = document.getElementById("ItemGategoriesId").value;
+            //var VendorId = document.getElementById("VendorId").value;
+            var StoreId = document.getElementById("StoreId").value;
+
+            var Isvalid = true;
+            if (Code == "" || Code == null) {
+                Isvalid = false;
+                toastr.warning('ادخل الكود')
+            }
+            if (ItemName == "" || ItemName == null) {
+                Isvalid = false;
+                toastr.warning('ادخل اسم الصنف')
+            }
+            if (ItemTypeId == 0 || ItemTypeId == "" || ItemTypeId == null) {
+                Isvalid = false;
+                toastr.warning(' اختر نوع الصنف')
+            }
+            if (ItemGroupId == 0 || ItemGroupId == "" || ItemGroupId == null) {
+                Isvalid = false;
+                toastr.warning(' اختر مجموعة الصنف')
+            }
+            if (ItemGategoriesId == 0 || ItemGategoriesId == "" || ItemGategoriesId == null) {
+                Isvalid = false;
+                toastr.warning(' اختر فئه الصنف')
+            }
+            //if (VendorId == 0 || VendorId == "" || VendorId == null) {
+            //    Isvalid = false;
+            //    toastr.warning(' اختر المورد')
+            //}
+            if (StoreId == 0 || StoreId == "" || StoreId == null) {
+                Isvalid = false;
+                toastr.warning('اختر المخزن ')
+            }
+            else {
+                $.ajax({
+
+                    type: "POST",
+                    url: '/Item/AddOrEdit',     //your action
+                    data: $('#ItemModalForm').serialize(),   //your form name.it takes all the values of model
+                    dataType: 'json',
+                    success: function (result) {
+
+                        location.reload();
+                    },
+
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        toastr.success('تم الحفظ بنجاح')
+                        loadSubUintList();
+                        loadOpeningBlanceList();
+                        loadAddationalSpecfationList();
+                        loadRequestLimitList();
+                        loadDefualtItemList();
+                        $("#AllTabes").show();
+                    }
+
+                });
+            }
+        }
+        //}
+    </script>
+
+
+    @*SubUintItem وحدات القياس الفرعيه*@
+    <script>
+        function showPopupCreateSubUint() {
+            $.ajax({
+                type: "Get",
+                url: "/Item/SubUintAddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+        function showPopupEditSubUint(id) {
+            $.ajax({
+                type: "Get",
+                url: "/Item/SubUintAddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                data: { Id: id },
+                dataType: "html",
+                success: function (result, status, xhr) {
+                    8
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+
+
+        $(document).ready(function () {
+            loadSubUintList();
+        });
+
+        //عرض وحدات الاصناف
+        function loadSubUintList() {
+            $.ajax({
+                url: "/Item/EditItemSubUintList",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    var html = '';
+                    $.each(result, function (key, item) {
+                        html += '<tr>';
+                        html += '<td>' + item.UnitId + '</td>';
+                        html += '<td>' +item.Unit.UnitName  + '</td>';
+                        html += '<td>' + item.Lengh + '</td>';
+                        html += '<td> <a href="#" class="btn btn-icon btn-outline-info" onclick="showPopupEditSubUint(' + item.Id + ')"><i class="far fa-edit"></i></a></td>';
+                        /**/
+                        html += '<td> <a onclick="DeleleSubUint(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+                        /**/
+                        html += '</tr>';
+                    });
+                    $('.SubUinttbody').html(html);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+
+        //حذف وحدات الاصناف
+        function DeleleSubUint(ID) {
+            var ans = confirm("هل  تريد الحذف?");
+            if (ans) {
+                $.ajax({
+                    url: "/Item/DeleteSubUint/" + ID,
+                    type: "POST",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (result) {
+                        loadSubUintList();
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+            }
+
+        }
+
+
+
+
+    </script>
+
+    @*OpeningBalance الرصيد الافتتاحي*@
+
+    <script>
+        function showPopupCreateOpeningBlance() {
+            $.ajax({
+                type: "Get",
+                url: "/Item/OpeningBalanceAddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+        function showPopupEditOpeningBlance(id) {
+            $.ajax({
+                type: "Get",
+                url: "/Item/OpeningBalanceAddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                data: { Id: id },
+                dataType: "html",
+                success: function (result, status, xhr) {
+                    8
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            loadOpeningBlanceList();
+        });
+
+        //عرض الرصيد الافتاحي
+        function loadOpeningBlanceList() {
+            $.ajax({
+                url: "/Item/EditItemOpeningBalanceList",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    var html = '';
+                    $.each(result, function (key, item) {
+                        html += '<tr>';
+                        html += '<td>' + item.Store.Name + '</td>';
+                        html += '<td>' + item.Quantity + '</td>';
+                        html += '<td> <a href="#" class="btn btn-icon btn-outline-info" onclick="showPopupEditOpeningBlance(' + item.Id + ')"><i class="far fa-edit"></i></a></td>';
+                        /**/
+                        html += '<td> <a onclick="DeleleOpeningBalance(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+                        /**/
+                        html += '</tr>';
+                    });
+                    $('.OpeningBalancetbody').html(html);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+
+        //حذف  الرصيد الافتتاحي
+        function DeleleOpeningBalance(ID) {
+            var ans = confirm("هل  تريد الحذف?");
+            if (ans) {
+                $.ajax({
+                    url: "/Item/DeleteOpenBalance/" + ID,
+                    type: "POST",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (result) {
+                        loadSubUintList();
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+            }
+
+        }
+
+
+
+
+    </script>
+
+
+    @*AddationalSpecfation المواصفات الاضافية*@
+
+    <script>
+        function showPopupCreateAddational() {
+            $.ajax({
+                type: "Get",
+                url: "/Item/AddtionalSpecificationAddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+        function showPopupEditAddational(id) {
+            $.ajax({
+                type: "Get",
+                url: "/Item/AddtionalSpecificationAddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                data: { Id: id },
+                dataType: "html",
+                success: function (result, status, xhr) {
+                    8
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+
+        $(document).ready(function () {
+            loadAddationalSpecfationList();
+        });
+
+        //عرض  المواصفات الاضافيه
+        function loadAddationalSpecfationList() {
+            $.ajax({
+                url: "/Item/EditItemAddtionalSpecificationList",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    var html = '';
+                    $.each(result, function (key, item) {
+                        html += '<tr>';
+                        html += '<td>' + item.AddtionalSpecName + '</td>';
+                        html += '<td>' + item.Value + '</td>';
+                        html += '<td>' + item.others + '</td>';
+                        html += '<td> <a href="#" class="btn btn-icon btn-outline-info" onclick="showPopupEditAddational(' + item.Id + ')"><i class="far fa-edit"></i></a></td>';
+                        /**/
+                        html += '<td> <a onclick="DeleleAddationalSpecfation(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+                        /**/
+                        html += '</tr>';
+                    });
+                    $('.AddtionalSpecificationtbody').html(html);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+
+        //حذف   المواصفات الاضافيه
+        function DeleleAddationalSpecfation(ID) {
+            var ans = confirm("هل  تريد الحذف?");
+            if (ans) {
+                $.ajax({
+                    url: "/Item/DeleteAddtional/" + ID,
+                    type: "POST",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (result) {
+                        loadAddationalSpecfationList();
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+            }
+
+        }
+
+
+
+    </script>
+
+
+    @*RequestLimit حد الطلب*@
+
+    <script>
+        function showPopupCreateRequestLimit() {
+            $.ajax({
+                type: "Get",
+                url: "/Item/RequestLimitAddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+        function showPopupEditRequestLimit(id) {
+            $.ajax({
+                type: "Get",
+                url: "/Item/RequestLimitAddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                data: { Id: id },
+                dataType: "html",
+                success: function (result, status, xhr) {
+                    8
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+        $(document).ready(function () {
+            loadRequestLimitList();
+        });
+
+        //عرض حد الطلب
+        function loadRequestLimitList() {
+            $.ajax({
+                url: "/Item/EditItemRequestLimitList",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    var html = '';
+                    $.each(result, function (key, item) {
+                        html += '<tr>';
+                        html += '<td>' + item.Store.Name + '</td>';
+                        html += '<td>' + item.MaxLimit + '</td>';
+                        html += '<td>' + item.MinLimit + '</td>';
+                        html += '<td> <a href="#" class="btn btn-icon btn-outline-info" onclick="showPopupEditRequestLimit(' + item.Id + ')"><i class="far fa-edit"></i></a></td>';
+                        /**/
+                        html += '<td> <a onclick="DeleleRequestLimit(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+                        /**/
+                        html += '</tr>';
+                    });
+                    $('.RequestLimittbody').html(html);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+
+        //حذف  حد الطلب
+        function DeleleRequestLimit(ID) {
+            var ans = confirm("هل  تريد الحذف?");
+            if (ans) {
+                $.ajax({
+                    url: "/Item/DeleteRequestLimit/" + ID,
+                    type: "POST",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (result) {
+                        loadRequestLimitList();
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+            }
+
+        }
+
+    </script>
+
+    @*DefualtItem  الصنف البديل*@
+
+<script>
+        function showPopupCreateDefualtItem() {
+            $.ajax({
+                type: "Get",
+                url: "/Item/ItemDefualtAddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+        function showPopupEditDefualtItem(id) {
+            $.ajax({
+                type: "Get",
+                url: "/Item/ItemDefualtAddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                data: { Id: id },
+                dataType: "html",
+                success: function (result, status, xhr) {
+                    8
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            loadDefualtItemList();
+        });
+
+        //عرض بديل الصنف
+        function loadDefualtItemList() {
+            $.ajax({
+                url: "/Item/EditGetItemDefualt",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    var html = '';
+                    $.each(result, function (key, item) {
+                        html += '<tr>';
+                        html += '<td>' + item.Item.ItemNameAr + '</td>';
+                        html += '<td> <a href="#" class="btn btn-icon btn-outline-info" onclick="showPopupEditDefualtItem(' + item.Id + ')"><i class="far fa-edit"></i></a></td>';
+                        /**/
+                        html += '<td> <a onclick="DeleleDefualtItem(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+                        /**/
+                        html += '</tr>';
+                    });
+                    $('.ItemDefualttbody').html(html);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+
+        //حذف  بديل الصنف
+        function DeleleDefualtItem(ID) {
+            var ans = confirm("هل  تريد الحذف?");
+            if (ans) {
+                $.ajax({
+                    url: "/Item/DeleteItemDefualt/" + ID,
+                    type: "POST",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (result) {
+                        loadDefualtItemList();
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+            }
+
+        }
+
+         $("#ItemCode").keyup(function () {
+        var text = $("#ItemCode").val();
+        if (text == null || text == "") {
+            $("#barcode").hide();
+        }
+        else {
+            $("#barcode").show();
+        $.ajax({
+            url: '@Url.Action("GenerateBarCode", "Item")',
+            dataType: 'json',
+            method: 'POST',
+            data: {
+                text: text,
+
+            },
+            success: function (res) {
+                $("#barcode").attr("src", res);
+            },
+            error: function (err) {
+                console.log(err);
+            }
+
+        })
+    }
+    })
+    $(document).ready(function () {
+        $("#GroupCode").val($("#ItemGroupId").val());
+        var text = $("#ItemCode").val();
+        if ($("#ItemCode").val() != 0 || $("#ItemCode").val() != null) {
+             $.ajax({
+            url: '@Url.Action("GenerateBarCode", "Item")',
+            dataType: 'json',
+            method: 'POST',
+            data: {
+                text: text,
+
+            },
+            success: function (res) {
+                $("#barcode").attr("src", res);
+            },
+            error: function (err) {
+                console.log(err);
+            }
+
+        })
+        }
+    })
+
+   
+</script>
+
+
+
+}

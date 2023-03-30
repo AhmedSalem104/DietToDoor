@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{89DF98AA-6DC7-498E-9DD9-06D4BC10A49B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataMapping</RootNamespace>
+    <AssemblyName>DataMapping</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.3.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.VS2010.10.0.40219.1\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entites\Accounts.cs" />
+    <Compile Include="Entites\Accounts_Types.cs" />
+    <Compile Include="Entites\ActionLog.cs" />
+    <Compile Include="Entites\Actions.cs" />
+    <Compile Include="Entites\ActivationTbl.cs" />
+    <Compile Include="Entites\ApplicationDbContext.cs" />
+    <Compile Include="Entites\AssetClassifcation.cs" />
+    <Compile Include="Entites\Attachments.cs" />
+    <Compile Include="Entites\Branches.cs" />
+    <Compile Include="Entites\CarDrivers.cs" />
+    <Compile Include="Entites\Color_Tbl.cs" />
+    <Compile Include="Entites\CompanyInfo.cs" />
+    <Compile Include="Entites\Contact.cs" />
+    <Compile Include="Entites\Currencies.cs" />
+    <Compile Include="Entites\CurrencyExchangeRates.cs" />
+    <Compile Include="Entites\FoodFrequency.cs" />
+    <Compile Include="Entites\Goals.cs" />
+    <Compile Include="Entites\InvoicesSettings.cs" />
+    <Compile Include="Entites\MyGoals.cs" />
+    <Compile Include="Entites\SignForm.cs" />
+    <Compile Include="Entites\TempGoals.cs" />
+    <Compile Include="Entites\Years.cs" />
+    <Compile Include="Entites\Days.cs" />
+    <Compile Include="Entites\Drivers.cs" />
+    <Compile Include="Entites\Employee.cs" />
+    <Compile Include="Entites\EmployeeGroups.cs" />
+    <Compile Include="Entites\EmployeeSecurityRoles.cs" />
+    <Compile Include="Entites\Equipments.cs" />
+    <Compile Include="Entites\GasolineTypes.cs" />
+    <Compile Include="Entites\MaintenanceTrx.cs" />
+    <Compile Include="Entites\MaintenanceTrxD.cs" />
+    <Compile Include="Entites\ServicesTrx.cs" />
+    <Compile Include="Entites\ServicesTrxD.cs" />
+    <Compile Include="Migrations\202303191556418_CreateDB.cs" />
+    <Compile Include="Migrations\202303191556418_CreateDB.designer.cs">
+      <DependentUpon>202303191556418_CreateDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303191607405_AddYearEntities.cs" />
+    <Compile Include="Migrations\202303191607405_AddYearEntities.designer.cs">
+      <DependentUpon>202303191607405_AddYearEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303212127587_addContactEntity.cs" />
+    <Compile Include="Migrations\202303212127587_addContactEntity.designer.cs">
+      <DependentUpon>202303212127587_addContactEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303291442133_addSignFormTbl.cs" />
+    <Compile Include="Migrations\202303291442133_addSignFormTbl.designer.cs">
+      <DependentUpon>202303291442133_addSignFormTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303301436096_addSignFormTbll.cs" />
+    <Compile Include="Migrations\202303301436096_addSignFormTbll.designer.cs">
+      <DependentUpon>202303301436096_addSignFormTbll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303301437422_addSignFormTbll1.cs" />
+    <Compile Include="Migrations\202303301437422_addSignFormTbll1.designer.cs">
+      <DependentUpon>202303301437422_addSignFormTbll1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303301500294_addGoalsAndFoodFreqTbl.cs" />
+    <Compile Include="Migrations\202303301500294_addGoalsAndFoodFreqTbl.designer.cs">
+      <DependentUpon>202303301500294_addGoalsAndFoodFreqTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303301501370_addGoalsAndFoodFreqTbl1.cs" />
+    <Compile Include="Migrations\202303301501370_addGoalsAndFoodFreqTbl1.designer.cs">
+      <DependentUpon>202303301501370_addGoalsAndFoodFreqTbl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303301544138_addTempGoalsTbl.cs" />
+    <Compile Include="Migrations\202303301544138_addTempGoalsTbl.designer.cs">
+      <DependentUpon>202303301544138_addTempGoalsTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303302133172_addImg.cs" />
+    <Compile Include="Migrations\202303302133172_addImg.designer.cs">
+      <DependentUpon>202303302133172_addImg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303302226181_addVegetables.cs" />
+    <Compile Include="Migrations\202303302226181_addVegetables.designer.cs">
+      <DependentUpon>202303302226181_addVegetables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procedures\CarDriverPrint_Result.cs" />
+    <Compile Include="Procedures\CarModelNo_Result.cs" />
+    <Compile Include="Procedures\CarStatus_Result.cs" />
+    <Compile Include="Procedures\FilterCars_Result.cs" />
+    <Compile Include="Procedures\FilterEquipments_Result.cs" />
+    <Compile Include="Procedures\FilterExpiredDiversLicenses_Result.cs" />
+    <Compile Include="Procedures\FilterUser_Result.cs" />
+    <Compile Include="Procedures\FilterVendors_Result.cs" />
+    <Compile Include="Procedures\GetAllCarsAndEquipmentsCarStatus_Result.cs" />
+    <Compile Include="Procedures\GetCarDriversDetailsInCarDelivery_Result.cs" />
+    <Compile Include="Procedures\GetCarsAndEquipments_Result.cs" />
+    <Compile Include="Procedures\GetDrivers_Result.cs" />
+    <Compile Include="Procedures\GetStationsTRXAndTRXOut_Result.cs" />
+    <Compile Include="Procedures\GetVendorPrint_Result.cs" />
+    <Compile Include="Procedures\Get_Car_Receipt_Result.cs" />
+    <Compile Include="Entites\Group.cs" />
+    <Compile Include="Entites\GroupSecurityRole.cs" />
+    <Compile Include="Entites\LicenseTypes_Tbl.cs" />
+    <Compile Include="Entites\MachineType.cs" />
+    <Compile Include="Entites\MainMenu.cs" />
+    <Compile Include="Entites\Managments.cs" />
+    <Compile Include="Entites\Nationalities_Tbl.cs" />
+    <Compile Include="Entites\Service_Tbl.cs" />
+    <Compile Include="Entites\SpareParts_Tbl.cs" />
+    <Compile Include="Entites\Stations.cs" />
+    <Compile Include="Entites\StationsTrx.cs" />
+    <Compile Include="Entites\StoreTRXTypes.cs" />
+    <Compile Include="Entites\Suppliers_Tbl.cs" />
+    <Compile Include="Entites\SystemFunction.cs" />
+    <Compile Include="Entites\SystemFunctionParent.cs" />
+    <Compile Include="Entites\Users.cs" />
+    <Compile Include="Entites\UserSafe.cs" />
+    <Compile Include="Entites\Users_Branches.cs" />
+    <Compile Include="Entites\Users_Groups.cs" />
+    <Compile Include="Entites\Vendor.cs" />
+    <Compile Include="Entites\VendorClassification.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Procedures\Get_Tank_Statment_Result.cs" />
+    <Compile Include="Procedures\MaintenanceCard_Result.cs" />
+    <Compile Include="Procedures\PrintStationsTrxInAndOut_Result.cs" />
+    <Compile Include="Procedures\PrintChangeOli_Result.cs" />
+    <Compile Include="Procedures\SelectCars_Result.cs" />
+    <Compile Include="Procedures\ServicesTrxPrint_Result.cs" />
+    <Compile Include="Procedures\StationsTrxPrint_Result.cs" />
+    <Compile Include="Procedures\StationTrxALLDataIndex_Result.cs" />
+    <Compile Include="Procedures\StationTrxDESC_Result.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resource.Ar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.Ar.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ViewModel\CarDriversViewModel.cs" />
+    <Compile Include="ViewModel\MaintenanceTrxViewModel.cs" />
+    <Compile Include="ViewModel\ServicesTrxViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202303191556418_CreateDB.resx">
+      <DependentUpon>202303191556418_CreateDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303191607405_AddYearEntities.resx">
+      <DependentUpon>202303191607405_AddYearEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303212127587_addContactEntity.resx">
+      <DependentUpon>202303212127587_addContactEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303291442133_addSignFormTbl.resx">
+      <DependentUpon>202303291442133_addSignFormTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303301436096_addSignFormTbll.resx">
+      <DependentUpon>202303301436096_addSignFormTbll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303301437422_addSignFormTbll1.resx">
+      <DependentUpon>202303301437422_addSignFormTbll1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303301500294_addGoalsAndFoodFreqTbl.resx">
+      <DependentUpon>202303301500294_addGoalsAndFoodFreqTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303301501370_addGoalsAndFoodFreqTbl1.resx">
+      <DependentUpon>202303301501370_addGoalsAndFoodFreqTbl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303301544138_addTempGoalsTbl.resx">
+      <DependentUpon>202303301544138_addTempGoalsTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303302133172_addImg.resx">
+      <DependentUpon>202303302133172_addImg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303302226181_addVegetables.resx">
+      <DependentUpon>202303302226181_addVegetables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource.Ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Ar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\Ar\" />
+    <Folder Include="bin\Release\Ar\" />
+    <Folder Include="Migrations\202201111437088_AddJournalType\" />
+    <Folder Include="StoredSQL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

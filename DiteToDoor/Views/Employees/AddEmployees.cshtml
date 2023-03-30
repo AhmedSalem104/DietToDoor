@@ -1,0 +1,797 @@
+﻿
+@using DataMapping.Entites
+@model DataMapping.Entites.Employees
+@{
+    ViewBag.Title = "";
+    ApplicationDbContext db = new ApplicationDbContext();
+
+    //SelectList ItemList = new SelectList(db.Item.Where(a => a.IsDeleted == false), "Id", "ItemNameAr");
+    //SelectList ItemCategoriesList = new SelectList(db.Itemgroups.Where(a => a.IsDeleted == false), "Id", "ItemgroupsName");
+    //SelectList UnitList = new SelectList(db.Unit.Where(a => a.IsDeleted == false), "Id", "UnitName");
+
+    //SelectList EmployeeList = new SelectList(db.Employee.Where(a => a.IsDeleted == false), "Id", "EmployeeNameAr");
+    //SelectList CustomersList = new SelectList(db.Customers.Where(a => a.IsDeleted == false), "Id", "CustomersName");
+    int CurrentBranch = ViewBag.DefultBranch;
+    var BranchName = db.Branches.SingleOrDefault(a => a.Id == CurrentBranch);
+    SelectList BranchId = new SelectList(db.Branches.Where(a => a.IsDeleted == false && a.Id == BranchName.Id), "Id", "BranchesName", BranchName.Id);
+    //SelectList StoreList = new SelectList(db.Store.Where(a => a.IsDeleted == false), "Id", "Name");
+
+    //SelectList SalesRepresentativeIdList = new SelectList(db.Representative, "Id", "Name");
+
+    SelectList NationalityId = new SelectList(db.Country.Where(a => a.IsDeleted == false), "Id", "CountryName");
+    SelectList CountryId = new SelectList(db.Country.Where(a => a.IsDeleted == false), "Id", "CountryName");
+    SelectList JobTitlesId = new SelectList(db.JobTitles.Where(a => a.IsDeleted == false), "Id", "JobTitle");
+    SelectList DepartmentId = new SelectList(db.Department.Where(a => a.IsDeleted == false), "Id", "DepartmentName");
+
+    SelectList ManagerId = new SelectList(db.Employees.Where(a => a.IsDeleted == false), "Id", "EmployeeNameAr");
+
+    SelectList QualificationId = new SelectList(db.Qualification.Where(a => a.IsDeleted == false), "Id", "QualificationName");
+    SelectList BankId = new SelectList(db.Bank.Where(a => a.IsDeleted == false), "Id", "BankName");
+
+    List<SelectListItem> Genders = new List<SelectListItem>();
+    Genders.Add(new SelectListItem() { Text = "ذكر", Value = "ذكر" });
+    Genders.Add(new SelectListItem() { Text = "أنثى", Value = "أنثى" });
+    SelectList Gender = new SelectList(Genders, "Value", "Text");
+
+    List<SelectListItem> MilitaryStatuss = new List<SelectListItem>();
+    MilitaryStatuss.Add(new SelectListItem() { Text = "أعزب", Value = "أعزب" });
+    MilitaryStatuss.Add(new SelectListItem() { Text = "متزوج", Value = "متزوج" });
+    MilitaryStatuss.Add(new SelectListItem() { Text = "مطلق", Value = "مطلق" });
+
+    MilitaryStatuss.Add(new SelectListItem() { Text = "أرمل", Value = "أرمل" });
+
+    SelectList MilitaryStatus = new SelectList(MilitaryStatuss, "Value", "Text");
+
+    List<SelectListItem> PaymentCyclee = new List<SelectListItem>();
+    PaymentCyclee.Add(new SelectListItem() { Text = "يومى", Value = "يومى" });
+    PaymentCyclee.Add(new SelectListItem() { Text = "أسبوعى", Value = "أسبوعى" });
+    PaymentCyclee.Add(new SelectListItem() { Text = "شهرى", Value = "شهرى" });
+
+    SelectList PaymentCycle = new SelectList(PaymentCyclee, "Value", "Text");
+
+
+}
+<style>
+</style>
+
+<div class="invoice-container">
+    <div class="row heder_title">
+        <div class="col-6">
+            <h3 class="blockquote">@DataMapping.Resources.Resource.Employee</h3>
+        </div>
+        <div class="col-6 text-left" style="display: -webkit-inline-box; direction:ltr">
+            <a href="#" id="submit" class="btn btn-icon icon-left info_butn">
+                @DataMapping.Resources.Resource.save <i class="fa fa-save" aria-hidden="true"></i>
+            </a>
+            @*<a href="#" class="btn btn-outline-secondary">
+                    طباعة <i class="fas fa-print"></i>
+                </a>*@
+            @*@using (Html.BeginForm("PrintDataRDLC", "SalesINV"))
+            {
+                <button formtarget="_blank" type="submit" class="btn btn-outline-secondary" style="background-color:white; color:darkgreen;border-width:2px">
+
+                    طباعة  <i class="fa fa-print" aria-hidden="true"></i>
+
+                </button>
+            }*@
+
+            @*<a href="#" id="addItem" class="btn btn-icon icon-left success_butn" data-toggle="modal">
+                @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+            </a>*@
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="row card-header" id="headingOne">
+                        <h2 class="col-2 mb-0 text-right">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="font-family: system-ui; font-size: inherit; width:auto">
+                                @DataMapping.Resources.Resource.EmployeeDefinition
+                            </button>
+                        </h2>
+                        <div class="col-10 text-left">
+                            <button class="btn btn-link btn-block no_hover_btn text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        @*<h2>@DataMapping.Resources.Resource.EmployeeDefinition</h2>*@
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card-layout" style="height:auto">
+                                        <div class="mb-2 row">
+                                            <label class="col-sm-2 col-form-label">
+                                                @DataMapping.Resources.Resource.NameInEnglish
+                                            </label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(a => a.EmployeeNameEn, new { @id = "EmployeeNameEn", @class = "form-control" })
+
+                                            </div>
+                                            <label class="col-sm-2 col-form-label"> @DataMapping.Resources.Resource.NameInArabic</label>
+                                            <div class="col-sm-4">
+                                                @*@Html.TextBoxFor(a => a.SalesINVDate, new { Value = ViewBag.autoDate, @id = "SalesINVDate", @class = "DateChange form-control", type = "date", @data_date = "", @data_date_format = "DD-MM-YYYY" })*@
+
+
+                                                @*@Html.EditorFor(model => model.SalesINVDate, new { htmlAttributes = new { @class = "DateChange form-control", Value = ViewBag.AutoDate } })*@
+                                                @Html.TextBoxFor(a => a.EmployeeNameAr, new { @id = "EmployeeNameAr", @class = "form-control" })
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="mb-2 row">
+                                            <label class="col-sm-2 col-form-label">  @DataMapping.Resources.Resource.Gender</label>
+                                            <div class="col-sm-4">
+                                                @Html.DropDownList("Gender", Gender, "... أختر  ...", new { @id = "Gender", @class = "Gender form-control select2" })
+
+                                            </div>
+
+                                            <label class="col-sm-2 col-form-label"> @DataMapping.Resources.Resource.BirthDate</label>
+                                            <div class="col-sm-4">
+                                                @*@Html.DropDownList("StoreList", StoreList, "... أختر  ...", new { @id = "StoreList", @class = "StoreList form-control select2" })*@
+                                                @Html.TextBoxFor(a => a.BirthDate, new { Value = ViewBag.autoDate, @id = "BirthDate", @class = "DateChange form-control", type = "date", @data_date = "", @data_date_format = "DD-MM-YYYY" })
+
+
+                                            </div>
+
+                                        </div>
+
+
+                                        @*<div class="mb-2 row">
+                                <label class="col-sm-2 col-form-label">رقم المستند</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(a => a.SalesPaperNo, new { @id = "SalesPaperNo", @class = "form-control" })
+
+                                </div>
+                                <label class="col-sm-2 col-form-label"> تاريخ المستند </label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(a => a.SalesPaperDate, new { @id = "SalesPaperDate", @class = "DateChange form-control", autocomplete = "off", type = "date" })
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="mb-2 row">
+                                <label class="col-sm-2 col-form-label">البيان</label>
+                                <div class="col-sm-10">
+                                    @Html.TextBoxFor(a => a.Notes, new { @id = "Notes", @class = "form-control", Value = "فاتورة مبيعات رقم " + ViewBag.autoCode })
+
+                                </div>
+                            </div>*@
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="card-layout" style="height:auto">
+                                        
+
+
+                                            <div class="mb-2 row">
+                                                <label class="col-sm-2 col-form-label" style="margin-right:auto"> @DataMapping.Resources.Resource.BranchId</label>
+                                                <div class="col-sm-4">
+                                                    @Html.DropDownList("BranchId", BranchId, "... أختر  ...", new { @id = "BranchId", @class = "BranchId form-control select2" })
+
+                                                </div>
+                                                <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.MilitaryStatus</label>
+                                                <div class="col-sm-4">
+                                                    @Html.DropDownList("MilitaryStatus", MilitaryStatus, "... أختر  ...", new { @id = "MilitaryStatus", @class = "MilitaryStatus form-control select2" })
+
+                                                </div>
+                                                <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.Nationality  </label>
+                                                <div class="col-sm-4">
+
+                                                    @Html.DropDownList("NationalityId", NationalityId, "... أختر  ...", new { @id = "NationalityId", @class = "NationalityId form-control select2" })
+
+
+                                                </div>
+
+                                                <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.HomeCountry   </label>
+                                                <div class="col-sm-4">
+
+                                                    @Html.DropDownList("CountryId", CountryId, "... أختر  ...", new { @id = "CountryId", @class = "CountryId form-control select2" })
+
+
+                                                </div>
+
+                                            </div>
+
+
+                                            @*<div class="mb-2 row">
+                                <label class="col-sm-2 col-form-label">عدد الاصناف</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(a => a.RowsCount, new { @id = "RowsCount", @class = "RowsCount form-control", @readonly = "readonly" })
+
+                                </div>
+                                <label class="col-sm-2 col-form-label">خصم الاصناف</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(a => a.TotaleItemDis, new { @id = "TotaleItemDis", @class = "form-control", @readonly = "readonly" })
+
+                                </div>*@
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                       
+                        <div class="card-body">
+                            
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card-layout" style="height:auto">
+                                        <h2 style="font-family: system-ui; font-size: large; color: darkgoldenrod;">@DataMapping.Resources.Resource.PersonalConnInfo</h2>
+                                        <div class="mb-2 row">
+                                            <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.Email</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(a => a.Email, new { @id = "Email", @class = "form-control" })
+
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.PhoneNumber</label>
+                                            <div class="col-sm-4">
+                                                @*@Html.TextBoxFor(a => a.SalesINVDate, new { Value = ViewBag.autoDate, @id = "SalesINVDate", @class = "DateChange form-control", type = "date", @data_date = "", @data_date_format = "DD-MM-YYYY" })*@
+
+
+                                                @*@Html.EditorFor(model => model.SalesINVDate, new { htmlAttributes = new { @class = "DateChange form-control", Value = ViewBag.AutoDate } })*@
+                                                @Html.TextBoxFor(a => a.PhoneNumber, new { @id = "PhoneNumber", @class = "form-control" })
+
+                                            </div>
+
+
+
+
+                                            <label class="col-sm-2 col-form-label"> @DataMapping.Resources.Resource.UrgentPhoneNumber</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(a => a.UrgentPhoneNumber, new { @id = "UrgentPhoneNumber", @class = "form-control" })
+
+                                            </div>
+
+                                            <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.Address</label>
+                                            <div class="col-sm-4">
+                                                @*@Html.DropDownList("StoreList", StoreList, "... أختر  ...", new { @id = "StoreList", @class = "StoreList form-control select2" })*@
+                                                @Html.TextBoxFor(a => a.Address, new { @id = "Address", @class = " form-control" })
+
+
+                                            </div>
+                                        </div>
+                                      
+
+
+                                        @*<div class="mb-2 row">
+            <label class="col-sm-2 col-form-label">رقم المستند</label>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(a => a.SalesPaperNo, new { @id = "SalesPaperNo", @class = "form-control" })
+
+            </div>
+            <label class="col-sm-2 col-form-label"> تاريخ المستند </label>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(a => a.SalesPaperDate, new { @id = "SalesPaperDate", @class = "DateChange form-control", autocomplete = "off", type = "date" })
+
+            </div>
+        </div>
+
+
+
+        <div class="mb-2 row">
+            <label class="col-sm-2 col-form-label">البيان</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(a => a.Notes, new { @id = "Notes", @class = "form-control", Value = "فاتورة مبيعات رقم " + ViewBag.autoCode })
+
+            </div>
+        </div>*@
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="card-layout" style="height:auto">
+                                        <h2 style="font-family: system-ui; font-size: large; color: darkgoldenrod;">@DataMapping.Resources.Resource.ConnInfoInWork</h2>
+                                        
+
+
+                                            <div class="mb-2 row">
+                                                <label class="col-sm-2 col-form-label" style="width:fit-content">@DataMapping.Resources.Resource.WorkEmail</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(a => a.WorkEmailAddress, new { @id = "WorkEmailAddress", @class = " form-control" })
+
+                                                </div>
+                                                <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.WorkPhoneNumber</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(a => a.WorkPhoneNumber, new { @id = "WorkPhoneNumber", @class = " form-control" })
+
+                                                </div>
+                                                <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.BankId</label>
+                                                <div class="col-sm-4">
+                                                    @Html.DropDownList("BankId", BankId, "... أختر  ...", new { @id = "BankId", @class = "BankId form-control select2" })
+                                                    @*@Html.TextBoxFor(a => a.BirthDate, new { Value = ViewBag.autoDate, @id = "BirthDate", @class = "DateChange form-control", type = "date", @data_date = "", @data_date_format = "DD-MM-YYYY" })*@
+
+
+                                                </div>
+
+                                                <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.BankAccNo</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(a => a.AccountBankNo, new { @id = "AccountBankNo", @class = " form-control" })
+                                                    @*@Html.TextBoxFor(a => a.BirthDate, new { Value = ViewBag.autoDate, @id = "BirthDate", @class = "DateChange form-control", type = "date", @data_date = "", @data_date_format = "DD-MM-YYYY" })*@
+
+
+                                                </div>
+
+                                            </div>
+
+
+                                            @*<div class="mb-2 row">
+            <label class="col-sm-2 col-form-label">عدد الاصناف</label>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(a => a.RowsCount, new { @id = "RowsCount", @class = "RowsCount form-control", @readonly = "readonly" })
+
+            </div>
+            <label class="col-sm-2 col-form-label">خصم الاصناف</label>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(a => a.TotaleItemDis, new { @id = "TotaleItemDis", @class = "form-control", @readonly = "readonly" })
+
+            </div>*@
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+        </div>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-12">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="row card-header" id="headingOne">
+                        <h2 class="col-2 mb-0 text-right">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" style="font-family: system-ui; font-size: inherit; width:auto">
+                                @DataMapping.Resources.Resource.EmploymentInformation
+                            </button>
+                        </h2>
+                        <div class="col-10 text-left">
+                            <button class="btn btn-link btn-block no_hover_btn text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            @*<h2>  @DataMapping.Resources.Resource.EmploymentInformation</h2>*@
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card-layout" style="height:auto">
+                                        <div class="mb-2 row">
+                                            <label class="col-sm-2 col-form-label"> @DataMapping.Resources.Resource.JobNo</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(a => a.JobNumber, new { @id = "JobNumber", @class = "form-control" })
+
+                                            </div>
+                                            <label class="col-sm-2 col-form-label"> @DataMapping.Resources.Resource.JoinDate</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(a => a.JoinDate, new { @id = "JoinDate", @class = "DateChange form-control", type = "date", @data_date = "", @data_date_format = "DD-MM-YYYY" })
+
+
+                                                @*@Html.EditorFor(model => model.SalesINVDate, new { htmlAttributes = new { @class = "DateChange form-control", Value = ViewBag.AutoDate } })*@
+                                                @*@Html.TextBoxFor(a => a.EmployeeNameAr, new { @id = "EmployeeNameAr", @class = "form-control" })*@
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="mb-2 row">
+                                            <label class="col-sm-2 col-form-label"> @DataMapping.Resources.Resource.WorkTable</label>
+                                            <div class="col-sm-4">
+                                                @*@Html.DropDownList("Gender", Gender, "... أختر  ...", new { @id = "Gender", @class = "Gender form-control select2" })*@
+                                                <select class="select2 form-control">
+
+                                                    <option></option>
+                                                </select>
+                                            </div>
+
+                                            <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.JobTitleName</label>
+                                            <div class="col-sm-4">
+                                                @Html.DropDownList("JobTitlesId", JobTitlesId, "... أختر  ...", new { @id = "JobTitlesId", @class = "JobTitlesId form-control select2" })
+                                                @*@Html.TextBoxFor(a => a.BirthDate, new { Value = ViewBag.autoDate, @id = "BirthDate", @class = "DateChange form-control", type = "date", @data_date = "", @data_date_format = "DD-MM-YYYY" })*@
+
+
+                                            </div>
+
+                                        </div>
+
+
+                                        @*<div class="mb-2 row">
+                            <label class="col-sm-2 col-form-label">رقم المستند</label>
+                            <div class="col-sm-4">
+                                @Html.TextBoxFor(a => a.SalesPaperNo, new { @id = "SalesPaperNo", @class = "form-control" })
+
+                            </div>
+                            <label class="col-sm-2 col-form-label"> تاريخ المستند </label>
+                            <div class="col-sm-4">
+                                @Html.TextBoxFor(a => a.SalesPaperDate, new { @id = "SalesPaperDate", @class = "DateChange form-control", autocomplete = "off", type = "date" })
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="mb-2 row">
+                            <label class="col-sm-2 col-form-label">البيان</label>
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(a => a.Notes, new { @id = "Notes", @class = "form-control", Value = "فاتورة مبيعات رقم " + ViewBag.autoCode })
+
+                            </div>
+                        </div>*@
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="card-layout" style="height:auto">
+
+
+                                        <div class="mb-2 row">
+                                            <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.Dep</label>
+                                            <div class="col-sm-4">
+                                                @Html.DropDownList("DepartmentId", DepartmentId, "... أختر  ...", new { @id = "DepartmentId", @class = "DepartmentId form-control select2" })
+
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.Manager  </label>
+                                            <div class="col-sm-4">
+
+                                                @Html.DropDownList("ManagerId", ManagerId, "... أختر  ...", new { @id = "ManagerId", @class = "ManagerId form-control select2" })
+
+
+                                            </div>
+
+                                            <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.Qualification </label>
+                                            <div class="col-sm-4">
+
+                                                @Html.DropDownList("QualificationId", QualificationId, "... أختر  ...", new { @id = "QualificationId", @class = "QualificationId form-control select2" })
+
+
+                                            </div>
+                                            <div class="mb-2 row">
+                                                <label class="col-sm-5 col-form-label">@DataMapping.Resources.Resource.QualDesc</label>
+                                                <div class="col-sm-7">
+                                                    @Html.TextBoxFor(a => a.QualificationDescription, new { @id = "QualificationDescription", @class = "form-control" })
+
+                                                </div>
+                                            </div>
+
+
+                                            @*<div class="mb-2 row">
+                            <label class="col-sm-2 col-form-label">عدد الاصناف</label>
+                            <div class="col-sm-4">
+                                @Html.TextBoxFor(a => a.RowsCount, new { @id = "RowsCount", @class = "RowsCount form-control", @readonly = "readonly" })
+
+                            </div>
+                            <label class="col-sm-2 col-form-label">خصم الاصناف</label>
+                            <div class="col-sm-4">
+                                @Html.TextBoxFor(a => a.TotaleItemDis, new { @id = "TotaleItemDis", @class = "form-control", @readonly = "readonly" })
+
+                            </div>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card-body">
+                            <h2 style="font-family: system-ui; font-size: large; color: darkgoldenrod;"> @DataMapping.Resources.Resource.SalaryDefinition</h2>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card-layout" style="height:auto">
+                                       
+                                        <div class="mb-2 row">
+                                            <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.FirstSalaryDate</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(a => a.FirstSalaryDate, new { Value = ViewBag.autoDate, @id = "FirstSalaryDate", @class = "DateChange form-control", type = "date", @data_date = "", @data_date_format = "DD-MM-YYYY" })
+
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.LastSalaryDate</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(a => a.LastSalaryDate, new { Value = ViewBag.autoDate, @id = "LastSalaryDate", @class = "DateChange form-control", type = "date", @data_date = "", @data_date_format = "DD-MM-YYYY" })
+
+
+                                                @*@Html.EditorFor(model => model.SalesINVDate, new { htmlAttributes = new { @class = "DateChange form-control", Value = ViewBag.AutoDate } })*@
+                                                @*@Html.TextBoxFor(a => a.EmployeeNameAr, new { @id = "EmployeeNameAr", @class = "form-control" })*@
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="mb-2 row">
+                                            <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.PaymentCycle</label>
+                                            <div class="col-sm-4">
+                                                @Html.DropDownList("PaymentCycle", PaymentCycle, "... أختر  ...", new { @id = "PaymentCycle", @class = "PaymentCycle form-control select2" })
+
+                                            </div>
+
+                                            <label class="col-sm-2 col-form-label">@DataMapping.Resources.Resource.SalaryValue</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(a => a.SalaryValue, new {  @id = "SalaryValue", @class = "SalaryValue form-control" })
+
+                                            </div>
+
+                                        </div>
+
+
+                                        @*<div class="mb-2 row">
+            <label class="col-sm-2 col-form-label">رقم المستند</label>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(a => a.SalesPaperNo, new { @id = "SalesPaperNo", @class = "form-control" })
+
+            </div>
+            <label class="col-sm-2 col-form-label"> تاريخ المستند </label>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(a => a.SalesPaperDate, new { @id = "SalesPaperDate", @class = "DateChange form-control", autocomplete = "off", type = "date" })
+
+            </div>
+        </div>
+
+
+
+        <div class="mb-2 row">
+            <label class="col-sm-2 col-form-label">البيان</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(a => a.Notes, new { @id = "Notes", @class = "form-control", Value = "فاتورة مبيعات رقم " + ViewBag.autoCode })
+
+            </div>
+        </div>*@
+                                    </div>
+                                </div>
+
+                                
+
+
+                                            @*<div class="mb-2 row">
+                            <label class="col-sm-2 col-form-label">عدد الاصناف</label>
+                            <div class="col-sm-4">
+                                @Html.TextBoxFor(a => a.RowsCount, new { @id = "RowsCount", @class = "RowsCount form-control", @readonly = "readonly" })
+
+                            </div>
+                            <label class="col-sm-2 col-form-label">خصم الاصناف</label>
+                            <div class="col-sm-4">
+                                @Html.TextBoxFor(a => a.TotaleItemDis, new { @id = "TotaleItemDis", @class = "form-control", @readonly = "readonly" })
+
+                            </div>*@
+                                        <!--</div>
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*</div>*@
+
+@section ModelPopup{
+}
+@section JavaScriptSection{
+    @*<script src="~/Scripts/ERPScript/SalesScript .js"></script>
+    <script src="~/Scripts/ERPScript/ItemCalculatejs.js"></script>*@
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/Scripts/DataPicker/jquery-ui.min.js"></script>
+    @*datepicker Osama Sadek*@
+    <link href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/start/jquery-ui.css" rel="stylesheet" />
+
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>*@
+    @*<link href="~/Scripts/DataPicker/DateBackerDesign.css" rel="stylesheet" />*@
+    <link href="~/Scripts/DataPicker/jquery-ui.min.css" rel="stylesheet" />
+    <script>
+        /*  $(document).ready(function () {*/
+        //    $('.DateChange').datepicker({
+        //        format: 'yyyy-mm-dd',
+        //        changeMonth: true,
+        //        changeYear: true,
+
+        //    });
+        //});
+        //$('.datePickerTrigger').click(function () {
+        //    $(this).closest('.input-group').find('.Date').datepicker('show');
+        //})
+    </script>
+
+
+    <script>
+        //$("#OrdersItems").on("click", ".remove", function () {
+
+        //confirm("هل تريد الحذف بالفعل ؟!");
+
+
+        //});
+        var toggle = document.getElementById("toggle");
+        var content = document.getElementById("showdetails");
+
+        toggle.addEventListener("click", function () {
+            showdetails.style.display = (content.dataset.toggled ^= 1) ? "block" : "none";
+        });
+    </script>
+
+    
+
+
+
+
+    
+
+
+    
+    <script>
+
+        /*  $("#SalesOrderDate").datepicker({ dateFormat: 'yy/mm/dd' });*/
+
+    </script>
+
+
+    @*تحويل القيمة الى رقم عشرى*@
+  
+    <script>
+        $(document).ready(function () {
+
+
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#JoinDate").attr("value", today);
+
+
+          
+
+          
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#FirstSalaryDate").attr("value", today);
+
+
+          
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#LastSalaryDate").attr("value", today);
+        });
+
+
+
+        //change date formate
+        //$("#SalesINVDate").change(function () {
+        //    this.setAttribute(
+        //        "data_date",
+        //        moment(this.value, "YYYY-MM-DD")
+        //            .format(this.getAttribute("data_date_format"))
+        //    )
+        //}).trigger("change")
+
+        $("#submit").click(function () {
+
+            var isValid = true;
+           
+           
+
+
+           
+            if (!($("#EmployeeNameEn").val().trim() != '' || 0)) {
+                toastr.warning('أدخل أسم الموظف انجليزى ...!')
+                isValid = false;
+            }
+            if (!($("#EmployeeNameEn").val().trim() != '' || 0)) {
+                toastr.warning('أدخل أسم الموظف عربى ...!')
+                isValid = false;
+            }
+            if (!($("#Gender").val().trim() != '' || 0)) {
+                toastr.warning(' اختر الجنس ...!')
+                isValid = false;
+            }
+
+            if (!($("#MilitaryStatus").val().trim() != '' || 0)) {
+                toastr.warning(' اختر الحالة الإجتماعية ...!')
+                isValid = false;
+            } 
+            if (!($("#NationalityId").val().trim() != '' || 0)) {
+                toastr.warning(' اختر الجنسية ...!')
+                isValid = false;
+            } 
+            if (!($("#CountryId").val().trim() != '' || 0)) {
+                toastr.warning('اختر الجنسية   ...!')
+                isValid = false;
+            }
+
+            if (isValid) {
+                var data = {
+                    Gender: $("#Gender").val(),
+                    EmployeeNameAr: $("#EmployeeNameAr").val(),
+                    BirthDate: $("#BirthDate").val(),
+                    MilitaryStatus: $("#MilitaryStatus").val(),
+                    CountryId: $("#CountryId").val(),
+                    NationalityId: $("#NationalityId").val(),
+                    Email: $("#Email").val(),
+                    PhoneNumber: $("#PhoneNumber").val(),
+                    UrgentPhoneNumber: $("#UrgentPhoneNumber").val(),
+                    Address: $("#Address").val(),
+                    WorkEmailAddress: $("#WorkEmailAddress").val(),
+                    WorkPhoneNumber: $("#WorkPhoneNumber").val(),
+                    BankId: $("#BankId").val(),
+                    AccountBankNo: $("#AccountBankNo").val(),
+                    JobNumber: $("#JobNumber").val(),
+                    JoinDate: $("#JoinDate").val(),
+                    WorkTable: $("#WorkTable").val(),
+                    JobTitlesId: $("#JobTitlesId").val(),
+                    DepartmentId: $("#DepartmentId").val(),
+                    QualificationId: $("#QualificationId").val(),
+                    QualificationDescription: $("#QualificationDescription").val(),
+                    FirstSalaryDate: $("#FirstSalaryDate").val(),
+
+                    LastSalaryDate: $("#LastSalaryDate").val(),
+                    PaymentCycle: $("#PaymentCycle").val(),
+                    SalaryValue: $("#SalaryValue").val(),
+                    EmployeeNameEn: $("#EmployeeNameEn").val(),
+                    ManagerId: $("#ManagerId").val(),
+                   
+
+                   
+                }
+
+
+                $("#submit").attr("disabled", true);
+                $(".remove ").hide();
+
+                //AddOrderAndSetails
+                $.ajax({
+                    type: 'POST',
+                    url: '/Employees/AddEmployees',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        if (data.status) {
+                            //$('#Ordermessages').text(data.message);
+                            toastr.success("تم الحفظ بنجاح")
+
+                        }
+                        else {
+                            //$('#Ordermessages').text(data.message);
+                            toastr.danger("فشل في الحفظ")
+
+                        }
+
+
+                    }
+
+                });
+
+            }
+
+
+
+
+        });
+    </script>
+
+}

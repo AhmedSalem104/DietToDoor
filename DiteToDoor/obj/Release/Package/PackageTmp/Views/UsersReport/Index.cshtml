@@ -1,0 +1,473 @@
+﻿
+
+
+
+
+@using DataMapping.Entites
+@model IEnumerable<DataMapping.Entites.Users>
+@{
+
+    List<SelectListItem> Type = new List<SelectListItem>();
+    Type.Add(new SelectListItem() { Text = " اختيار الكل", Value = "0" });
+
+    Type.Add(new SelectListItem() { Text = " تاريخ انشاء المستخدم", Value = "1" });
+    Type.Add(new SelectListItem() { Text = " تاريخ اخر دخول", Value = "2" });
+
+
+    ViewBag.Type = new SelectList(Type, "Value", "Text");
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<style>
+
+    .lds-ellipsis {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin-right: 560px;
+    }
+
+        .lds-ellipsis div {
+            position: absolute;
+            top: 33px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #ff6a00;
+            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 0);
+        }
+
+            .lds-ellipsis div:nth-child(1) {
+                left: 8px;
+                animation: lds-ellipsis1 0.4s infinite;
+            }
+
+            .lds-ellipsis div:nth-child(2) {
+                left: 8px;
+                animation: lds-ellipsis2 0.4s infinite;
+            }
+
+            .lds-ellipsis div:nth-child(3) {
+                left: 32px;
+                animation: lds-ellipsis2 0.4s infinite;
+            }
+
+            .lds-ellipsis div:nth-child(4) {
+                left: 56px;
+                animation: lds-ellipsis3 0.4s infinite;
+            }
+
+    @@keyframes lds-ellipsis1 {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @@keyframes lds-ellipsis3 {
+        0% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(0);
+        }
+    }
+
+    @@keyframes lds-ellipsis2 {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        100% {
+            transform: translate(24px, 0);
+        }
+    }
+
+    /* .spinner-grow {
+        animation-duration: 1s;
+
+    }*/
+
+</style>
+<div class="row heder_title">
+    <div class="col-12">
+        <h3 class="blockquote"> تقرير بيانات المستخدمين</h3>
+    </div>
+
+</div>
+
+<div class="row" style="margin-bottom: 15px;width:3000px">
+
+
+    <div class="col-lg-1" style="">
+        مجموعة الصلاحيات:@Html.DropDownList("GroupId", null, "اختيار الكل ", htmlAttributes: new { @class = "form-control", @Id = "GroupId" })
+
+    </div>
+    <div class="col-lg-1" style="">
+        المستخدمين :@Html.DropDownList("UserId", null, "اختيار الكل ", htmlAttributes: new { @class = "form-control", @Id = "UserId" })
+
+    </div>
+
+
+
+
+    <div class="col-lg-1" style="">
+        نوع التاريخ   :@Html.DropDownList("Type", Type, null, htmlAttributes: new { @class = "form-control", @Id = "TypeId" })
+
+    </div>
+    @*اختار:
+        <br>*@
+    @*<input class="form-control" type="radio" name="flexRadioDefault" id="CreateDateradio" checked>
+        <input class="form-control" type="radio" name="flexRadioDefault" id="LastDateRadio">*@
+
+    @*<input type="checkbox" name="flexRadioDefault" id="CreateDateradio"  >حسب تاريخ انشاء المستخدم
+        <br>
+        <input type="checkbox" name="flexRadioDefault"  id="LastDateRadio" >حسب تاريخ اخر دخول*@
+
+    <!--<div class="form-group col-md-4">
+    <input class="form-control" type="radio" name="flexRadioDefault" id="CreateDateradio" checked>-->
+    @*<input id="" class="" type="checkbox" />*@
+    <!--<label>حسب تاريخ انشاء المستخدم</label>
+
+    </div>
+    <div class="form-group col-md-4">
+        <input class="form-control" type="radio" name="flexRadioDefault" id="LastDateRadio">-->
+    @*<input id="" class="" type="checkbox" />*@
+    <!--<label>حسب تاريخ اخر دخول</label>
+
+    </div>-->
+
+
+    <div class="col-lg-1.5" style="margin-left:3px">
+        من تاريخ @Html.Editor("FromDate", new { htmlAttributes = new { @id = "FromDate", @class = "DateChange form-control", type = "date" } })
+        @Html.ValidationMessage("FromDate", "", new { @class = "text-danger" })
+
+    </div>
+    <div class="col-lg-1.5" style="margin-left:3px">
+        الى تاريخ: @Html.Editor("ToDate", new { htmlAttributes = new { @id = "ToDate", @class = "DateChange form-control", type = "date" } })
+        @Html.ValidationMessage("ToDate", "", new { @class = "text-danger" })
+
+    </div>
+    @*<div  class="col-lg-1.5" style="margin-left:3px">
+            تاريخ الدخول: @Html.Editor("LastDate", new { htmlAttributes = new { @id = "LastDate", @class = "DateChange form-control", type = "date" } })
+            @Html.ValidationMessage("LastDate", "", new { @class = "text-danger" })
+
+        </div>*@
+
+
+
+    <div class="col-lg-1.5" style="margin-left: 3px">
+        <input type="submit" id="submit" value="@DataMapping.Resources.Resource.Show" style="margin-top: 18px; margin-right: 2px; height:fit-content" class="btn btn-primary" />
+
+    </div>
+
+    <div class="col-lg-1.5" style=" margin-top: 18px;">
+        @using (Html.BeginForm("PrintDataRDLC", "UsersReport"))
+        {
+
+            <button id="Print" formtarget="_blank" type="submit" class="submitDis btn btn-outline-secondary" style="background-color: white; color: darkgreen; border-width: 2px; font-weight: bold; ">
+
+                @DataMapping.Resources.Resource.Print  <i class="fa fa-print" aria-hidden="true"></i>
+
+            </button>
+        }
+
+    </div>
+
+</div>
+
+
+
+
+<div style="margin-bottom:40px;" class="container">
+
+</div>
+
+<div style="height:110px;" id="DivSpiners"></div>
+
+
+<div style="text-align:center;" id="spiners" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="table-responsive">
+            <table id="DisplayData" class="table table-striped table-hover table-bordered" @*id="save-stage"*@ style="width:100%;">
+                <thead style="width:100%;">
+                    <tr style="text-align:center;">
+                        <th>
+                            اسم المستخدم
+                        </th>
+                        <th>
+                            مجموعة المستخدم
+                        </th>
+
+                        <th>
+                            حالة المستخدم
+                        </th>
+                        <th>
+                            تاريخ الانشاء
+                        </th>
+
+
+                        <th>
+                            طباعة
+                        </th>
+
+
+                        @*<th> @DataMapping.Resources.Resource.PurchaseOrderNo</th>
+                            <th> @DataMapping.Resources.Resource.PurchasePaperNo</th>
+                            <th> @DataMapping.Resources.Resource.Branches</th>*@
+
+                        @*<th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                            <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                            <th class="th_width_5">@DataMapping.Resources.Resource.Print</th>*@
+                    </tr>
+                </thead>
+                <tbody class="tbody" style="width:100%;">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section ModelPopup{}
+
+
+@section JavaScriptSection{
+
+    <script type="text/javascript">
+
+        //$(document).ready(function () {
+        //    $("#LastDate").hide();
+
+
+        //})
+        //$(document).ready(function () {
+        //    $("#ToDate").hide();
+
+        //})
+        //$(document).ready(function () {
+        //    $("#FromDate").hide();
+
+        //})
+        $(document).ready(function () {
+            $("#spiners").hide();
+            $("#DivSpiners").hide();
+        });
+
+        $(document).ready(function () {
+            $("#Print").prop("disabled", true);
+            $("#submit").click(function () {
+                $("#Print").prop("disabled", false);
+
+            })
+        })
+    </script>
+
+    <script>
+
+
+
+
+
+
+        //$("#TypeId").change(function () {
+        //    var x = $("#TypeId").val();
+
+
+        //    if (x == 1) {
+        //        $("#ToDate").show();
+        //    }
+        //    else {
+        //        $("#ToDate").hide();
+
+        //    }
+
+        //})
+
+        //$("#TypeId").change(function () {
+        //    var x = $("#TypeId").val();
+
+
+        //    if (x == 1) {
+        //        $("#FromDate").show();
+        //    }
+        //    else {
+        //        $("#FromDate").hide();
+
+        //    }
+
+        /*  })*/
+
+
+        ////$("#CreateDateradio").change(function () {
+        ////    var x = $("#CreateDateradio").val();
+
+
+        ////    if (x == true) {
+        ////        $("#FromDate").show();
+        ////        $("#ToDate").show();
+        ////    }
+        ////    else {
+        ////        $("#FromDate").hide();
+        ////        $("#ToDate").hide();
+
+        ////    }
+
+        ////})
+
+    </script>
+    <script type="text/javascript">
+
+
+
+        $("#submit").click(function () {
+            var x = $("#TypeId").val();
+            var isValid = true;
+            if (x == "0") {
+                $("#DisplayData").empty();
+
+                GetData();
+
+            }
+
+            else if ($("#FromDate").val() == "" || $("#ToDate").val() == "" ) {
+
+
+                toastr.warning("من فضلك اختار مدة التاريخ  ")
+                isValid = false;
+
+
+            }
+            if (isValid) {
+
+                $("#DisplayData").empty();
+                GetDataAll();
+            }
+        });
+
+        function GetData() {
+            $("#spiners").show();
+            $("#DivSpiners").show();
+            $.ajax({
+                url: '@Url.Action("Filter", "UsersReport")',
+                method: "Get",
+                //contentType: "application/json;charset=utf-8",
+                dataType: "Html",
+                data: {
+
+                    //Startdate: $("#FromDate").val(),
+                    //EndDate: $("#ToDate").val(),
+                    groupId: $("#GroupId").val(),
+                    userId: $("#UserId").val(),
+                    TypeId: $("#TypeId").val(),
+
+
+                },
+                success: function (result) {
+                    $("#DisplayData").html('').html(result);
+                    $("#spiners").hide();
+                    $("#DivSpiners").hide();
+
+                    },
+                error: function (errormessage) {
+                    //    alert(errormessage.responseText);
+                    }
+            })
+
+        }
+
+          function GetDataAll() {
+            $.ajax({
+                url: '@Url.Action("FilterBYAll", "UsersReport")',
+                method: "Get",
+                //contentType: "application/json;charset=utf-8",
+                dataType: "Html",
+                data: {
+
+                    Startdate: $("#FromDate").val(),
+                    EndDate: $("#ToDate").val(),
+                    groupId: $("#GroupId").val(),
+                    userId: $("#UserId").val(),
+                    TypeId: $("#TypeId").val(),
+
+
+                },
+                success: function (result) {
+                    $("#DisplayData").html('').html(result);
+
+                    },
+                error: function (errormessage) {
+                    //    alert(errormessage.responseText);
+                    }
+            })
+
+        }
+    </script>
+    <script>
+        //$("#submit").click(function () {
+        //    var x = $("#TypeId").val();
+        //if (x == "1" || "2") {
+        $(document).ready(function () {
+
+
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#FromDate").attr("value", today);
+
+        });
+        $(document).ready(function () {
+
+
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#ToDate").attr("value", today);
+
+        });
+        //    }
+        //});
+        $(document).ready(function () {
+
+
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#LastDate").attr("value", today);
+
+        });
+    </script>
+
+
+}
+
+

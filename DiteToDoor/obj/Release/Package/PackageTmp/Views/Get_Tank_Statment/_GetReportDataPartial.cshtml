@@ -1,0 +1,101 @@
+﻿@using DataMapping.Entites
+@model IEnumerable<DataMapping.Procedures.Get_Tank_Statment_Result>
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+}
+<p class="btn btn-default" style="color:red" id="message">@ViewBag.DateErr </p>
+<div class="col-12">
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover" id="save-stage" style="width:100%;">
+            <thead>
+                <tr style="text-align:center">
+                    <th class="width-per-3"> نوع الحركة</th>
+                    <th class="width-per-4"> السنة</th>
+                    <th class="width-per-3">مسلسل</th>
+                    <th class="width-per-8">تاريخ</th>
+                    <th> أسم المحطة</th>
+                    <th class="width-per-3">سيارة / معدة</th>
+                    <th class="width-per-3">كود السيارة</th>
+                    <th class="width-per-3">الكمية المطلوبة</th>
+                    <th class="width-per-3"> وارد/منصرف</th>
+                    <th class="width-per-3"> تم إستلام الوقود</th>
+                    <th class="width-per-6">نوع الوقود</th>
+                    <th class="width-per-3">رقم اللوحة</th>
+                    <th> رقم الشاسيه</th>
+                    <th class="width-per-8">الموديل</th>
+                    <th class="width-per-8">نوع السيارة / المعدة</th>
+                    <th class="width-per-4">رقم الاستمارة </th>
+                    <th class="width-per-3">نوع البنزين</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                @if (Model.Count() != 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        var car = db.Cars.FirstOrDefault(a => a.Id == item.CarId);
+                <tr style="text-align:center">
+                    <td>@item.NameAr</td>
+                    <td>@item.Year</td>
+                    <td>@item.Serial</td>
+                    <td>@item.Date</td>
+                    <td>@item.StationName</td>
+                    <td>@item.CarTypeName</td>
+                    <td>@item.CarNo</td>
+                    <td>@item.RequestedQuantity</td>
+
+                    <td>@item.ActualQuantity</td>
+                    @if (item.IsPrinted == true)
+                    {
+                        <td>نعم</td>
+
+                    }
+                    else
+                    {
+                        <td>لا</td>
+
+                    }
+                    <td>@item.FuelType</td>
+                    <td>@car.PanelNo</td>
+                    <td>@car.ChassisNo</td>
+                    <td>@car.ModelNo</td>
+                    <td>@item.CarTypeName</td>
+                    <td>@car.CarLicenseNo</td>
+                    <td>@item.GasolineTypeName</td>
+
+
+                </tr>
+                    }
+
+                }
+                else
+                {
+                    <tr>
+                        <td >لا يوجد بيانات....</td>
+                    </tr>
+
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#message").hide();
+        if ($('#message').length > 0 && $.trim($('#message').text()) != "") {
+            $("#message").show();
+            $(".tbody").hide();
+        }
+
+    })
+
+</script>
+
+
+

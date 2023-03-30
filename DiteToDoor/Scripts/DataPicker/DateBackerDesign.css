@@ -1,0 +1,12 @@
+﻿.ui-datepicker {
+    font-size: 20%;
+}
+
+.ui-widget-header {
+    background: #77CC6D;
+}
+
+.ui-widget-content .ui-state-default:hover {
+    background: #77CC6D;
+    border-radius: 2px;
+}

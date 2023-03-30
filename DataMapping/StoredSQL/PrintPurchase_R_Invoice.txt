@@ -1,0 +1,26 @@
+reate proc PrintPurchase_R_Invoice
+
+as
+begin
+
+SELECT        GL.PurchaseINVDetails_R.PurchaseINVId, GL.PurchaseINVDetails_R.ItemCategoriesId, GL.Item.ItemNameAr, GL.PurchaseINVDetails_R.ItemId, GL.PurchaseINVDetails_R.UnitId, GL.Unit.UnitName, 
+                         GL.PurchaseINVDetails_R.Amount, GL.PurchaseINVDetails_R.Price, GL.PurchaseINVDetails_R.Total, GL.PurchaseINVDetails_R.DisPer, GL.PurchaseINVDetails_R.DisValue, GL.PurchaseINVDetails_R.NetPrice, 
+                         GL.PurchaseINVDetails_R.ItemBalance, GL.PurchaseINVDetails_R.StoreId, GL.PurchaseINV_R.CompanyId, GL.PurchaseINV_R.BranchesId, GL.PurchaseINV_R.PurchaseINVNo, GL.PurchaseINV_R.PurchaseINVDate, 
+                         GL.PurchaseINV_R.VendorId, GL.Vendor.Name AS VendorName, GL.PurchaseINV_R.StoreId AS MainStoreID, GL.Store.Name AS StoreName, GL.PurchaseINV_R.EmployeeId, GL.Employee.EmployeeNameAr, 
+                         GL.PurchaseINV_R.PurchaseINVTypeId, GL.PurchaseINV_R.PaymentTypeId, GL.PurchaseINV_R.RowsCount, GL.PurchaseINV_R.TotaleItemDis, GL.PurchaseINV_R.PurchaseINVTotal, GL.PurchaseINV_R.InvoiceDisPer, 
+                         GL.PurchaseINV_R.InvoiceDisValue, GL.PurchaseINV_R.NetValue, GL.PurchaseINV_R.PaidValue, GL.PurchaseINV_R.RemainingValue, GL.PurchaseINV_R.Notes, GL.PurchaseINV_R.IsDeleted
+FROM            GL.Vendor INNER JOIN
+                         GL.PurchaseINV_R INNER JOIN
+                         GL.PurchaseINVDetails_R ON GL.PurchaseINV_R.Id = GL.PurchaseINVDetails_R.PurchaseINVId INNER JOIN
+                         GL.Item ON GL.PurchaseINVDetails_R.ItemId = GL.Item.Id INNER JOIN
+                         GL.Unit ON GL.PurchaseINVDetails_R.UnitId = GL.Unit.Id ON GL.Vendor.Id = GL.PurchaseINV_R.VendorId INNER JOIN
+                         GL.Store ON GL.PurchaseINV_R.StoreId = GL.Store.Id INNER JOIN
+                         GL.Employee ON GL.PurchaseINV_R.EmployeeId = GL.Employee.Id CROSS JOIN
+                         GL.Branches
+
+
+
+
+
+
+end

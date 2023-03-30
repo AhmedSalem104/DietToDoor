@@ -1,0 +1,322 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    .lds-ellipsis {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin-right: 560px;
+    }
+
+        .lds-ellipsis div {
+            position: absolute;
+            top: 33px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #ff6a00;
+            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 0);
+        }
+
+            .lds-ellipsis div:nth-child(1) {
+                left: 8px;
+                animation: lds-ellipsis1 0.4s infinite;
+            }
+
+            .lds-ellipsis div:nth-child(2) {
+                left: 8px;
+                animation: lds-ellipsis2 0.4s infinite;
+            }
+
+            .lds-ellipsis div:nth-child(3) {
+                left: 32px;
+                animation: lds-ellipsis2 0.4s infinite;
+            }
+
+            .lds-ellipsis div:nth-child(4) {
+                left: 56px;
+                animation: lds-ellipsis3 0.4s infinite;
+            }
+
+    @@keyframes lds-ellipsis1 {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @@keyframes lds-ellipsis3 {
+        0% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(0);
+        }
+    }
+
+    @@keyframes lds-ellipsis2 {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        100% {
+            transform: translate(24px, 0);
+        }
+    }
+
+    /* .spinner-grow {
+        animation-duration: 1s;
+
+    }*/
+
+</style>
+
+<div class="row heder_title">
+    <div class="col-12">
+        <h3 class="blockquote"> وارد الوقود</h3>
+    </div>
+
+
+    <div class="row" style="margin-bottom: 15px; width:2000px">
+        <div class="col-lg-1.5" style="margin-right:20px; margin-left:3px">
+            @DataMapping.Resources.Resource.FromDate:
+            @Html.Editor("FromDate", new { htmlAttributes = new { @id = "FromDate", @class = "DateChange form-control", type = "date" } })
+            @Html.ValidationMessage("FromDate", "", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-1.5" style="margin-left:3px" ">
+            @DataMapping.Resources.Resource.ToDate: @Html.Editor("ToDate", new { htmlAttributes = new { @id = "ToDate", @class = "DateChange form-control", type = "date" } })
+            @Html.ValidationMessage("ToDate", "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="col-lg-2">
+            المحطة: @Html.DropDownList("StationId", null, "اختيار الكل ", htmlAttributes: new { @id = "StationId", @class = "select2  form-control" })
+
+            @Html.ValidationMessage("StationId", "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="col-lg-1.5" style="margin-top:18px">
+            <input type="submit" id="submit" value="@DataMapping.Resources.Resource.Show" class="btn btn-primary" style="height:fit-content" />
+        </div>
+        <div class="col-lg-1.5" style="margin-top:18px">
+
+            @using (Html.BeginForm("PrintDataRDLC", "Get_Tank_StatmentIn"))
+            {
+                @*<input type="submit" value="Print" />*@
+                @*<button formtarget="_blank" type="submit" class="submitDis btn btn-icon" id="save">
+                        <span data-toggle="tooltip" data-placement="bottom" title=@DataMapping.Resources.Resource.Print>
+                            <i class="fa fa-print" aria-hidden="true"></i>
+                        </span>
+                    </button>*@
+                <button formtarget="_blank" type="submit" class="submitDis btn btn-outline-secondary" style="background-color: white; color: darkgreen; border-width: 2px; font-weight: bold;">
+
+                    @DataMapping.Resources.Resource.Print  <i class="fa fa-print" aria-hidden="true"></i>
+
+                </button>
+            }
+        </div>
+    </div>
+
+</div>
+<div style="height:110px;" id="DivSpiners"></div>
+
+
+<div style="text-align:center;" id="spiners" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+
+
+
+<div class="row">
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover" id="DispplayData" style="width:100%;">
+            <thead>
+                <tr>
+                    <th> السنة</th>
+                    <th>مسلسل</th>
+                    <th>الكمية</th>
+                    <th> نوع الوقود</th>
+                    <th>رقم التعميد</th>
+                    <th>تاريخ التعميد</th>
+                    <th>رقم الفاتورة</th>
+                    <th> تاريخ الفاتورة</th>
+                    <th> تاريخ الاستلام</th>
+                    <th>أسم المحطة</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+@section ModelPopup{}
+
+
+@section JavaScriptSection{
+
+    <script>
+        $(document).ready(function () {
+            $("#spiners").hide();
+            $("#DivSpiners").hide();
+        });
+        $("#submit").click(function () {
+
+
+            $("#DispplayData").empty()
+                GetData();
+
+
+        });
+
+    //$(() => {
+    //    GetData();
+    //    //$("#FromDate").on('keyup', () => {
+    //    //    GetData();
+    //    //});
+
+    //});
+        function GetData() {
+            $("#spiners").show();
+            $("#DivSpiners").show();
+
+        $.ajax({
+            url: '@Url.Action("GetReportData", "Get_Tank_StatmentIn")',
+            dataType: 'html',
+            method: 'Get',
+            data: {
+                FromDate: $("#FromDate").val(),
+                ToDate: $("#ToDate").val(),
+                StationId: $("#StationId").val(),
+
+            },
+            success: function (res) {
+                $("#DispplayData").html('').html(res);
+                $("#spiners").hide();
+                $("#DivSpiners").hide();
+
+            },
+            error: function (err) {
+                console.log(err);
+            }
+
+        })
+    }
+    </script>
+    <script>
+        $(document).ready(function () {
+
+
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#FromDate").attr("value", today);
+
+        });
+
+        $(document).ready(function () {
+
+
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#ToDate").attr("value", today);
+
+        });
+
+
+
+                                    //$(document).ready(function () {
+                                    //    $("#StationId").change(function () {
+                                    //        $.get("/Get_Tank_Statment/GetStationType", { ID: $("#StationId").val() }, function (data) {
+
+                                    //            if (data == true) {
+                                    //                $("#GAS").show();
+                                    //                $("#GasType").val("بنزين");
+
+                                    //            }
+                                    //            else {
+
+                                    //                $("#GAS").hide();
+                                    //                $("#GasType").val("وقود");
+                                    //            }
+                                    //        });
+                                    //    })
+                                    //});
+
+
+                                    ////$(document).ready(function () {
+                                    ////    $("#StationId").change(function () {
+                                    ////        $.get("/StationsTrxOut/GetStationInfo", { ID: $("#StationId").val() }, function (data) {
+
+                                    ////            $.each(data, function (index, row) {
+
+                                    ////                $("#Balance").val(row.TankCapacity);
+                                    ////                $("#MinLimit").val(row.MinCapacity);
+                                    ////                $("#MaxLimit").val(row.MaxCapacity);
+                                    ////            });
+                                    ////        });
+                                    ////    });
+                                    ////});
+                                    //    $(document).ready(function () {
+                                    //        $("#StaionsType").change(function () {
+                                    //            $.get("/Get_Tank_Statment/GetStations", { ID: $("#StaionsType").val() }, function (data) {
+                                    //                $("#StationId").prop("disabled", false);
+                                    //                $("#StationId").empty();
+                                    //                $("#StationId").append("<option value = '0'> اختر المحطة </option>")
+                                    //                $.each(data, function (index, row) {
+
+                                    //                    $("#StationId").append("<option value='" + row.Id + "'>" + row.StationName + "</option>")
+                                    //                });
+                                    //            });
+                                    //        })
+                                    //    });
+
+                                    //    $(document).ready(function () {
+                                    //        $("#GAS").hide();
+                                    //    })
+
+
+    </script>
+
+
+}

@@ -1,0 +1,295 @@
+﻿@model DataMapping.Entites.Drivers
+
+@{
+    ViewBag.Title = DataMapping.Resources.Resource.Vendor;
+}
+
+<style>
+    .col-form-label {
+        font-size: 14px !important;
+        font-weight: 600;
+        color: #34395e !important;
+        margin-bottom: 8px;
+    }
+</style>
+@using (Html.BeginForm("AddOrEdit", "Drivers", FormMethod.Post, new { @class = "form-horizontal", @id = "ModalForm" }))
+
+{
+    if (Model != null)
+    {
+        if (Model.LicenseReleaseDate != null)
+        {
+            <input id="ReleaseDatee" hidden value="@Model.LicenseReleaseDate.Value.Date">
+
+        }
+
+        if (Model.LicenseEndDate != null)
+        {
+            <input id="EndDatee" hidden value="@Model.LicenseEndDate.Value.Date">
+
+        }
+
+       
+
+
+    }
+    else
+    {
+        <input id="ReleaseDatee" hidden value="1">
+        <input id="EndDatee" hidden value="1">
+        
+
+    }
+    <div class="row heder_title">
+        <div class="col-6">
+            <h3 class="blockquote">السائقين</h3>
+        </div>
+        <div class="col-6 text-left">
+
+
+            <a href="~/Drivers/Index" class="btn btn-icon icon-left btn-outline-warning">
+                رجوع <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="card-layout">
+        <p style="color:red; font-size:10px;">@Session["msgErrV"]</p>
+        <div class="row">
+            <label class="col-sm-2 col-form-label">
+                رقم السيارة
+            </label>
+            <div class="col-sm-4">
+                @if (Model != null)
+                {
+                    @Html.EditorFor(model => model.DriverNo, new { htmlAttributes = new { Value = ViewBag.autoCode, @class = "form-control", @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.DriverNo, "", new { @class = "text-danger" })
+                }
+                else
+                {
+                    @Html.EditorFor(model => model.DriverNo, new { htmlAttributes = new { Value = ViewBag.autoCode, @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DriverNo, "", new { @class = "text-danger" })
+                }
+            </div>
+
+            <label class="col-sm-2 col-form-label">
+                اسم السائق
+            </label>
+            <div class="col-sm-4">
+                @Html.EditorFor(model => model.DriverName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DriverName, "", new { @class = "text-danger" })
+            </div>
+
+            <label class="col-sm-2 col-form-label">
+                الجنسية
+            </label>
+            <div class="col-sm-4">
+                @Html.DropDownList("NatId", null, "... أختر  ...", new { @id = "CarTypeId", @class = "NatId form-control select2" })
+                @Html.ValidationMessageFor(model => model.NatId, "", new { @class = "text-danger" })
+            </div>
+
+            <label class="col-sm-2 col-form-label">
+                الادارة
+            </label>
+            <div class="col-sm-4">
+                @Html.DropDownList("BranchId", null, "... أختر  ...", new { @id = "CarTypeId", @class = "NatId form-control select2" })
+                @Html.ValidationMessageFor(model => model.BranchId, "", new { @class = "text-danger" })
+            </div>
+
+            <label class="col-sm-2 col-form-label">
+                الهاتف
+            </label>
+            <div class="col-sm-4">
+                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                </div>
+
+
+                <label class="col-sm-2 col-form-label">رقم الرخصة</label>
+                <div class="col-sm-4">
+                    @Html.EditorFor(model => model.LicenseNo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LicenseNo, "", new { @class = "text-danger" })
+                </div>
+
+                <label class="col-sm-2 col-form-label">جهة الاصدار</label>
+                <div class="col-sm-4">
+                    @Html.EditorFor(model => model.LicensePlace, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LicensePlace, "", new { @class = "text-danger" })
+                </div>
+
+
+
+                <label class="col-sm-2 col-form-label">تاريخ الاصدار</label>
+                <div class="col-sm-4">
+                    @Html.EditorFor(model => model.LicenseReleaseDate, new { htmlAttributes = new { @class = "DateChange form-control", Value = ViewBag.AutoDate, type = "date", @data_date = ViewBag.AutoDate, @data_date_format = "YYYY/MM/DD", @id = "ReleaseDate" } })
+                    @Html.ValidationMessageFor(model => model.LicenseReleaseDate, "", new { @class = "text-danger" })
+                </div>
+
+                <label class="col-sm-2 col-form-label">تاريخ الانتهاء</label>
+                <div class="col-sm-4">
+                    @Html.EditorFor(model => model.LicenseEndDate, new { htmlAttributes = new { @class = "DateChange form-control", Value = ViewBag.AutoDate, type = "date", @data_date = ViewBag.AutoDate, @data_date_format = "YYYY/MM/DD", @id = "EndDate" } })
+                    @Html.ValidationMessageFor(model => model.LicenseEndDate, "", new { @class = "text-danger" })
+                </div>
+
+                <label class="col-sm-2 col-form-label">نوع الرخصة</label>
+                <div class="col-sm-4">
+                    @Html.DropDownList("LicenseTypeId", null, "... أختر  ...", new { @id = "CarTypeId", @class = "NatId form-control select2" })
+                    @Html.ValidationMessageFor(model => model.LicenseTypeId, "", new { @class = "text-danger" })
+                </div>
+
+                <label class="col-sm-2 col-form-label">ملاحظات</label>
+                <div class="col-sm-4">
+                    @Html.EditorFor(model => model.Notes, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+                </div>
+
+
+            </div>
+            <button type="submit" class="btn btn-icon icon-left btn-info">
+                @DataMapping.Resources.Resource.save <i class="fa fa-save" aria-hidden="true"></i>
+            </button>
+        </div>
+}
+@section ModelPopup{
+
+}
+@section JavaScriptSection{
+    <script>
+        $(document).ready(function () {
+
+            if ($("#ReleaseDatee").val() == 1) {
+                var date = new Date();
+
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+
+                if (month < 10) month = "0" + month;
+                if (day < 10) day = "0" + day;
+
+                var today = year + "-" + month + "-" + day;
+                $("#ReleaseDate").attr("value", today);
+            }
+
+            else {
+                var date = new Date($("#ReleaseDatee").val());
+
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+
+                if (month < 10) month = "0" + month;
+                if (day < 10) day = "0" + day;
+
+                var today = year + "-" + month + "-" + day;
+                $("#ReleaseDate").attr("value", today);
+            }
+
+
+
+
+
+
+
+            if ($("#EndDatee").val() == 1) {
+                var date = new Date();
+
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+
+                if (month < 10) month = "0" + month;
+                if (day < 10) day = "0" + day;
+
+                var today = year + "-" + month + "-" + day;
+                $("#EndDate").attr("value", today);
+            }
+
+            else {
+                var date = new Date($("#EndDatee").val());
+
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+
+                if (month < 10) month = "0" + month;
+                if (day < 10) day = "0" + day;
+
+                var today = year + "-" + month + "-" + day;
+                $("#EndDate").attr("value", today);
+            }
+
+
+
+
+
+
+
+            if ($("#PurchaseDatee").val() == 1) {
+                var date = new Date();
+
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+
+                if (month < 10) month = "0" + month;
+                if (day < 10) day = "0" + day;
+
+                var today = year + "-" + month + "-" + day;
+                $("#PurchaseDate").attr("value", today);
+            }
+
+            else {
+                var date = new Date($("#PurchaseDatee").val());
+
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+
+                if (month < 10) month = "0" + month;
+                if (day < 10) day = "0" + day;
+
+                var today = year + "-" + month + "-" + day;
+                $("#PurchaseDate").attr("value", today);
+            }
+
+
+
+
+
+
+
+            if ($("#ServiceDatee").val() == 1) {
+                var date = new Date();
+
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+
+                if (month < 10) month = "0" + month;
+                if (day < 10) day = "0" + day;
+
+                var today = year + "-" + month + "-" + day;
+                $("#ServiceDate").attr("value", today);
+            }
+
+            else {
+                var date = new Date($("#ServiceDatee").val());
+
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+
+                if (month < 10) month = "0" + month;
+                if (day < 10) day = "0" + day;
+
+                var today = year + "-" + month + "-" + day;
+                $("#ServiceDate").attr("value", today);
+            }
+
+
+
+        });
+    </script>
+}

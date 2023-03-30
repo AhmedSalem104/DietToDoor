@@ -1,0 +1,26 @@
+
+
+
+Create proc PrintSales_R_Invoice
+
+as
+begin
+
+
+SELECT        GL.SalesINVDetails_R.SalesINVId, GL.SalesINVDetails_R.ItemCategoriesId, GL.SalesINVDetails_R.ItemId, GL.Item.ItemNameAr, GL.Unit.UnitName, GL.SalesINVDetails_R.UnitId, GL.SalesINVDetails_R.Amount, 
+                         GL.SalesINVDetails_R.Price, GL.SalesINVDetails_R.Total, GL.SalesINVDetails_R.DisPer, GL.SalesINVDetails_R.DisValue, GL.SalesINVDetails_R.NetPrice, GL.SalesINVDetails_R.Tax, GL.SalesINVDetails_R.ItemBalance, 
+                         GL.SalesINV_R.BranchesId, GL.SalesINV_R.SalesINVNo, GL.SalesINV_R.SalesINVDate, GL.SalesINV_R.CustomersId, GL.Customers.CustomersName, GL.SalesINV_R.StoreId, GL.Store.Name AS StoreName, 
+                         GL.SalesINV_R.EmployeeId, GL.Employee.EmployeeNameAr, GL.SalesINV_R.PurchaseINVTypeId, GL.SalesINV_R.RowsCount, GL.SalesINV_R.TotaleItemDis, GL.SalesINV_R.SalesINVTotal, GL.SalesINV_R.InvoiceDisPer, 
+                         GL.SalesINV_R.InvoiceDisValue, GL.SalesINV_R.NetValue, GL.SalesINV_R.PaidValue, GL.SalesINV_R.RemainingValue, GL.SalesINV_R.Notes, GL.SalesINV_R.IsDeleted, GL.Branches.BranchesName
+FROM            GL.Employee INNER JOIN
+                         GL.Store INNER JOIN
+                         GL.Customers INNER JOIN
+                         GL.Unit INNER JOIN
+                         GL.SalesINV_R INNER JOIN
+                         GL.SalesINVDetails_R ON GL.SalesINV_R.Id = GL.SalesINVDetails_R.SalesINVId INNER JOIN
+                         GL.Item ON GL.SalesINVDetails_R.ItemId = GL.Item.Id ON GL.Unit.Id = GL.SalesINVDetails_R.UnitId ON GL.Customers.Id = GL.SalesINV_R.CustomersId ON GL.Store.Id = GL.SalesINV_R.StoreId ON 
+                         GL.Employee.Id = GL.SalesINV_R.EmployeeId INNER JOIN
+                         GL.Branches ON GL.SalesINV_R.BranchesId = GL.Branches.Id
+
+
+end

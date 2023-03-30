@@ -1,0 +1,194 @@
+﻿@model IEnumerable<DataMapping.Entites.Branches>
+@{
+    ViewBag.Title = DataMapping.Resources.Resource.Branches;
+}
+@if (ViewBag.CanDelete == false)
+{
+    <input type="text" value="false" hidden id="delete" />
+}
+@if (ViewBag.CanDelete == true)
+{
+    <input type="text" value="true" hidden id="delete" />
+}
+<div class="row heder_title">
+    <div class="col-6">
+        <h3 class="blockquote">@DataMapping.Resources.Resource.Branches</h3>
+    </div>
+    <div class="col-6 text-left">
+        <a href="#" class="btn btn-icon icon-left success_butn" onclick="showPopupCreate()">
+            @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+        </a>
+    </div>
+</div>
+<div class="row ">
+    <div class="col-12">
+        <div @*class="table-responsive"*@>
+            <table class="table table-striped table-bordered table-hover" id="save-Order" style="width:100%;">
+                <thead>
+                    <tr style="text-align:center;">
+                        <th  class="width-per-5"> @DataMapping.Resources.Resource.BrancheNo</th>
+                        <th> @DataMapping.Resources.Resource.Name</th>
+                        <th  class="width-per-30"> @DataMapping.Resources.Resource.Notes</th>
+                        <th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                        <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@section ModelPopup{
+    <div id="mainDiv"></div>
+    <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 text-center warning_icon">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 confirm_text">
+                            <h3>@DataMapping.Resources.Resource.Alert</h3>
+                            <p>@DataMapping.Resources.Resource.Confirm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+                        <div class="col-6 text-right">
+                            <button id="btnContinueDelete" type="button" class="btn btn-danger">حذف</button>
+                        </div>
+                        <div class="col-6 text-left">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">رجوع</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section JavaScriptSection{
+    <script type="text/javascript">
+        function showPopupCreate() {
+            $.ajax({
+                type: "Get",
+                url: "/Branch/AddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+        function showPopupEdit(id) {
+            $.ajax({
+                type: "Get",
+                url: "/Branch/AddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                data: { Id: id },
+                dataType: "html",
+                success: function (result, status, xhr) {
+                    8
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+
+        $(document).ready(function () {
+            loadData();
+        });
+
+        //Load Data function
+        function loadData() {
+            $.ajax({
+                url: "/Branch/List",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    var html = '';
+                    $.each(result, function (key, item) {
+                        html += '<tr  style="text-align:center;">';
+                        if (item.BrnacheNo == null) {
+                            html += '<td>' + "لايوجد" + '</td>';
+                        }
+                        else {
+                            html += '<td>' + item.BrnacheNo + '</td>';
+                        }
+                        html += '<td>' + item.BranchesName + '</td>';
+                        if (item.Notes == null) {
+                            html += '<td>' + "لايوجد" + '</td>';
+                        }
+                        else {
+                            html += '<td>' + item.Notes + '</td>';
+                        }
+
+                        html += '<td> <a href="#" class="btn btn-icon btn-outline-info" onclick="showPopupEdit(' + item.Id + ')"><i class="far fa-edit"></i></a></td>';
+                        /**/
+                        html += '<td> <a onclick="Delele(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+                        /**/
+                        html += '</tr>';
+                    });
+                    $('.tbody').html(html);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+
+
+        function Delele(ID) {
+            var deletee = $("#delete").val();
+            if (deletee == "false") {
+                alert("عفواً . ليس لديك صلاحية");
+            }
+            else {
+                var ans = confirm("هل  تريد الحذف?");
+                if (ans) {
+                    $.ajax({
+                        url: "/Branch/Delete/" + ID,
+                        type: "POST",
+                        contentType: "application/json;charset=UTF-8",
+                        dataType: "json",
+                        success: function (result) {
+                            if (result == false) {
+
+                                toastr.error("لا يمكن حذف السجل لارتباطه بسجلات أخرى ");
+                            }
+                            else {
+                                loadData();
+
+                            }
+                              
+                            
+                        },
+                        error: function (errormessage) {
+                            alert(errormessage.responseText);
+                        }
+                    });
+                }
+            }
+
+        }
+
+
+
+    </script>
+}

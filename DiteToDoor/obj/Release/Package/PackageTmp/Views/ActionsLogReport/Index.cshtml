@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="row heder_title">
+    <div class="col-12">
+        <h3 class="blockquote"> @DataMapping.Resources.Resource.UserHistory</h3>
+    </div>
+
+
+    <div class="row" style="margin-bottom: 15px; width:2000px">
+        <div class="col-lg-1.5" style="margin-right:20px; margin-left:3px">
+            @DataMapping.Resources.Resource.FromDate:
+            @Html.Editor("FromDate", new { htmlAttributes = new { @id = "FromDate", @class = "DateChange form-control", type = "datetime-local" } })
+            @Html.ValidationMessage("FromDate", "", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-1.5" style="margin-left:3px" ">
+            @DataMapping.Resources.Resource.ToDate: @Html.Editor("ToDate", new { htmlAttributes = new { @id = "ToDate", @class = "DateChange form-control", type = "datetime-local" } })
+            @Html.ValidationMessage("ToDate", "", new { @class = "text-danger" })
+
+        </div>
+        <div class="col-lg-2" style="margin-right:20px">
+            @DataMapping.Resources.Resource.UserName:
+            @Html.DropDownList("Users", null, "اختيار الكل ", htmlAttributes: new { @id = "Users", @class = "select2 VendorId form-control" })
+
+        </div>
+        <div class="col-lg-2">
+            @DataMapping.Resources.Resource.ActionType: @Html.DropDownList("SystemFunction", null, "اختيار الكل ", htmlAttributes: new { @id = "SystemFunction", @class = "select2 VendorId form-control" })
+
+            @Html.ValidationMessage("SystemFunction", "", new { @class = "text-danger" })
+
+        </div>
+
+
+        <div class="col-lg-1.5" style="margin-top:18px">
+            <input type="submit" id="submit" value="@DataMapping.Resources.Resource.Show" class="btn btn-primary" style="height:fit-content" />
+        </div>
+        <div class="col-lg-1.5" style="margin-top:18px">
+
+            @using (Html.BeginForm("PrintDataRDLC", "ActionsLogReport"))
+            {
+                @*<input type="submit" value="Print" />*@
+                @*<button formtarget="_blank" type="submit" class="submitDis btn btn-icon" id="save">
+                        <span data-toggle="tooltip" data-placement="bottom" title=@DataMapping.Resources.Resource.Print>
+                            <i class="fa fa-print" aria-hidden="true"></i>
+                        </span>
+                    </button>*@
+                <button formtarget="_blank" type="submit" class="submitDis btn btn-outline-secondary" style="background-color: white; color: darkgreen; border-width: 2px; font-weight: bold;">
+
+                    @DataMapping.Resources.Resource.Print  <i class="fa fa-print" aria-hidden="true"></i>
+
+                </button>
+            }
+        </div>
+    </div>
+
+</div>
+
+<div class="row" id="DispplayData">
+    <table class="table table-striped table-bordered table-hover" id="@*save-stage*@" style="width:100%;">
+        <thead>
+            <tr>
+                <th> @DataMapping.Resources.Resource.Date</th>
+                <th> @DataMapping.Resources.Resource.ScreenArEn</th>
+               
+                <th>@DataMapping.Resources.Resource.OperationArEn</th>
+                @*<th>الرصيد </th>*@
+                
+                <th>  @DataMapping.Resources.Resource.UserName</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+@section ModelPopup{}
+
+
+@section JavaScriptSection{
+
+    <script>
+        $("#submit").click(function () {
+            $("#DispplayData").empty()
+            GetData();
+        });
+    //$(() => {
+    //    GetData();
+    //    //$("#FromDate").on('keyup', () => {
+    //    //    GetData();
+    //    //});
+
+    //});
+    function GetData() {
+        $.ajax({
+            url: '@Url.Action("GetReportData", "ActionsLogReport")',
+            dataType: 'html',
+            method: 'Get',
+            data: {
+                FromDate: $("#FromDate").val(),
+                ToDate: $("#ToDate").val(),
+                UsersId: $("#Users").val(),
+                SystemFunctionId: $("#SystemFunction").val()
+            },
+            success: function (res) {
+                $("#DispplayData").html('').html(res);
+            },
+            error: function (err) {
+                console.log(err);
+            }
+
+        })
+    }
+    </script>
+    <script>
+        $(document).ready(function () {
+
+
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            /* var today = year + "/" + month + "/" + day + "/" + hours + "-" + minutes;*/
+            date.setHours(date.getHours() + (date.getTimezoneOffset() / -60));
+            var today = date.toJSON().slice(0, 19);
+            $("#FromDate").attr("value", today);
+
+        });
+
+        $(document).ready(function () {
+
+
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            if (hours < 10) hours = "0" + hours;
+            if (minutes < 10) minutes = "0" + minutes;
+
+
+            /*var today = year + "/" + month + "/" + day + " " + hours + ":" + minutes;*/
+            date.setHours(date.getHours() + (date.getTimezoneOffset() / -60));
+            var today = date.toJSON().slice(0, 19);
+            $("#ToDate").attr("value", today);
+
+        });
+
+    </script>
+
+
+}

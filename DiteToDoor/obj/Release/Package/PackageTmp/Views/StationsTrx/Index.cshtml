@@ -1,0 +1,160 @@
+﻿@using DataMapping.Entites
+@model IEnumerable<DataMapping.Entites.StationsTrx>
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+    ViewBag.Title = DataMapping.Resources.Resource.Vendor;
+}
+
+<div class="row heder_title">
+    <div class="col-6">
+        <h3 class="blockquote">سند إستلام محروقات</h3>
+    </div>
+    <div class="col-6 text-left">
+        @if (ViewBag.CanAdd == true)
+        {
+            <a href="~/StationsTrx/AddOrEdit" class="btn btn-icon icon-left success_butn">
+                @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+            </a>
+        }
+        else
+        {
+            <a href="~/StationsTrx/AddOrEdit" class="btn btn-icon icon-left success_butn disabled">
+                @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+            </a>
+        }
+    </div>
+</div>
+
+@*<div class="row" style="margin-bottom: 15px;">
+    <div class="col-lg-4">
+        @DataMapping.Resources.Resource.VendorClassificationId: @Html.DropDownList("VendorClassificationId", null, "اختيار الكل ", htmlAttributes: new { @id = "SelectedItem", @class = "select2 form-control" })
+    </div>
+</div>*@
+
+<div class="row">
+    <div class="col-12">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover" id="save-stage" style="width:100%;">
+                <thead>
+                    <tr>
+                        @*<th class="width-per-8">سنة</th>*@
+                        <th class="width-per-2"> مسلسل</th>
+                        <th class="width-per-8"> تاريخ الاستلام</th>
+                        <th class="width-per-4">رقم التعميد</th>
+                        <th class="width-per-8"> تاريخ التعميد</th>
+
+
+                        <th class="width-per-12"> أسم المحطة</th>
+                        <th class="width-per-8"> الكمية الفعلية</th>
+                        <th class="width-per-8"> إجمالى القيمة</th>
+                        <th class="width-per-2"> رقم الفاتورة</th>
+                        <th class="width-per-8"> تاريخ الفاتورة</th>
+
+                        <th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                        <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                        <th class="width-per-5">  طباعة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        var StationName = db.Stations.SingleOrDefault(a => a.Id == item.StationId).StationName;
+                    <tr style="text-align:center">
+                        @*<td style="text-align:center"> @Html.DisplayFor(modelItem => item.Year)</td>*@
+                        <td> @Html.DisplayFor(modelItem => item.Serial)</td>
+                        <td>  @item.Date.Value.Year-@item.Date.Value.Month-@item.Date.Value.Day</td>
+
+                        <td>@Html.DisplayFor(modelItem => item.AssignmentNo)</td>
+                        <td> @item.AssignmentDate.Value.Year-@item.AssignmentDate.Value.Month-@item.AssignmentDate.Value.Day</td>
+
+                        @*<td>@item.AssignmentDate.Value.Date.Year;</td>*@
+                        @*<td> @item.AssignmentDate.Value.Year - @item.AssignmentDate.Value.Month - @item.AssignmentDate.Value.Day </td>*@
+                        <td> @StationName</td>
+                        <td> @Html.DisplayFor(modelItem => item.ActualQuantity)</td>
+                        <td> @Html.DisplayFor(modelItem => item.RequestedQuantity)</td>
+                        <td> @Html.DisplayFor(modelItem => item.InvoiceNo)</td>
+                        <td>  @item.InvoiceDate.Value.Year-@item.InvoiceDate.Value.Month-@item.InvoiceDate.Value.Day</td>
+                        @*<td> @Html.DisplayFor(modelItem => item.Date)</td>*@
+
+
+
+
+                        <td class="th_width_5">
+                            @if (ViewBag.CanEdit == true)
+                            {
+                                <a href="@Url.Action("AddOrEdit", "StationsTrx", new { Id = @item.Id })" class="btn btn-icon btn-outline-info">
+                                    <i class="far fa-edit"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("AddOrEdit", "StationsTrx", new { Id = @item.Id })" class="btn btn-icon btn-outline-info disabled">
+                                    <i class="far fa-edit"></i>
+                                </a>
+                            }
+                        </td>
+                        <td class="th_width_5">
+                            @if (ViewBag.CanDelete == true)
+                            {
+                                <a href="@Url.Action("Delete", "StationsTrx", new { Id = @item.Id })" class="deleteItem btn btn-icon btn-outline-danger">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("Delete", "StationsTrx", new { Id = @item.Id })" class="deleteItem btn btn-icon btn-outline-danger disabled">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            }
+                        </td>
+                        <td>
+                            @using (Html.BeginForm("PrintDataRDLCById", "StationsTrx", new { id = @item.Id }))
+                            {
+                                <button formtarget="_blank" type="submit" class="btn btn-outline-info">
+
+                                    @*@DataMapping.Resources.Resource.Print*@  <i class="fa fa-print" aria-hidden="true"></i>
+
+                                </button>
+                            }
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@section ModelPopup{
+
+}
+@section JavaScriptSection{
+
+    <script>
+        $(function () {
+
+            $("#SelectedItem").change(function () {
+                //debugger;
+
+                var Id = $("#SelectedItem").val()
+                var data = Id
+                $.ajax({
+                    type: 'POST',
+                    url: '/Vendor/Index/' + Id,
+                    //data: JSON.stringify(data),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        window.location.href = '/Vendor/Index' + '/' + Id
+                    }
+
+
+                });
+
+
+
+            });
+        });
+    </script>
+
+}

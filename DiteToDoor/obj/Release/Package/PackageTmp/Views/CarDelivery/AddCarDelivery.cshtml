@@ -1,0 +1,1131 @@
+﻿@using DataMapping.Entites
+@model DataMapping.ViewModel.CarDriversViewModel
+@{
+    ViewBag.Title = "";
+    ApplicationDbContext db = new ApplicationDbContext();
+
+    SelectList Type = new SelectList(db.MachineType.ToList(), "Id", "Name");
+    SelectList CarId = new SelectList(db.SelectCars().Where(a => a.IsDeleted == false), "CarId", "SelectCar");
+    SelectList EquId = new SelectList(db.Equipments.Where(a => a.IsDeleted == false), "Id", "PanelNo");
+    SelectList CarDriverNo = new SelectList(db.CarDrivers.Where(a => a.IsDeleted == false), "Id", "Serial");
+
+
+    SelectList DriverID = new SelectList(db.Drivers.Where(a => a.IsDeleted == false), "Id", "DriverName");
+
+
+}
+<style>
+    #Year, #Serial, #PanelNo, #CarType, #LicNo, #ModelNo, #Manage, #Mobile, #DriverID, #Type, #DaysCount, #ToDate, #SideName, #TimeId, #Notes, #CarDriverNo, #ActualDays, #ReceiptDate {
+        border: 2px solid #ebebeb;
+    }
+</style>
+<div class="invoice-container">
+    <!--<div class="row heder_title">
+        <div class="col-6">
+            <h3 class="blockquote">@DataMapping.Resources.Resource.PurchaseINV</h3>
+        </div>
+        <div class="col-6 text-left" style="display: -webkit-inline-box; margin-right:1000px">
+            <a href="#" id="submit" class="btn btn-icon icon-left btn-info">
+                @DataMapping.Resources.Resource.save <i class="fa fa-save" aria-hidden="true"></i>
+            </a>-->
+    @*<a href="#" class="btn btn-outline-secondary">
+            طباعة <i class="fas fa-print"></i>
+        </a>*@
+    <!--@using (Html.BeginForm("PrintDataRDLC", "CarDrivers"))
+            {
+                <button formtarget="_blank" type="submit" class="btn btn-outline-secondary" style="background-color:white; color:darkgreen;border-width:2px">
+
+                    @DataMapping.Resources.Resource.Print  <i class="fa fa-print" aria-hidden="true"></i>
+
+                </button>
+            }
+            <a id="ADD" href="#" class="btn btn-icon icon-left success_butn" data-toggle="modal">
+                @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>-->
+    <div class="row heder_title">
+        <div class="col-6">
+            <h3 class="blockquote">محضر رجوع سيارة</h3>
+        </div>
+        <div class="col-6 text-left" style="display: -webkit-inline-box; direction:ltr">
+
+            <a href="~/CarDelivery/Index" id="addItem" class="btn btn-icon icon-left btn-outline-warning">
+                رجوع <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </a>
+            @*<a href="#" class="btn btn-outline-secondary">
+                    طباعة <i class="fas fa-print"></i>
+                </a>*@
+            @using (Html.BeginForm("PrintDataRDLC", " CarDrivers"))
+            {
+                <button  formtarget="_blank" type="submit" class="btn btn-outline-secondary">
+                    طباعة  <i class="fa fa-print" aria-hidden="true"></i>
+                </button>
+            }
+            <a href="#" id="submit"  class="btn btn-icon icon-left info_butn">
+                @DataMapping.Resources.Resource.save <i class="fa fa-save" aria-hidden="true"></i>
+            </a>
+        </div>
+
+    </div>
+    <div class="row">
+        <input hidden type="text" id="DrivId" class="form-control">
+
+        <input hidden type="text" id="dateHidden" class="form-control">
+        <input hidden type="text" id="ReceiptDateHidden" class="form-control">
+        @*<input hidden type="text" id="Days" class="form-control">*@
+
+
+
+
+        <div class="col-12">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div style="background-color:#00ff21" class="row card-header" id="headingOne">
+                        <h2 class="col-2 mb-0 text-right">
+                            <button style="color:white;font-weight:bold;" class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                تفاصيل المحضر
+                            </button>
+                        </h2>
+                        <div class="col-10 text-left">
+                            <button style="color:white;" class="btn btn-link btn-block no_hover_btn text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card-layout">
+                                        <div class="mb-2 row ">
+                                            <label class="col-sm-2 col-form-label">السنة</label>
+                                            <div class="col-sm-4">
+
+
+                                                @if (Model != null)
+                                                {
+                                                    @Html.EditorFor(model => model.Year, new { htmlAttributes = new { @class = "form-control", @id = "Year", @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+                                                }
+                                                else
+                                                {
+                                                    @Html.EditorFor(model => model.Year, new { htmlAttributes = new { @class = "form-control", @id = "Year", Value = ViewBag.Year, @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+                                                }
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">مسلسل</label>
+                                            <div class="col-sm-4">
+
+                                                @if (Model != null)
+                                                {
+                                                    @Html.EditorFor(model => model.Serial, new { htmlAttributes = new { @class = "form-control", @id = "Serial", @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.Serial, "", new { @class = "text-danger" })
+                                                }
+                                                else
+                                                {
+                                                    @Html.EditorFor(model => model.Serial, new { htmlAttributes = new { @class = "form-control", @id = "Serial", Value = ViewBag.autoCode, @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.Serial, "", new { @class = "text-danger" })
+                                                }
+                                            </div>
+
+
+                                        </div>
+
+
+
+                                        <div class="mb-2 row">
+
+                                            <label class="col-sm-2 col-form-label"> المركبة </label>
+                                            <div class="col-sm-4" id="cars">
+                                                @Html.DropDownList("CarId", CarId, "...اختار...", new { @id = "CarId", @class = "CarId form-control select2", @disabled = "disabled" })
+
+                                            </div>
+
+                                            <label class="col-sm-2 col-form-label">رقم اللوحة</label>
+                                            <div class="col-sm-4">
+                                                <input  type="text" id="PanelNo" disabled class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-2 row">
+
+                                            <label class="col-sm-2 col-form-label"> السائق </label>
+                                            <div class="col-sm-10">
+                                                <input  type="text" id="DriverID" disabled class="form-control">
+
+                                                @*@Html.DropDownList("",null ,htmlAttributes : new { @id = "DriverID", @class = "DriverID form-control select2", @disabled = "disabled" })*@
+
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="mb-2 row">
+
+                                            <label class="col-sm-2 col-form-label"> المده المطلوبة  </label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="DaysCount" disabled class="form-control">
+
+                                                @*@Html.TextBoxFor(a => a.DaysCount, new { @id = "DaysCount", @class = "DaysCount form-control", @readonly = "readonly" })*@
+
+                                            </div>
+
+                                            <label class="col-sm-2 col-form-label">إلى تاريخ</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="ToDate" disabled class="form-control">
+
+                                                @*@Html.TextBoxFor(a => a.ToDate, new { @id = "ToDate", @readonly = "readonly", @class = "DateChange form-control" })*@
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+
+                                            <label class="col-sm-2 col-form-label">الجهة</label>
+                                            <div class="col-sm-10">
+
+
+                                                @Html.TextBoxFor(a => a.SideName, new { @id = "SideName", @class = "SideName form-control", @readonly = "readonly" })
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-2 row">
+
+                                            <label class="col-sm-2 col-form-label">البيان</label>
+                                            <div class="col-sm-10">
+                                                @Html.TextBoxFor(a => a.Notes, new { @id = "Notes", @class = "Notes form-control", @disabled = "disabled" })
+
+                                            </div>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="card-layout">
+
+
+                                        <div class="mb-2 row">
+
+                                            <label class="col-sm-2 col-form-label">تاريخ الرجوع </label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(a => a.Date, new { @id = "Date", @class = "DateChange form-control", type = "date", Value = ViewBag.autoDate })
+
+                                            </div>
+
+                                            <label class="col-sm-2 col-form-label">نوع المركبة</label>
+                                            <div class="col-sm-4">
+                                                @Html.DropDownList("Type", Type, "... اختار  ...", new { @id = "Type", @class = "OwnerId form-control select2" })
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-2 row">
+
+
+                                            <label class="col-sm-2 col-form-label">النوع </label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="CarType" disabled class="form-control">
+
+                                            </div>
+
+                                            <label class="col-sm-2 col-form-label"> محضر التسليم</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="CarDriverNo" disabled class="form-control">
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="mb-2 row">
+                                            <label class="col-sm-2 col-form-label">الإدارة</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="Manage" disabled class="form-control">
+                                            </div>
+                                            <label class="col-sm-2 col-form-label"> الجوال </label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="Mobile" disabled class="form-control">
+
+                                            </div>
+
+
+
+
+                                        </div>
+
+
+                                        <div class="mb-2 row">
+
+
+                                            <label class="col-sm-2 col-form-label">تاريخ التسليم </label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="ReceiptDate" disabled class="form-control">
+
+                                                @*@Html.TextBoxFor(a => a.Time, new { @id = "TimeId", @class = "SideName form-control",, @readonly = "readonly" })*@
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">المدة الفعلية</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="ActualDays" disabled class="form-control">
+                                            </div>
+
+                                        </div>
+                                        <div class="mb-2 row">
+
+
+                                            <label class="col-sm-2 col-form-label">الوقت</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="TimeId" disabled class="form-control">
+
+                                                @*@Html.TextBoxFor(a => a.Time, new { @id = "TimeId", @class = "SideName form-control",, @readonly = "readonly" })*@
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">الموديل</label>
+                                            <div class="col-sm-4">
+                                                <input  type="text" id="ModelNo" disabled class="form-control">
+                                            </div>
+
+                                        </div>
+
+                                        <!--<div class="mb-2 row">
+                                        <label class="col-sm-2 col-form-label"> وقت التسليم </label>
+
+                                        <div class="form-check">
+                                            @Html.CheckBox("DeliverTime", new { @name = "DeliverTime", @id = "DeliverTime", @class = "form-check-input", @type = "checkbox" })
+
+                                            <label class="form-check-label" for="DeliverTime">
+                                                وقت الدوام الرسمى فقط
+                                            </label>
+
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="detime" class="form-check-input" name="DeliverTime">-->
+                                        @*<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>*@
+                                        <!--<label class="form-check-label" for="detime">
+                                                وقت الدوام الرسمى وخارج الدوام
+                                            </label>
+
+                                        </div>-->
+                                        @*<label class="col-sm-2 col-form-label"> وقت التسليم </label>
+                                            <div class="col-sm-4">
+                                                وقت الدوام الرسمى فقط @Html.CheckBox("DeliverTime", new { @name = "DeliverTime", @id = "DeliverTime", @class = "DeliverTime form-control" })
+
+                                            </div>
+                                            <div class="col-sm-6">
+                                                وقت الدوام الرسمى وخارج الدوام <input style="font-size:small;" type="checkbox" id="detime" class="form-control" name="DeliverTime">
+
+                                            </div>*@
+
+
+                                        <!--</div>-->
+
+
+
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table id="OrdersItems" class="table table-striped table-bordered table-hover" style="width:100%;">
+                    <thead>
+                        <tr>
+                            <th class="th_width_3">كود المرافق</th>
+                            <th class="th_width_3" hidden></th>
+                            <th>أسم المرافق</th>
+                            <th>الادارة </th>
+                            <th>الجوال </th>
+                            @*<th class="th_width_3">@DataMapping.Resources.Resource.Delete</th>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            @*<th></th>*@
+
+                        </tr>
+
+                        <!--<tr id="MainRow">
+                        <td>
+                            <input type="number" id="ItemNumber" class="ItemNumber form-control" readonly>
+                        </td>
+
+                        <td>
+                            <input type="text" id="DriverIdd" class="DriverIdd  form-control select2" readonly>-->
+                        @*@Html.DropDownList("DriverID", DriverID, "اختر المرافق", new { @id = "DriverIdd", @class = "DriverIdd  form-control select2", @disabled = "disabled" })*@
+                        <!--</td>
+                        <td>
+                            <input type="text" id="ManagmentId" class="form-control" readonly>
+
+                        </td>
+
+                        <td>
+                            <input type="text" id="PhoneId" class="form-control" readonly>
+
+                        </td>
+
+
+                        <td>
+                            <a id="addd" class="deleteItem btn btn-icon btn-outline-info" data-toggle="modal" hidden>-->
+                        @*<i class="fas fa-check"></i>*@
+                        <!--<i class="fas fa-plus-circle success"></i>
+                                </a>
+                            </td>
+                        </tr>-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            @*<button id="addRowCarDelivery" class="btn btn-icon icon-left success_butn add-row"><i class="fa fa-plus"></i>إضافة مرافق</button>*@
+        </div>
+    </div>
+
+
+</div>
+<div class="row">
+    <div class="col-12">
+        @*<a href="#" id="submit" class="btn btn-icon icon-left info_butn">
+                @DataMapping.Resources.Resource.save <i class="fa fa-save" aria-hidden="true"></i>
+            </a>*@
+    </div>
+</div>
+@section ModelPopup{
+    <!--<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="width:85%">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">@DataMapping.Resources.Resource.AddItem</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="padding-bottom: 0px !important;">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table style="table-layout: fixed !important" class="table table-striped table-bordered table-hover" style="width:100%;">
+
+                                <tbody></tbody>
+                            </table>
+                            <table id="TbItem" style="table-layout: fixed !important" class="table table-striped table-bordered table-hover" style="width:100%;">
+                                <thead>
+                                    <tr>
+                                        <th class="th_width_3">@DataMapping.Resources.Resource.ItemNo</th>
+                                        <th class="th_width_14">@DataMapping.Resources.Resource.ItemGroup</th>
+                                        <th class="th_width_14">@DataMapping.Resources.Resource.ItemName</th>
+                                        <th class="th_width_9">@DataMapping.Resources.Resource.unit</th>
+                                        <th class="th_width_5">@DataMapping.Resources.Resource.Quantity</th>
+                                        <th class="th_width_8">@DataMapping.Resources.Resource.Price</th>
+                                        <th class="th_width_8">@DataMapping.Resources.Resource.Total</th>
+                                        <th class="th_width_5">@DataMapping.Resources.Resource.DisPer</th>
+                                        <th class="th_width_5">@DataMapping.Resources.Resource.DisVal</th>
+                                        <th class="th_width_8">@DataMapping.Resources.Resource.Net</th>
+
+                                        <th class="th_width_5">@DataMapping.Resources.Resource.Balance</th>
+                                        <th class="th_width_3">@DataMapping.Resources.Resource.ItemCostt</th>
+                                        <th class="th_width_3">ادراج</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="MainRow">
+                                        <td>
+                                            <input type="number" id="ItemNumber" class="ItemNumber form-control" readonly>
+
+                                        </td>
+                                        <td id="GroupHide">
+                                            <div>
+
+                                            </div>
+
+                                        </td>
+                                        <td>
+
+
+
+                                        </td>
+                                        <td>
+
+
+                                        </td>
+                                        <td>
+                                            <input type="number" id="Qty" class="Qty form-control" value="1">
+                                        </td>
+                                        <td>
+                                            <input type="text" id="Price" class="Price form-control" value="0">
+                                        </td>
+                                        <td>
+                                            <span id="Total" class="Total"></span>
+                                        </td>
+                                        <td>
+                                            <input type="number" id="Disper" class="Disper form-control" value="0">
+                                        </td>
+                                        <td>
+                                            <input type="number" id="DisValue" class="DisValue form-control" value="0">
+                                        </td>
+                                        <td>
+                                            <span id="Net" class="Net"></span>
+
+                                        </td>
+
+                                        <td>
+                                            <input type="number" id="ItemBalance" class="form-control" readonly>
+                                        </td>
+                                        <td>
+                                            <input type="number" id="ItemCostt" class="ItemCostt form-control" readonly>
+
+                                        </td>
+                                        <td>
+                                            <a id="add" class="deleteItem btn btn-icon btn-outline-info" data-toggle="modal">-->
+    @*<i class="fas fa-check"></i>*@
+    <!--<i class="fas fa-plus-circle success"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="mb-2 row">
+                        <div class="col-12 text-right">
+                            <button type="button" id="toggle" class="btn btn-primary"> تفاصيل الصنف </button>
+                        </div>
+                    </div>
+
+                    <div class="row" id="showdetails">
+                        <div class="card-layout">
+                            <div class="col-12">
+                                <div class="mb-2 row">
+                                    <label class="col-sm-2 col-form-label text-center">أخر سعر شراء</label>
+                                    <div class="col-sm-2">
+                                        <span class="pop_span"></span>
+                                    </div>
+
+                                    <label class="col-sm-2 col-form-label text-center">أقل سعر شراء</label>
+                                    <div class="col-sm-2">
+                                        <span class="pop_span"></span>
+                                    </div>
+
+                                    <label class="col-sm-2 col-form-label text-center">أعلى سعر شراء</label>
+                                    <div class="col-sm-2">
+                                        <span class="pop_span"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <label class="col-sm-2 col-form-label text-center">أخر سعر شراء من نفس المورد</label>
+                                    <div class="col-sm-2">
+                                        <span class="pop_span"></span>
+                                    </div>
+
+                                    <label class="col-sm-2 col-form-label text-center">التاريخ</label>
+                                    <div class="col-sm-2">
+                                        <span class="pop_span"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+                        <div class="col-12 text-left">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">@DataMapping.Resources.Resource.Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+}
+@section JavaScriptSection{
+
+    <script src="~/Scripts/ERPScript/CarDelivery.js"></script>
+    <script src="~/Scripts/ERPScript/ItemCalculatejs.js"></script>
+
+
+    <script src="~/Scripts/DataPicker/jquery-ui.min.js"></script>
+    @*datepicker Osama Sadek*@
+    <link href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/start/jquery-ui.css" rel="stylesheet" />
+
+    <link href="~/Scripts/DataPicker/jquery-ui.min.css" rel="stylesheet" />
+
+
+
+    @*جلب سعر المنتج *@
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#CarId").change(function () {
+                $("#DaysCount").val("")
+                $("#DaysCount").val("")
+                $("#SideName").val("")
+                $("#CarDriverNo").val("")
+                $("#Notes").val("")
+                $("#DrivId").val("")
+                $("#ActualDays").val("")
+
+                
+
+
+                $.get("/CarDelivery/GetLastTRX", { ID: $("#CarId").val() }, function (data) {
+
+                    if (data != null) {
+                        if (data == 2 || data == 1) {
+                            toastr.warning(' هذة السيارة تم رجوعها وهى حاليا غير مسلمة لموظف ');
+                        }
+                        //else if (data == 1) {
+
+                        //    toastr.warning('هذه السيارة ليس لها محضر تسليم   ');
+                        //    if ($("#CarDriverNo" == null)) {
+                        //        $("#submit").attr("disabled", true);
+                        //    }
+
+                                
+                        //}
+                        else {
+                            $.each(data, function (index, row) {
+
+
+                                $("#DaysCount").val(row.DaysCount)
+                                $("#SideName").val(row.SideName)
+                                $("#CarDriverNo").val(row.Serial)
+                                $("#Notes").val(row.Notes)
+                                //$("#TimeId").val(row.Time)
+                                $("#DrivId").val(row.DriverID)
+
+
+                            });
+
+                        }
+
+
+                    }
+
+                });
+            });
+        });
+    </script>
+
+    <script>
+           $("#CarId").change(function () {
+               GetDate();
+            });
+
+        function GetDate() {
+
+            $("#ActualDays").css('background-color', 'white');           
+
+
+            $.ajax({
+                url: '@Url.Action("GetDate", "CarDelivery")',
+                method: "Get",
+                //contentType: "application/json;charset=utf-8",
+                dataType: "Html",
+                data: {
+                Id: $("#CarId").val(),
+                },
+                success: function (result) {
+
+                    if (result != 1) {
+
+                        var g = $("#Date").val();
+
+                        var date = new Date(g);
+
+                        var dayDate = date.getDate();
+                        var monthDate = date.getMonth() + 1;
+                        var yearDate = date.getFullYear();
+
+                        if (monthDate < 10) monthDate = "0" + monthDate;
+                        if (dayDate < 10) dayDate = "0" + dayDate;
+
+                        var todayDate = yearDate + "-" + monthDate + "-" + dayDate;
+
+                        //------------------------------------------------------------------------------
+                        $("#dateHidden").val(result);
+                        var g = $("#dateHidden").val();
+
+
+                        var date = new Date(g);
+
+                        var day = date.getDate();
+                        var month = date.getMonth() + 1;
+                        var year = date.getFullYear();
+
+                        if (month < 10) month = "0" + month;
+                        if (day < 10) day = "0" + day;
+
+                        var today = year + "-" + month + "-" + day;
+
+                        var ActualDaysValue = dayDate - day;
+
+                        var ActualDaysValueFromMonth = (monthDate - month) * 30;
+                        var ActualDaysValueFromYears = (yearDate - year) * 365;
+                        var FinalDays = ActualDaysValue + ActualDaysValueFromMonth + ActualDaysValueFromYears;
+
+
+                        $("#ToDate").attr("value", today);
+
+                        if (FinalDays > 0) {
+
+                            $("#ActualDays").val(FinalDays);
+                            $("#ActualDays").css('background-color', '#ff000042');
+
+
+                        }
+                        else if (FinalDays < 0) {
+                            $("#ActualDays").val(FinalDays);
+                            $("#ActualDays").css('background-color', '#5bff006e');
+
+
+                        }
+                        else if (FinalDays == 0) {
+                            $("#ActualDays").val(FinalDays);
+                            $("#ActualDays").css('background-color', 'white');
+
+
+                        }
+
+
+                    }
+                    else if (result == 1)
+                    {
+                        $("#ToDate").attr("value", "");
+
+                    }
+
+
+
+
+                },
+                error: function (errormessage) {
+                   
+                alert(errormessage.responseText);
+                }
+             })
+
+            }
+
+
+
+    </script>
+
+    <script>
+        $("#CarId").change(function () {
+            //$("#ReceiptDate").val("");
+
+               GetReceiptDate();
+            });
+
+        function GetReceiptDate() {
+            $.ajax({
+                url: '@Url.Action("GetReceiptDate", "CarDelivery")',
+                method: "Get",
+                //contentType: "application/json;charset=utf-8",
+                dataType: "Html",
+                data: {
+                Id: $("#CarId").val(),
+                },
+                success: function (result) {
+
+                    if (result != 1) {
+                        $("#ReceiptDateHidden").val(result);
+                        var g = $("#ReceiptDateHidden").val();
+
+
+                        var date = new Date(g);
+
+                        var day = date.getDate();
+                        var month = date.getMonth() + 1;
+                        var year = date.getFullYear();
+
+                        if (month < 10) month = "0" + month;
+                        if (day < 10) day = "0" + day;
+
+                        var today = year + "-" + month + "-" + day;
+                        $("#ReceiptDate").attr("value", today);
+                    }
+                    else if (result == 1) {
+                        $("#ReceiptDate").attr("value", "");
+
+                    }
+                },
+                error: function (errormessage) {
+                alert(errormessage.responseText);
+                }
+             })
+
+            }
+
+
+    </script>
+    <script>
+         $("#CarId").change(function () {
+            $("#OrdersItems").empty();
+            GetData();
+        });
+
+        function GetData() {
+            $.ajax({
+                url: '@Url.Action("Filter", "CarDelivery")',
+                method: "Get",
+                //contentType: "application/json;charset=utf-8",
+                dataType: "Html",
+                data: {
+                    Id: $("#CarId").val(),
+                },
+                success: function (result) {
+
+                    if (result == 1) {
+
+                    }
+
+                    else
+                    {
+
+                        $("#OrdersItems").html('').html(result);
+
+                    }
+
+
+
+
+                    },
+                error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+            })
+
+        }
+
+    </script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $("#Equs").hide();
+        })
+
+        $("#Type").change(function () {
+            $.get("/CarDelivery/GetCars", { ID: $("#Type").val() }, function (data) {
+                $("#CarId").prop("disabled", false);
+                $("#CarId").empty();
+                //$("#EquNo").prop("disabled", false);
+                //$("#UnitList").append("<option> ----------------  </option>")
+                $("#CarId").append("<option>اختار </option>")
+
+                $.each(data, function (index, row) {
+
+
+                    $("#CarId").append("<option value='" + row.CarId + "'>" + row.SelectCar + "</option>")
+                });
+            });
+        });
+
+
+
+        $(document).ready(function () {
+            $("#CarId").change(function () {
+                //$("#PanelNo").val("");
+                //$("#LicNo").val("");
+                //$("#ModelNo").val("");
+
+                $.get("/CarDelivery/GetCarsInfo", { ID: $("#CarId").val() }, function (data) {
+
+
+                    if (data != 1) {
+                        $.each(data, function (index, row) {
+
+                            $("#PanelNo").val(row.PanelNo);
+                            $("#LicNo").val(row.CarLicenseNo);
+                            $("#ModelNo").val(row.ModelNo);
+                        });
+
+
+                    }
+                    else {
+
+                        $("#PanelNo").val("");
+                        $("#LicNo").val("");
+                        $("#ModelNo").val("");
+                    }
+
+
+                });
+            });
+        });
+
+
+
+        $(document).ready(function () {
+            $("#CarId").change(function () {
+                $("#CarType").val("");
+                $.get("/CarDelivery/GetCarType", { ID: $("#CarId").val() }, function (data) {
+
+                    if (data != 1) {
+                        $.each(data, function (index, row) {
+
+                            $("#CarType").val(row.CarTypeName);
+
+                        });
+                    }
+                    else {
+                    }
+
+                });
+            });
+        });
+
+
+    </script>
+
+    <script>
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#CarId").change(function () {
+                $("#Mobile").val("");
+                $("#DriverID").val("")
+                $.get("/CarDelivery/GetDriversInfo", { ID: $("#CarId").val() }, function (data) {
+
+                    $.each(data, function (index, row) {
+
+                        $("#Mobile").val(row.Phone);
+                        $("#DriverID").val(row.DriverName);
+
+
+                    });
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            $("#CarId").change(function () {
+                $("#Manage").val("");
+                $.get("/CarDelivery/GetDriverManage", { ID: $("#CarId").val() }, function (data) {
+
+
+                    if (data != 1) {
+                        $.each(data, function (index, row) {
+
+                            $("#Manage").val(row.BranchesName);
+
+                        });
+                    }
+
+                    else {
+
+                    }
+
+
+                });
+            });
+        });
+
+
+
+
+
+
+
+        $(document).ready(function () {
+
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#Date").attr("value", today);
+
+            //var datee = new Date();
+
+            //var day = datee.getDate();
+            //var month = datee.getMonth() + 1;
+            //var year = datee.getFullYear();
+
+            //if (month < 10) month = "0" + month;
+            //if (day < 10) day = "0" + day;
+
+            //var today = year + "-" + month + "-" + day;
+            //$("#ToDate").attr("value", today);
+
+
+        });
+        $(document).ready(function () {
+            $("#DeliverTime").val(false);
+            $("#DeliverTime").click(function () {
+
+                if ($(this).is(":checked")) {
+                    $(this).val(true);
+                    $("#detime").prop("checked", false);
+                }
+            });
+
+            $("#detime").click(function () {
+                if ($(this).is(":checked")) {
+                    $("#DeliverTime").val(false);
+                    $("#DeliverTime").prop("checked", false);
+                }
+            });
+        });
+
+
+
+    </script>
+
+    @*<script>
+            $(document).ready(function () {
+                $("#Date").change(function () {
+                    $("#Date").val(result);
+                    $("#ToDate").val(result);
+                    //--------------------------------------------------------------------- تاريخ الرجوع
+
+                    var g = $("#Date").val();
+
+                    var date = new Date(g);
+
+                    var dayDate = date.getDate();
+                    var monthDate = date.getMonth() + 1;
+                    var yearDate = date.getFullYear();
+
+                    if (monthDate < 10) monthDate = "0" + monthDate;
+                    if (dayDate < 10) dayDate = "0" + dayDate;
+
+                    var todayDate = yearDate + "-" + monthDate + "-" + dayDate;
+                    //--------------------------------------------------------------------- الى تاريخ
+                    var g = $("#ToDate").val();
+
+                    var date = new Date(g);
+
+                    var dayToDate = date.getDate();
+                    var monthToDate = date.getMonth() + 1;
+                    var yearToDate = date.getFullYear();
+
+                    if (monthToDate < 10) monthToDate = "0" + monthToDate;
+                    if (dayToDate < 10) dayToDate = "0" + dayToDate;
+
+                    var todayToDate = yearToDate + "-" + monthToDate + "-" + dayToDate;
+
+                    var ActualDaysValue = dayDate
+                    $("#ActualDays").val(ActualDaysValue);
+                });
+            });
+        </script>*@
+
+    <script>
+           $("#Date").change(function () {
+            GetDateee();
+            });
+
+            function GetDateee() {
+            $.ajax({
+                url: '@Url.Action("GetDate", "CarDelivery")',
+                method: "Get",
+                //contentType: "application/json;charset=utf-8",
+                dataType: "Html",
+                data: {
+                Id: $("#CarId").val(),
+                },
+                success: function (result) {
+
+                    if (result != 1) {
+
+                        var g = $("#Date").val();
+
+                        var date = new Date(g);
+
+                        var dayDate = date.getDate();
+                        var monthDate = date.getMonth() + 1;
+                        var yearDate = date.getFullYear();
+
+                        if (monthDate < 10) monthDate = "0" + monthDate;
+                        if (dayDate < 10) dayDate = "0" + dayDate;
+
+                        var todayDate = yearDate + "-" + monthDate + "-" + dayDate;
+                        //------------------------------------------------------------------------------
+                        $("#dateHidden").val(result);
+                        var g = $("#dateHidden").val();
+
+
+                        var date = new Date(g);
+
+                        var day = date.getDate();
+                        var month = date.getMonth() + 1;
+                        var year = date.getFullYear();
+
+                        if (month < 10) month = "0" + month;
+                        if (day < 10) day = "0" + day;
+
+                        var today = year + "-" + month + "-" + day;
+
+
+
+
+                        var ActualDaysValue = dayDate - day;
+                        var ActualDaysValueFromMonth = (monthDate - month) * 30;
+                        var ActualDaysValueFromYears = (yearDate - year) * 365;
+                        var FinalDays = ActualDaysValue + ActualDaysValueFromMonth + ActualDaysValueFromYears;
+
+
+                        if (FinalDays > 0) {
+
+                            $("#ActualDays").val(FinalDays);
+                            $("#ActualDays").css('background-color','#ff000042');
+
+
+                        }
+                        else if (FinalDays < 0) {
+                            $("#ActualDays").val(FinalDays);
+                            $("#ActualDays").css('background-color', '#5bff006e');
+
+
+                        }
+                        else if (FinalDays == 0) {
+                            $("#ActualDays").val(FinalDays);
+                            $("#ActualDays").css('background-color', 'white');
+
+
+                        }
+
+                         }
+                },
+                error: function (errormessage) {
+                alert(errormessage.responseText);
+                }
+             })
+
+            }
+
+
+
+    </script>
+
+}

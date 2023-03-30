@@ -1,0 +1,162 @@
+﻿@model DataMapping.Entites.Currencies
+
+@{
+    ViewBag.Title = "details";
+}
+
+<h2>details</h2>
+
+<div>
+    <h4>Currencies</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Branch.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Branch.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FesicalYear.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FesicalYear.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Organization.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organization.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameAr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameAr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrencyUnitEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrencyUnitEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrencyUnitAr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrencyUnitAr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrencySubUnitEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrencySubUnitEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrencySubUnitAr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrencySubUnitAr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConversionRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConversionRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotesEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotesEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotesAr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotesAr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

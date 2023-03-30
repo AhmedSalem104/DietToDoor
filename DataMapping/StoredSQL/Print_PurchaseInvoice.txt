@@ -1,0 +1,25 @@
+ Create proc Print_PurchaseInvoice
+ @id int
+ As
+ begin
+
+SELECT        GL.PurchaseINVDetails.Id, GL.PurchaseINVDetails.PurchaseINVId, GL.PurchaseINVDetails.ItemCategoriesId, GL.PurchaseINVDetails.ItemId, GL.PurchaseINVDetails.UnitId, GL.PurchaseINVDetails.Amount, 
+                         GL.PurchaseINVDetails.Price, GL.PurchaseINVDetails.Total, GL.PurchaseINVDetails.DisPer, GL.PurchaseINVDetails.DisValue, GL.PurchaseINVDetails.NetPrice, GL.PurchaseINVDetails.ItemBalance, 
+                         GL.PurchaseINVDetails.StoreId, GL.PurchaseINV.Id AS MainID, GL.PurchaseINV.BranchesId, GL.PurchaseINV.PurchaseINVNo, GL.PurchaseINV.PurchaseINVDate, GL.PurchaseINV.VendorId, 
+                         GL.PurchaseINV.StoreId AS StoreName, GL.PurchaseINV.TotaleItemDis, GL.PurchaseINV.PurchaseINVTotal, GL.PurchaseINV.InvoiceDisPer, GL.PurchaseINV.InvoiceDisValue, GL.PurchaseINV.NetValue, 
+                         GL.PurchaseINV.PaidValue, GL.PurchaseINV.RemainingValue, GL.PurchaseINV.PurchaseINVTypeId, GL.PurchaseINV.PaymentTypeId, GL.Store.Name, GL.Vendor.Name AS VendorName, GL.Employee.EmployeeNameAr, 
+                         GL.Branches.BranchesName, GL.Item.ItemNameAr, GL.Unit.UnitName
+FROM            GL.PurchaseINV INNER JOIN
+                         GL.PurchaseINVDetails ON GL.PurchaseINV.Id = GL.PurchaseINVDetails.PurchaseINVId INNER JOIN
+                         GL.Store ON GL.PurchaseINV.StoreId = GL.Store.Id INNER JOIN
+                         GL.Vendor ON GL.PurchaseINV.VendorId = GL.Vendor.Id INNER JOIN
+                         GL.Employee ON GL.PurchaseINV.EmployeeId = GL.Employee.Id INNER JOIN
+                         GL.Branches ON GL.PurchaseINV.BranchesId = GL.Branches.Id INNER JOIN
+                         GL.Item ON GL.PurchaseINVDetails.ItemId = GL.Item.Id INNER JOIN
+                         GL.Unit ON GL.PurchaseINVDetails.UnitId = GL.Unit.Id
+
+						 where GL.PurchaseINVDetails.PurchaseINVId=@id
+
+						
+ end
+

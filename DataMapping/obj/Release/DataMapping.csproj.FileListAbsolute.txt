@@ -1,0 +1,1674 @@
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\DataMapping.dll.config
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\DataMapping.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\DataMapping.pdb
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\Ar\DataMapping.resources.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\EntityFramework.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\EntityFramework.SqlServer.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\Owin.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\System.Web.Helpers.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\System.Web.Mvc.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\System.Web.Razor.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\System.Web.WebPages.Deployment.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\System.Web.WebPages.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\System.Web.WebPages.Razor.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\EntityFramework.xml
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\EntityFramework.SqlServer.xml
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\System.Web.Helpers.xml
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\System.Web.Mvc.xml
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\System.Web.Razor.xml
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\System.Web.WebPages.xml
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\System.Web.WebPages.Deployment.xml
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\bin\Release\System.Web.WebPages.Razor.xml
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.csprojAssemblyReference.cache
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaa.resources
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.Migrations.kjfnjdsb.resources
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.Migrations.jhjhfj.resources
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.Migrations.lll.resources
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.Migrations.nbnb.resources
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Item.resources
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ssss.resources
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.Migrations.kkkk.resources
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.Migrations.oosa.resources
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.Migrations.pppp.resources
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.Resources.Resource.resources
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.Resources.Resource.Ar.resources
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.csproj.GenerateResource.cache
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.csproj.CoreCompileInputs.cache
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\Ar\DataMapping.resources.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.csproj.CopyComplete
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.dll
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.pdb
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ooii.resources
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.Migrations.llll.resources
+D:\FreeLancer\NewTFS\OsamaSadekTFS\ERP System\DataMapping\obj\Release\DataMapping.Migrations.pppp1.resources
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\SqlServerTypes\x64\msvcr120.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\SqlServerTypes\x86\msvcr120.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\DataMapping.dll.config
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\DataMapping.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\DataMapping.pdb
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Ar\DataMapping.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\EntityFramework.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\EntityFramework.SqlServer.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.Common.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.DataVisualization.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.Design.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.WebDesign.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.WebForms.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.WinForms.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.SqlServer.Types.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Owin.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\System.Web.Helpers.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\System.Web.Mvc.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\System.Web.Razor.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\System.Web.WebPages.Deployment.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\System.Web.WebPages.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\System.Web.WebPages.Razor.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\EnvDTE.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.VisualStudio.Shell.Interop.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\stdole.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.VisualStudio.OLE.Interop.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.MSXML.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\EntityFramework.xml
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\EntityFramework.SqlServer.xml
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.WinForms.xml
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\System.Web.Helpers.xml
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\System.Web.Mvc.xml
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\System.Web.Razor.xml
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\System.Web.WebPages.xml
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\System.Web.WebPages.Deployment.xml
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\System.Web.WebPages.Razor.xml
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\de\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\es\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\it\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\de\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\es\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\it\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\de\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\es\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\it\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\de\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\es\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\it\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.csproj.AssemblyReference.cache
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.bnana.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.InvoiceName.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.AdName.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Print.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.osamsadek.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Salse.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ccc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.xzds.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSchoolTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addKbdTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSchoolProcedure.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addporc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addprocedure.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.sp.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.formateDate.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.del.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaa.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeType.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.add_UserSafeTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsDeletedCoulmn.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addrel.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.delRel.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRelAgain.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.delRelagain.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRel2.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addproc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAmount.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemId.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addUnitNameCoulmn.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeType1.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.updateStoreTRXProcedure.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreIdCoulmn.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemId1.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreTRXTypeId.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.delStoreTRXId.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations._as.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.nullableBalance.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBranchesIdCoulmn.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.delBranchesId.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBranchesIdRe.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBrancheIdAndCompanyIdInStoreTRX.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeIsDefaultTypeInUsersBranches.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.sda.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.rellll.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeUserSafeName.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGroupIdCoulmnInStoreTRX.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGroupIdCoulmnInSalesINVDestails.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemGroupIdInProcedure.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.dsasaad.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemGroupCoulmnInStoreTRXProcedure.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addddddd.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.MoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeMoenyToMonay.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIdToStorTRX.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreNameCoulmn.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTotalsInMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addParameterDateInMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.reAddParameterInMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.salem.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.suii.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.fixParam.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.fixParamInMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.lastVersionOfFixParameterInMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsDeletedCoulmn1.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTRXTypeId.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations._2225.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBankAccountsTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAddPermissionTables.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeDateToNullableIStoreAddPermission.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.removeStoreId.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreIdAsFoerignKey.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreTRXTypesIdCoulmnInStoreAddPerpession.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemIdCoulmnInStoreAddPermission.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreAddPermissionProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreAddPermissionProcc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Tree.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCashingPermmisionTables.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditCoulmnsNameInStoreCashPermission.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations._011.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.restoreCoulmns.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreCashingProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreCashingProc1.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeActiveToNotActive.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCoulmnsInJournals.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsDetailsTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.AddJournalsDetailsCoulmns.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.AddJournalTypeTabTables.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addForignKeyInJournals.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.moo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.fanta.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ChangeAccountNameToAccountId.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Updateee.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsPROC.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.updateJournalsPROC.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.TabNotNull.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsLeafCoulmnInAccountsTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAccountNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRequestLimitProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBranchIDCoulmnInGetRequetLimitProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.asdght.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProc2.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProc3.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProc4.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProc5.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProcc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProcc2.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsDeletedColumnInSafeSetting.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.sdetghhg.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaaaaaaaaaaa.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.asdef.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.zzzzzzzzz.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.upcolname.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSalesReport.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaaaaasdde.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.AddNotesColumnToJournalDetails.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditNotesColumnToJournalDetails.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeFKInSafeSetting.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSafeTransformTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDeaalerNameInMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ChangeNullableType.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDateTimeNull.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addNotessColumn.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addInventoryTables.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreTRXTypeIdInInventoryDetails.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreOpeningBalanceTables.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGroupIdColumn.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_All_PermissionsProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addUnitIdColumnInStoreOpeningBalance.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDelar.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editProooc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.updDate.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemCodeColumn.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDriversTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.NullableDate.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRequestLimitProcAgain.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editReguestLimit.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.edittttttttt.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreTRXProcV2.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editTRXX.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.asasasas.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGetAllMoneyTRXProcAfterUpdate.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editMoneyTRXXProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.momo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSafeIdParameterInGetAllMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSafeIdParameterInGetAllMoneyTRXXProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDealerReportProcAndSafeReportProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditGetItemCardProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditAgainGetItemCardProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Edit3GetItemCardProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaaaassaa.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemTypeIdToStoreTRXXProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPaymentMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Print_PaymentMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ChangeRecipetNumberType.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.upProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.uppppProcSafeReport.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditGetPurchaseProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditPurchase_RProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaaaaaaaaaasaaaaa.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTotalBalanceColInPurchase_RProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditSalesProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditSales_RProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemCostColumn.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPaymentMoneyTRXAndCashingMoneyTRXTables.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditPrintPaymentMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Print_CashingMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addToDateColumnInUsersTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeDateTimeType.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.asasasasas.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addFK.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addActionLogTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.removeUserIdInActionLog.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ReAddUserIdInActionLog.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeIPType.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addActionsTbl.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.AddActionsLogProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addFunctionNameColumnInActionLogTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addFunctionNameToActionsLogProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addActionNameArEnCoulmnInActionProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsProcc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsDeletedCoulmnInGetAllJournalsReport.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_All_Journals_TotalsProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_All_Journals_DetailsProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTrial_BalanceLastLevelProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditTrialBalanceProcAddIsLeaf.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemCategoryTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTRXsTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTRXAccountsTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaasdeqeq.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addFKInTRXAccounts.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTrial_BalanceMainRootsProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addMainRootsProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.removeDebitAndCreditFromMainRootsProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.adadadadadad.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditMainRootsProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editAccountLevelColTypeInAccountsTbl.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.awqwqwq.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsTRXTbl.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsTRXTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editTableName.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.reditTbleNames.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.renameee.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEmpsTables.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditTablesNames.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ChangeIsActiveBool.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.asasae.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeBool_ToBool.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEmployeesTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEmployeeNameEnColInEmpsTbl.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.UpdateTble.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEmpNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.removeCostTypeCol.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addManagerIdCol.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.edotDateTime.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_Employees_InformationsProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsEmpActiveCol.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGovernatesTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGovernatesFKToCityTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSomeCoulmmnsInCustomersTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_All_CustomersProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.edddddit.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_All_VendorsProc.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addVendorProcAgain.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCompanyInfoTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCompanyInfoTablee.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editCompanyInfoooTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addInvoicesSettingsTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addNotesToInvoicesSettingsTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEditableAndNonEditableColsInInvoicesSettings.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaaaaaaaaaaaaaaaaaa.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditInvoicesSettingsTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addNotesAndCondtiotionsColsInSalesINVTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAttachmentsTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCountryNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCurrencyNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addUnitNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStorePlaceNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJobNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCityNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBrnacheNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDepNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBankNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSafeNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEmpNo1.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSafeSettingNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRepresentativeNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBankAccountNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDriverNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGovernateNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemCatNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemGroupNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAccountsIdInSafe.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addQualificationNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSkillNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPermissionTypeNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJobTitleNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPublicHolidayNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTaxBracketNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDedNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRewardTypeNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEligibilityTypeNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCustomerClaasificationNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addVendorClaasificationNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCustomerNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addVendorNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCostCenterNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGroupNo.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAssetClassifcationTable.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addLifeCycleTypeColumn.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Resources.Resource.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.Resources.Resource.Ar.resources
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.csproj.GenerateResource.cache
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.csproj.CoreCompileInputs.cache
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\Ar\DataMapping.resources.dll
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.csproj.CopyComplete
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.dll
+D:\C#\ERBVersions\ERP System\DataMapping\obj\Release\DataMapping.pdb
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\SqlServerTypes\x64\msvcr120.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\SqlServerTypes\x86\msvcr120.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\DataMapping.dll.config
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\DataMapping.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\DataMapping.pdb
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Ar\DataMapping.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\EntityFramework.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\EntityFramework.SqlServer.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.Common.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.DataVisualization.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.Design.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.WebDesign.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.WebForms.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.WinForms.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.SqlServer.Types.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Owin.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\System.Web.Helpers.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\System.Web.Mvc.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\System.Web.Razor.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\System.Web.WebPages.Deployment.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\System.Web.WebPages.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\System.Web.WebPages.Razor.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\EnvDTE.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.VisualStudio.Shell.Interop.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\stdole.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.VisualStudio.OLE.Interop.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.MSXML.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\EntityFramework.xml
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\EntityFramework.SqlServer.xml
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.WinForms.xml
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\System.Web.Helpers.xml
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\System.Web.Mvc.xml
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\System.Web.Razor.xml
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\System.Web.WebPages.xml
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\System.Web.WebPages.Deployment.xml
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\System.Web.WebPages.Razor.xml
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\de\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\es\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\it\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\de\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\es\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\it\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\de\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\es\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\it\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\de\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\es\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\it\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.csproj.AssemblyReference.cache
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.bnana.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.InvoiceName.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.AdName.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Print.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.osamsadek.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Salse.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ccc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.xzds.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSchoolTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addKbdTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSchoolProcedure.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addporc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addprocedure.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.sp.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.formateDate.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.del.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaa.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeType.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.add_UserSafeTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsDeletedCoulmn.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addrel.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.delRel.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRelAgain.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.delRelagain.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRel2.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addproc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAmount.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemId.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addUnitNameCoulmn.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeType1.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.updateStoreTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreIdCoulmn.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemId1.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreTRXTypeId.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.delStoreTRXId.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations._as.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.nullableBalance.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBranchesIdCoulmn.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.delBranchesId.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBranchesIdRe.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBrancheIdAndCompanyIdInStoreTRX.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeIsDefaultTypeInUsersBranches.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.sda.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.rellll.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeUserSafeName.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGroupIdCoulmnInStoreTRX.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGroupIdCoulmnInSalesINVDestails.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemGroupIdInProcedure.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.dsasaad.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemGroupCoulmnInStoreTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addddddd.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.MoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeMoenyToMonay.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIdToStorTRX.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreNameCoulmn.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTotalsInMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addParameterDateInMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.reAddParameterInMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.salem.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.suii.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.fixParam.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.fixParamInMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.lastVersionOfFixParameterInMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsDeletedCoulmn1.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTRXTypeId.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations._2225.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBankAccountsTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAddPermissionTables.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeDateToNullableIStoreAddPermission.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.removeStoreId.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreIdAsFoerignKey.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreTRXTypesIdCoulmnInStoreAddPerpession.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemIdCoulmnInStoreAddPermission.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreAddPermissionProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreAddPermissionProcc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Tree.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCashingPermmisionTables.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditCoulmnsNameInStoreCashPermission.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations._011.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.restoreCoulmns.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreCashingProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreCashingProc1.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeActiveToNotActive.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCoulmnsInJournals.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsDetailsTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.AddJournalsDetailsCoulmns.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.AddJournalTypeTabTables.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addForignKeyInJournals.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.moo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.fanta.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ChangeAccountNameToAccountId.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Updateee.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsPROC.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.updateJournalsPROC.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.TabNotNull.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsLeafCoulmnInAccountsTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAccountNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRequestLimitProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBranchIDCoulmnInGetRequetLimitProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.asdght.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProc2.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProc3.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProc4.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProc5.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProcc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProcc2.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsDeletedColumnInSafeSetting.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.sdetghhg.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaaaaaaaaaaa.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.asdef.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.zzzzzzzzz.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.upcolname.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSalesReport.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaaaaasdde.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.AddNotesColumnToJournalDetails.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditNotesColumnToJournalDetails.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeFKInSafeSetting.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSafeTransformTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDeaalerNameInMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ChangeNullableType.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDateTimeNull.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addNotessColumn.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addInventoryTables.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreTRXTypeIdInInventoryDetails.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreOpeningBalanceTables.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGroupIdColumn.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_All_PermissionsProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addUnitIdColumnInStoreOpeningBalance.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDelar.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editProooc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.updDate.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemCodeColumn.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDriversTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.NullableDate.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRequestLimitProcAgain.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editReguestLimit.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.edittttttttt.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreTRXProcV2.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editTRXX.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.asasasas.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGetAllMoneyTRXProcAfterUpdate.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editMoneyTRXXProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.momo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSafeIdParameterInGetAllMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSafeIdParameterInGetAllMoneyTRXXProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDealerReportProcAndSafeReportProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditGetItemCardProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditAgainGetItemCardProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Edit3GetItemCardProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaaaassaa.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemTypeIdToStoreTRXXProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPaymentMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Print_PaymentMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ChangeRecipetNumberType.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.upProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.uppppProcSafeReport.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditGetPurchaseProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditPurchase_RProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaaaaaaaaaasaaaaa.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTotalBalanceColInPurchase_RProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditSalesProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditSales_RProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemCostColumn.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPaymentMoneyTRXAndCashingMoneyTRXTables.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditPrintPaymentMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Print_CashingMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addToDateColumnInUsersTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeDateTimeType.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.asasasasas.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addFK.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addActionLogTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.removeUserIdInActionLog.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ReAddUserIdInActionLog.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeIPType.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addActionsTbl.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.AddActionsLogProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addFunctionNameColumnInActionLogTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addFunctionNameToActionsLogProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addActionNameArEnCoulmnInActionProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsProcc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsDeletedCoulmnInGetAllJournalsReport.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_All_Journals_TotalsProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_All_Journals_DetailsProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTrial_BalanceLastLevelProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditTrialBalanceProcAddIsLeaf.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemCategoryTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTRXsTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTRXAccountsTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaasdeqeq.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addFKInTRXAccounts.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTrial_BalanceMainRootsProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addMainRootsProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.removeDebitAndCreditFromMainRootsProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.adadadadadad.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditMainRootsProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editAccountLevelColTypeInAccountsTbl.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.awqwqwq.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsTRXTbl.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsTRXTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editTableName.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.reditTbleNames.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.renameee.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEmpsTables.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditTablesNames.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ChangeIsActiveBool.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.asasae.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeBool_ToBool.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEmployeesTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEmployeeNameEnColInEmpsTbl.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.UpdateTble.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEmpNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.removeCostTypeCol.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addManagerIdCol.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.edotDateTime.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_Employees_InformationsProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsEmpActiveCol.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGovernatesTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGovernatesFKToCityTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSomeCoulmmnsInCustomersTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_All_CustomersProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.edddddit.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_All_VendorsProc.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addVendorProcAgain.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCompanyInfoTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCompanyInfoTablee.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editCompanyInfoooTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addInvoicesSettingsTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addNotesToInvoicesSettingsTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEditableAndNonEditableColsInInvoicesSettings.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaaaaaaaaaaaaaaaaaa.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditInvoicesSettingsTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addNotesAndCondtiotionsColsInSalesINVTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAttachmentsTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCountryNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCurrencyNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addUnitNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStorePlaceNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJobNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCityNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBrnacheNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDepNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBankNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSafeNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEmpNo1.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSafeSettingNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRepresentativeNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBankAccountNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDriverNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGovernateNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemCatNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemGroupNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAccountsIdInSafe.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addQualificationNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSkillNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPermissionTypeNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJobTitleNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPublicHolidayNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTaxBracketNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDedNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRewardTypeNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEligibilityTypeNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCustomerClaasificationNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addVendorClaasificationNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCustomerNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addVendorNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCostCenterNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGroupNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAssetClassifcationTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addLifeCycleTypeColumn.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemspecificationNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addMainClauseNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSubClauseNo.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.removeDriverCode.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPaymentOrCollectionInAccountsTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAccounts_TypesTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAccounts_TypesIdInAccountsTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRequiredInSafeTransform.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRequiredInAssetClassfication.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDInJournalsDetails.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addColumnAddActionInSystemFunction.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addActivationTbl.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addActivationTable.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Resources.Resource.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Resources.Resource.Ar.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.csproj.GenerateResource.cache
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.csproj.CoreCompileInputs.cache
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\Ar\DataMapping.resources.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.csproj.CopyComplete
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.dll
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.pdb
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editDebitAndCredit.resources
+D:\C#\ERBVersions\ERP System2022-07-03\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editDD.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\SqlServerTypes\x64\msvcr120.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\SqlServerTypes\x86\msvcr120.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\DataMapping.dll.config
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\DataMapping.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\DataMapping.pdb
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Ar\DataMapping.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\EntityFramework.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\EntityFramework.SqlServer.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.Common.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.DataVisualization.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.Design.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.WebDesign.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.WebForms.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.WinForms.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.SqlServer.Types.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Owin.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\System.Web.Helpers.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\System.Web.Mvc.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\System.Web.Razor.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\System.Web.WebPages.Deployment.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\System.Web.WebPages.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\System.Web.WebPages.Razor.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\EnvDTE.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.VisualStudio.Shell.Interop.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\stdole.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.VisualStudio.OLE.Interop.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.MSXML.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\EntityFramework.xml
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\EntityFramework.SqlServer.xml
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\Microsoft.ReportViewer.WinForms.xml
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\System.Web.Helpers.xml
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\System.Web.Mvc.xml
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\System.Web.Razor.xml
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\System.Web.WebPages.xml
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\System.Web.WebPages.Deployment.xml
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\System.Web.WebPages.Razor.xml
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\de\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\es\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\it\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\de\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\es\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\it\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\de\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\es\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\it\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\de\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\es\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\it\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.csproj.AssemblyReference.cache
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.bnana.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.InvoiceName.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.AdName.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Print.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.osamsadek.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Salse.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ccc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.xzds.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSchoolTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addKbdTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSchoolProcedure.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addporc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addprocedure.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.sp.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.formateDate.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.del.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaa.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeType.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.add_UserSafeTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsDeletedCoulmn.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addrel.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.delRel.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRelAgain.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.delRelagain.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRel2.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addproc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAmount.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemId.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addUnitNameCoulmn.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeType1.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.updateStoreTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreIdCoulmn.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemId1.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreTRXTypeId.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.delStoreTRXId.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations._as.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.nullableBalance.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBranchesIdCoulmn.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.delBranchesId.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBranchesIdRe.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBrancheIdAndCompanyIdInStoreTRX.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeIsDefaultTypeInUsersBranches.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.sda.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.rellll.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeUserSafeName.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGroupIdCoulmnInStoreTRX.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGroupIdCoulmnInSalesINVDestails.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemGroupIdInProcedure.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.dsasaad.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemGroupCoulmnInStoreTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addddddd.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.MoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeMoenyToMonay.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIdToStorTRX.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreNameCoulmn.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTotalsInMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addParameterDateInMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.reAddParameterInMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.salem.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.suii.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.fixParam.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.fixParamInMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.lastVersionOfFixParameterInMoneyTRXProcedure.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsDeletedCoulmn1.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTRXTypeId.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations._2225.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBankAccountsTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAddPermissionTables.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeDateToNullableIStoreAddPermission.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.removeStoreId.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreIdAsFoerignKey.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreTRXTypesIdCoulmnInStoreAddPerpession.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemIdCoulmnInStoreAddPermission.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreAddPermissionProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreAddPermissionProcc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Tree.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCashingPermmisionTables.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditCoulmnsNameInStoreCashPermission.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations._011.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.restoreCoulmns.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreCashingProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreCashingProc1.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeActiveToNotActive.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCoulmnsInJournals.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsDetailsTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.AddJournalsDetailsCoulmns.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.AddJournalTypeTabTables.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addForignKeyInJournals.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.moo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.fanta.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ChangeAccountNameToAccountId.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Updateee.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsPROC.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.updateJournalsPROC.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.TabNotNull.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsLeafCoulmnInAccountsTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAccountNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRequestLimitProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBranchIDCoulmnInGetRequetLimitProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.asdght.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProc2.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProc3.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProc4.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProc5.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProcc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.modifyGetAllMoneyTRXProcc2.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsDeletedColumnInSafeSetting.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.sdetghhg.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaaaaaaaaaaa.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.asdef.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.zzzzzzzzz.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.upcolname.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSalesReport.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaaaaasdde.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.AddNotesColumnToJournalDetails.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditNotesColumnToJournalDetails.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeFKInSafeSetting.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSafeTransformTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDeaalerNameInMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ChangeNullableType.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDateTimeNull.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addNotessColumn.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addInventoryTables.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreTRXTypeIdInInventoryDetails.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreOpeningBalanceTables.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGroupIdColumn.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_All_PermissionsProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addUnitIdColumnInStoreOpeningBalance.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDelar.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editProooc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.updDate.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemCodeColumn.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDriversTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.NullableDate.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRequestLimitProcAgain.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editReguestLimit.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.edittttttttt.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStoreTRXProcV2.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editTRXX.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.asasasas.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGetAllMoneyTRXProcAfterUpdate.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editMoneyTRXXProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.momo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSafeIdParameterInGetAllMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSafeIdParameterInGetAllMoneyTRXXProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDealerReportProcAndSafeReportProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditGetItemCardProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditAgainGetItemCardProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Edit3GetItemCardProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaaaassaa.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemTypeIdToStoreTRXXProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPaymentMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Print_PaymentMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ChangeRecipetNumberType.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.upProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.uppppProcSafeReport.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditGetPurchaseProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditPurchase_RProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaaaaaaaaaasaaaaa.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTotalBalanceColInPurchase_RProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditSalesProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditSales_RProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemCostColumn.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPaymentMoneyTRXAndCashingMoneyTRXTables.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditPrintPaymentMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.Print_CashingMoneyTRXProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addToDateColumnInUsersTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeDateTimeType.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.asasasasas.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addFK.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addActionLogTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.removeUserIdInActionLog.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ReAddUserIdInActionLog.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeIPType.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addActionsTbl.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.AddActionsLogProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addFunctionNameColumnInActionLogTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addFunctionNameToActionsLogProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addActionNameArEnCoulmnInActionProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsProcc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsDeletedCoulmnInGetAllJournalsReport.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_All_Journals_TotalsProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_All_Journals_DetailsProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTrial_BalanceLastLevelProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditTrialBalanceProcAddIsLeaf.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemCategoryTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTRXsTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTRXAccountsTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaasdeqeq.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addFKInTRXAccounts.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTrial_BalanceMainRootsProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addMainRootsProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.removeDebitAndCreditFromMainRootsProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.adadadadadad.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditMainRootsProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editAccountLevelColTypeInAccountsTbl.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.awqwqwq.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsTRXTbl.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJournalsTRXTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editTableName.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.reditTbleNames.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.renameee.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEmpsTables.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditTablesNames.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ChangeIsActiveBool.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.asasae.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeBool_ToBool.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEmployeesTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEmployeeNameEnColInEmpsTbl.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.UpdateTble.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEmpNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.removeCostTypeCol.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addManagerIdCol.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.edotDateTime.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_Employees_InformationsProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addIsEmpActiveCol.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGovernatesTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGovernatesFKToCityTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSomeCoulmmnsInCustomersTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_All_CustomersProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.edddddit.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGet_All_VendorsProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addVendorProcAgain.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCompanyInfoTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCompanyInfoTablee.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editCompanyInfoooTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addInvoicesSettingsTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addNotesToInvoicesSettingsTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEditableAndNonEditableColsInInvoicesSettings.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.aaaaaaaaaaaaaaaaaaaa.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.EditInvoicesSettingsTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addNotesAndCondtiotionsColsInSalesINVTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAttachmentsTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCountryNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCurrencyNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addUnitNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addStorePlaceNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJobNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCityNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBrnacheNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDepNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBankNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSafeNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEmpNo1.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSafeSettingNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRepresentativeNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addBankAccountNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDriverNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGovernateNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemCatNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemGroupNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAccountsIdInSafe.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addQualificationNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSkillNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPermissionTypeNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addJobTitleNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPublicHolidayNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addTaxBracketNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDedNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRewardTypeNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addEligibilityTypeNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCustomerClaasificationNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addVendorClaasificationNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCustomerNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addVendorNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCostCenterNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addGroupNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAssetClassifcationTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addLifeCycleTypeColumn.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addItemspecificationNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addMainClauseNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addSubClauseNo.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.removeDriverCode.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPaymentOrCollectionInAccountsTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAccounts_TypesTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addAccounts_TypesIdInAccountsTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRequiredInSafeTransform.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addRequiredInAssetClassfication.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addDInJournalsDetails.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addColumnAddActionInSystemFunction.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addActivationTbl.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addActivationTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editDebitAndCredit.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.editDD.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Resources.Resource.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Resources.Resource.Ar.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.csproj.GenerateResource.cache
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.csproj.CoreCompileInputs.cache
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\Ar\DataMapping.resources.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.csproj.CopyComplete
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.dll
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.pdb
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeRefIdType.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCurrencyExchangeRatesTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCashSupplyOrderTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.ChangeFromNameTypeInCashSupplyOrder.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCashSupplyPermmisionTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCashSupplyPermmisionTablee.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPrintCashSupplyPermmisionProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.changeCashSupplyOrderValueTextValue.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addPrintCashSupplyOrderProc.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCashDisbursementOrderTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.addCashDisbursementPermmisionTable.resources
+D:\C#\ERBVersions\ERP System2022-08-09\ERP System\DataMapping\obj\Release\DataMapping.Migrations.dropTable.resources
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\SqlServerTypes\x64\msvcr120.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\SqlServerTypes\x86\msvcr120.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\DataMapping.dll.config
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\DataMapping.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\DataMapping.pdb
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Ar\DataMapping.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\EntityFramework.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\EntityFramework.SqlServer.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.ReportViewer.Common.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.ReportViewer.DataVisualization.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.ReportViewer.Design.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.ReportViewer.WebDesign.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.ReportViewer.WebForms.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.ReportViewer.WinForms.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.SqlServer.Types.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Owin.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\System.Web.Helpers.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\System.Web.Mvc.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\System.Web.Razor.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\System.Web.WebPages.Deployment.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\System.Web.WebPages.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\System.Web.WebPages.Razor.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\EnvDTE.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.VisualStudio.Shell.Interop.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\stdole.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.VisualStudio.OLE.Interop.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.MSXML.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\EntityFramework.xml
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\EntityFramework.SqlServer.xml
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\Microsoft.ReportViewer.WinForms.xml
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\System.Web.Helpers.xml
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\System.Web.Mvc.xml
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\System.Web.Razor.xml
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\System.Web.WebPages.xml
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\System.Web.WebPages.Deployment.xml
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\System.Web.WebPages.Razor.xml
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\de\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\es\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\it\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\de\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\es\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\it\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\de\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\es\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\it\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\de\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\es\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\fr\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\it\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\ja\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\ko\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\pt\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\ru\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\obj\Release\DataMapping.csproj.AssemblyReference.cache
+D:\C#\StoresSystem\Store System\DataMapping\obj\Release\DataMapping.Resources.Resource.resources
+D:\C#\StoresSystem\Store System\DataMapping\obj\Release\DataMapping.Resources.Resource.Ar.resources
+D:\C#\StoresSystem\Store System\DataMapping\obj\Release\DataMapping.csproj.GenerateResource.cache
+D:\C#\StoresSystem\Store System\DataMapping\obj\Release\DataMapping.csproj.CoreCompileInputs.cache
+D:\C#\StoresSystem\Store System\DataMapping\obj\Release\Ar\DataMapping.resources.dll
+D:\C#\StoresSystem\Store System\DataMapping\obj\Release\DataMapping.csproj.CopyComplete
+D:\C#\StoresSystem\Store System\DataMapping\obj\Release\DataMapping.dll
+D:\C#\StoresSystem\Store System\DataMapping\obj\Release\DataMapping.pdb
+D:\C#\StoresSystem\Store System\DataMapping\obj\Release\DataMapping.Migrations.editActivationTable.resources
+D:\C#\StoresSystem\Store System\DataMapping\obj\Release\DataMapping.Migrations.addInternalDepartmentsTable.resources
+D:\C#\StoresSystem\Store System\DataMapping\obj\Release\DataMapping.Migrations.addFourTables.resources
+D:\C#\StoresSystem\Store System\DataMapping\obj\Release\DataMapping.Migrations.addThreeTables.resources
+D:\C#\StoresSystem\Store System\DataMapping\obj\Release\DataMapping.Migrations.addThreeTabless.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\SqlServerTypes\x64\msvcr120.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\SqlServerTypes\x86\msvcr120.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\DataMapping.dll.config
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\DataMapping.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\DataMapping.pdb
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Ar\DataMapping.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\EntityFramework.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\EntityFramework.SqlServer.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.AspNet.Identity.Core.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.ReportViewer.Common.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.ReportViewer.DataVisualization.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.ReportViewer.Design.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.ReportViewer.WebDesign.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.ReportViewer.WebForms.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.ReportViewer.WinForms.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.SqlServer.Types.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.Web.Infrastructure.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Owin.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\System.Web.Helpers.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\System.Web.Mvc.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\System.Web.Razor.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\System.Web.WebPages.Deployment.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\System.Web.WebPages.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\System.Web.WebPages.Razor.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\EnvDTE.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.VisualStudio.Shell.Interop.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\stdole.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.VisualStudio.OLE.Interop.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.VisualStudio.TextManager.Interop.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.MSXML.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\EntityFramework.xml
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\EntityFramework.SqlServer.xml
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.AspNet.Identity.Core.xml
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\Microsoft.ReportViewer.WinForms.xml
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\System.Web.Helpers.xml
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\System.Web.Mvc.xml
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\System.Web.Razor.xml
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\System.Web.WebPages.xml
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\System.Web.WebPages.Deployment.xml
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\System.Web.WebPages.Razor.xml
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\de\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\es\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\fr\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\it\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\ja\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\ko\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\pt\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\ru\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\de\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\es\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\fr\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\it\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\ja\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\ko\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\pt\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\ru\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\de\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\es\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\it\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\de\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\es\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\fr\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\it\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\ja\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\ko\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\pt\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\ru\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.csproj.AssemblyReference.cache
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.CreateDB.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.editDB.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.tt.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.tteesstt.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.removeTest.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addStationsTable.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.EditStationsTable.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.AddStationCode.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.AddCarsTable.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.EditCarsTable.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addFiveTables.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addSuppliers_Tbl.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addColor_Tbl.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addCarNo.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addEquipmentsTable.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addManagmentsTable.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addTwoTable.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addDriversTable.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addLicenseTypesTable.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.editLicenseTypesTable.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addStationTRXTypesTable.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addGasolineTypesTable.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addStationsTrxTable.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addGet_Tank_Statment_ResultProc.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.edirGet_Tank_Statment_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addMachineTypeTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addEQUTypeCol.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addCarDriversTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addColSerial.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addCarDriversCompanionsTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.editNameCarDriversCompanionsTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.adsdefre.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addGet_Car_ReceiptProc.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addLastLoginDate.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addFiveProc.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addDayNameCol.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addDaysTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addMaintenanceTrxTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addMaintenanceTrxDTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addMaintenanceTrxDTbll.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addCheckTypesTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addMaintenanceCardProc.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.editProc.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addTowTables.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addPrintChangeOliProc.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addProcedurePrintStationsTrxInAndOut_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Migrations.addProcedurePrintStationsTrxInAndOut_Result1.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Resources.Resource.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.Resources.Resource.Ar.resources
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.csproj.GenerateResource.cache
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.csproj.CoreCompileInputs.cache
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\Ar\DataMapping.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.csproj.CopyComplete
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.dll
+E:\Work\ERB-Maintanence\Maintanence2022-11-09\Maintanence\DataMapping\obj\Release\DataMapping.pdb
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\SqlServerTypes\x64\msvcr120.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\SqlServerTypes\x86\msvcr120.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\DataMapping.dll.config
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\DataMapping.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\DataMapping.pdb
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Ar\DataMapping.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\EntityFramework.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\EntityFramework.SqlServer.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.AspNet.Identity.Core.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.ReportViewer.Common.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.ReportViewer.DataVisualization.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.ReportViewer.Design.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.ReportViewer.WebDesign.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.ReportViewer.WebForms.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.ReportViewer.WinForms.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.SqlServer.Types.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.Web.Infrastructure.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Owin.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\System.Web.Helpers.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\System.Web.Mvc.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\System.Web.Razor.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\System.Web.WebPages.Deployment.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\System.Web.WebPages.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\System.Web.WebPages.Razor.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\EnvDTE.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.VisualStudio.Shell.Interop.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\stdole.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.VisualStudio.OLE.Interop.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.VisualStudio.TextManager.Interop.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.MSXML.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\EntityFramework.xml
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\EntityFramework.SqlServer.xml
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.AspNet.Identity.Core.xml
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\Microsoft.ReportViewer.WinForms.xml
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\System.Web.Helpers.xml
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\System.Web.Mvc.xml
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\System.Web.Razor.xml
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\System.Web.WebPages.xml
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\System.Web.WebPages.Deployment.xml
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\System.Web.WebPages.Razor.xml
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\de\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\es\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\fr\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\it\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\ja\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\ko\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\pt\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\ru\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\de\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\es\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\fr\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\it\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\ja\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\ko\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\pt\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\ru\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\de\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\es\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\it\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\de\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\es\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\fr\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\it\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\ja\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\ko\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\pt\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\ru\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\bin\Release\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.csproj.AssemblyReference.cache
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.CreateDB.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.editDB.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.tt.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.tteesstt.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.removeTest.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addStationsTable.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditStationsTable.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.AddStationCode.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.AddCarsTable.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditCarsTable.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addFiveTables.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addSuppliers_Tbl.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addColor_Tbl.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addCarNo.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addEquipmentsTable.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addManagmentsTable.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addTwoTable.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addDriversTable.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addLicenseTypesTable.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.editLicenseTypesTable.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addStationTRXTypesTable.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addGasolineTypesTable.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addStationsTrxTable.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addGet_Tank_Statment_ResultProc.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.edirGet_Tank_Statment_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addMachineTypeTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addEQUTypeCol.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addCarDriversTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addColSerial.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addCarDriversCompanionsTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.editNameCarDriversCompanionsTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.adsdefre.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addGet_Car_ReceiptProc.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addLastLoginDate.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addFiveProc.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addDayNameCol.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addDaysTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addMaintenanceTrxTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addMaintenanceTrxDTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addMaintenanceTrxDTbll.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addCheckTypesTbl.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addMaintenanceCardProc.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.editProc.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addTowTables.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addPrintChangeOliProc.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addProcedurePrintStationsTrxInAndOut_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addProcedurePrintStationsTrxInAndOut_Result1.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addcoloumnVendoridInEntityStationsTrx.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addTwoColumnInServicesEntityDriverIdAndDepartmentId.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.editinStationTRXentity.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.editinStationTRXentity1.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.editinStationTRXentity2.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditinDarDriverdTypeColumnTime.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditinDarDriverdTypeColumnTime1.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditinDarDriverdTypeColumnTime2.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditinDarDriverdTypeColumnTime21.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditinDarDriverdTypeColumnTime3.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditinDarDriverdTypeColumnTime4.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditinDarDriverdTypeColumnTime31.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditinDarDriverdTypeColumnTime5.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.coloumnsInCompanyInfoEntity.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.coloumnsInCompanyInfoEntity2.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.ChangeDataBases.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.ChangeDataBases1.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.ChangeDataBases2.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.AddColumnItem_OldInItemsEntity.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.AddColumnItem_OldInItemsEntit.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.AddColumnLicenseTypeId_OldInLicenseTypeEntity.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.AddColumnDriverID_OldInDriverEntity.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addcolumnInCarEntity.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addColumnTypeInEntityCars.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.editColumnPanalNoInEntityCars.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.AddProcedurGetCarsAndEquipments_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.AddColumnStationTRXID_OldInStationTRX.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.AddProcedurGetStationsTRXAndTRXOut_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.AddcoloumninentityBranches.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addProcedureCarStatus_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.Last.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Resources.Resource.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Resources.Resource.Ar.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.csproj.GenerateResource.cache
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.csproj.CoreCompileInputs.cache
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\Ar\DataMapping.resources.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.csproj.CopyComplete
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.dll
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.pdb
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditInColumnOldStationTrx.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedureGetDrivers_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedureGetDrivers_Result2.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.editColumnNameInTypeToCarTypeINCarAndStaionTrx.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addProcedureGetCarDriversDetailsInCarDelivery.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditTypesProcedureGetCarDriversDetailsInCarDelivery.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditTypesProcedureGetCarDriversDetailsInCarDelivery1.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditTypesProcedureGetCarDriversDetailsInCarDelivery3.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditTypesProcedureGetCarDriversDetailsInCarDelivery4.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addProcedureSelectCar_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addProcedureSelectCar_Result2.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addProcedureSelectCar_Result3.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addGetStationsTRXAndTRXOut2.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addProcedureSelectCar_Result6.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.editProcedureGet_Tank_Statment.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.editProcedureGet_Tank_Statment2.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addProcedureGetVendorPrint_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addProcedureCarDriverPrint_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addProcedureCarDriverPrint_Result2.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addProcedureCarDriverPrint_Result3.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addColumnSupervisorManagerInCompanyinfo.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addProcedureStationsTrxPrint_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditProcedureStationsTrxPrint3.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditProcedureStationsTrxPrint4.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditProcedureStationsTrxPrint5.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addProcedureStationTrxALLDataIndex_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addColumnIdInServiceTabel.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addColumnIdInServiceTabel1.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addColumnIdInServiceTabel2.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addColumnIdInServiceTabel3.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addColumnIdInServiceTabel5.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addProcedureServicesTrxPrint_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditProcedurCarStatusResult.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditProcedurCarStatusResult2.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditProcedurCarStatusResult3.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditProcedurCarStationTrxAllDataIndex.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.EditProcedurCarModelNo_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addYearsEntity.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addYearsEntity1.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addYearIdInCompanyInfo.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addinvoicesSettingsEntity.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addinvoicesSettingsEntity2.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addinvoicesSettingsEntity3.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.removeinvoicesSettingsEntity.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addinvoicesSettingsEntity4.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addinvoicesSettingsEntity5.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedurStationTrxDESC_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedureGetAllCarsAndEquipments_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedureGetAllCarsAndEquipments_Result2.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedureGetAllCarsAndEquipments_Result3.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedureGetAllCarsAndEquipments_Result4.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedureGetAllCarsAndEquipments_Result5.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.RemoveprocedureGetAllCarsAndEquipments_Result.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedureGetAllCarsAndEquipments_ResultlAST.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedureGetAllCarsAndEquipments_ResultlAST1.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedureGetAllCarsAndEquipmentsCarStatus.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedureGetAllCarsAndEquipmentsCarStatus1.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedureGetAllCarsAndEquipmentsCarStatus2.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedureGetAllCarsAndEquipmentsCarStatus3.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedureGetAllCarsAndEquipmentsCarStatus4.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addprocedureGetAllCarsAndEquipmentsCarStatus5.resources
+E:\Work\ERB-Maintanence\Maintanence2023-01-24\DataMapping\obj\Release\DataMapping.Migrations.addcolumnDriveridInStationTrxOutEntity.resources

@@ -1,0 +1,215 @@
+﻿@model DataMapping.Entites.Users
+
+@{
+    ViewBag.Title = DataMapping.Resources.Resource.Users;
+    var ActiveOrNot = new SelectList(
+                new List<SelectListItem> {
+
+            new SelectListItem { Text="نشط", Value = "true"},
+            new SelectListItem { Text="غير نشط", Value = "false"},
+
+                    });
+    ViewBag.Active = ActiveOrNot;
+}
+
+@using (Html.BeginForm("AddOrEdit", "Users", FormMethod.Post, new { @class = "form-horizontal", @id = "ModalForm" }))
+
+{
+    <div class="row heder_title">
+        <div class="col-6">
+            <h3 class="blockquote">@DataMapping.Resources.Resource.Users</h3>
+        </div>
+        <div class="col-6 text-left">
+            <button type="submit" class="btn btn-outline-info" style="height:32px;" id="submit">
+                @DataMapping.Resources.Resource.save <i class="fa fa-save" aria-hidden="true"></i>
+            </button>
+
+            <a href="~/Users/Index" class="btn btn-icon icon-left btn-outline-secondary">
+                رجوع <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card-layout">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label>@DataMapping.Resources.Resource.LoginName</label>
+
+                        @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label>@DataMapping.Resources.Resource.EmployeeName</label>
+
+                        @Html.DropDownList("EmployeeId", null, " -------- ", htmlAttributes: new { @id = "EmployeeId", @class = "select2 form-control" })
+                        @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>@DataMapping.Resources.Resource.DateCreated</label>
+
+
+                        @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @id = "CreateDate", @class = "DateChange form-control", Value = ViewBag.DateNow, type = "date", @data_date = "", @data_date_format = "DD-MM-YYYY" } })
+                        @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label>@DataMapping.Resources.Resource.UserName</label>
+
+                        @Html.EditorFor(model => model.ArbDescription, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ArbDescription, "", new { @class = "text-danger" })
+                    </div>
+                    @*<div class="form-group col-md-6">
+                            <label>@DataMapping.Resources.Resource.EngDescription</label>
+                            @Html.EditorFor(model => model.EngDescription, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.EngDescription, "", new { @class = "text-danger" })
+                        </div>*@
+                    <div class="form-group col-md-4">
+                        <label>@DataMapping.Resources.Resource.ToDate</label>
+                        @Html.EditorFor(model => model.ToDate, new { htmlAttributes = new { @id = "ToDate", @class = "form-control", type = "date", @data_date = "", @data_date_format = "DD-MM-YYYY" } })
+                        @Html.ValidationMessageFor(model => model.ToDate, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>@DataMapping.Resources.Resource.Password</label>
+
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-4">
+                        <label>مجموعة المستخدم</label>
+
+                        @Html.DropDownList("GroupId", null, " اختر المجموعة ", htmlAttributes: new { @id = "GroupId", @class = "select2 form-control" })
+                        @*@Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })*@
+                        <p class="text-danger" id="GroupErr">اختر مجموعة المستخدم</p>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>@DataMapping.Resources.Resource.Image</label>
+
+                        <input type="file" id="myImage" name="file" title="Upload Image Branch" class="form-control-file">
+                    </div>
+                    <div class="col-md-4" style="margin-top: 32px;">
+                        <div class="form-group mycheckboxdiv">
+                            <label>
+                                @DataMapping.Resources.Resource.IsActive
+                                @Html.CheckBox("IsActive", htmlAttributes: new { @class = "pull-right mycheckbox" })
+                                @*@Html.DropDownList("Active", null, " اختر ", htmlAttributes: new { @id = "CountryId", @class = "select2 form-control" })*@
+
+                                @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+}
+@*</div>*@
+
+@section ModelPopup{
+
+}
+@section JavaScriptSection{
+    <script src="~/Scripts/DataPicker/jquery-ui.min.js"></script>
+    @*datepicker Osama Sadek*@
+    <link href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/start/jquery-ui.css" rel="stylesheet" />
+
+    <link href="~/Scripts/DataPicker/jquery-ui.min.css" rel="stylesheet" />
+    <script>
+
+        //$(document).ready(function () {
+        //    $('.DateChange').datepicker({
+        //        format: 'dd/MM/yyyy',
+        //        changeMonth: true,
+        //        changeYear: true
+        //    });
+        //});
+        //jQuery.validator.addMethod(
+        //    "dateITA",
+        //    function (value, element) {
+        //        var check = false;
+        //        var re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+        //        if (re.test(value)) {
+        //            var adata = value.split('/');
+        //            var gg = parseInt(adata[0], 10);
+        //            var mm = parseInt(adata[1], 10);
+        //            var aaaa = parseInt(adata[2], 10);
+        //            var xdata = new Date(aaaa, mm - 1, gg);
+        //            if ((xdata.getFullYear() == aaaa)
+        //                && (xdata.getMonth() == mm - 1)
+        //                && (xdata.getDate() == gg))
+        //                check = true;
+        //            else
+        //                check = false;
+        //        } else
+        //            check = false;
+        //        return this.optional(element) || check;
+        //    },
+        //    "Please enter a correct date"
+        //);
+        //jQuery.validator.methods["date"] = function (value, element) { return true; }
+        $(document).ready(function () {
+
+
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#CreateDate").attr("value", today);
+        });
+
+        $(document).ready(function () {
+
+
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#ToDate").attr("value", today);
+        });
+        $(document).ready(function () {
+            $("#submit").prop('disabled', true);
+
+        });
+        $("#GroupId").change(function () {
+            if (document.getElementById("GroupId").selectedIndex == null || document.getElementById("GroupId").selectedIndex == 0) {
+                $("#GroupErr").show();
+
+                $("#submit").prop('disabled', true);
+
+            }
+            else {
+                $("#GroupErr").hide();
+                $("#submit").prop('disabled', false);
+            }
+
+        })
+
+    </script>
+    /**/
+}

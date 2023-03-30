@@ -1,0 +1,72 @@
+﻿@model DataMapping.Entites.EmployeeSecurityRoles
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>EmployeeSecurityRoles</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SystemFunctionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SystemFunctionId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CanView)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CanView)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CanAdd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CanAdd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CanEdit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CanEdit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CanDelete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CanDelete)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

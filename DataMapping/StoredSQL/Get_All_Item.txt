@@ -1,0 +1,18 @@
+USE [ERPSystemDB]
+GO
+/****** Object:  StoredProcedure [dbo].[Get_All_Item]    Script Date: 7/23/2021 5:58:42 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[Get_All_Item]
+
+as 
+begin
+SELECT        GL.Item.Id, GL.Item.Code, GL.Item.ItemTypeId, GL.Item.ItemGroupId, GL.Item.ItemGategoriesId, GL.Item.VendorId, GL.Item.StoreId, GL.Item.ItemCost, GL.Item.ItemPrice1, GL.Item.ItemPrice2, GL.Item.ItemPrice3, GL.Item.UintID, 
+                         GL.Item.ItemTax, GL.Item.Descripation, GL.Item.Notes, GL.Item.IsDeleted, GL.Item.Img, GL.Item.ExchangecontrolId, GL.Item.ItemNameAr, GL.Item.ItemNameEn, GL.ItemCategories.ItemCatName, 
+                         GL.Itemgroups.ItemgroupsName
+FROM            GL.Item INNER JOIN
+                         GL.Itemgroups ON GL.Item.ItemGroupId = GL.Itemgroups.Id INNER JOIN
+                         GL.ItemCategories ON GL.Item.ItemGategoriesId = GL.ItemCategories.Id
+end

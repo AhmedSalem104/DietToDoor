@@ -1,0 +1,132 @@
+﻿@model DataMapping.Entites.ActivationTbl
+@{
+    ViewBag.Title = "Activation";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>التفعيل</title>
+    <link rel="stylesheet" href="~/Design/assets/css/app.min.css">
+    <link rel="stylesheet" href="~/Design/assets/css/style.css">
+    <link rel="stylesheet" href="~/Design/assets/components.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+</head>
+<body dir="rtl">
+    <div id="app">
+        <div class="limiter">
+            @*<img src="~/Design/assets/img/istockphoto-1269648167-1024x1024.jpg" />*@
+            @*<img src="~/Design/assets/img/istockphoto-1227651712-1024x1024.jpg" />*@
+            @*<img src="~/Design/assets/img/istockphoto-188052258-1024x1024.jpg" />*@
+            <div class="container-login100" style="background-image: url('../../Design/assets/img/istockphoto-1269648167-1024x1024.jpg'); ">
+                <div class="section">
+                    <div class="container mt-8">
+
+                        <!-- Section: Design Block -->
+                        <section class="text-center">
+                            <!-- Background image -->
+                            <!-- Background image -->
+
+                            <div class="card mx-4 mx-md-5 shadow-5-strong" style=" margin-top: 150px;
+                                  background: hsl(0deg 0% 100% / 89%);
+                                  backdrop-filter: blur(30px); ">
+                                <div class="card-body py-5 px-md-5">
+
+                                    <div class="row d-flex justify-content-center">
+
+                                        <div class="col-lg-8">
+                                            <h5 style="color:red;font-weight:bold;"> هذه النسخة غير مفعلة برجاء التفعيل...!</h5> <h5 style="color: red; font-weight: bold;">  This Version not activated please active it...!! </h5>
+                                            <hr />
+                                            <label class=" col-form-label" style="font-size:large; ">
+                                                رقم النسخة  Version No <span style="font-weight:bold;color:black;">@Session["Mac"]</span>
+                                            </label>
+
+
+                                            @using (Html.BeginForm("Activation", "Login", FormMethod.Post, new { @class = "form-horizontal", @id = "ModalForm" }))
+                                            {
+                                                <div class="row heder_title">
+                                                    <div class="col-6" style="display: flex;font-weight:bold;color:crimson; justify-content: space-between;">
+                                                    </div>
+                                                    <div class="col-6 text-left">
+
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="card-layout">
+
+                                                    <div class="row ">
+
+
+                                                    </div>
+                                                    <div class="row d-flex justify-content-center" id="activNo">
+                                                        <label class="col-sm-2 col-form-label control-label">
+                                                            رقم التفعيل
+                                                        </label>
+                                                        <div class="col-sm-4">
+                                                            @Html.EditorFor(model => model.serialKey, new { htmlAttributes = new { @class = "form-control" } })
+                                                        </div>
+                                                        <button type="submit" class="btn btn-icon icon-left btn-info" id="submit">
+                                                            تفعيل
+                                                        </button>
+                                                    </div>
+
+
+                                                </div>
+
+
+                                            }<br>
+                                            <hr />
+
+                                            @using (Html.BeginForm("ActivationTrial", "Login", FormMethod.Post, new { @class = "form-horizontal", @id = "ModalForm", @style = "" }))
+
+                                            {
+                                                <div class="  text-center">
+
+                                                 
+                                                    <a href="~/Login/Index" class="btn btn-icon icon-left btn-danger">
+                                                        رجوع <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+
+                                            }
+                                            <p style="color:beige;font-weight:bold;">@Session["SerialNotValid"]</p>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Section: Design Block -->
+
+
+
+    <script src="~/Design/assets/js/app.min.js"></script>
+    <script src="~/Design/assets/bundles/apexcharts/apexcharts.min.js"></script>
+    <script src="~/Design/assets/js/page/index.js"></script>
+    <script src="~/Design/assets/js/scripts.js"></script>
+    <script src="~/Design/assets/js/custom.js"></script>
+    <script src="~/Scripts/DataPicker/jquery-ui.min.js"></script>
+    @*datepicker Osama Sadek*@
+    <link href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/start/jquery-ui.css" rel="stylesheet" />
+
+    <link href="~/Scripts/DataPicker/jquery-ui.min.css" rel="stylesheet" />
+
+
+  
+</body>
+</html>
+

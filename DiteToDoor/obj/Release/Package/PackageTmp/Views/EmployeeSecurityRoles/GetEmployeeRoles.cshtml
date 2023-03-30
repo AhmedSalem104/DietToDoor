@@ -1,0 +1,68 @@
+﻿@model IEnumerable<DataMapping.Entites.EmployeeSecurityRoles>
+<script>
+    function SubmitForm() {
+        var emid = $("#EmployeeId").val();
+        $("#EmployeeIds").val($("#EmployeeId").val());
+        //alert($("#EmployeeNationalIds").val());
+        //$("#rolesForm").attr('target', '_self');
+        $("#employeeRolesForm").submit();
+    }
+</script>
+
+<form id="employeeRolesForm" action="@Url.Action("GetEmployeeRoles")" method="post" enctype="multipart/form-data">
+    @Html.Hidden("EmployeeIds")
+    <table class="table table-striped table-hover table-bordered">
+
+        <thead>
+            <tr>
+                <th> اسم الصفحة |  امكانية رؤية او حذف الكل <input type="checkbox" /> </th>
+                <th>امكانية رؤية الصفحة</th>
+                <th>امكانية الإضافة</th>
+                <th>امكانية التعديل</th>
+                <th>امكانية الحذف</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.SystemFunction.NameInArabic</td>
+                    @{
+                        string CanView = item.CanView ? "checked" : "";
+                        string CanAdd = item.CanAdd ? "checked" : "";
+                        string CanEdit = item.CanEdit ? "checked" : "";
+                        string CanDelete = item.CanDelete ? "checked" : "";
+                    }
+                    <td class="text-center">
+                        <input type="checkbox" name="CanView" id="@string.Format("CanView" + item.Id)" class="custom-checkbox" value="@item.Id" @CanView />
+                    </td>
+                    <td class="text-center">
+                        <input type="checkbox" name="CanAdd" id="@string.Format("CanAdd" + item.Id)" class="custom-checkbox" value="@item.Id" @CanAdd />
+                    </td>
+                    <td class="text-center">
+                        <input type="checkbox" name="CanEdit" id="@string.Format("CanEdit" + item.Id)" class="custom-checkbox" value="@item.Id" @CanEdit />
+                    </td>
+                    <td class="text-center">
+                        <input type="checkbox" name="CanDelete" id="@string.Format("CanDelete" + item.Id)" class="custom-checkbox" value="@item.Id" @CanDelete />
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</form>
+
+
+<script type="text/javascript">
+    $(function () {
+        $('th > :checkbox').click(function () {
+            $(this).closest('table')
+                .find('td > :checkbox')
+                .attr('checked', $(this).is(':checked'));
+        });
+    });
+</script>
+
+

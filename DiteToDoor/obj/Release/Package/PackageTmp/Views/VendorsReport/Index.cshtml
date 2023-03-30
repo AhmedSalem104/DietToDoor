@@ -1,0 +1,267 @@
+﻿@*@using DataMapping.Entites*@
+@model IEnumerable<DataMapping.Entites.Vendor>
+@{
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<style>
+
+    .lds-ellipsis {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin-right: 560px;
+    }
+
+        .lds-ellipsis div {
+            position: absolute;
+            top: 33px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #ff6a00;
+            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 0);
+        }
+
+            .lds-ellipsis div:nth-child(1) {
+                left: 8px;
+                animation: lds-ellipsis1 0.4s infinite;
+            }
+
+            .lds-ellipsis div:nth-child(2) {
+                left: 8px;
+                animation: lds-ellipsis2 0.4s infinite;
+            }
+
+            .lds-ellipsis div:nth-child(3) {
+                left: 32px;
+                animation: lds-ellipsis2 0.4s infinite;
+            }
+
+            .lds-ellipsis div:nth-child(4) {
+                left: 56px;
+                animation: lds-ellipsis3 0.4s infinite;
+            }
+
+    @@keyframes lds-ellipsis1 {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @@keyframes lds-ellipsis3 {
+        0% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(0);
+        }
+    }
+
+    @@keyframes lds-ellipsis2 {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        100% {
+            transform: translate(24px, 0);
+        }
+    }
+
+    /* .spinner-grow {
+        animation-duration: 1s;
+
+    }*/
+
+</style>
+<div class="row heder_title">
+    <div class="col-12">
+        <h3 class="blockquote"> تقرير الموردين</h3>
+    </div>
+
+</div>
+
+<div class="row" style="margin-bottom: 15px;width:3000px">
+
+
+    <div class="col-lg-1" style="">
+        @DataMapping.Resources.Resource.Vendor:@Html.DropDownList("VendorId", null, "اختيار الكل ", htmlAttributes: new { @class = "form-control", @Id = "VendorId" })
+
+    </div>
+
+    <div class="col-lg-1.5" style="margin-left: 3px">
+        <input type="submit" id="submit" value="@DataMapping.Resources.Resource.Show" style="margin-top: 18px; margin-right: 2px; height:fit-content" class="btn btn-primary" />
+
+    </div>
+
+    <div class="col-lg-1.5" style=" margin-top: 18px;">
+        @using (Html.BeginForm("PrintDataRDLC", "VendorsReport"))
+        {
+
+            <button id="Print" formtarget="_blank" type="submit" class="submitDis btn btn-outline-secondary" style="background-color: white; color: darkgreen; border-width: 2px; font-weight: bold; ">
+
+                @DataMapping.Resources.Resource.Print  <i class="fa fa-print" aria-hidden="true"></i>
+
+            </button>
+        }
+
+    </div>
+
+</div>
+
+
+
+
+<div style="margin-bottom:40px;" class="container">
+
+</div>
+
+
+<div style="height:110px;" id="DivSpiners"></div>
+
+
+<div style="text-align:center;" id="spiners" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+<div class="row">
+    <div class="col-12">
+        <div class="table-responsive">
+            <table id="DisplayData" class="table table-striped table-hover table-bordered" @*id="save-stage"*@ style="width:100%;">
+                <thead style="width:100%;">
+                    <tr style="text-align:center;">
+                        <th>
+                            رقم المورد
+                        </th>
+                        <th>
+                            اسم المورد
+                        </th>
+
+                        <th>
+                            هاتف 1
+                        </th>
+                        <th>
+                            هاتف 2
+                        </th>
+                        <th>
+                            الفاكس
+                        </th>
+                        <th>
+                            العنوان
+                        </th>
+
+                        <th>
+                            طباعة
+                        </th>
+
+
+                        @*<th> @DataMapping.Resources.Resource.PurchaseOrderNo</th>
+                            <th> @DataMapping.Resources.Resource.PurchasePaperNo</th>
+                            <th> @DataMapping.Resources.Resource.Branches</th>*@
+
+                        @*<th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                            <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                            <th class="th_width_5">@DataMapping.Resources.Resource.Print</th>*@
+                    </tr>
+                </thead>
+                <tbody class="tbody" style="width:100%;">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section ModelPopup{}
+
+
+@section JavaScriptSection{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#spiners").hide();
+            $("#DivSpiners").hide();
+        });
+        $(document).ready(function () {
+            $("#Print").prop("disabled", true);
+            $("#submit").click(function () {
+                $("#Print").prop("disabled", false);
+
+            })
+        })
+    </script>
+
+
+    <script type="text/javascript">
+    //$(document).ready(function () {
+
+
+    //    var date = new Date();
+
+    //    var day = date.getDate();
+    //    var month = date.getMonth() + 1;
+    //    var year = date.getFullYear();
+
+    //    if (month < 10) month = "0" + month;
+    //    if (day < 10) day = "0" + day;
+
+    //    var today = year + "-" + month + "-" + day;
+    //    $("#FromDate").attr("value", today);
+
+    //});
+    //$(document).ready(function () {
+
+
+    //    var date = new Date();
+
+    //    var day = date.getDate();
+    //    var month = date.getMonth() + 1;
+    //    var year = date.getFullYear();
+
+    //    if (month < 10) month = "0" + month;
+    //    if (day < 10) day = "0" + day;
+
+    //    var today = year + "-" + month + "-" + day;
+    //    $("#ToDate").attr("value", today);
+
+    //});
+    $("#submit").click(function () {
+        $("#DisplayData").empty();
+            GetData();
+        });
+
+        function GetData() {
+            $("#spiners").show();
+            $("#DivSpiners").show();
+            $.ajax({
+                url: '@Url.Action("Filter", "VendorsReport")',
+                method: "Get",
+                //contentType: "application/json;charset=utf-8",
+                dataType: "Html",
+                data: {
+
+                    VendorId: $("#VendorId").val(),
+
+                },
+                success: function (result) {
+                    $("#DisplayData").html('').html(result);
+                    $("#spiners").hide();
+                    $("#DivSpiners").hide();
+
+                    },
+                error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+            })
+
+        }
+    </script>
+
+
+}
+
+

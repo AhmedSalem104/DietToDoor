@@ -1,0 +1,953 @@
+﻿@using DataMapping.Entites
+@model DataMapping.Entites.SignForm
+
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+
+
+    ViewBag.GoalId = new SelectList(db.Goals.ToList(), "Id", "Name");
+
+    var maxId = 1;
+    var maxs = db.SignForm.ToList();
+    int maxxx = 1;
+
+    if (maxs.Count() != 0 ) {
+        maxId = db.SignForm.Max(a => a.Id);
+        var maxItemNo = db.SignForm.Max(a => a.Id);
+
+        maxxx = Convert.ToInt32(maxItemNo);
+
+        maxxx += 1;
+    }
+
+}
+<style>
+    #Code, #ItemCode, #GroupCode,#Serial {
+        border: 2px solid #ebebeb;
+    }
+</style>
+<div class="row heder_title">
+    <input type="text" hidden id="groupSerial">
+    <div class="col-6">
+        <h3 class="blockquote">@DataMapping.Resources.Resource.DTDNutritionalAssessmentForm</h3>
+    </div>
+    <div class="col-6 text-left" id="SaveBTN">
+        <button id="Save" class="btn btn-icon icon-left btn-info" onclick="AddItem()">
+
+            حفظ <i class="fa fa-save" aria-hidden="true"></i>
+
+        </button>
+        @*<a href="#" id="SubMit" class="btn btn-icon icon-left btn-info" onclick="AddItem()">
+                حفظ <i class="fa fa-save" aria-hidden="true"></i>
+            </a>*@
+        <a href="~/Item/Index" class="btn btn-icon icon-left btn-outline-warning">
+            رجوع <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        </a>
+    </div>
+</div>
+<input type="number" value="@maxId" hidden id="itemID">
+<div class="row">
+    <div class="col-12">
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal", @id = "ItemModalForm" }))
+
+        {
+        <div class="card-layout">
+
+            @*<div class="form-row">
+            <div class="form-group col-md-9 text-right">
+
+            </div>
+
+            <div class="form-group col-md-3 text-right">
+                <div id="imageDiv">
+
+                    <img src="" id="CompanyImage" style="height:150px;">
+                    <p id="pargraph" style="border:solid;border-width:1px;border-color:darkgray;height:150px;width:200px;padding-top:50px;text-align:center">صورة الصنف</p>
+                    <input data-inline="true" type="file" id="myImage" name="file" placeholder="اختار صورة" title="Upload Item Image " class="form-control-file">
+                    <p data-inline="true" class="btn btn-danger" id="delLogo">حذف الصورة   </p>
+
+
+
+                </div>
+
+                @Html.EditorFor(model => model.Img, new { htmlAttributes = new { @id = "ImageSrc", @class = "form-control", @hidden = "hidden" } })
+                <hr>
+            </div>
+
+        </div>*@
+            <div class="form-row">
+
+                <div class="form-group col-md-3">
+                    <label>@DataMapping.Resources.Resource.FullName</label>
+                    @Html.TextBoxFor(x => x.FullName, new { @id = "FullName", @class = "form-control" })
+                </div>
+
+
+                <div class="form-group col-md-3">
+                    <label>@DataMapping.Resources.Resource.MobileNumber</label>
+                    @*@Html.DropDownList("ItemGroupId", null, " اختر ", htmlAttributes: new { @id = "ItemGroupId", @class = "select2 form-control" })*@
+                    @Html.TextBoxFor(x => x.Mobile, new { @id = "Mobile", @class = "form-control" })
+
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label>@DataMapping.Resources.Resource.waterPercentage</label>
+
+                    @Html.TextBoxFor(x => x.waterPercentage, new { @id = "waterPercentage", @class = "form-control" })
+                </div>
+                @*<div class="form-group col-md-3 text-right">*@
+                @*<div id="imageDiv" style="margin-top:-150px;margin-bottom:-100px;width:130px">
+
+                <img src="" id="CompanyImage" style="height:150px;">
+                <p id="pargraph" style="border:solid;border-width:1px;border-color:darkgray;height:150px;width:130px;padding-top:50px;text-align:center">صورة الصنف</p>
+
+                <input data-inline="true" type="file" id="myImage" name="file" placeholder="اختار صورة" title="Upload Item Image " class="form-control-file" style="display:flow">
+                <p data-inline="true" class="btn btn-danger" id="delLogo">حذف الصورة   </p>
+
+
+
+            </div>*@
+
+                @*@Html.EditorFor(model => model.Img, new { htmlAttributes = new { @id = "ImageSrc", @class = "form-control", @hidden = "hidden" } })*@
+                <hr>
+                @*</div>*@
+
+                @*<div class="form-group col-md-3" style="margin-top:auto">
+
+                <img src="" alt="" id="barcode" />
+
+            </div>*@
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label>@DataMapping.Resources.Resource.Adress</label>
+                    @Html.TextBoxFor(x => x.Address, new { @id = "Adress", @class = "form-control" })
+                </div>
+                <div class="form-group col-md-3">
+                    <label>@DataMapping.Resources.Resource.Gender</label>
+                    @Html.DropDownList("Type", null, "اختر", htmlAttributes: new { @id = "Type", @class = "select2 form-control" })
+
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label>@DataMapping.Resources.Resource.Age </label>
+                    @Html.TextBoxFor(x => x.Age, new { @id = "Age", @class = "form-control" })
+
+                </div>
+
+
+
+                <div class="form-group col-md-2">
+                    <label>@DataMapping.Resources.Resource.DateOfBirth</label>
+                    @Html.TextBoxFor(x => x.BirthDate, new { @id = "BirthDate", @class = "form-control", @type = "date" })
+                </div>
+
+            </div>
+            <h1>@DataMapping.Resources.Resource.WhereDidYouHearAboutUs</h1>
+
+            <div class="form-row">
+
+
+
+                <div class="form-group col-md-2 row">
+
+                    @Html.TextBoxFor(x => x.HowHear, new { @id = "Google", @class = "form-control", @type = "radio", name = "hear", Value = "Google" })
+                    <label for="Google">Google Search - بحث على جوجل</label><br>
+
+
+
+
+
+
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.TextBoxFor(x => x.HowHear, new { @id = "Facebook", @class = "form-control", @type = "radio", name = "hear", Value = "Facebook" })
+                    <label for="Facebook">Facebook - فيسبوك</label><br>
+
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.TextBoxFor(x => x.HowHear, new { @id = "Instagram", @class = "form-control", @type = "radio", name = "hear", Value = "Instagram" })
+                    <label for="Instagram">Instagram - انستجرام</label><br>
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.TextBoxFor(x => x.HowHear, new { @id = "OldCustomer", @class = "form-control", @type = "radio", name = "hear", Value = "OldCustomer" })
+                    <label for="OldCustomer">Old Customer - عميل سابق لدايت تودوور</label><br>
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.TextBoxFor(x => x.HowHear, new { @id = "fromAFriend", @class = "form-control", @type = "radio", name = "hear", Value = "fromAFriend" })
+                    <label for="fromAFriend">from a friend - من خلال صديق</label><br>
+
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.TextBoxFor(x => x.HowHear, new { @id = "Youtube", @class = "form-control", @type = "radio", name = "hear", Value = "Youtube" })
+                    <label for="Youtube">Youtube - يوتيوب</label><br>
+                </div>
+
+
+
+                <div class="form-group col-md-3">
+                    <label>@DataMapping.Resources.Resource.Height</label>
+                    @Html.TextBoxFor(x => x.Height, new { @id = "Height", @class = "form-control" })
+
+                </div>
+
+                @*<div class="form-group col-md-3">
+                <label>@DataMapping.Resources.Resource.itemPrice 1</label>
+                @Html.TextBoxFor(x => x.ItemPrice1, new { @id = "ItemPrice1", @class = "form-control" })
+            </div>*@
+                @*<div class="form-group col-md-3">
+                <label>@DataMapping.Resources.Resource.itemPrice 2</label>
+                @Html.TextBoxFor(x => x.ItemPrice2, new { @id = "ItemPrice2", @class = "form-control" })
+            </div>*@
+                <div class="form-group col-md-3">
+                    <label>@DataMapping.Resources.Resource.waistCircumference</label>
+                    @Html.TextBoxFor(x => x.waistCircumference, new { @id = "waistCircumference", @class = "form-control" })
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label>@DataMapping.Resources.Resource.fatPercentage</label>
+                    @Html.TextBoxFor(x => x.fatPercentage, new { @id = "fatPercentage", @class = "form-control" })
+                </div>
+                <div class="form-group col-md-3">
+                    <label>@DataMapping.Resources.Resource.muscleMass</label>
+                    @Html.TextBoxFor(x => x.muscleMass, new { @id = "muscleMass", @class = "form-control" })
+                </div>
+            </div>
+
+
+
+            <h1>@DataMapping.Resources.Resource.ActivityLevel</h1>
+
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    @Html.TextBoxFor(x => x.ActivityLevel, new { @id = "Lightly", @class = "form-control", @type = "radio", name = "hear", Value = "Lightly Active - exercise/sports 1-3 times/week - نشاط خفيف رياضه مره الى ثلاث فى الاسبوع" })
+
+                    <label for="Lightly">Lightly Active - exercise/sports 1-3 times/week - نشاط خفيف رياضه مره الى ثلاث فى الاسبوع</label><br>
+
+
+
+
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.TextBoxFor(x => x.ActivityLevel, new { @id = "Facebook", @class = "form-control", @type = "radio", name = "hear", Value = "Sedentary - little or no exercise - نشاط خفيف او لا نشاط" })
+                    <label for="Sedentary">Sedentary - little or no exercise - نشاط خفيف او لا نشاط</label><br>
+
+                </div>
+
+                <!--<div class="form-group col-md-3">
+        <div id="imageDiv">-->
+                @*@if (Model.Img != null)
+            {
+                <img src="@Model.Img" id="CompanyImage" style="height:245px;">
+                <p id="pargraph" hidden style="border:solid;border-width:5px;border-style:solid;border-color:black;height:245px;width:300px;padding-top:85px;text-align:center">شعار الشركة</p>
+
+            }*@
+                @*else
+            {*@
+                <!--<img src="" id="CompanyImage" style="height:245px;">
+        <p id="pargraph" style="border:solid;border-width:5px;border-style:solid;border-color:black;height:245px;width:300px;padding-top:85px;text-align:center">صورة الصنف</p>-->
+                @*}*@
+                <!--<p class="btn btn-danger" id="delLogo"> حذف صورة الصنف</p>
+            </div>
+
+            <input type="file" id="myImage" name="file" title="Upload Item Image " class="form-control-file">
+            @Html.EditorFor(model => model.BodyShapeImage, new { htmlAttributes = new { @id = "ImageSrc", @class = "form-control", @hidden = "hidden" } })
+
+        </div>-->
+            </div>
+
+            <div class="form-row">
+
+
+                <div class="form-group col-md-4">
+
+                    @Html.TextBoxFor(x => x.ActivityLevel, new { @id = "Moderately", @class = "form-control", @type = "radio", name = "hear", Value = "Moderately Active - exercise/sports 3-5 times/week - نشاط معتدل رياضه ثلاث الى خمس مرات فى الاسبوع" })
+                    <label for="Moderately">Moderately Active - exercise/sports 3-5 times/week - نشاط معتدل رياضه ثلاث الى خمس مرات فى الاسبوع</label><br>
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.TextBoxFor(x => x.ActivityLevel, new { @id = "Very", @class = "form-control", @type = "radio", name = "hear", Value = "Very Active - hard exercise/sports 6-7 times/week - نشاط جدا رياضه 6-7مرات فى الاسبوع" })
+                    <label for="Very">Very Active - hard exercise/sports 6-7 times/week - نشاط جدا رياضه 6-7مرات فى الاسبوع</label><br>
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.TextBoxFor(x => x.ActivityLevel, new { @id = "Extra", @class = "form-control", @type = "radio", name = "hear", Value = "Extra Active - very hard exercise/sports or physical job - نشاط كثيف" })
+                    <label for="Extra">Extra Active - very hard exercise/sports or physical job - نشاط كثيف</label><br>
+                </div>
+                <!--<div class="form-group col-md-3">
+        <div id="imageDiv">-->
+                @*@if (Model.Img != null)
+            {
+                <img src="@Model.Img" id="CompanyImage" style="height:245px;">
+                <p id="pargraph" hidden style="border:solid;border-width:5px;border-style:solid;border-color:black;height:245px;width:300px;padding-top:85px;text-align:center">شعار الشركة</p>
+
+            }*@
+                @*else
+            {*@
+                <!--<img src="" id="CompanyImage" style="height:245px;">
+        <p id="pargraph" style="border:solid;border-width:5px;border-style:solid;border-color:black;height:245px;width:300px;padding-top:85px;text-align:center">صورة الصنف</p>-->
+                @*}*@
+                <!--<p class="btn btn-danger" id="delLogo"> حذف صورة الصنف</p>
+            </div>
+
+            <input type="file" id="myImage" name="file" title="Upload Item Image " class="form-control-file">
+            @Html.EditorFor(model => model.BodyShapeImage, new { htmlAttributes = new { @id = "ImageSrc", @class = "form-control", @hidden = "hidden" } })
+
+        </div>-->
+            </div>
+            <div class="form-row">
+
+
+                <div class="form-group col-md-6">
+                    <h1>@DataMapping.Resources.Resource.AlcoholConsumes</h1>
+
+                    @Html.TextBoxFor(x => x.AlcoholConsumes, new { @id = "Yes", @class = "form-control", @type = "radio", name = "Alcohol", Value = "1" })
+
+                    <label for="Yes">Yes</label><br>
+
+                    @Html.TextBoxFor(x => x.AlcoholConsumes, new { @id = "No", @class = "form-control", @type = "radio", name = "Alcohol", Value = "0" })
+
+                    <label for="No">No</label><br>
+
+
+                </div>
+
+
+                <div class="form-group col-md-6">
+                    <h1>@DataMapping.Resources.Resource.Smoker</h1>
+
+                    @Html.TextBoxFor(x => x.Smoker, new { @id = "Yes", @class = "form-control", @type = "radio", name = "Smoker", Value = "1" })
+
+                    <label for="Yes">Yes</label><br>
+
+                    @Html.TextBoxFor(x => x.Smoker, new { @id = "No", @class = "form-control", @type = "radio", name = "Smoker", Value = "0" })
+
+                    <label for="No">No</label><br>
+
+
+                </div>
+                <!--<div class="form-group col-md-3">
+        <div id="imageDiv">-->
+                @*@if (Model.Img != null)
+            {
+                <img src="@Model.Img" id="CompanyImage" style="height:245px;">
+                <p id="pargraph" hidden style="border:solid;border-width:5px;border-style:solid;border-color:black;height:245px;width:300px;padding-top:85px;text-align:center">شعار الشركة</p>
+
+            }*@
+                @*else
+            {*@
+                <!--<img src="" id="CompanyImage" style="height:245px;">
+        <p id="pargraph" style="border:solid;border-width:5px;border-style:solid;border-color:black;height:245px;width:300px;padding-top:85px;text-align:center">صورة الصنف</p>-->
+                @*}*@
+                <!--<p class="btn btn-danger" id="delLogo"> حذف صورة الصنف</p>
+            </div>
+
+            <input type="file" id="myImage" name="file" title="Upload Item Image " class="form-control-file">
+            @Html.EditorFor(model => model.BodyShapeImage, new { htmlAttributes = new { @id = "ImageSrc", @class = "form-control", @hidden = "hidden" } })
+
+        </div>-->
+            </div>
+
+
+
+
+            <div class="form-row">
+
+                <div class="form-group col-md-3">
+                    <label>@DataMapping.Resources.Resource.HealthCondition</label>
+                    @Html.TextBoxFor(x => x.HealthCondition, new { @id = "HealthCondition", @class = "form-control" })
+                </div>
+
+
+                <div class="form-group col-md-3">
+                    <label>@DataMapping.Resources.Resource.DoYouHaveAnyFoodAllergy</label>
+                    @*@Html.DropDownList("ItemGroupId", null, " اختر ", htmlAttributes: new { @id = "ItemGroupId", @class = "select2 form-control" })*@
+                    @Html.TextBoxFor(x => x.DoYouHaveAnyFoodAllergy, new { @id = "DoYouHaveAnyFoodAllergy", @class = "form-control" })
+
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label>@DataMapping.Resources.Resource.PleaseSendLastUpdatedLaboratoryTests</label>
+
+                    <div class="form-group col-md-3 text-right">
+                        <div id="imageDivLab">
+
+                            <img src="" id="CompanyImageLab" style="height:150px;">
+                            <p id="pargraphLab" style="border:solid;border-width:1px;border-color:darkgray;height:150px;width:200px;padding-top:50px;text-align:center">الصورة</p>
+                            <input data-inline="true" type="file" id="myImageLab" name="file" placeholder="اختار صورة" title="Upload Item Image " class="form-control-file">
+                            <p data-inline="true" class="btn btn-danger" id="delLogoLab">حذف الصورة   </p>
+
+
+
+                        </div>
+
+                        @Html.EditorFor(model => model.BodyShapeImage, new { htmlAttributes = new { @id = "ImageSrc", @class = "form-control", @hidden = "hidden" } })
+                        <hr>
+                    </div>
+                </div>
+                <div class="form-row">
+
+
+                    <div class="form-group col-md-3 text-right">
+                        <div id="imageDiv">
+
+                            <img src="" id="CompanyImage" style="height:150px;">
+                            <p id="pargraph" style="border:solid;border-width:1px;border-color:darkgray;height:150px;width:200px;padding-top:50px;text-align:center">الصورة</p>
+                            <input data-inline="true" type="file" id="myImage" name="file" placeholder="اختار صورة" title="Upload Item Image " class="form-control-file">
+                            <p data-inline="true" class="btn btn-danger" id="delLogo">حذف الصورة   </p>
+
+
+
+                        </div>
+
+                        @Html.EditorFor(model => model.BodyShapeImage, new { htmlAttributes = new { @id = "ImageSrc", @class = "form-control", @hidden = "hidden" } })
+                        <hr>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.ImportantToKnowAboutMe</label>
+                        @Html.TextBoxFor(x => x.ImportantToKnowAboutMe, new { @id = "ImportantToKnowAboutMe", @class = "form-control" })
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.WriteHereAFullDayExampleFromWakingUpToSleep</label>
+                        @Html.TextBoxFor(x => x.fullDayExampleFromWakingUpToSleep, new { @id = "fullDayExampleFromWakingUpToSleep", @class = "form-control" })
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label>@DataMapping.Resources.Resource.WakingUpTime</label>
+                        @Html.TextBoxFor(x => x.WakingUpTime, new { @id = "WakingUpTime", @class = "form-control" })
+                    </div>
+                </div>
+                <hr>
+               
+            </div>
+
+
+        </div>
+        }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="tab">
+            <ul class="tabs">
+                <li><a href="#">@DataMapping.Resources.Resource.MyGoals</a></li>
+                @*<li><a href="#">الأرصدة الإفتتاحية</a></li>*@
+                <li><a href="#">@DataMapping.Resources.Resource.FoodFrequency</a></li>
+               
+            </ul>
+
+            <div class="tab_content" id="AllTabes">
+                <div class="tabs_item" id="UnitTab">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="#" class="btn btn-icon icon-left success_butn tab_button" onclick="showPopupCreateSubUintTemp()">
+                                @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover table-bordered" id="save-stage" style="width:100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>رقم الهدف</th>
+                                            <th>@DataMapping.Resources.Resource.Name</th>
+                                            
+                                            <th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                                            <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                                        </tr>
+                                    </thead>
+                                    @*@Html.Action("GetItemSubUintList")*@
+                                    <tbody class="SubUinttbody">
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @*<div class="tabs_item" id="OpeningBalanceTab">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="#" class="btn btn-icon icon-left success_butn tab_button" onclick="showPopupCreateOpeningBlance()">
+                                @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover table-bordered" id="save-stage" style="width:100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>@DataMapping.Resources.Resource.Store</th>
+                                            <th>@DataMapping.Resources.Resource.Quantity</th>
+                                            <th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                                            <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="OpeningBalancetbody">
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+
+                <div class="tabs_item" id="FoodFrequncey">
+                  
+                    @Html.Partial("FoodFrequencey")
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section ModelPopup{
+
+    <div id="mainDiv"></div>
+    <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 text-center warning_icon">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 confirm_text">
+                            <h3>@DataMapping.Resources.Resource.Alert</h3>
+                            <p>@DataMapping.Resources.Resource.Confirm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+                        <div class="col-6 text-right">
+                            <button id="btnContinueDelete" type="button" class="btn btn-icon icon-left btn-danger">
+                                حذف <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="col-6 text-left">
+                            <button type="button" class="btn btn-icon icon-left btn-warning" data-dismiss="modal">
+                                رجوع <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section JavaScriptSection
+    {
+
+    @*حفظ الصنف*@
+    <script>
+        /*  $("#AllTabes").hide();*/
+       
+        $(".OpeningBalancetbody").hide();
+        $(".AddtionalSpecificationtbody").hide();
+        $(".RequestLimittbody").hide();
+        $(".ItemDefualttbody").hide();
+    </script>
+    <script type="text/javascript">
+        function AddItem() {
+            var Code = $("#Code").val();
+            var ItemCode = $("#ItemCode").val();
+            var ItemNameAr = $("#ItemNameAr").val();
+            var ItemTypeId = document.getElementById("ItemTypeId").value;
+            var ItemGroupId = document.getElementById("ItemGroupId").value;
+            var ItemGategoriesId = document.getElementById("ItemGategoriesId").value;
+            //var VendorId = document.getElementById("VendorId").value;
+            var StoreId = document.getElementById("StoreId").value;
+            //var UintID = document.getElementById("UintID").value;
+            var Isvalid = true;
+            if (Code == "" || Code == null) {
+                Isvalid = false;
+                toastr.warning('ادخل رقم الصنف')
+            }
+            if (ItemCode == "" || ItemCode == null) {
+                Isvalid = false;
+                toastr.warning('ادخل كود الصنف')
+            }
+            if (ItemNameAr == "" || ItemNameAr == null) {
+                Isvalid = false;
+                toastr.warning('ادخل اسم الصنف')
+            }
+            if (ItemTypeId == 0 || ItemTypeId == "" || ItemTypeId == null) {
+                Isvalid = false;
+                toastr.warning(' اختر نوع الصنف')
+            }
+            if (ItemGroupId == 0 || ItemGroupId == "" || ItemGroupId == null) {
+                Isvalid = false;
+                toastr.warning(' اختر مجموعة الصنف')
+            }
+            if (ItemGategoriesId == 0 || ItemGategoriesId == "" || ItemGategoriesId == null) {
+                Isvalid = false;
+                toastr.warning(' اختر فئه الصنف')
+            }
+            //if (VendorId == 0 || VendorId == "" || VendorId == null) {
+            //    Isvalid = false;
+            //    toastr.warning(' اختر المورد')
+            //}
+            if (StoreId == 0 || StoreId == "" || StoreId == null) {
+                Isvalid = false;
+                toastr.warning('اختر المخزن ')
+            }
+            //if (UintID == 0 || UintID == "" || UintID == null) {
+            //    Isvalid = false;
+            //    toastr.warning('اختر الوحدة ')
+            //}
+            alert($(".SubUinttbody").children().length);
+            if ($(".SubUinttbody").children().length == 0) {
+                Isvalid = false;
+                toastr.warning('من فضلك اختر وحدة واحدة على الأفل ')
+            }
+            if (Isvalid) {
+                var data = {
+                    ItemNameAr: $("#ItemNameAr").val(),
+                    ItemNameEn: $("#ItemNameEn").val(),
+                    VendorId: $("#VendorId").val(),
+                    StoreId: $("#StoreId").val(),                  
+                    ItemNatureId: $("#ItemNatureId").val(),
+                    Code: $("#Code").val(),
+                    ItemTypeId: $("#ItemTypeId").val(),
+                    ItemGroupId: $("#ItemGroupId").val(),
+                    ItemGategoriesId: $("#ItemGategoriesId").val(),
+                    ItemCost: $("#ItemCost").val(),
+                    ItemPrice1: $("#ItemPrice1").val(),
+                    ItemPrice2: $("#ItemPrice2").val(),
+                    ItemPrice3: $("#ItemPrice3").val(),
+                    UintID: $("#UintID").val(),
+                    ExchangecontrolId: $("#ExchangecontrolId").val(),
+                    ItemTax: $("#ItemTax").val(),
+                    Descripation: $("#Descripation").text(),
+                    Notes: $("#Notes").val(),
+                    ItemCode: $("#ItemCode").val(),
+                    Serial: $("#Serial").val()
+
+                }
+                /*$("#Save").hide();*/
+                //$("#SaveBTN").attr("disabled", true);
+                $.ajax({
+
+                    type: "POST",
+                    url: '/Item/AddOrEdit',     //your action
+                    data: JSON.stringify(data),  //your form name.it takes all the values of model
+                    contentType: 'application/json',
+                    success: function (data) {
+                        toastr.success("تم الحفظ بنجاح")
+
+                        loadSubUintList();
+                        loadOpeningBlanceList();
+                        loadAddationalSpecfationList();
+                        loadRequestLimitList();
+                        loadDefualtItemList();
+                        /*$("#AllTabes").show();*/
+                        //$("#OpeningBalanceTab").show();
+                        //$("#AddtionalTab").show();
+                        //$("#RequestLimitTab").show();
+                        //$("#DefaultItemTab").show();
+                        //location.reload();
+                        location.reload();
+                       
+                    },
+
+
+
+                });
+            }
+        }
+        //}
+    </script>
+
+
+    @*SubUintItem وحدات القياس الفرعيه*@
+    <script>
+        function showPopupCreateSubUint() {
+            $.ajax({
+                type: "Get",
+                url: "/Item/SubUintAddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+        function showPopupEditSubUint(id) {
+            $.ajax({
+                type: "Get",
+                url: "/Item/SubUintAddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                data: { Id: id },
+                dataType: "html",
+                success: function (result, status, xhr) {
+                    8
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+        function showPopupCreateSubUintTemp() {
+            $.ajax({
+                type: "Get",
+                url: "/SignUpForm/SubUintAddOrEditTemp",
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+        function showPopupEditSubUintTemp(id) {
+            $.ajax({
+                type: "Get",
+                url: "/Item/SubUintAddOrEditTemp",
+                contentType: "application/json; charset=utf-8",
+                data: { Id: id },
+                dataType: "html",
+                success: function (result, status, xhr) {
+                    8
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+
+        $(document).ready(function () {
+            loadSubUintList();
+        });
+
+        //عرض وحدات الاصناف
+        function loadSubUintList() {
+            $.ajax({
+                url: "/SignUpForm/ItemSubUintListTemp",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    var html = '';
+                    $.each(result, function (key, item) {
+                        html += '<tr>';
+                        html += '<td>' + item.Id + '</td>';
+                        html += '<td>' + item.Name + '</td>';
+                        html += '<td> <a href="#" class="btn btn-icon btn-outline-info" onclick="showPopupEditSubUintTemp(' + item.Id + ')"><i class="far fa-edit"></i></a></td>';
+                        /**/
+                        html += '<td> <a onclick="DeleleSubUintTemp(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+                        /**/
+                        html += '</tr>';
+                    });
+                    $('.SubUinttbody').html(html);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+
+        //حذف وحدات الاصناف
+        function DeleleSubUint(ID) {
+            var ans = confirm("هل  تريد الحذف?");
+            if (ans) {
+                $.ajax({
+                    url: "/SignUpForm/DeleteSubUint/" + ID,
+                    type: "POST",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (result) {
+                        loadSubUintList();
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+            }
+
+        }
+
+
+        function DeleleSubUintTemp(ID) {
+            var ans = confirm("هل  تريد الحذف?");
+            if (ans) {
+                $.ajax({
+                    url: "/SignUpForm/DeleteSubUintTemp/" + ID,
+                    type: "POST",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (result) {
+                        loadSubUintList();
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+            }
+
+        }
+
+    </script>
+
+    @*OpeningBalance الرصيد الافتتاحي*@
+
+    <script>
+        function showPopupCreateOpeningBlance() {
+            $.ajax({
+                type: "Get",
+                url: "/SignUpForm/OpeningBalanceAddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+        function showPopupEditOpeningBlance(id) {
+            $.ajax({
+                type: "Get",
+                url: "/SignUpForm/OpeningBalanceAddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                data: { Id: id },
+                dataType: "html",
+                success: function (result, status, xhr) {
+                    8
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+        $(document).ready(function () {
+        });
+
+        //عرض الرصيد الافتاحي
+        function loadOpeningBlanceList() {
+            $.ajax({
+                url: "/SignUpForm/ItemOpeningBalanceList/" + $("#itemID").val(),
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    var html = '';
+                    $.each(result, function (key, item) {
+                        html += '<tr>';
+                        html += '<td>' + item.RedMeat + '</td>';
+                        html += '<td>' + item.Chicken + '</td>';
+
+                        html += '<td>' + item.SeaFood + '</td>';
+                        html += '<td>' + item.Fruits + '</td>';
+                        html += '<td> <a href="#" class="btn btn-icon btn-outline-info" onclick="showPopupEditOpeningBlance(' + item.Id + ')"><i class="far fa-edit"></i></a></td>';
+                        /**/
+                        html += '<td> <a onclick="DeleleOpeningBalance(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+                        /**/
+                        html += '</tr>';
+                    });
+                    $('.OpeningBalancetbody').html(html);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+
+        //حذف  الرصيد الافتتاحي
+        function DeleleOpeningBalance(ID) {
+            var ans = confirm("هل  تريد الحذف?");
+            if (ans) {
+                $.ajax({
+                    url: "/SignUpForm/DeleteOpenBalance/" + ID,
+                    type: "POST",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (result) {
+                        loadSubUintList();
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+            }
+
+        }
+
+
+
+
+    </script>
+
+
+   
+    @*تحويل القيمة الى رقم عشرى*@
+
+      <script>
+          function myFunction() {
+
+              var file = document.getElementById('myImage').files[0];
+              var reader = new FileReader();
+              // it's onload event and you forgot (parameters)
+              reader.onload = function (e) {
+                  var image = document.getElementById("CompanyImage");
+                  // the result image data
+                  image.src = e.target.result;
+                
+                  $("#ImageSrc").val(image.src);
+                
+              }
+              $("#pargraph").hide();
+              // you have to declare the file loading
+              reader.readAsDataURL(file);
+          }
+          $("#myImage").change(function () {
+
+             
+              myFunction();
+              
+          });
+
+
+          $("#delLogo").click(function () {
+              var image = document.getElementById("CompanyImage");
+              
+              image.src = "";
+              $("#pargraph").show();
+          })
+      </script> 
+}
+        
+

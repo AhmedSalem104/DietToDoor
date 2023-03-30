@@ -1,0 +1,84 @@
+﻿
+@using DataMapping.Entites
+@model IEnumerable<DataMapping.Procedures.GetCarDriversDetailsInCarDelivery_Result>
+
+@{
+
+    ApplicationDbContext db = new ApplicationDbContext();
+    //var PurchaseDetailss = db.TempReceievNotificationDetails.Where(a =>a.TempReceievId == Model.).ToList();
+
+
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="table-responsive">
+            <table id="OrdersItems" class="table table-striped table-bordered table-hover" style="width:100%;">
+                <thead>
+                    <tr style="text-align:center;">
+                        <th class="th_width_8">كود السائق</th>
+                        <th >اسم المرافق</th>
+                        <th > الادارة</th>
+                        <th class="th_width_20">الجوال</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    @foreach (var item in Model)
+                    {
+                        <tr style="text-align:center;" id="MainRow">
+                            <td>
+                                <input type="number" id="ItemNumber" value="@item.DriverNo" class="ItemNumber form-control" readonly>
+                            </td>
+
+                            <td>
+                                <input type="text" id="DriverIdd" value="@item.DriverName" class="DriverIdd   form-control select2" readonly>
+
+                                @*@Html.DropDownList("DriverID", DriverID, "اختر المرافق", new { @id = "DriverIdd", @class = "DriverIdd  form-control select2", @disabled = "disabled" })*@
+                            </td>
+                            <td>
+                                <input type="text" id="ManagmentId" value=" @item.BranchesName" class="form-control" readonly>
+
+                            </td>
+
+                            <td>
+                                <input type="text" id="PhoneId" value=" @item.Phone" class="form-control" readonly>
+
+                            </td>
+
+
+                            <!--<td>
+                                <a id="addd" class="deleteItem btn btn-icon btn-outline-info" data-toggle="modal" hidden>-->
+                                    @*<i class="fas fa-check"></i>*@
+                                    <!--<i class="fas fa-plus-circle success"></i>
+                                </a>
+                            </td>-->
+                        </tr>
+                        @*<tr style="text-align:center;" id="MainRow">
+
+
+
+                            <td>
+                                @item.DriverNo
+                            </td>
+                            <td>
+                                @item.DriverName
+                            </td>
+                            <td>
+                                @item.BranchesName
+                            </td>
+                            <td>
+                                @item.Phone
+                            </td>
+
+                        </tr>*@
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,23 @@
+use[ERPSystemDB]
+
+create proc PrintSalseInvoce
+as
+begin
+
+SELECT        GL.SalesINVDetails.SalesINVId, GL.SalesINVDetails.ItemCategoriesId, GL.SalesINVDetails.ItemId, GL.Item.ItemNameAr, GL.SalesINVDetails.UnitId, GL.Unit.UnitName, GL.SalesINVDetails.Amount, GL.SalesINVDetails.Price, 
+                         GL.SalesINVDetails.Total, GL.SalesINVDetails.DisPer, GL.SalesINVDetails.DisValue, GL.SalesINVDetails.NetPrice, GL.SalesINVDetails.Tax, GL.SalesINVDetails.ItemBalance, GL.SalesINVDetails.StoreId, 
+                         GL.SalesINV.CompanyId, GL.SalesINV.BranchesId, GL.SalesINV.SalesINVNo, GL.SalesINV.SalesINVDate, GL.SalesINV.CustomersId, GL.Customers.CustomersName, GL.Store.Name, GL.SalesINV.StoreId AS Expr1, 
+                         GL.SalesINV.EmployeeId, GL.Employee.EmployeeNameAr, GL.SalesINV.PurchaseINVTypeId, GL.SalesINV.DiscountCategoriesId, GL.SalesINV.Itemtax, GL.SalesINV.RowsCount, GL.SalesINV.TotaleItemDis, 
+                         GL.SalesINV.SalesINVTotal, GL.SalesINV.InvoiceDisPer, GL.SalesINV.InvoiceDisValue, GL.SalesINV.NetValue, GL.SalesINV.PaidValue, GL.SalesINV.RemainingValue, GL.SalesINV.Notes, GL.SalesINV.IsDeleted, 
+                         GL.Branches.BranchesName
+FROM            GL.Employee INNER JOIN
+                         GL.Customers INNER JOIN
+                         GL.SalesINVDetails INNER JOIN
+                         GL.SalesINV ON GL.SalesINVDetails.SalesINVId = GL.SalesINV.Id INNER JOIN
+                         GL.Item ON GL.SalesINVDetails.ItemId = GL.Item.Id INNER JOIN
+                         GL.Unit ON GL.SalesINVDetails.UnitId = GL.Unit.Id ON GL.Customers.Id = GL.SalesINV.CustomersId INNER JOIN
+                         GL.Store ON GL.SalesINV.StoreId = GL.Store.Id ON GL.Employee.Id = GL.SalesINV.EmployeeId INNER JOIN
+                         GL.Branches ON GL.SalesINV.BranchesId = GL.Branches.Id
+
+
+end

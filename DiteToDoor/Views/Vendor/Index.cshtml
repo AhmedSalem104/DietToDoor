@@ -1,0 +1,178 @@
+﻿@using DataMapping.Entites
+@model IEnumerable<DataMapping.Entites.Vendor>
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+    ViewBag.Title = DataMapping.Resources.Resource.Vendor;
+}
+
+@*<div class="row heder_title">
+    <div class="col-6">
+        <h3 class="blockquote">@DataMapping.Resources.Resource.Vendors</h3>
+    </div>
+    <div class="col-6 text-left">
+        @if (ViewBag.CanAdd == true)
+        {
+            <a href="~/Vendor/AddOrEdit" class="btn btn-icon icon-left success_butn">
+                @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+            </a>
+        }
+        else
+        {
+            <a href="~/Vendor/AddOrEdit" class="btn btn-icon icon-left success_butn disabled">
+                @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+            </a>
+        }
+    </div>
+</div>*@
+
+@using (Html.BeginForm("PrintDataRDLC", "Vendor"))
+{
+
+
+    <div class="row heder_title">
+        <div class="col-6">
+            <h3 class="blockquote">@DataMapping.Resources.Resource.Vendors</h3>
+        </div>
+        <div class="col-6 text-left">
+            @if (ViewBag.CanAdd == true)
+            {
+                <a href="~/Vendor/AddOrEdit" class="btn btn-icon icon-left success_butn">
+                    @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            }
+            else
+            {
+                <a href="~/Vendor/AddOrEdit" class="btn btn-icon icon-left success_butn disabled">
+                    @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            }
+            <button type="submit" class="btn btn-outline-secondary " formtarget="_blank">
+                طباعة <i class="fa fa-print" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+}
+
+<div class="row" style="margin-bottom: 15px;">
+    <div class="col-lg-4">
+        @DataMapping.Resources.Resource.VendorClassificationId: @Html.DropDownList("VendorClassificationId", null, "اختيار الكل ", htmlAttributes: new { @id = "SelectedItem", @class = "select2 form-control" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover" id="save-Order" style="width:100%;">
+                <thead>
+                    <tr>
+                        <th class="width-per-8">@DataMapping.Resources.Resource.VenNo</th>
+                        <th > @DataMapping.Resources.Resource.Name</th>
+                        <th class="width-per-15">تصنيف المورد</th>
+                        <th class="width-per-8"> @DataMapping.Resources.Resource.Phone</th>
+                        <th class="width-per-8"> @DataMapping.Resources.Resource.Mobile</th>
+                        <th class="width-per-8"> @DataMapping.Resources.Resource.OpenBalnceDept</th>
+                        <th class="width-per-8"> @DataMapping.Resources.Resource.OpenBalnceCridt</th>
+                        <th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                        <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                        <th class="th_width_5">طباعة</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        var VenClassName = db.VendorClassification.SingleOrDefault(a => a.Id == item.VendorClassificationId).Name;
+                    <tr  style="text-align:center;">
+                        <td > @Html.DisplayFor(modelItem => item.Id)</td>
+                        <td> @Html.DisplayFor(modelItem => item.SupplierName)</td>
+
+                        <td>@VenClassName</td>
+                        <td> @Html.DisplayFor(modelItem => item.Phone)</td>
+                        <td> @Html.DisplayFor(modelItem => item.Mobile)</td>
+                        <td> @Html.DisplayFor(modelItem => item.OpenBalnceDept)</td>
+                        <td> @Html.DisplayFor(modelItem => item.OpenBalnceCridt)</td>
+                        <td class="th_width_5">
+                            @if (ViewBag.CanEdit == true)
+                            {
+                                <a href="@Url.Action("AddOrEdit", "Vendor", new { Id = @item.Id })" class="btn btn-icon btn-outline-info">
+                                    <i class="far fa-edit"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("AddOrEdit", "Vendor", new { Id = @item.Id })" class="btn btn-icon btn-outline-info disabled">
+                                    <i class="far fa-edit"></i>
+                                </a>
+                            }
+                        </td>
+                        <td class="th_width_5">
+                            @if (ViewBag.CanDelete == true)
+                            {
+                                <a href="@Url.Action("Delete", "Vendor", new { Id = @item.Id })" class="deleteItem btn btn-icon btn-outline-danger">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("Delete", "Vendor", new { Id = @item.Id })" class="deleteItem btn btn-icon btn-outline-danger disabled">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            }
+                        </td>
+                        <td class="th_width_5">
+                            <Form action="Vendor/PrintDataRDLCById/@item.Id" method="post"> <button formtarget="_blank" type="submit" class="btn btn-outline-info" title="طباعة" style=" "><i class="fa fa-print" aria-hidden="true"></i></button></Form>
+
+                            @*@if (ViewBag.CanEdit == true)
+        {
+            <a href="@Url.Action("PrintDataRDLCById", "Vendor", new { Id = @item.Id })" class="btn btn-icon btn-outline-info">
+                <i class="fa fa-print"></i>
+            </a>
+        }
+        else
+        {
+            <a href="@Url.Action("PrintDataRDLCById", "Vendor", new { Id = @item.Id })" class="btn btn-icon btn-outline-info disabled">
+                <i class="fa fa-print"></i>
+            </a>
+        }*@
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@section ModelPopup{
+
+}
+@section JavaScriptSection{
+
+    <script>
+        $(function () {
+
+            $("#SelectedItem").change(function () {
+                //debugger;
+
+                var Id = $("#SelectedItem").val()
+                var data = Id
+                $.ajax({
+                    type: 'POST',
+                    url: '/Vendor/Index/' + Id,
+                    //data: JSON.stringify(data),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        window.location.href = '/Vendor/Index' + '/' + Id
+                    }
+
+
+                });
+
+
+
+            });
+        });
+    </script>
+
+}

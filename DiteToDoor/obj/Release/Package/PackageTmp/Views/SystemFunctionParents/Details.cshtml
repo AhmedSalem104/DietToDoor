@@ -1,0 +1,66 @@
+﻿@model DataMapping.Entites.SystemFunctionParent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SystemFunctionParent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NameInArabic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameInArabic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameInEnglish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameInEnglish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondLevelInArabic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondLevelInArabic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondLevelInEnglish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondLevelInEnglish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasParent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasParent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Icons)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Icons)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,538 @@
+﻿
+@using DataMapping.Entites
+@model IEnumerable<DataMapping.Entites.ServicesTrx>
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+
+    //ViewBag.ItemGroupId = new SelectList(db.Itemgroups.ToList(), "Id", "ItemgroupsName");
+    //ViewBag.ItemGategoriesId = new SelectList(db.ItemCategories.ToList(), "Id", "ItemCatName");
+    ViewBag.Title = DataMapping.Resources.Resource.Item;
+}
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (ViewBag.CanEdit == false)
+{
+    <input type="text" value="false" hidden id="edit" />
+}
+@if (ViewBag.CanEdit == true)
+{
+    <input type="text" value="true" hidden id="edit" />
+}
+
+@if (ViewBag.CanDelete == false)
+{
+    <input type="text" value="false" hidden id="delete" />
+}
+@if (ViewBag.CanDelete == true)
+{
+    <input type="text" value="true" hidden id="delete" />
+}
+
+
+@*<div class="col-md-12">
+
+
+            <div class="container" style="margin:10px 10px 30px 80px;">
+                <span style="font-weight:bold;color:darkblue;"> تاريخ الابتداء : </span><input id="startDate" type="date" name="Start" />
+                <span style="font-weight:bold;color:darkblue;"> تاريخ الانتهاء : </span><input id="endDate" type="date" name="end" />
+                <button style="font-weight:bold;" id="submit" class="btn btn-primary">تنفيذ</button>
+            </div>
+
+
+
+
+
+    </div>*@
+
+@using (Html.BeginForm("PrintDataRDLC", "ServicesTrx"))
+{
+    <div class="row heder_title">
+        <div class="col-6">
+            <h3 class="blockquote"> سند صرف زيوت وفلاتر وغسيل</h3>
+        </div>
+        <div class="col-6 text-left">
+            @if (ViewBag.CanAdd == true)
+            {
+                <a href="~/ServicesTrx/AddServicesTrx1" class="btn btn-icon icon-left success_butn">
+                    @DataMapping.Resources.Resource.Add<i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            }
+            else
+            {
+                <a href="~/ServicesTrx/AddServicesTrx" class="btn btn-icon icon-left success_butn disabled">
+                    @DataMapping.Resources.Resource.Add<i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            }
+            <button id="Display" formtarget="_blank" type="submit" class="submitDis btn btn-outline-secondary" style="background-color: white; color: darkgreen; border-width: 2px; font-weight: bold; ">
+
+                @DataMapping.Resources.Resource.Print  <i class="fa fa-print" aria-hidden="true"></i>
+
+            </button>
+        </div>
+    </div>
+}
+    @*<div class="row heder_title">
+        <div class="col-6">
+            <h3 class="blockquote"> سند صرف زيوت وفلاتر وغسيل</h3>
+        </div>
+        <div class="col-6 text-left">
+            @using (Html.BeginForm("PrintDataRDLC", "ServicesTrx"))
+            {
+
+                <button id="Display" formtarget="_blank" type="submit" class="submitDis btn btn-outline-secondary" style="background-color: white; color: darkgreen; border-width: 2px; font-weight: bold; ">
+
+                    @DataMapping.Resources.Resource.Print  <i class="fa fa-print" aria-hidden="true"></i>
+
+                </button>
+            }
+            @if (ViewBag.CanAdd == true)
+            {
+                <a href="~/ServicesTrx/AddServicesTrx1" class="btn btn-icon icon-left success_butn">
+                    @DataMapping.Resources.Resource.Add<i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            }
+            else
+            {
+                <a href="~/ServicesTrx/AddServicesTrx" class="btn btn-icon icon-left success_butn disabled">
+                    @DataMapping.Resources.Resource.Add<i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            }
+        </div>
+    </div>*@
+    <!--<div style="margin-bottom:40px;" class="container">
+        <div class="row">
+
+            <div class="col-4">
+                @DataMapping.Resources.Resource.Vendor:@Html.DropDownList("VendorId", null, "اختيار الكل", htmlAttributes: new { @class = "form-control", @Id = "VendorId" })
+            </div>
+            <div class="col-4">
+                المستلم : @Html.DropDownList("ReceivePersonId", null, "اختيار الكل ", htmlAttributes: new { @class = "form-control", @Id = "ReceivePersonId" })
+            </div>
+            <div class="col-2">
+                <button type="submit" id="submit" style="height:fit-content; margin-top:20px" class="btn btn-info">عرض</button>
+            </div>
+            <div class="col-lg-1.5" style=" margin-top: 20px;">
+
+
+            </div>-->
+
+
+            @*<div class="col-md-6">
+
+                    <div class="col-md-8">
+                        <button id="submit" style="font-weight:bold;" class="btn btn-info">تنفيذ</button>
+                    </div>
+
+                </div>*@
+        <!--</div>
+    </div>-->
+    @*<div class="row" style="margin-bottom: 15px;">
+            <div class="col-lg-4">
+                @DataMapping.Resources.Resource.Vendor:@Html.DropDownList("VendorId", null, "اختيار الكل ", htmlAttributes: new { @id = "VendorId", @class = "select2 VendorId form-control" })
+
+            </div>
+            <button class="btn btn-primary" id="search" style="height:fit-content; margin-top:20px">تنفيذ</button>
+
+        </div>*@
+    <div class="row">
+        @*<div class="col-lg-4">
+                @DataMapping.Resources.Resource.Itemgroups:@Html.DropDownList("ItemGroupId", null, " -------- ", htmlAttributes: new { @id = "ClauseTypeId", @class = "ClauseTypeId form-control" })
+
+            </div>
+            <div class="col-lg-4">
+                @DataMapping.Resources.Resource.ItemCategories:@Html.DropDownList("ItemGategoriesId", null, " -------- ", htmlAttributes: new { @id = "GetMainClauseId", @class = "MainClauseId form-control" })
+            </div>*@
+
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table id="save-stage" class="table table-striped table-hover table-bordered" @*id="save-stage"*@ style="width:100%;">
+                    <thead style="width:100%;">
+                        <tr>
+                            <th class="th_width_10"> المسلسل</th>
+
+                            <th class="width-per-10">تاريخ الاستلام</th>
+                            <th class="width-per-10"> النوع  </th>
+                            <th class="width-per-10"> رقم الاستمارة</th>
+                            <th class="width-per-20"> رقم اللوحة</th>
+
+
+                            @*<th> @DataMapping.Resources.Resource.PurchaseOrderNo</th>
+                                <th> @DataMapping.Resources.Resource.PurchasePaperNo</th>
+                                <th> @DataMapping.Resources.Resource.Branches</th>*@
+
+                            <th class="width-per-3">@DataMapping.Resources.Resource.Edit</th>
+                            <th class="width-per-3">@DataMapping.Resources.Resource.Delete</th>
+                            <th class="width-per-3">@DataMapping.Resources.Resource.Print</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody" style="width:100%;">
+                        @foreach (var item in Model)
+                        {
+                            //var Branches = db.Branches.SingleOrDefault(a => a.Id == item.BranchesId)?.BranchesName;
+                            //var VendorName = db.Vendor.SingleOrDefault(a => a.Id == item.VendorId)?.Name;
+                            var carNo = db.Cars.SingleOrDefault(a => a.Id == item.CarId)?.PanelNo;
+                            var type = db.MachineType.SingleOrDefault(a => a.Id == item.CarId)?.Name;
+
+
+                            //var PurchaseINVType = item.PurchaseINVTypeId;
+                            <tr style="text-align:center">
+                                <td> @Html.DisplayFor(modelItem => item.Serial)</td>
+
+                                <td> @item.Date.Value.Year-@item.Date.Value.Month-@item.Date.Value.Day</td>
+                                <td> @type</td>
+
+                                <td> @item.CurrentReading</td>
+                                <td> @carNo</td>
+
+
+                                <td @*class="th_width_5"*@>
+                                    @if (ViewBag.CanEdit == true)
+                                    {
+                                        <a href="@Url.Action("UpdateServicesTrx1", "ServicesTrx", new { Id = @item.TrxType })" class="btn btn-icon btn-outline-info">
+                                            <i class="far fa-edit"></i>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@Url.Action("UpdateServicesTrx1", "ServicesTrx", new { Id = @item.TrxType })" class="btn btn-icon btn-outline-info disabled">
+                                            <i class="far fa-edit"></i>
+                                        </a>
+                                    }
+                                </td>
+
+
+                                <td @*class="th_width_5"*@>
+                                    @if (ViewBag.CanDelete == true)
+                                    {
+                                        <a id="deleteItem" class="deleteItem btn btn-icon btn-outline-danger" data-toggle="modal"
+                                           data-path="@Url.Action("Delete", "ServicesTrx", new { Id = @item.TrxType })" data-target="#deleteConfirmModal">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a id="deleteItem" class="deleteItem btn btn-icon btn-outline-danger disabled" data-toggle="modal"
+                                           data-path="@Url.Action("Delete", "ServicesTrx", new { Id = @item.TrxType })" data-target="#deleteConfirmModal">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </a>
+                                    }
+                                </td>
+                                <td>
+                                    @using (Html.BeginForm("PrintDataRDLCById", "ServicesTrx", new { id = @item.Id }))
+                                    {
+                                        <button formtarget="_blank" type="submit" class="btn btn-outline-info" >
+
+                                            @*@DataMapping.Resources.Resource.Print*@  <i class="fa fa-print" aria-hidden="true"></i>
+
+                                        </button>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    @section ModelPopup{
+        <div id="mainDiv"></div>
+        <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12 text-center warning_icon">
+                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 confirm_text">
+                                <h3>تنبيه</h3>
+                                <p>هل انت متأكد من الحذف؟</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-whitesmoke br">
+                        <div class="row">
+                            <div class="col-6 text-right">
+                                <button id="btnContinueDelete" type="button" class="btn btn-icon icon-left btn-danger">
+                                    @DataMapping.Resources.Resource.Delete <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="col-6 text-left">
+                                <button type="button" class="btn btn-icon icon-left btn-warning" data-dismiss="modal">
+                                    @DataMapping.Resources.Resource.back <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @section JavaScriptSection{
+        <script>
+            //$(document).ready(function () {
+            //    $("#Display").prop("disabled", true);
+            //    $("#submit").click(function () {
+            //        $("#Display").prop("disabled", false);
+
+            //    })
+            //})
+        </script>
+
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $("#submit").click(function () {
+                $("#DisplayData").empty();
+                GetData();
+            });
+
+            function GetData() {
+                $.ajax({
+                    url: '@Url.Action("GetReportData", "ServicesTrx")',
+                    method: "Get",
+                    //contentType: "application/json;charset=utf-8",
+                    dataType: "Html",
+                    data: {
+                        VendorId: $("#VendorId").val(),
+                        ReceivePersonId: $("#ReceivePersonId").val(),
+
+                    },
+                    success: function (result) {
+                        $("#DisplayData").html('').html(result);
+
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                })
+
+            }
+        });
+        </script>
+        @*<script type="text/javascript">
+            $(document).ready(function () {
+
+
+                var date = new Date();
+
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+
+                if (month < 10) month = "0" + month;
+                if (day < 10) day = "0" + day;
+
+                var today = year + "-" + month + "-" + day;
+                $("#startDate").attr("value", today);
+
+            });
+            $(document).ready(function () {
+
+
+                var date = new Date();
+
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+
+                if (month < 10) month = "0" + month;
+                if (day < 10) day = "0" + day;
+
+                var today = year + "-" + month + "-" + day;
+                $("#endDate").attr("value", today);
+
+            });
+            $("#submit").click(function () {
+                $("#DisplayData").empty();
+                    GetData();
+                });
+
+                function GetData() {
+                    $.ajax({
+                        url: '@Url.Action("FilterDate", "ReceiveRecord")',
+                        method: "Get",
+                        //contentType: "application/json;charset=utf-8",
+                        dataType: "Html",
+                        data: {
+                            Start: $("#startDate").val(),
+                            End: $("#endDate").val(),
+                        },
+                        success: function (result) {
+                            $("#DisplayData").html('').html(result);
+
+                            },
+                        error: function (errormessage) {
+                                alert(errormessage.responseText);
+                            }
+                    })
+
+                }
+            </script>*@
+        <script>
+
+            //الفلتره   بالمورد
+            $("#search").click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: '/PurchaseINV/GetVendorFilter',
+                    datatype: 'JSON',
+                    data: { 'VendorId': $("#VendorId").val() },
+                    success: function (data) {
+                        $('.tbody').empty();
+                        $.each(data, function (i, item) {
+                            var edit = $("#edit").val();
+                            var deletee = $("#delete").val();
+                            if (edit == "true" && deletee == "true") {
+
+                                var rows = "<tr>" +
+                                    //"<td>" + item.Id + "</td>" +
+                                    "<td>" + item.PurchaseINVNo + "</td>" +
+                                    "<td>" + "15-4-2021" + "</td>" +
+                                    "<td>" + item.Vendor.Name + "</td>" +
+                                    "<td>" + "نقدى" + "</td>" +
+                                    "<td>" + item.PurchaseINVTotal + "</td>" +
+                                    '<td> <a href="/PurchaseINV/UpdatePurchase/' + item.Id + '", class="btn btn-icon btn-outline-info"><i class="far fa-edit"></i></a></td>' +
+                                    '<td> <a href="/PurchaseINV_R/AddPurchase/' + item.Id + '", class="btn btn-icon btn-outline-info"><i class="fas fa-exchange-alt"></i></a></td>' +
+                                    '<td> <a onclick="Delele(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>' +
+                                    "</tr>";
+                                $('.tbody').append(rows);
+                            }
+                            else if (edit == "false" && deletee == "false") {
+                                var rows = "<tr>" +
+                                    //"<td>" + item.Id + "</td>" +
+                                    "<td>" + item.PurchaseINVNo + "</td>" +
+                                    "<td>" + "15-4-2021" + "</td>" +
+                                    "<td>" + item.Vendor.Name + "</td>" +
+                                    "<td>" + "نقدى" + "</td>" +
+                                    "<td>" + item.PurchaseINVTotal + "</td>" +
+                                    '<td> <a href="/PurchaseINV/UpdatePurchase/' + item.Id + '", class="btn btn-icon btn-outline-info disabled"><i class="far fa-edit"></i></a></td>' +
+                                    '<td> <a href="/PurchaseINV_R/AddPurchase/' + item.Id + '", class="btn btn-icon btn-outline-info disabled"><i class="fas fa-exchange-alt"></i></a></td>' +
+                                    '<td> <a onclick="Delele(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger disabled" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>' +
+                                    "</tr>";
+                                $('.tbody').append(rows);
+                            }
+                            else if (edit == "true" && deletee == "false") {
+                                var rows = "<tr>" +
+                                    //"<td>" + item.Id + "</td>" +
+                                    "<td>" + item.PurchaseINVNo + "</td>" +
+                                    "<td>" + "15-4-2021" + "</td>" +
+                                    "<td>" + item.Vendor.Name + "</td>" +
+                                    "<td>" + "نقدى" + "</td>" +
+                                    "<td>" + item.PurchaseINVTotal + "</td>" +
+                                    '<td> <a href="/PurchaseINV/UpdatePurchase/' + item.Id + '", class="btn btn-icon btn-outline-info"><i class="far fa-edit"></i></a></td>' +
+                                    '<td> <a href="/PurchaseINV_R/AddPurchase/' + item.Id + '", class="btn btn-icon btn-outline-info"><i class="fas fa-exchange-alt"></i></a></td>' +
+                                    '<td> <a onclick="Delele(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger disabled" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>' +
+                                    "</tr>";
+                                $('.tbody').append(rows);
+                            } else if (edit == "false" && deletee == "true") {
+                                var rows = "<tr>" +
+                                    //"<td>" + item.Id + "</td>" +
+                                    "<td>" + item.PurchaseINVNo + "</td>" +
+                                    "<td>" + "15-4-2021" + "</td>" +
+                                    "<td>" + item.Vendor.Name + "</td>" +
+                                    "<td>" + "نقدى" + "</td>" +
+                                    "<td>" + item.PurchaseINVTotal + "</td>" +
+                                    '<td> <a href="/PurchaseINV/UpdatePurchase/' + item.Id + '", class="btn btn-icon btn-outline-info disabled"><i class="far fa-edit"></i></a></td>' +
+                                    '<td> <a href="/PurchaseINV_R/AddPurchase/' + item.Id + '", class="btn btn-icon btn-outline-info disabled"><i class="fas fa-exchange-alt"></i></a></td>' +
+                                    '<td> <a onclick="Delele(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>' +
+                                    "</tr>";
+                                $('.tbody').append(rows);
+                            }
+                        });
+                    },
+                    error: loadData()
+                });
+            });
+
+            //عرض البيانات تلقائي الصفحه
+            $(document).ready(function () {
+                /*loadData();*/
+            });
+
+
+            function loadData() {
+                $.ajax({
+                    url: "/PurchaseINV/List",
+                    type: "GET",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        var html = '';
+                        $.each(result, function (key, item) {
+                            //var shortDateFormat = $.format.toBrowserTimeZone(shortDateFormat);
+                            html += '<tr>';
+                            if (item.PurchaseINVNo == null) {
+                                html += '<td>' + "لايوجد" + '</td>';
+                            } else {
+                                html += '<td>' + item.PurchaseINVNo + '</td>';
+                            }
+                            if (item.PurchaseINVDate == null) {
+                                html += '<td>' + "لايوجد" + '</td>';
+                            } else {
+                                html += '<td>' + item.PurchaseINVDate.getDate() + '</td>';
+                            }
+                            if (item.Vendor.Name == null) {
+                                html += '<td>' + "لايوجد" + '</td>';
+                            } else {
+                                html += '<td>' + item.Vendor.Name + '</td>';
+                            }
+                            if (item.PurchaseINVTypeId == null) {
+                                html += '<td>' + "لا يوجد" + '</td>';
+                            } else if (item.PurchaseINVTypeId == 1) {
+                                html += '<td>' + "نقدي" + '</td>';
+                            } else if (item.PurchaseINVTypeId == 2) {
+                                html += '<td>' + "أجل" + '</td>';
+                            }
+                            if (item.PurchaseINVTotal == null) {
+                                html += '<td>' + "لايوجد" + '</td>';
+                            } else {
+                                html += '<td>' + item.PurchaseINVTotal + '</td>';
+                            }
+
+                            html += '<td> <a href="/PurchaseINV/UpdatePurchase/' + item.Id + '", class="btn btn-icon btn-outline-info"><i class="far fa-edit"></i></a></td>';
+                            /**/
+                            html += '<td> <a href="/PurchaseINV_R/AddPurchase/' + item.Id + '", class="btn btn-icon btn-outline-info"><i class="fas fa-exchange-alt"></i></a></td>';
+
+                            html += '<td> <a onclick="Delele(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+                            /**/
+                            html += '</tr>';
+                        });
+                        $('.tbody').html(html);
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+            }
+
+            function Delele(ID) {
+                var ans = confirm("هل  تريد الحذف?");
+                if (ans) {
+                    $.ajax({
+                        url: "/ServicesTrx/Delete/" + ID,
+                        type: "POST",
+                        contentType: "application/json;charset=UTF-8",
+                        dataType: "json",
+                        success: function (result) {
+                            loadData();
+                        },
+                        error: function (errormessage) {
+                            alert(errormessage.responseText);
+                        }
+                    });
+                }
+
+            }
+
+        </script>
+
+    }
+
+

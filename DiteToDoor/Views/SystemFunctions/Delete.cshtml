@@ -1,0 +1,72 @@
+﻿@model DataMapping.Entites.SystemFunction
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SystemFunction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SystemFunctionParents.NameInArabic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SystemFunctionParents.NameInArabic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameInArabic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameInArabic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameInEnglish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameInEnglish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Controller)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Controller)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Action)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Action)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Icon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Icon)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

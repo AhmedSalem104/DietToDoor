@@ -1,0 +1,19 @@
+
+
+create proc Get_AllPurchase_R
+as
+begin
+
+
+SELECT        GL.PurchaseINV_R.Id, GL.PurchaseINV_R.CompanyId, GL.PurchaseINV_R.BranchesId, GL.PurchaseINV_R.PurchaseINVNo, GL.PurchaseINV_R.PurchaseINVDate, GL.PurchaseINV_R.VendorId, GL.PurchaseINV_R.StoreId, 
+                         GL.PurchaseINV_R.PurchaseOrderNo, GL.PurchaseINV_R.PurchaseOrderDate, GL.PurchaseINV_R.PurchasePaperNo, GL.PurchaseINV_R.PurchasePaperDate, GL.PurchaseINV_R.EmployeeId, 
+                         GL.PurchaseINV_R.PurchaseINVTypeId, GL.PurchaseINV_R.PaymentTypeId, GL.PurchaseINV_R.DirectExpenses1, GL.PurchaseINV_R.DirectExpenses2, GL.PurchaseINV_R.RowsCount, GL.PurchaseINV_R.TotaleItemDis, 
+                         GL.PurchaseINV_R.PurchaseINVTotal, GL.PurchaseINV_R.InvoiceDisPer, GL.PurchaseINV_R.InvoiceDisValue, GL.PurchaseINV_R.NetValue, GL.PurchaseINV_R.PaidValue, GL.PurchaseINV_R.RemainingValue, 
+                         GL.PurchaseINV_R.Notes, GL.PurchaseINV_R.CreatedBy, GL.PurchaseINV_R.CreatedDate, GL.PurchaseINV_R.UpdatedBy, GL.PurchaseINV_R.UpdatedDate, GL.PurchaseINV_R.IsDeleted, GL.PurchaseINV_R.PurchaseINVNo_R, 
+                         GL.Vendor.Name, GL.PurchaseINVType.PurchaseINVTypeName
+FROM            GL.PurchaseINV_R INNER JOIN
+                         GL.Vendor ON GL.PurchaseINV_R.VendorId = GL.Vendor.Id INNER JOIN
+                         GL.PurchaseINVType ON GL.PurchaseINV_R.PurchaseINVTypeId = GL.PurchaseINVType.Id
+
+
+end

@@ -1,0 +1,406 @@
+﻿@*@using DataMapping.Entites*@
+@model IEnumerable<DataMapping.Procedures.CarStatus_Result>
+@{
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+
+<style>
+    #CarId {
+        border: 2px solid #d4d4d4;
+    }
+
+    .spinner-grow {
+        animation-duration: 1s;
+    }
+
+    .lds-ellipsis {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin-right: 560px;
+    }
+
+        .lds-ellipsis div {
+            position: absolute;
+            top: 33px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #ff6a00;
+            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 0);
+        }
+
+            .lds-ellipsis div:nth-child(1) {
+                left: 8px;
+                animation: lds-ellipsis1 0.4s infinite;
+            }
+
+            .lds-ellipsis div:nth-child(2) {
+                left: 8px;
+                animation: lds-ellipsis2 0.4s infinite;
+            }
+
+            .lds-ellipsis div:nth-child(3) {
+                left: 32px;
+                animation: lds-ellipsis2 0.4s infinite;
+            }
+
+            .lds-ellipsis div:nth-child(4) {
+                left: 56px;
+                animation: lds-ellipsis3 0.4s infinite;
+            }
+
+    @@keyframes lds-ellipsis1 {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @@keyframes lds-ellipsis3 {
+        0% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(0);
+        }
+    }
+
+    @@keyframes lds-ellipsis2 {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        100% {
+            transform: translate(24px, 0);
+        }
+    }
+
+    /* .spinner-grow {
+        animation-duration: 1s;
+
+    }*/
+
+</style>
+<div class="row heder_title">
+    <div class="col-12">
+        <h3 class="blockquote"> حالة السيارة</h3>
+    </div>
+
+</div>
+
+<div class="row" style="margin-bottom: 15px;width:3000px">
+
+    <div class="col-lg-1.5" style="margin-left: 5px">
+        نوع المركبة:@Html.DropDownList("MachineTypeId", null, "اختيار الكل ", htmlAttributes: new { @class = "ColorId form-control select2", @Id = "MachineTypeId" })
+
+    </div>
+
+
+    <div class="col-lg-1" style="margin-left: 3px">
+        المركبة :   @Html.DropDownList("CarId", null, "... اختار  ...", new { @id = "CarId", @class = "ColorId form-control select2", @disabled = "disabled" })
+
+    </div>
+
+    @*<div class="col-lg-1.5" style="margin-left: 5px">
+            رقم اللوحة:@Html.DropDownList("CarPanelId", null, "اختيار الكل ", htmlAttributes: new { @class = "form-control", @Id = "PanalNo", @disabled = "disabled" })
+
+        </div>*@
+
+
+    <div class="col-lg-1" style="margin-left: 3px">
+        الموديل:@Html.DropDownList("CarModelId", null, "اختيار الكل ", htmlAttributes: new { @class = "ColorId form-control select2", @Id = "CarModelId", @DISTINCT = "DISTINCT " })
+
+    </div>
+
+    <div class="col-lg-1.5" style="margin-left: 5px">
+        اللون:@Html.DropDownList("ColorId", null, "اختيار الكل ", htmlAttributes: new { @class = "ColorId form-control select2", @Id = "ColorId" })
+
+    </div>
+    <div class="col-lg-1.5" style="margin-left: 5px">
+        حالة السيارة:@Html.DropDownList("CarStatusId", null, htmlAttributes: new { @class = "ColorId form-control select2", @Id = "CarStatusId" })
+
+    </div>
+
+    <div class="col-lg-1.5" style="margin-left: 3px">
+        <input type="submit" id="submit" value="@DataMapping.Resources.Resource.Show" style="margin-top: 18px; margin-right: 2px; height:fit-content" class="btn btn-primary" />
+
+    </div>
+
+    <div class="col-lg-1.5" style=" margin-top: 18px;">
+        @using (Html.BeginForm("PrintDataRDLC", "CarStatus"))
+        {
+
+            <button id="Print" formtarget="_blank" type="submit" class="submitDis btn btn-outline-secondary" style="background-color: white; color: darkgreen; border-width: 2px; font-weight: bold; ">
+
+                @DataMapping.Resources.Resource.Print  <i class="fa fa-print" aria-hidden="true"></i>
+
+            </button>
+        }
+
+    </div>
+
+</div>
+
+
+
+
+<div style="margin-bottom:40px;" class="container">
+
+</div>
+
+
+<div style="height:110px;" id="DivSpiners"></div>
+
+
+<div style="text-align:center;" id="spiners" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+<div class="row">
+    <div class="col-12">
+        <div class="table-responsive">
+            <table id="DisplayData" class="table table-striped table-hover table-bordered" @*id="save-stage"*@ style="width:100%;">
+                <thead style="width:100%;">
+                    <tr>
+                        <th>
+                            كود المركبة
+                        </th>
+                        <th>
+                            رقم اللوحة
+                        </th>
+
+                        <th>
+                            رقم المركبة
+                        </th>
+                        <th>
+                            رقم الاستمارة
+                        </th>
+                        <th>
+                            اللون
+                        </th>
+                        <th>
+                            الموديل
+                        </th>
+                        <th>
+                            الحالة
+                        </th>
+                        <th>
+                            اسم السائق
+                        </th>
+                        <th>
+                            رقم الجوال
+                        </th>
+                        <th>
+                            تاريخ الخروج
+                        </th>
+                        <th>
+                            المدة
+                        </th>
+                        <th>
+                            تاريخ الرجوع
+                        </th>
+                        <th>
+                            رجوع سيارة
+                        </th>
+                        <th>
+                            SMS
+                        </th>
+
+
+                        @*<th> @DataMapping.Resources.Resource.PurchaseOrderNo</th>
+                            <th> @DataMapping.Resources.Resource.PurchasePaperNo</th>
+                            <th> @DataMapping.Resources.Resource.Branches</th>*@
+
+                        @*<th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                            <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                            <th class="th_width_5">@DataMapping.Resources.Resource.Print</th>*@
+                    </tr>
+                </thead>
+                <tbody class="tbody" style="width:100%;">
+                    <tr>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section ModelPopup{}
+
+
+@section JavaScriptSection{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#spiners").hide();
+            $("#DivSpiners").hide();
+        });
+        $(document).ready(function () {
+            $("#Print").prop("disabled", true);
+            $("#submit").click(function () {
+                $("#Print").prop("disabled", false);
+
+            })
+        })
+    </script>
+
+
+    <script type="text/javascript">
+    //$(document).ready(function () {
+
+
+    //    var date = new Date();
+
+    //    var day = date.getDate();
+    //    var month = date.getMonth() + 1;
+    //    var year = date.getFullYear();
+
+    //    if (month < 10) month = "0" + month;
+    //    if (day < 10) day = "0" + day;
+
+    //    var today = year + "-" + month + "-" + day;
+    //    $("#FromDate").attr("value", today);
+
+    //});
+    //$(document).ready(function () {
+
+
+    //    var date = new Date();
+
+    //    var day = date.getDate();
+    //    var month = date.getMonth() + 1;
+    //    var year = date.getFullYear();
+
+    //    if (month < 10) month = "0" + month;
+    //    if (day < 10) day = "0" + day;
+
+    //    var today = year + "-" + month + "-" + day;
+    //    $("#ToDate").attr("value", today);
+
+    //});
+
+       
+    $("#submit").click(function () {
+        $("#DisplayData").empty();
+            GetData();
+        });
+
+        function GetData() {
+            $("#spiners").show();
+            $("#DivSpiners").show();
+            $.ajax({
+                url: '@Url.Action("Filter", "CarStatus")',
+                method: "Get",
+                //contentType: "application/json;charset=utf-8",
+                dataType: "Html",
+                data: {
+
+                    CarId: $("#CarId").val(),
+                    CarModelId: $("#CarModelId").val(),
+                    ColorId: $("#ColorId").val(),
+                    MachineTypeId: $("#MachineTypeId").val(),
+                    CarStatusId: $("#CarStatusId").val(),
+
+                },
+                success: function (result) {
+                    $("#DisplayData").html('').html(result);
+                    $("#spiners").hide();
+                    $("#DivSpiners").hide();
+
+                    },
+                error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+            })
+
+        }
+
+        //$(document).ready(function () {
+
+        //    $("#CarPanelId").prop("disabled", true);
+        //    $("#CarModelId").prop("disabled", true);
+        //    $("#ColorId").prop("disabled", true);
+        //})
+        //$("#CarId").change(function () {
+        //    alert($("#CarId").val())
+        //});
+
+        $("#MachineTypeId").change(function () {
+            $.get("/CarStatus/GetCars", { ID: $("#MachineTypeId").val() }, function (data) {
+
+                $("#CarId").prop("disabled", false);
+                $("#CarId").empty();
+                //$("#UnitList").append("<option> ----------------  </option>")
+                $("#CarId").append("<option>اختار </option>")
+
+                $.each(data, function (index, row) {
+                    $("#CarId").append("<option value='" + row.CarId + "'>" + row.SelectCar + "</option>")
+                });
+            });
+        });
+    </script>
+
+    @*<script>
+            function removeduplicate() {
+                var mycode = {};
+                $("#CarModelId").each(function () {
+                    if (mycode[this.text]) {
+                        $(this).remove();
+                    } else {
+                        mycode[this.text] = this.value;
+                    }
+                });
+            }
+        </script>*@
+
+
+}
+
+

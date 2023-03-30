@@ -1,0 +1,126 @@
+﻿
+@model DataMapping.Entites.Stations
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">@DataMapping.Resources.Resource.Add</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal", @id = "ModalForm" }))
+
+            {
+        <div class="modal-body">
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label class="col-sm-4 col-form-label">@DataMapping.Resources.Resource.StationCode</label>
+
+                    @Html.TextBoxFor(a => a.StationCode, new { Value = ViewBag.autoCode, @id = "StationCode", @class = "form-control" })
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label>@DataMapping.Resources.Resource.StationName</label>
+                    @Html.EditorFor(model => model.StationName, new { htmlAttributes = new { @id = "Name", @class = "form-control" } })
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label>@DataMapping.Resources.Resource.FuelType</label>
+                    @Html.DropDownList("FuelType", null, " اختر ", htmlAttributes: new { @id = "FuelType", @class = "select2 form-control" })
+
+                </div>
+                @*<div class="form-group col-md-6">
+                    <label>@DataMapping.Resources.Resource.TankCapacity</label>
+                    @Html.EditorFor(model => model.TankCapacity, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>*@
+            </div>
+          
+            @*<div class="row">
+                <div class="form-group col-md-6">
+                    <label>@DataMapping.Resources.Resource.MinCapacity</label>
+                    @Html.EditorFor(model => model.MinCapacity, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label>@DataMapping.Resources.Resource.MaxCapacity</label>
+                    @Html.EditorFor(model => model.MaxCapacity, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>*@
+
+        </div>
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+                        <div class="col-6 text-right">
+                            <button type="button" class="btn btn-success" onclick="Add()">@DataMapping.Resources.Resource.save</button>
+                        </div>
+                        <div class="col-6 text-left">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">@DataMapping.Resources.Resource.Close</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function Add() {
+        var Isvalid = true;
+        if ($("#Name").val() == "" || $("#Name").val() == null) {
+            Isvalid = false;
+            toastr.warning('ادخل البيانات')
+            
+        }
+        else
+        {
+            
+
+            $.ajax({
+
+                type: "POST",
+                url: '/StationsOut/CheckStationNo',     //your action
+                data: { StationNo: parseInt($("#StationCode").val()) },   //your form name.it takes all the values of model
+                dataType: 'json',
+                success: function (result) {
+                    if (result == false) {
+                        toastr.warning('عفوا كود المحطة هذا موجود مسبقاً')
+                    }
+                    else {
+                        $.ajax({
+
+                            type: "POST",
+                            url: '/StationsOut/AddOrEdit',     //your action
+                            data: $('#ModalForm').serialize(),   //your form name.it takes all the values of model
+                            dataType: 'json',
+                            success: function (result) {
+                                loadData();
+                                $('#exampleModalCenter').modal('hide');
+
+                            },
+
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                alert('oops, something bad happened')
+                                //toastr.warning('اختر  ...!')
+                            }
+
+                        });
+                    }
+
+                },
+
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('oops, something bad happened')
+                    //toastr.warning('اختر  ...!')
+                }
+
+            });
+        }
+    }
+</script>
+

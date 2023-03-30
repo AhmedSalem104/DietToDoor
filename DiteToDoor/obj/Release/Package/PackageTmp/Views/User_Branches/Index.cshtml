@@ -1,0 +1,285 @@
+﻿@using DataMapping.Entites
+@model IEnumerable<DataMapping.Entites.Users_Branches>
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+    ViewBag.Title = DataMapping.Resources.Resource.SafeAccess;
+}
+@if (ViewBag.CanDelete == false)
+{
+    <input type="text" value="false" hidden id="delete" />
+}
+@if (ViewBag.CanDelete == true)
+{
+    <input type="text" value="true" hidden id="delete" />
+}
+<div class="row heder_title">
+    <div class="col-6">
+        <h3>@DataMapping.Resources.Resource.BrancheAccess</h3>
+    </div>
+    <div class="col-6 text-left">
+        <a href="#" class="btn btn-icon icon-left btn-success" onclick="showPopupCreate()">
+            @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+        </a>
+    </div>
+</div>
+<div class="row" style="margin-bottom: 15px;">
+    <div class="col-lg-4">
+        @DataMapping.Resources.Resource.UserName:@Html.DropDownList("UserId", null, "اختيار الكل ", htmlAttributes: new { @id = "UserId", @class = "select2 SubClause form-control" })
+
+    </div>
+    <div class="col-lg-4">
+        @DataMapping.Resources.Resource.BranchId:@Html.DropDownList("BrancheId", null, "اختيار الكل ", htmlAttributes: new { @id = "BrancheId", @class = "select2 MainClauseId form-control" })
+    </div>
+    <button class="btn btn-primary" id="search" style="height:fit-content; margin-top:20px">تنفيذ</button>
+
+</div>
+<div class="row ">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover" id="save-stage" style="width:100%;">
+                        <thead>
+                            <tr>
+
+                                <th> @DataMapping.Resources.Resource.UserName</th>
+                                <th>  @DataMapping.Resources.Resource.BranchId</th>
+                                <th>  @DataMapping.Resources.Resource.IsDefault</th>
+                                <th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                                <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            @*@foreach (var item in Model)
+                                {*@
+                            @*var UserName = db.User.SingleOrDefault(a => a.Id == item.UserId)?.EngDescription;
+                                var BrancheName = db.Branches.SingleOrDefault(a => a.Id == item.BranchId)?.BranchesName;*@
+                            <!--<tr>
+
+                                <td>UserName </td>
+                                <td>BrancheName</td>
+                                <td>-->
+                            @*<a href="#" class="btn btn-icon btn-outline-info" onclick="showPopupEdit(@item.Id)">
+                                    <i class="far fa-edit"></i>
+                                </a>*@
+                            <!--<a href="#" class="btn btn-icon btn-outline-info" onclick="showPopupEdit(item.Id)"><i class="far fa-edit"></i></a>
+                            </td>
+                            <td>
+                                <a id="deleteItem" class="deleteItem btn btn-icon btn-outline-danger" data-toggle="modal"
+                                   data-path="Url.Action("Delete", "User_Branches", new { Id = item.Id })" data-target="#deleteConfirmModal">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>-->
+                            @*<a onclick="Delete(item.Id)" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a>*@
+                            <!--</td>
+
+                                </tr>
+                            }-->
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section ModelPopup{
+    <div id="mainDiv"></div>
+    <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 text-center warning_icon">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 confirm_text">
+                            <h3>@DataMapping.Resources.Resource.Alert</h3>
+                            <p>@DataMapping.Resources.Resource.Confirm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+                        <div class="col-6 text-right">
+                            <button id="btnContinueDelete" type="button" class="btn btn-danger">حذف</button>
+                        </div>
+                        <div class="col-6 text-left">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">رجوع</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section JavaScriptSection{
+    <script type="text/javascript">
+        function showPopupCreate() {
+            $.ajax({
+                type: "Get",
+                url: "/User_Branches/AddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+        function showPopupEdit(id) {
+            $.ajax({
+                type: "Get",
+                url: "/User_Branches/AddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                data: { Id: id },
+                dataType: "html",
+                success: function (result, status, xhr) {
+                    8
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+        function Delete(ID) {
+            var deletee = $("#delete").val();
+            if (deletee == "false") {
+                alert("عفواً . ليس لديك صلاحية");
+            }
+            else {
+                var ans = confirm("هل  تريد الحذف?");
+                if (ans) {
+                    $.ajax({
+                        url: "/User_Branches/Delete/" + ID,
+                        type: "POST",
+                        contentType: "application/json;charset=UTF-8",
+                        dataType: "json",
+                        success: function (result) {
+                            
+                                loadData();
+                            
+                            /*  location.reload();*/
+                        },
+                        error: function (errormessage) {
+                            alert(errormessage.responseText);
+                        }
+                    });
+                }
+            }
+        }
+
+        $(document).ready(function () {
+            loadData();
+        });
+
+        //Load Data function
+        function loadData() {
+            $.ajax({
+                type: 'GET',
+                url: '/User_Branches/GetUserBrancheFilter',
+                datatype: 'JSON',
+                data: {
+                    'UserId': $("#UserId").val(),
+                    'BrancheId': $("#BrancheId").val()
+                },
+                success: function (data) {
+
+                    var html = '';
+                    $('.tbody').empty();
+                    $.each(data, function (i, item) {
+
+                        html += '<tr>';
+
+                        if (item.Users.EngDescription == null) {
+                            html += '<td>' + "لايوجد" + '</td>';
+                        } else {
+                            html += '<td>' + item.Users.EngDescription + '</td>';
+                        }
+                        if (item.Branch.BranchesName == null) {
+                            html += '<td>' + "لايوجد" + '</td>';
+                        } else {
+                            html += '<td>' + item.Branch.BranchesName + '</td>';
+                        }
+                        if (item.IsDefault == true) {
+                            html += '<td>' + "نعم" + '</td>';
+                        } else {
+                            html += '<td>' + "لا" + '</td>';
+                        }
+
+                        html += '<td> <a href="#" class="btn btn-icon btn-outline-info" onclick="showPopupEdit(' + item.Id + ')"><i class="far fa-edit"></i></a></td>';
+                        /**/
+
+                        html += '<td> <a onclick="Delete(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+                        /**/
+                        html += '</tr>';
+                    });
+                    $('.tbody').html(html);
+
+                },
+                /* error: alert("لا يمكن تحميل البيانات")*/
+
+            });
+        }
+
+        //الفلترة بالمستخدمين والفروع
+        $("#search").click(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/User_Branches/GetUserBrancheFilter',
+                datatype: 'JSON',
+                data: {
+                    'UserId': $("#UserId").val(),
+                    'BrancheId': $("#BrancheId").val()
+                },
+                success: function (data) {
+
+                    var html = '';
+                    $('.tbody').empty();
+                    $.each(data, function (i, item) {
+
+                        html += '<tr>';
+
+                        if (item.Users.EngDescription == null) {
+                            html += '<td>' + "لايوجد" + '</td>';
+                        } else {
+                            html += '<td>' + item.Users.EngDescription + '</td>';
+                        }
+                        if (item.Branch.BranchesName == null) {
+                            html += '<td>' + "لايوجد" + '</td>';
+                        } else {
+                            html += '<td>' + item.Branch.BranchesName + '</td>';
+                        }
+                        if (item.IsDefault == true) {
+                            html += '<td>' + "نعم" + '</td>';
+                        } else {
+                            html += '<td>' + "لا" + '</td>';
+                        }
+
+
+                        html += '<td> <a href="/User_Branches/AddOrEdit/' + item.Id + '", class="btn btn-icon btn-outline-info"><i class="far fa-edit"></i></a></td>';
+                        /**/
+
+                        html += '<td> <a onclick="Delete(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+                        /**/
+                        html += '</tr>';
+                    });
+                    $('.tbody').html(html);
+
+                },
+                /* error: alert("لا يمكن تحميل البيانات")*/
+
+            });
+        });
+    </script>
+}

@@ -1,0 +1,62 @@
+﻿
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">@DataMapping.Resources.Resource.Accessbility</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal", @id = "ModalForm" }))
+
+            {
+                <div class="modal-body">
+
+                    <p style="font-size:medium">@DataMapping.Resources.Resource.Access</p>
+
+                </div>
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+
+                        <div class="col-6 text-left">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" style="float:right">@DataMapping.Resources.Resource.Close</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function Add() {
+        var Isvalid = true;
+        if ($("#Name").val() == "" || $("#Name").val() == null && $("#ConversionRate").val() == "" || $("#ConversionRate").val() == null) {
+            Isvalid = false;
+            toastr.warning('ادخل البيانات')
+        }
+        else
+        {
+            $.ajax({
+
+                type: "POST",
+                url: '/Currency/AddOrEdit',     //your action
+                data: $('#ModalForm').serialize(),   //your form name.it takes all the values of model
+                dataType: 'json',
+                success: function (result) {
+
+                    loadData();
+                    $('#exampleModalCenter').modal('hide');
+
+                },
+
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('oops, something bad happened')
+                }
+
+            });
+        }
+    }
+</script>
+
+

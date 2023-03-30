@@ -1,0 +1,112 @@
+﻿@using DataMapping.Entites
+@model IEnumerable<DataMapping.Procedures.FilterUser_Result>
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+    //decimal? TCost = 0;
+    //decimal? PCost = 0;
+    //decimal? RCost = 0;
+
+
+
+}
+
+@*@using(Html.BeginForm("PrintDataRDLC", "ReceiveRecordReport"))
+    {
+        <button formtarget="_blank" type="submit" class="btn btn-outline-secondary" style="background-color:white;margin-bottom:20px; color:darkgreen;border-width:2px">
+
+            @DataMapping.Resources.Resource.Print  <i class="fa fa-print" aria-hidden="true"></i>
+
+        </button>
+    }*@
+
+<div class="container">
+    <table id="DisplayData" class="table table-striped table-hover table-bordered" @*id="save-stage"*@ style="width:100%;">
+
+        <tr  style="text-align:center;">
+            <th>
+                اسم المستخدم
+            </th>
+            <th class="width-per-15">
+                مجموعة المستخدم
+            </th>
+
+            <th class="width-per-15">
+                حالة المستخدم
+            </th>
+            <th class="width-per-20">
+                تاريخ الانشاء
+            </th>
+
+            <th class="width-per-10">
+                طباعة
+            </th>
+
+            @*<th>
+                Actions
+            </th>*@
+
+        </tr>
+        @foreach (var item in Model)
+        {
+
+            string status = "غير نشط";
+
+            if (item.IsActive == true)
+            {
+                status = " نشط";
+            }
+            <tr  style="text-align:center;">
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArbDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameInArabic)
+
+
+                </td>
+                <td>
+                    @status
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.Date)*@
+                    @item.Date.ToShortDateString()
+                </td>
+
+
+
+
+                <td>
+                    @using (Html.BeginForm("PrintDataRDLCById", "UsersReport", new { id = @item.UserId }))
+                    {
+                        <button formtarget="_blank" type="submit" class="btn btn-outline-secondary" style="background-color:white; color:darkgreen;border-width:2px">
+
+                            @*@DataMapping.Resources.Resource.Print*@  <i class="fa fa-print" aria-hidden="true"></i>
+
+                        </button>
+                    }
+                </td>
+                @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>*@
+
+            </tr>
+            //TCost = item.TotalCost;
+            //PCost = item.PaidCost;
+            //RCost = item.RemainingCost;
+
+        }
+
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,338 @@
+﻿@model DataMapping.Entites.StationsTrx
+
+@{
+    ViewBag.Title = DataMapping.Resources.Resource.Vendor;
+}
+
+<style>
+    .col-form-label {
+        font-size: 14px !important;
+        font-weight: 600;
+        color: #34395e !important;
+        margin-bottom: 8px;
+    }
+</style>
+@using (Html.BeginForm("AddOrEdit", "StationsTrx", FormMethod.Post, new { @class = "form-horizontal", @id = "ModalForm" }))
+
+{
+
+    if (Model != null)
+    {
+        if (Model.AssignmentDate != null)
+        {
+            <input id="AssignmentDatee" hidden value="@Model.AssignmentDate.Value.Date">
+
+        }
+
+        if (Model.InvoiceDate != null)
+        {
+            <input id="InvoiceDatee" hidden value="@Model.InvoiceDate.Value.Date">
+
+        }
+
+        if (Model.Date != null)
+        {
+            <input id="Datee" hidden value="@Model.Date.Value.Date">
+
+        }
+
+
+
+
+    }
+    else
+    {
+        <input id="AssignmentDatee" hidden value="1">
+        <input id="InvoiceDatee" hidden value="1">
+        <input id="Datee" hidden value="1">
+
+
+    }
+    <div class="row heder_title">
+        <div class="col-6">
+            <h3 class="blockquote">سند إستلام محروقات</h3>
+        </div>
+        <div class="col-6 text-left">
+
+
+            <a href="~/StationsTrx/Index" id="back" class="btn btn-icon icon-left btn-outline-warning">
+                رجوع <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="card-layout">
+        <p style="color:red; font-size:10px;">@Session["msgErrV"]</p>
+        <div class="row">
+            <label class="col-sm-2 col-form-label">
+                سنة
+            </label>
+
+
+            <input type="number" id="change" hidden>
+            <div class="col-sm-4">
+
+
+                @if (Model != null)
+                {
+                    @Html.EditorFor(model => model.Year, new { htmlAttributes = new { @class = "form-control", @id = "Year", @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+                }
+                else
+                {
+                    @Html.EditorFor(model => model.Year, new { htmlAttributes = new { @class = "form-control", @id = "Year", Value = ViewBag.Year, @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+                }
+            </div>
+            <label class="col-sm-2 col-form-label">
+                مسلسل
+            </label>
+            <div class="col-sm-4">
+                @if (Model != null)
+                {
+                    @Html.EditorFor(model => model.Serial, new { htmlAttributes = new { Value = ViewBag.autoCode, @class = "form-control", @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.Serial, "", new { @class = "text-danger" })
+                }
+                else
+                {
+                    @Html.EditorFor(model => model.Serial, new { htmlAttributes = new { Value = ViewBag.autoCode, @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Serial, "", new { @class = "text-danger" })
+                }
+            </div>
+
+            <label class="col-sm-2 col-form-label">
+                رقم التعميد
+            </label>
+            <div class="col-sm-4">
+                @Html.EditorFor(model => model.AssignmentNo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AssignmentNo, "", new { @class = "text-danger" })
+            </div>
+
+            <label class="col-sm-2 col-form-label">
+                تاريخ التعميد
+            </label>
+            <div class="col-sm-4">
+                @Html.EditorFor(model => model.AssignmentDate, new { htmlAttributes = new { @class = "DateChange form-control", Value = ViewBag.AutoDate, type = "date", @data_date = ViewBag.AutoDate, @data_date_format = "YYYY/MM/DD", @id = "AssignmentDate" } })
+                @Html.ValidationMessageFor(model => model.AssignmentDate, "", new { @class = "text-danger" })
+            </div>
+
+            <label class="col-sm-2 col-form-label">
+                المحطة
+            </label>
+            <div class="col-sm-4">
+                @Html.DropDownList("StationId", null, "... اختار  ...", new { @id = "StationId", @class = "ColorId form-control select2" })
+                @Html.ValidationMessageFor(model => model.StationId, "", new { @class = "text-danger" })
+            </div>
+            <label class="col-sm-2 col-form-label">
+                المورد
+            </label>
+            <div class="col-sm-4">
+                @Html.DropDownList("VendorId", null, "... اختار  ...", new { @id = "VendorId", @class = "ColorId form-control select2" })
+                @Html.ValidationMessageFor(model => model.VendorId, "", new { @class = "text-danger" })
+            </div>
+
+            <label class="col-sm-2 col-form-label" id="type">
+                نوع البنزين
+            </label>
+            <div class="col-sm-4" id="typee">
+                @Html.DropDownList("GasolineTypeId", null, "... اختار  ...", new { @id = "GasolineTypeId", @class = "ColorId form-control select2" })
+                @Html.ValidationMessageFor(model => model.GasolineTypeId, "", new { @class = "text-danger" })
+            </div>
+
+
+
+
+            <label class="col-sm-2 col-form-label">الكميلة الفعلية</label>
+            <div class="col-sm-4">
+                @Html.EditorFor(model => model.ActualQuantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ActualQuantity, "", new { @class = "text-danger" })
+            </div>
+
+            <label class="col-sm-2 col-form-label">إجمالي القيمه</label>
+            <div class="col-sm-4">
+                @Html.EditorFor(model => model.RequestedQuantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RequestedQuantity, "", new { @class = "text-danger" })
+            </div>
+
+            <label class="col-sm-2 col-form-label">رقم الفاتورة </label>
+            <div class="col-sm-4">
+                @Html.EditorFor(model => model.InvoiceNo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.InvoiceNo, "", new { @class = "text-danger" })
+            </div>
+
+            <label class="col-sm-2 col-form-label">تاريخ الفاتورة</label>
+            <div class="col-sm-4">
+                @Html.EditorFor(model => model.InvoiceDate, new { htmlAttributes = new { @class = "DateChange form-control", Value = ViewBag.AutoDate, type = "date", @data_date = ViewBag.AutoDate, @data_date_format = "YYYY/MM/DD", @id = "InvoiceDate" } })
+                @Html.ValidationMessageFor(model => model.InvoiceDate, "", new { @class = "text-danger" })
+            </div>
+
+            <label class="col-sm-2 col-form-label">تاريخ الإستلام</label>
+            <div class="col-sm-4">
+                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "DateChange form-control", Value = ViewBag.AutoDate, type = "date", @data_date = ViewBag.AutoDate, @data_date_format = "YYYY/MM/DD", @id = "Date" } })
+                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+            </div>
+
+
+        </div>
+        <button type="submit" class="btn btn-icon icon-left btn-info">
+            @DataMapping.Resources.Resource.save <i class="fa fa-save" aria-hidden="true"></i>
+        </button>
+    </div>
+}
+@section ModelPopup{
+
+}
+@section JavaScriptSection{
+
+
+    <script>
+        $(document).ready(function () {
+            $("#StationId").change(function () {
+                $.get("/StationsTrx/GetStationType", { ID: $("#StationId").val() }, function (data) {
+
+                    if (data == true) {
+                        $("#type").show();
+                        $("#typee").show();
+                    }
+                    else {
+                        $("#type").hide();
+                        $("#typee").hide();
+                    }
+                });
+            })
+        });
+
+        if ($("#AssignmentDatee").val() == 1) {
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#AssignmentDate").attr("value", today);
+        }
+
+        else {
+            var date = new Date($("#AssignmentDatee").val());
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#AssignmentDate").attr("value", today);
+        }
+
+
+
+
+
+
+
+        if ($("#InvoiceDatee").val() == 1) {
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#InvoiceDate").attr("value", today);
+        }
+
+        else {
+            var date = new Date($("#InvoiceDatee").val());
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#InvoiceDate").attr("value", today);
+        }
+
+
+
+
+
+
+
+        if ($("#Datee").val() == 1) {
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#Date").attr("value", today);
+        }
+
+        else {
+            var date = new Date($("#Datee").val());
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#Date").attr("value", today);
+        }
+
+
+        $(document).ready(function () {
+            $("#type").hide();
+            $("#typee").hide();
+        })
+
+    </script>
+
+    <script type="text/javascript" language="javascript">
+
+        $("input").keyup(function () {
+            $("#change").val(1);
+        })
+        $("#back").click(function () {
+            //alert($("#change").val());
+            if ($("#change").val() == 1) {
+
+                window.onbeforeunload = function () {
+                    var Ans = confirm("لقد تم تغيير البيانات هل تريد الحفظ");
+                    if (Ans == true) {
+                        return true;
+                        toastr.warning('هذه السيارة مسلمة لموظف ');
+                    }
+
+                    else
+                        return false;
+                };
+            }
+
+
+        });
+
+        $(document).ready(function () {
+            $("#change").val(0);
+        })
+    </script>
+}

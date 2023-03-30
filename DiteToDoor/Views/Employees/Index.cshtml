@@ -1,0 +1,385 @@
+﻿@using DataMapping.Entites
+@model IEnumerable<DataMapping.Entites.Employees>
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+
+    ViewBag.ItemGroupId = new SelectList(db.Itemgroups.ToList(), "Id", "ItemgroupsName");
+    ViewBag.ItemGategoriesId = new SelectList(db.ItemCategories.ToList(), "Id", "ItemCatName");
+    ViewBag.Title = DataMapping.Resources.Resource.Item;
+}
+@if (ViewBag.CanEdit == false)
+{
+    <input type="text" value="false" hidden id="edit" />
+}
+@if (ViewBag.CanEdit == true)
+{
+    <input type="text" value="true" hidden id="edit" />
+}
+
+@if (ViewBag.CanDelete == false)
+{
+    <input type="text" value="false" hidden id="delete" />
+}
+@if (ViewBag.CanDelete == true)
+{
+    <input type="text" value="true" hidden id="delete" />
+}
+<div class="row heder_title">
+    <div class="col-6">
+        <h3 class="blockquote">@DataMapping.Resources.Resource.Employee</h3>
+    </div>
+    <div class="col-6 text-left">
+        <a href="#" class="btn btn-outline-secondary">
+            طباعة <i class="fas fa-print"></i>
+        </a>
+        @if (ViewBag.CanAdd == true)
+        {
+            <a href="~/Employees/AddEmployees" class="btn btn-icon icon-left success_butn">
+                @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+            </a>
+        }
+        else
+        {
+            <a href="~/Employees/AddEmployees" class="btn btn-icon icon-left success_butn disabled">
+                @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+            </a>
+        }
+    </div>
+</div>
+<div class="row" style="margin-bottom: 15px;">
+    <div class="col-lg-2">
+        رقم الموظف:@Html.DropDownList("EmployeesId", null, "اختيار الكل ", htmlAttributes: new { @id = "EmployeesId", @class = "select2 VendorId form-control" })
+      
+    </div>
+    <div class="col-lg-2">
+        اسم الموظف:@Html.DropDownList("EmployeesName", null, "اختيار الكل ", htmlAttributes: new { @id = "EmployeesName", @class = "select2 VendorId form-control" })
+
+    </div>
+
+    <div class="col-lg-2">
+        القسم:@Html.DropDownList("DepartmentId", null, "اختيار الكل ", htmlAttributes: new { @id = "DepartmentId", @class = "select2 VendorId form-control" })
+
+    </div>
+    <div class="col-lg-2">
+        المسمى الوظيفى:@Html.DropDownList("JobTitle", null, "اختيار الكل ", htmlAttributes: new { @id = "JobTitle", @class = "select2 VendorId form-control" })
+
+    </div>
+    <div class="col-lg-2">
+        @DataMapping.Resources.Resource.Status:@Html.DropDownList("ActiveOrNott", null, "اختيار الكل ", htmlAttributes: new { @id = "ActiveOrNott", @class = "select2 VendorId form-control" })
+
+    </div>
+    <button class="btn btn-primary" id="search" style="height:fit-content; margin-top:20px">تنفيذ</button>
+
+</div>
+<div class="row">
+    @*<div class="col-lg-4">
+            @DataMapping.Resources.Resource.Itemgroups:@Html.DropDownList("ItemGroupId", null, " -------- ", htmlAttributes: new { @id = "ClauseTypeId", @class = "ClauseTypeId form-control" })
+
+        </div>
+        <div class="col-lg-4">
+            @DataMapping.Resources.Resource.ItemCategories:@Html.DropDownList("ItemGategoriesId", null, " -------- ", htmlAttributes: new { @id = "GetMainClauseId", @class = "MainClauseId form-control" })
+        </div>*@
+
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered" id="save-stage" style="width:100%;">
+                <thead style="width:100%;">
+                    <tr>
+                        <th class="th_width_8"> @DataMapping.Resources.Resource.EmpNo</th>
+                        <th> @DataMapping.Resources.Resource.EmployeeName</th>
+                        <th> @DataMapping.Resources.Resource.Department</th>
+                        <th> @DataMapping.Resources.Resource.JobTitleName</th>
+                        <th> @DataMapping.Resources.Resource.Status</th>
+                      
+                      
+
+                        @*<th> @DataMapping.Resources.Resource.PurchaseOrderNo</th>
+        <th> @DataMapping.Resources.Resource.PurchasePaperNo</th>
+        <th> @DataMapping.Resources.Resource.Branches</th>*@
+
+                        <th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                        
+                        <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody" style="width:100%;">
+                    @*@foreach (var item in Model)
+                        {
+                            var Branches = db.Branches.SingleOrDefault(a => a.Id == item.BranchesId)?.BranchesName;
+                            string CustomerName = db.Customers.SingleOrDefault(a => a.Id == item.CustomersId)?.CustomersName;
+                            var PurchaseINVType = item.PurchaseINVTypeId;
+                            <tr>
+                                <td> @Html.DisplayFor(modelItem => item.SalesINVNo)</td>
+                                <td>
+
+                                    @item.SalesINVDate.ToString("yyyy/MM/dd")
+
+                                </td>
+                                <td> @CustomerName</td>
+                                <td>
+                                    @if (PurchaseINVType == 1)
+                                    {
+                                        <p>نقدي</p>
+                                    }
+                                    else
+                                    {
+                                        <p>أجل</p>
+                                    }
+
+                                </td>
+                                <td>
+                                    @if (item.SalesINVTotal == null)
+                                    {
+                                        <h5>لايوجد</h5>
+                                    }
+                                    else
+                                    {
+                                        @item.SalesINVTotal
+                                    }
+
+                                </td>
+
+                                <td >
+                                    <a href="@Url.Action("EditItem", "PurchaseINV", new { Id = @item.Id })" class="btn btn-icon btn-outline-info">
+                                        <i class="far fa-edit"></i>
+                                    </a>
+                                </td>
+
+                                <td >
+                                    <a href="~/SalesINV_R/AddSalesINV/@item.Id" class="btn btn-icon btn-outline-info">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </a>
+                                </td>
+                                <td >
+                                    <a id="deleteItem" class="deleteItem btn btn-icon btn-outline-danger" data-toggle="modal"
+                                       data-path="@Url.Action("Delete", "PurchaseINV", new { Id = @item.Id })" data-target="#deleteConfirmModal">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            }*@
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section ModelPopup{
+    <div id="mainDiv"></div>
+    <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 text-center warning_icon">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 confirm_text">
+                            <h3>تنبيه</h3>
+                            <p>هل انت متأكد من الحذف؟</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+                        <div class="col-6 text-right">
+                            <button id="btnContinueDelete" type="button" class="btn btn-icon icon-left btn-danger">
+                                حذف <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="col-6 text-left">
+                            <button type="button" class="btn btn-icon icon-left btn-warning" data-dismiss="modal">
+                                رجوع <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section JavaScriptSection{
+
+    <script>
+
+        //الفلتره   بالمورد
+        $("#search").click(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/Employees/GetEmpsFilter',
+                datatype: 'JSON',
+                data: {
+                    'EmpId': $("#EmployeesId").val(),
+                    'EmpName': $("#EmployeesName").val(),
+                    'DepartmentId': $("#DepartmentId").val(),
+                    'JobTitle': $("#JobTitle").val(),
+                    'Active': $("#ActiveOrNott").val(),
+
+                },
+                success: function (data) {
+                    /*$('.tbody').empty();*/
+                    var html = '';
+                    $.each(data, function (i, item) {
+                        html += '<tr>';
+                        if (item.Id == null) {
+                            html += '<td>' + "لايوجد" + '</td>';
+                        } else {
+                            html += '<td>' + item.Id + '</td>';
+                        }
+                        if (item.EmployeeNameAr == null) {
+                            html += '<td>' + "لايوجد" + '</td>';
+                        } else {
+                            html += '<td>' + item.EmployeeNameAr + '</td>';
+
+                        }
+                        if (item.Department.DepartmentName == null) {
+                            html += '<td>' + "لايوجد" + '</td>';
+                        } else {
+                            html += '<td>' + item.Department.DepartmentName + '</td>';
+                        }
+
+                        if (item.JobTitles.JobTitle == null) {
+                            html += '<td>' + "لايوجد" + '</td>';
+                        } else {
+                            html += '<td>' + item.JobTitles.JobTitle + '</td>';
+                        }
+                        if (item.IsEmpActive == true) {
+                            html += '<td>' + "نشط" + '</td>';
+                        } else {
+                            html += '<td>' + "غير نشط" + '</td>';
+                        }
+
+
+                        var edit = $("#edit").val();
+                        var deletee = $("#delete").val();
+                        if (edit == "true") {
+                            html += '<td> <a href="/Employees/UpdateEmployees/' + item.Id + '", class="btn btn-icon btn-outline-info"><i class="far fa-edit"></i></a></td>';
+                        } else {
+                            html += '<td> <a href="/Employees/UpdateEmployees/' + item.Id + '", class="btn btn-icon btn-outline-info disabled"><i class="far fa-edit"></i></a></td>';
+
+                        }
+                        /**/
+                        //if (edit == "true") {
+                        //    html += '<td> <a href="/Employees/AddSalesINV/' + item.Id + '", class="btn btn-icon btn-outline-info"><i class="fas fa-exchange-alt"></i></a></td>';
+                        //} else {
+                        //    html += '<td> <a href="/Employees/AddSalesINV/' + item.Id + '", class="btn btn-icon btn-outline-info disabled"><i class="fas fa-exchange-alt"></i></a></td>';
+
+                        //}
+                        if (deletee == "true") {
+                            html += '<td> <a onclick="Delele(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+                        } else {
+                            html += '<td> <a onclick="Delele(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger disabled" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+
+                        }
+                            /**/
+                        html += '</tr>';
+                    });
+                    $('.tbody').html(html);
+                },
+                error: loadData()
+            });
+        });
+
+        //عرض البيانات تلقائي الصفحه
+        $(document).ready(function () {
+            loadData();
+        });
+
+
+        function loadData() {
+            $.ajax({
+                url: "/Employees/List",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    var html = '';
+                    $.each(result, function (key, item) {
+                        //var shortDateFormat = $.format.toBrowserTimeZone(shortDateFormat);
+                        html += '<tr>';
+                        if (item.Id == null) {
+                            html += '<td>' + "لايوجد" + '</td>';
+                        } else {
+                            html += '<td>' + item.Id + '</td>';
+                        }
+                        if (item.EmployeeNameAr == null) {
+                            html += '<td>' + "لايوجد" + '</td>';
+                        } else {
+                            html += '<td>' + item.EmployeeNameAr + '</td>';
+
+                        }
+                        if (item.Department.DepartmentName == null) {
+                            html += '<td>' + "لايوجد" + '</td>';
+                        } else {
+                            html += '<td>' + item.Department.DepartmentName+ '</td>';
+                        }
+
+                        if (item.JobTitles.JobTitle == null) {
+                            html += '<td>' + "لايوجد" + '</td>';
+                        } else {
+                            html += '<td>' + item.JobTitles.JobTitle + '</td>';
+                        }
+                        if (item.IsEmpActive == true) {
+                            html += '<td>' + "نشط" + '</td>';
+                        } else  {
+                            html += '<td>' + "غير نشط" + '</td>';
+                        } 
+                       
+
+                        var edit = $("#edit").val();
+                        var deletee = $("#delete").val();
+                        if (edit == "true") {
+                            html += '<td> <a href="/Employees/UpdateEmployees/' + item.Id + '", class="btn btn-icon btn-outline-info"><i class="far fa-edit"></i></a></td>';
+                        } else {
+                            html += '<td> <a href="/Employees/UpdateEmployees/' + item.Id + '", class="btn btn-icon btn-outline-info disabled"><i class="far fa-edit"></i></a></td>';
+
+                        }
+                        /**/
+                        //if (edit == "true") {
+                        //    html += '<td> <a href="/Employees/AddSalesINV/' + item.Id + '", class="btn btn-icon btn-outline-info"><i class="fas fa-exchange-alt"></i></a></td>';
+                        //} else {
+                        //    html += '<td> <a href="/Employees/AddSalesINV/' + item.Id + '", class="btn btn-icon btn-outline-info disabled"><i class="fas fa-exchange-alt"></i></a></td>';
+
+                        //}
+                        if (deletee == "true") {
+                            html += '<td> <a onclick="Delele(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+                        } else {
+                            html += '<td> <a onclick="Delele(' + item.Id + ')" class="deleteItem btn btn-icon btn-outline-danger disabled" data-target="#deleteConfirmModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+
+                        }
+                        /**/
+                        html += '</tr>';
+                    });
+                    $('.tbody').html(html);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+
+        function Delele(ID) {
+            var ans = confirm("هل  تريد الحذف?");
+            if (ans) {
+                $.ajax({
+                    url: "/Employees/Delete/" + ID,
+                    type: "POST",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (result) {
+                        loadData();
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+            }
+
+        }
+
+    </script>
+
+}

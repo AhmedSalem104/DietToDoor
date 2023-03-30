@@ -1,0 +1,80 @@
+﻿@using ERPWeb.Models
+@if (HelperMethods.globalData.UserCode != null)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+    <ul class="navbar-nav navbar-right">
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                @*<img alt="" src=@Url.Content(HelperMethods.globalData.Image) class="user-img-radious-style">*@
+                <img src="~/Design/assets/img/user.png" />
+                <span class="d-sm-none d-lg-inline-block"></span>
+                <div class="dropdown-title">@HelperMethods.globalData.UserCode</div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right pullDown">
+                <a href="~/Users/AddOrEdit/@HelperMethods.globalData.UserID" class="dropdown-item has-icon">
+                    <i class="far fa-user"></i> الصفحة الشخصية
+                </a>
+                <a href="#" class="dropdown-item has-icon">
+                    <i class="fas fa-cog"></i> الإعدادات
+                </a>
+                <div class="dropdown-divider"></div>
+
+                @Html.ActionLink("تسجيل خروج", "index", "Login", null, new { @class = "dropdown-item has-icon text-danger " })
+            </div>
+        </li>
+    </ul>
+    }
+}
+else
+{
+    <div class="user-box">
+        <a href="~/Users/Create" class="dropdown-item">
+            <i class="fas fa-user-lock"></i>
+            @DataMapping.Resources.Resource.Register
+        </a>
+        <a href="~/Login/Index" class="dropdown-item">
+            <i class="fas fa-sign-in-alt"></i>
+            @DataMapping.Resources.Resource.login
+        </a>
+    </div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@using Microsoft.AspNet.Identity
+    @if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+        {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
+        }
+    }
+    else
+    {
+        <ul class="nav navbar-nav navbar-right">
+            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+            <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        </ul>
+    }*@

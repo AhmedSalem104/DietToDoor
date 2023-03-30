@@ -1,0 +1,23 @@
+USE [ERPSystemDB]
+GO
+/****** Object:  StoredProcedure [dbo].[Get_PurchaseAll]    Script Date: 7/23/2021 5:59:09 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[Get_PurchaseAll]
+
+as 
+begin
+SELECT        GL.PurchaseINV.Id, GL.PurchaseINV.CompanyId, GL.PurchaseINV.BranchesId, GL.PurchaseINV.PurchaseINVNo, GL.PurchaseINV.VendorId, GL.PurchaseINV.PurchaseINVDate, GL.PurchaseINV.StoreId, 
+                         GL.PurchaseINV.PurchaseOrderNo, GL.PurchaseINV.PurchaseOrderDate, GL.PurchaseINV.PurchasePaperNo, GL.PurchaseINV.PurchasePaperDate, GL.PurchaseINV.EmployeeId, GL.PurchaseINV.DirectExpenses1, 
+                         GL.PurchaseINV.DirectExpenses2, GL.PurchaseINV.RowsCount, GL.PurchaseINV.TotaleItemDis, GL.PurchaseINV.PurchaseINVTotal, GL.PurchaseINV.InvoiceDisPer, GL.PurchaseINV.InvoiceDisValue, GL.PurchaseINV.NetValue, 
+                         GL.PurchaseINV.PaidValue, GL.PurchaseINV.RemainingValue, GL.PurchaseINV.Notes, GL.PurchaseINV.IsDeleted, GL.PurchaseINV.PurchaseINVTypeId, GL.PurchaseINV.PaymentTypeId, GL.Vendor.Name, 
+                         GL.PaymentType.PaymentTypeName, GL.Store.Name AS StoreName
+FROM            GL.PurchaseINV INNER JOIN
+                         GL.Store ON GL.PurchaseINV.StoreId = GL.Store.Id INNER JOIN
+                         GL.Vendor ON GL.PurchaseINV.VendorId = GL.Vendor.Id INNER JOIN
+                         GL.PaymentType ON GL.PurchaseINV.PaymentTypeId = GL.PaymentType.Id
+
+end
+

@@ -1,0 +1,70 @@
+﻿@using DataMapping.Entites
+@model IEnumerable<DataMapping.Procedures.ActionsLog_Result>
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+}
+<p class="btn btn-default" style="color:red" id="message">@ViewBag.DateErr </p>
+<div class="col-12">
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover" id="save-stage" style="width:100%;">
+            <thead>
+                <tr>
+                    <th> @DataMapping.Resources.Resource.Date</th>
+                    <th> @DataMapping.Resources.Resource.ScreenArEn</th>
+                   
+                    <th>@DataMapping.Resources.Resource.OperationArEn</th>
+                    @*<th>الرصيد </th>*@
+                 
+                    <th>  @DataMapping.Resources.Resource.UserName</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                @if (Model.Count() != 0)
+                {
+                    foreach (var item in Model)
+                    {
+                      
+                <tr>
+                    <td>@item.CreatedDate</td>
+                    <td>@item.FunctionName</td>
+                    
+                    <td>@item.ActionNameArEn</td>
+                    
+                    <td>@item.ArbDescription</td>
+                    
+
+                </tr>
+                    }
+
+                }
+                else
+                {
+                    <tr>
+                        <td>لا يوجد بيانات....</td>
+                    </tr>
+
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#message").hide();
+        if ($('#message').length > 0 && $.trim($('#message').text()) != "") {
+            $("#message").show();
+            $(".tbody").hide();
+        }
+
+    })
+
+</script>
+
+
+

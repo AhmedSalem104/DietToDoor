@@ -1,0 +1,57 @@
+﻿@model DataMapping.Entites.Currencies
+
+@{
+    ViewBag.Title = DataMapping.Resources.Resource.currency;
+}
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">@DataMapping.Resources.Resource.currency</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @using (Html.BeginForm("AddOrEdit", "Currency", FormMethod.Post, new { @class = "form-horizontal", @id = "ModalForm" }))
+
+    {
+        <div class="modal-body">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>@DataMapping.Resources.Resource.Code</label>
+
+                    @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label>@DataMapping.Resources.Resource.NameAr</label>
+
+                    @Html.EditorFor(model => model.NameAr, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NameAr, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>@DataMapping.Resources.Resource.currency</label>
+                    @Html.EditorFor(model => model.ConversionRate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ConversionRate, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label>@DataMapping.Resources.Resource.NameEn</label>
+                    @Html.EditorFor(model => model.NameEn, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NameEn, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="bg-whitesmoke br">
+            <div class="row">
+                <div class="col-6 text-right">
+
+                </div>
+                <div class="col-6 text-left">
+                    <input type="submit" value="@DataMapping.Resources.Resource.save" class="btn btn-success" />
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

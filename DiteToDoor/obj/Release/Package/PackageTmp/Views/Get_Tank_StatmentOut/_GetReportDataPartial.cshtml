@@ -1,0 +1,82 @@
+﻿@using DataMapping.Entites
+@model IEnumerable<DataMapping.Procedures.Get_Tank_Statment_Result>
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+}
+<p class="btn btn-default" style="color:red" id="message">@ViewBag.DateErr </p>
+<div class="col-12">
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover" id="save-stage" style="width:100%;">
+            <thead>
+                <tr style="text-align:center;">
+                   
+                    <th> تاريخ السند</th>
+                    <th>رقم السيارة</th>
+                    <th>رقم اللوحة</th>
+                    <th> النوع </th>
+                    <th>الادارة</th>
+                    <th>نوع الوقود</th>
+                    <th>الكمية</th>
+                    <th> السنة</th>
+                    <th> أسم الموظف</th>
+                    <th>سيارة/معدة</th>
+                  
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                @if (Model.Count() != 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        var car = db.Cars.FirstOrDefault(a => a.Id == item.CarId);
+                <tr style="text-align:center;">
+
+                    <td>@item.Date</td>
+                    <td>@item.CarNo</td>
+                    <td>@car.PanelNo</td>
+                    <td>@item.CarTypeName</td>
+                    <td></td>
+                    <td>@item.FuelType</td>
+                    <td>@item.ActualQuantity</td>
+
+                    <td>@item.Year</td>
+                    <td></td>
+                    <td>@item.NameAr</td>
+
+
+
+                </tr>
+                    }
+
+                }
+                else
+                {
+                    <tr>
+                        <td>لا يوجد بيانات....</td>
+                    </tr>
+
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#message").hide();
+        if ($('#message').length > 0 && $.trim($('#message').text()) != "") {
+            $("#message").show();
+            $(".tbody").hide();
+        }
+
+    })
+
+</script>
+
+
+

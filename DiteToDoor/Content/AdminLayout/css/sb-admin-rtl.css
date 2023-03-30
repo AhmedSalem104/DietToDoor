@@ -1,0 +1,113 @@
+body{
+  direction: rtl;
+}
+footer {
+    right: unset !important;
+    left: 0px !important;
+}
+.navbar-nav .nav-item.dropdown .dropdown-toggle::after {
+    float: left !important;
+    content: '\f104'
+}
+.navigation-bg {
+    background-color: #003c58;
+}
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: left;
+}
+
+
+@media (min-width: 768px) {
+    .sidebar .nav-item .nav-link {
+        text-align: right !important;
+    }
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #fdfdfd;
+    text-align: center;
+}
+table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_desc_disabled:before{
+    right:unset;
+    left:1em;
+}
+table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after {
+    right: unset;
+    left: 0.5em;
+}
+.Header_Style {
+    height: 33px !important;
+    padding-top: 5px;
+}
+footer.sticky-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    transition: 0.4s;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    /*width: calc(100% - 90px);*/
+    height: 30px;
+    background-color: #e9ecef;
+}
+.Zero {
+    padding: 0px !important;
+}
+.BTN_SM {
+    height: 33px;
+    margin-top: 0px;
+    padding-top: 4px;
+}
+.Radio_SM {
+    margin-bottom: -3.15rem !important;
+    padding:10px;
+}
+.Card_Edit {
+    margin-top: -6px;
+}
+.Label_Text {
+    border: none;
+    background: transparent;
+}
+.modal.show .modal-dialog {
+    transform: rotateY(45deg) !important;
+}
+.table th, .table td {
+    padding: 0.2rem !important;
+    font-size: 18px;
+}
+.modal-body
+{
+    padding:0rem !important;
+}
+.dropdownPopUp {
+    height: calc(1.5rem + 2px);
+    padding: 2.1px 0.75rem !important;
+}
+.ItemPara {
+    font-family: Arial,Helvetica,sans-serif !important;
+}
+.SpecsTxt {
+    font-size: 16px;
+    line-height: 1rem;
+}
+.QTY_HEIGHT {
+    height: calc(1.5rem + 2px);
+}
+.finish-line {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #e9ecef;
+    color: #000;
+    padding: 0.4rem 1.25rem;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.Navigation_Header{
+    line-height:30px;
+}
+.Card_Padding {
+    padding-bottom: 17px;
+}

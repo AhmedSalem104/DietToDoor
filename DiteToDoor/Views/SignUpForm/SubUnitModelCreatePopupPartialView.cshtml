@@ -1,0 +1,89 @@
+﻿@using DataMapping.Entites
+@model DataMapping.Entites.MyGoals
+
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+    ViewBag.GoalId = new SelectList(db.Goals.ToList(), "Id", "Name");
+}
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">@DataMapping.Resources.Resource.Add</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal", @id = "ModalForm" }))
+
+            {
+                @*<input type="text" value="@Model.Id" id="SuperItemId" />*@
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label>اسم الهدف</label>
+
+                            @Html.DropDownList("GoalId", null, "اختر ", htmlAttributes: new { @id = "GoalId", @class = "select2 form-control" })
+                            @*@Html.TextBoxFor(x => x.ItemId, new { @id = "ItemId", @class = "form-control",Value=Model.ItemId })*@
+                        </div>
+                    </div>
+                   
+
+
+                </div>
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+                        <div class="col-6 text-right">
+                            <button type="button" class="btn btn-success" onclick="Add()">@DataMapping.Resources.Resource.save</button>
+                        </div>
+                        <div class="col-6 text-left">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">@DataMapping.Resources.Resource.Close</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function Add() {
+        var Isvalid = true;
+        if ($("#GoalId").val() == "" || $("#GoalId").val() == null  ) {
+            Isvalid = false;
+            toastr.warning('ادخل البيانات')
+        }
+        else {
+
+            var data = {
+              
+                GoalId: $("#GoalId").val(),
+                UserId: $("#SuperItemId").val(),
+
+
+            }
+
+            $.ajax({
+
+
+                type: "POST",
+                url: '/SignUpForm/SubUintAddOrEdit',     //your action
+                //data: $('#ModalForm').serialize(),
+                data: data,
+                dataType: 'json',
+                success: function (result) {
+                    loadSubUintList();
+                    $('#exampleModalCenter').modal('hide');
+                    //location.reload();
+                },
+
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    toastr.warning('عفوا هذه الوحدة مستخدمة مسبقاً')
+                }
+
+            });
+        }
+    }
+
+</script>
+

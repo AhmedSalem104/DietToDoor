@@ -1,0 +1,65 @@
+﻿@using DataMapping.Entites;
+@model Users
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_Layout_login.cshtml";
+
+}
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            @using (Html.BeginForm("Login", "Account", new {Lang = 1, ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                <form class="login100-form">
+                    <span class="login100-form-title p-b-43">
+                        Login
+                    </span>
+                    <div class="wrap-input100 ">
+                        @Html.TextBoxFor(m => m.Code, new { @class = "input100", @type = "text", @name = "email", @placeholder = "User Name" })
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">User Name</span>
+                    </div>
+                    <div class="wrap-input100">
+                        @Html.TextBoxFor(m => m.Password, new { @class = "input100", @type = "password", @name = "pass", @placeholder = "Password" })
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Password</span>
+                    </div>
+
+                    <div class="flex-sb-m w-full p-t-3 p-b-32">
+                        <div class="contact100-form-checkbox">
+                            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                            <label class="label-checkbox100" for="ckb1">
+                                Remember me
+                            </label>
+                        </div>
+
+                        <div>
+                            <a href="#" class="txt1">
+                                Create Account
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="container-login100-form-btn">
+                        <input type="submit" value="Log in" class="login100-form-btn" />
+                        @*<button class="login100-form-btn">
+                                Login
+                            </button>*@
+                    </div>
+
+                    <div class="footer">
+                        <p>Sahab Copy right</p>
+                    </div>
+                </form>
+            }
+            <div class="login100-more" style="background-image: url('../Content/Login/images/bg-2.jpg');">
+            </div>
+        </div>
+    </div>
+</div>

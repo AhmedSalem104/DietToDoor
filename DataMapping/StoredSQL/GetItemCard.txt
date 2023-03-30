@@ -1,0 +1,22 @@
+USE [ERPSystemDB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetItemCard]    Script Date: 7/23/2021 5:59:33 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER proc [dbo].[GetItemCard]
+as 
+begin
+SELECT        GL.StoreTRX.Id, GL.StoreTRX.TRXTypes, GL.StoreTRX.DelarId, GL.StoreTRX.StoreTRXTypesId, GL.StoreTRX.InvoiceDate, GL.StoreTRX.MainInvoiceNo, GL.StoreTRX.PurchaseINVId, GL.StoreTRX.ItemCategoriesId, 
+                         GL.StoreTRX.ItemId, GL.StoreTRX.UnitId, GL.StoreTRX.Amount, GL.StoreTRX.Price, GL.StoreTRX.Total, GL.StoreTRX.DisPer, GL.StoreTRX.DisValue, GL.StoreTRX.NetPrice, GL.StoreTRX.ItemBalance, GL.StoreTRX.StoreId, 
+                         GL.Store.Name AS StoreName, GL.StoreTRXTypes.Name AS StoreTRXTYpeName, GL.DealerType.DealerTypeName, GL.Unit.UnitName
+FROM            GL.StoreTRX INNER JOIN
+                         GL.Store ON GL.StoreTRX.StoreId = GL.Store.Id INNER JOIN
+                         GL.StoreTRXTypes ON GL.StoreTRX.StoreTRXTypesId = GL.StoreTRXTypes.Id INNER JOIN
+                         GL.DealerType ON GL.StoreTRX.DelarId = GL.DealerType.Id INNER JOIN
+                         GL.Unit ON GL.StoreTRX.UnitId = GL.Unit.Id
+
+ end

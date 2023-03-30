@@ -1,0 +1,228 @@
+﻿@using DataMapping.Entites
+@model IEnumerable<DataMapping.Procedures.GetDrivers_Result>
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+    ViewBag.Title = DataMapping.Resources.Resource.Vendor;
+}
+
+@*<div class="row heder_title">
+        <div class="col-6">
+            <h3 class="blockquote">بيانات السائقين</h3>
+        </div>
+        <div class="col-6 text-left">
+            @if (ViewBag.CanAdd == true)
+            {
+                <a href="~/Drivers/AddOrEdit" class="btn btn-icon icon-left success_butn">
+                    @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            }
+            else
+            {
+                <a href="~/Drivers/AddOrEdit" class="btn btn-icon icon-left success_butn disabled">
+                    @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            }
+        </div>
+    </div>*@
+
+@using (Html.BeginForm("PrintDataRDLC", "Drivers"))
+{
+
+
+    <div class="row heder_title">
+        <div class="col-6">
+            <h3 class="blockquote">بيانات السائقين</h3>
+        </div>
+        <div class="col-6 text-left">
+            @if (ViewBag.CanAdd == true)
+            {
+                <a href="~/Drivers/AddOrEdit" class="btn btn-icon icon-left success_butn">
+                    @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            }
+            else
+            {
+                <a href="~/Drivers/AddOrEdit" class="btn btn-icon icon-left success_butn disabled">
+                    @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            }
+            <button type="submit" class="btn btn-outline-secondary " formtarget="_blank">
+                طباعة <i class="fa fa-print" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+}
+
+@*<div class="row" style="margin-bottom: 15px;">
+        <div class="col-lg-4">
+            @DataMapping.Resources.Resource.VendorClassificationId: @Html.DropDownList("VendorClassificationId", null, "اختيار الكل ", htmlAttributes: new { @id = "SelectedItem", @class = "select2 form-control" })
+        </div>
+    </div>*@
+<!--<div style="margin-bottom:40px;" class="container">
+    <div class="row">
+        <div class="col-2">
+           الجنسية : @Html.DropDownList("NatId", null, "اختيار الكل ", htmlAttributes: new { @class = "form-control", @Id = "NatId" })
+        </div>
+
+        <div class="col-2">
+            الادارة:@Html.DropDownList("ManageId", null, "اختيار الكل", htmlAttributes: new { @class = "form-control", @Id = "ManageId" })
+        </div>
+
+        <div class="col-2">
+            <button type="submit" id="submit" style="height:fit-content; margin-top:20px" class="btn btn-info">عرض</button>
+        </div>
+        <div class="col-lg-1.5" style=" margin-top: 20px;">
+
+
+        </div>-->
+
+
+        @*<div class="col-md-6">
+
+                <div class="col-md-8">
+                    <button id="submit" style="font-weight:bold;" class="btn btn-info">تنفيذ</button>
+                </div>
+
+            </div>*@
+    <!--</div>
+</div>-->
+<div class="row">
+    <div class="col-12">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover" id="save-Order" style="width:100%;">
+                <thead>
+                    <tr style="text-align:center;">
+                        <th class="width-per-3">كود السائق</th>
+                        <th > أسم السائق</th>
+                        <th class="width-per-12">الجنسية</th>
+                        <th> الادارة</th>
+                        <th class="width-per-8">رقم الرخصة</th>
+                        @*<th class="width-per-15"> نوع الرخصة</th>*@
+                        <th class="width-per-8"> رقم الهاتف</th>
+                        @*<th> اللون</th>
+        <th class="width-per-12"> @DataMapping.Resources.Resource.OpenBalnceDept</th>
+        <th class="width-per-12"> @DataMapping.Resources.Resource.OpenBalnceCridt</th>*@
+                        <th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                        <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>
+                        <th class="th_width_5">طباعة</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        //var NatName = db.Nationalities_Tbl.FirstOrDefault(a => a.NatId_Old == item.NatId).NatName;
+                        //var ManageName = db.Managments.FirstOrDefault(a => a.Id == item.BranchId).Name;
+                    <tr style="text-align:center;">
+                        <td style="text-align:center"> @Html.DisplayFor(modelItem => item.DriverNo)</td>
+                        <td> @Html.DisplayFor(modelItem => item.DriverName)</td>
+
+                        <td>@item.NatName</td>
+                        <td> @item.BranchesName</td>
+                        <td>@item.LicenseNo</td>
+                        @*<td> @item.LicenseTypeId</td>*@
+                        <td> @item.Phone</td>
+
+                        <td class="th_width_5">
+                            @if (ViewBag.CanEdit == true)
+                            {
+                                <a href="@Url.Action("AddOrEdit", "Drivers", new { Id = @item.DriverID })" class="btn btn-icon btn-outline-info">
+                                    <i class="far fa-edit"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("AddOrEdit", "Drivers", new { Id = @item.DriverID })" class="btn btn-icon btn-outline-info disabled">
+                                    <i class="far fa-edit"></i>
+                                </a>
+                            }
+                        </td>
+                        <td class="th_width_5">
+                            @if (ViewBag.CanDelete == true)
+                            {
+                                <a href="@Url.Action("Delete", "Drivers", new { Id = @item.DriverID })" class="deleteItem btn btn-icon btn-outline-danger">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("Delete", "Drivers", new { Id = @item.DriverID })" class="deleteItem btn btn-icon btn-outline-danger disabled">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            }
+                        </td>
+                        <td class="th_width_5">
+                            <Form action="Drivers/PrintDataRDLCById/@item.DriverID " method="post"> <button formtarget="_blank" type="submit" class="btn btn-outline-info" title="طباعة" style=" "><i class="fa fa-print" aria-hidden="true"></i></button></Form>
+
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@section ModelPopup{
+
+}
+@section JavaScriptSection{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#submit").click(function () {
+                $("#DisplayData").empty();
+                GetData();
+            });
+
+            function GetData() {
+                $.ajax({
+                    url: '@Url.Action("GetReportData", "Drivers")',
+                    method: "Get",
+                    //contentType: "application/json;charset=utf-8",
+                    dataType: "Html",
+                    data: {
+                        NatId: $("#NatId").val(),
+                        ManageId: $("#ManageId").val(),
+
+
+                    },
+                    success: function (result) {
+                        $("#DisplayData").html('').html(result);
+
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                })
+
+            }
+        });
+    </script>
+    <script>
+        $(function () {
+
+            $("#SelectedItem").change(function () {
+                //debugger;
+
+                var Id = $("#SelectedItem").val()
+                var data = Id
+                $.ajax({
+                    type: 'POST',
+                    url: '/Cars/Index/' + Id,
+                    //data: JSON.stringify(data),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        window.location.href = '/Vendor/Index' + '/' + Id
+                    }
+
+
+                });
+
+
+
+            });
+        });
+    </script>
+
+}

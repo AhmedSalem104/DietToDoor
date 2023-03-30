@@ -1,0 +1,15 @@
+
+
+
+Create proc Get_ALLSales_R
+as
+begin
+SELECT        GL.SalesINV_R.Id, GL.SalesINV_R.CompanyId, GL.SalesINV_R.BranchesId, GL.SalesINV_R.SalesINVNo, GL.SalesINV_R.SalesINVDate, GL.SalesINV_R.CustomersId, GL.SalesINV_R.StoreId, GL.SalesINV_R.SalesOrderNo, 
+                         GL.SalesINV_R.SalesOrderDate, GL.SalesINV_R.SalesPaperNo, GL.SalesINV_R.SalesPaperDate, GL.SalesINV_R.EmployeeId, GL.SalesINV_R.PurchaseINVTypeId, GL.SalesINV_R.SalesRepresentativeId, 
+                         GL.SalesINV_R.DiscountCategoriesId, GL.SalesINV_R.Itemtax, GL.SalesINV_R.RowsCount, GL.SalesINV_R.TotaleItemDis, GL.SalesINV_R.SalesINVTotal, GL.SalesINV_R.InvoiceDisPer, GL.SalesINV_R.InvoiceDisValue, 
+                         GL.SalesINV_R.NetValue, GL.SalesINV_R.PaidValue, GL.SalesINV_R.RemainingValue, GL.SalesINV_R.Notes, GL.SalesINV_R.CreatedBy, GL.SalesINV_R.CreatedDate, GL.SalesINV_R.UpdatedBy, GL.SalesINV_R.UpdatedDate, 
+                         GL.SalesINV_R.IsDeleted, GL.Customers.CustomersName, GL.PurchaseINVType.PurchaseINVTypeName
+FROM            GL.SalesINV_R INNER JOIN
+                         GL.Customers ON GL.SalesINV_R.CustomersId = GL.Customers.Id INNER JOIN
+                         GL.PurchaseINVType ON GL.SalesINV_R.PurchaseINVTypeId = GL.PurchaseINVType.Id
+end

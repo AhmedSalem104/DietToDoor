@@ -1,0 +1,362 @@
+﻿@using ERPWeb.Models;
+@{
+    object languague = 0;
+    if (HelperMethods.globalData.UserCode == null)
+    {
+        Response.Redirect(Url.Action("Index", "Login") + "/");
+        //Response.Redirect(String.Format("~/Login/Index"));
+    }
+    else
+    {
+        languague = Session["Language"];
+        if (Convert.ToString(languague) == "en")
+        {
+        }
+        else
+        {
+        }
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Font Family Ubuntu-->
+    @*<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lateef&display=swap" rel="stylesheet">*@
+    <!-- Custom fonts for this template-->
+    <link href="~/Content/AdminLayout/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="~/Content/AdminLayout/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="~/Content/AdminLayout/css/bootstrap-select.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template-->
+
+    <link href="~/Content/AdminLayout/css/sb-admin.css" rel="stylesheet">
+    @if (Convert.ToString(languague) == "Ar")
+    {
+        <link href="~/Content/AdminLayout/css/bootstrap-rtl.min.css" rel="stylesheet">
+        <link href="~/Content/AdminLayout/css/sb-admin-rtl.css" rel="stylesheet">
+    }
+    <!-- selectMania Style -->
+    <link href="~/Scripts/selectMania/src/select-mania.css" rel="stylesheet" type="text/css">
+    <link href="~/Scripts/selectMania/src/themes/select-mania-theme-darkblue.css" rel="stylesheet" type="text/css">
+    <link href="~/Scripts/Multiple-Select-fSelect/fSelect.css" rel="stylesheet" />
+    @*<script src="~/Content/AdminLayout/vendor/jquery/jquery.min.js"></script>*@
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        function display_c() {
+            var refresh = 1000; // Refresh rate in milli seconds
+            mytime = setTimeout('display_ct()', refresh)
+        }
+        function display_ct() {
+            var x = new Date()
+            var x1 = x.getDay();
+            if (x1 == 0) { x1 = 'Sunday' }
+            if (x1 == 1) { x1 = 'Monday' }
+            if (x1 == 2) { x1 = 'Tuesday' }
+            if (x1 == 3) { x1 = 'Wednesday' }
+            if (x1 == 4) { x1 = 'Thursday' }
+            if (x1 == 5) { x1 = 'Friday' }
+            if (x1 == 6) { x1 = 'Saturday' }
+            // time part //
+            var hour = x.getHours();
+            var minute = x.getMinutes();
+            var second = x.getSeconds();
+            if (hour < 10) { hour = '0' + hour; }
+            if (minute < 10) { minute = '0' + minute; }
+            x1 = x1 + ", " + hour + ':' + minute;
+            document.getElementById('ct').innerHTML = x1;
+            display_c();
+        }
+    </script>
+    <!--***************************************-->
+    <link href="~/Content/AdminLayout/css/flaticon.css" rel="stylesheet">
+    <link href="~/Content/AdminLayout/css/toastr.min.css" rel="stylesheet" type="text/css">
+    @if (Convert.ToString(languague) == "Ar")
+    {
+<link href="~/Content/AdminLayout/css/custom-ar.css" rel="stylesheet" />
+    }
+    </head>
+
+    <body id="page-top" onload=display_ct();>
+        <nav class="navbar navbar-expand navbar-dark navigation-bg sticky-top">
+            <a class="navbar-brand mr-1 text-center" href="~/home/index">
+                <img class="logo" src="~/Content/logo1.png" alt="img" width="100">
+            </a>
+            <button class="btn btn-link btn-sm text-white order-sm-0 ml-auto ml-sm-0" id="sidebarToggle" href="#">
+                <i class="fas fa-bars"></i>
+            </button>
+            <span class="m-sm-auto d-none d-sm-inline-block ct" id='ct' style="color:#fff;transition: 0.5s;"></span>
+            <!-- Navbar -->
+            <ul class="navbar-nav d-none d-sm-flex">
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-bell fa-fw"></i>
+                        <span class="badge badge-danger">9+</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-envelope fa-fw"></i>
+
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="user-img" src=@Url.Content(HelperMethods.globalData.Image) alt="img">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" style="min-width: 14rem;" aria-labelledby="userDropdown">
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </li>
+
+
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-language fa-fw"></i>
+                    </a>
+                    <div class="dropdown-menu Language-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        @{
+                            foreach (var i in ERPWeb.Models.LanguageMang.AvailableLanguages)
+                            {
+                                @Html.ActionLink(i.LanguageFullName, "ChangeLanguage", "Lang", new { lang = i.LanguageCultureName, url = Request.Url.LocalPath }, new { @class = "dropdown-item" }) <text> </text>
+                            }
+                        }
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <ul class="sidebar navbar-nav text-center">
+                @{
+                    if (Convert.ToString(languague) == "Ar")
+                    {
+
+                        int? EmployeeId = ERPWeb.Models.HelperMethods.globalData.EmployeeId;
+                        var MenuItems = ERPWeb.Models.SecurityRoles.LoggedUser.GetMenuItems(EmployeeId);
+
+                        foreach (var item in MenuItems)
+                        {
+                            if (item.SystemFunctions.Count > 0)
+                            {
+                                <li class="nav-item">
+                                    <a>
+                                        <span>@item.NameInArabic</span>
+                                    </a>
+                                </li>
+                                foreach (var function in item.SystemFunctions)
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="@Url.Action(function.Action, function.Controller)">
+                                            @function.NameInArabic
+                                        </a>
+                                    </li>
+                                }
+                            }
+                            else if (item.MenuItems.Count > 0)
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown">
+                                        <span><i class="@item.Icons "></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @item.NameInArabic</span>
+                                    </a>
+                                    <div class="dropdown-menu text-center text-md-left sub-menu m-0" aria-labelledby="pagesDropdown">
+                                        @foreach (var SecondLevel in item.MenuItems)
+                                        {
+
+                                            foreach (var function in SecondLevel.SystemFunctions)
+                                            {
+                                                <a class="dropdown-item" href="@Url.Action(function.Action, function.Controller)">
+                                                    <span> @function.NameInArabic</span>
+                                                </a>
+                                            }
+                                        }
+                                    </div>
+                                </li>
+                            }
+                        }
+                    }
+                    else
+                    {
+
+                        int? EmployeeId = ERPWeb.Models.HelperMethods.globalData.EmployeeId;
+                        var MenuItems = ERPWeb.Models.SecurityRoles.LoggedUser.GetMenuItems(EmployeeId);
+
+                        foreach (var item in MenuItems)
+                        {
+                            if (item.SystemFunctions.Count > 0)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown">
+                                        <span> @item.NameInEnglish</span>
+                                    </a>
+                                </li>
+                                foreach (var function in item.SystemFunctions)
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="@Url.Action(function.Action, function.Controller)">
+                                            @function.NameInEnglish
+                                        </a>
+                                    </li>
+                                }
+                            }
+                            else if (item.MenuItems.Count > 0)
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown">
+                                        <span><i class="@item.Icons "></i>&nbsp;@item.NameInEnglish</span>
+                                    </a>
+                                    <div class="dropdown-menu text-center text-md-left sub-menu m-0" aria-labelledby="pagesDropdown">
+                                        @foreach (var SecondLevel in item.MenuItems)
+                                        {
+
+                                            foreach (var function in SecondLevel.SystemFunctions)
+                                            {
+                                                <a class="dropdown-item" href="@Url.Action(function.Action, function.Controller)">
+                                                    @function.NameInEnglish
+                                                </a>
+                                            }
+                                        }
+                                    </div>
+                                </li>
+                            }
+                        }
+
+
+
+
+
+                    }
+
+                }
+
+            </ul>
+            <div id="content-wrapper">
+                <div class="container-fluid">
+                    <!-- DataTables Example -->
+                    @RenderBody()
+                </div>
+                <!-- /.container-fluid -->
+                <!-- Sticky Footer -->
+                <footer class="sticky-footer">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>All rights Reserved © Sahab Information Technology</span>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- /.content-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="~/Scripts/selectMania/src/select-mania.js"></script>
+        <script src="@Url.Content("~/Scripts/Multiple-Select-fSelect/fSelect.js")"></script>
+        <script>
+            $('.selectMania').selectMania({
+                // size: 'large',
+                themes: ['darkblue'],
+                placeholder: '---------',
+                removable: true,
+                search: true,
+                size: 'tiny' //'tiny' / 'small' / 'medium' / 'large'
+            });
+
+            $('.multiselect').multiselect();
+
+        </script>
+        @RenderSection("scripts", required: false)
+        <!-- Bootstrap core JavaScript-->
+        @*<script src="~/Content/AdminLayout/vendor/jquery/jquery.min.js"></script>*@
+        <script src="~/Content/AdminLayout/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="~/Content/AdminLayout/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Page level plugin JavaScript-->
+        <script src="~/Content/AdminLayout/vendor/datatables/jquery.dataTables.js"></script>
+        <script src="~/Content/AdminLayout/vendor/datatables/dataTables.bootstrap4.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="~/Content/AdminLayout/js/sb-admin.min.js"></script>
+        <!-- Demo scripts for this page-->
+        <script src="~/Content/AdminLayout/js/demo/datatables-demo.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/Content/AdminLayout/js/bootstrap-select.min.js"></script>
+        <script src="~/Content/AdminLayout/js/demo/Chart.min.js"></script>
+        <script src="~/Content/AdminLayout/js/demo/chart-area-demo.js"></script>
+        <script src="~/Content/AdminLayout/js/demo/chart-bar-demo.js"></script>
+        <script src="~/Content/AdminLayout/js/demo/chart-pie-demo.js"></script>
+        <script src="~/Content/AdminLayout/js/popper.min.js"></script>
+        <script src="~/Content/AdminLayout/js/toastr.js"></script>
+        @*<script>
+                //paste this code under head tag or in a seperate js file.
+                // Wait for window load
+                $(window).load(function () {
+                    // Animate loader off screen
+                    $(".se-pre-con").fadeOut("slow");;
+                });
+            </script>*@
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-top-left",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+            });
+        </script>
+    </body>
+</html>
+
