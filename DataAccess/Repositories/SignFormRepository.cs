@@ -57,7 +57,6 @@ namespace DataAccess.Repositories
                         q.FullName = item.FullName;
                         q.Mobile = item.Mobile;
                         q.Address = item.Address;
-                        q.Phone = item.Phone;
                         q.Type = item.Type;
                         q.Age = item.Age;
                         q.BirthDate = item.BirthDate;

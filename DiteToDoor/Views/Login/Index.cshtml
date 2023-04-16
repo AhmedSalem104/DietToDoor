@@ -1,149 +1,85 @@
 ﻿@using DataMapping.Entites;
 @model Users
 @{
-
     ViewBag.Title = "";
     ApplicationDbContext db = new ApplicationDbContext();
     //ViewBag.BrancheId = new SelectList(db.Branches.Where(a => a.IsDeleted == false).ToList(), "Id", "BranchesName");
-
 }
-
-
 @{ Layout = null;}
-
 
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@DataMapping.Resources.Resource.login</title>
-    <link rel="stylesheet" href="~/Design/assets/css/app.min.css">
-    <link rel="stylesheet" href="~/Design/assets/css/style.css">
-    <link rel="stylesheet" href="~/Design/assets/components.css">
+    <link rel="stylesheet" href="~/Design/assets/css/login.css">
+
 </head>
 
-<body dir="rtl">
-    @*<p id="test"></p>*@
-    <div class="loader"></div>
-    <div id="app">
-        <div class="limiter">
-            @*<img src="~/Design/assets/img/banner/Car_Maintenance.PNG" />*@
-            <div class="container-login100" style="background-image: url('../../Design/assets/img/istockphoto-1269648167-1024x1024.jpg'); ">
-                <div class="section">
-                    <div class="container mt-8">
-                        <div class="row">
-                            <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-                                <div class="card card-primary">
-                                    <div class="card-header">
-                                        <h4>@DataMapping.Resources.Resource.login</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        @using (Html.BeginForm("Index", "Login", new
-                                        {
-                                            Lang = 0,
-                                            ReturnUrl = ViewBag.ReturnUrl@*, BranchId = 11*@ }, FormMethod.Post, new { @class = "form-horizontal login100-form", role = "form" }))
-                                        {
-                                            <div class="form-group">
-
-                                                <label for="email">@DataMapping.Resources.Resource.UserName</label>
-                                                @Html.TextBoxFor(m => m.Code, new { Value = ViewBag.code, @class = "form-control", @type = "text", @name = "email", @placeholder = "User Name", @id = "Code" })
-                                                @Html.ValidationMessageFor(model => model.Code)
-                                                @*<input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>*@
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <label for="password" class="control-label">@DataMapping.Resources.Resource.Password</label>
-                                                @Html.TextBoxFor(m => m.Password, new { Value = ViewBag.Password, @class = "form-control", @type = "password", @name = "pass", @placeholder = "Password" })
-                                                @Html.ValidationMessageFor(model => model.Password)
-                                                @*<input id="password" type="password" class="form-control" name="password" tabindex="2" required>*@
-                                            </div>
-                                            <div class="form-group" id="branche">
-
-
-
-                                                <p style="font-size:15px;font-weight:bold;color:red">@Session["Message"]</p>
-                                                @*<input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>*@
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="password" class="control-label">@DataMapping.Resources.Resource.RememperMe</label>
-                                                @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-control", @type = "checkbox", @name = "RememberMe", @placeholder = "RememberMe" })
-                                                @Html.ValidationMessageFor(model => model.RememberMe)
-                                                @*<input id="password" type="password" class="form-control" name="password" tabindex="2" required>*@
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="submit" value="تسجيل الدخول" class="btn btn-primary btn-lg btn-block" tabindex="4" id="submit">
-                                            </div>
-                                        }
-
-                                        @if (ViewBag.TestlicenceType == false)
-
-                                        {
-                                            <p>@Session["IsTrial"]</p><a href="~/Login/Activation" class="btn btn-primary">تفعيل</a>
-                                        }
-
-                                        else if (ViewBag.TestlicenceType == true)
-
-                                        {
-                                            <a href="~/Login/Activation" hidden class="btn btn-primary">تفعيل</a>
-                                        }
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+<body >
+  
+   
+    <main>
+        <section class="words-Section">
+          
+            <img class="foods-img"src="~/Design/assets/img/foods.png" />
+            <div class="info">
+                <div class="logo">
+                    <img src="~/Design/assets/img/LOGO.png" />
+                </div>
+                <div class="words">Clean Eating 7 days Meal Plan</div>
+                <div class="words_p">
+                    <p>
+                        Take control of your diet,and get into the best shape of your
+                        life.
+                    </p>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+        <section class="form-section">
+            <div class="form-logo">
 
-    <script src="~/Design/assets/js/app.min.js"></script>
-    <script src="~/Design/assets/bundles/apexcharts/apexcharts.min.js"></script>
-    <script src="~/Design/assets/js/page/index.js"></script>
-    <script src="~/Design/assets/js/scripts.js"></script>
-    <script src="~/Design/assets/js/custom.js"></script>
-    <script src="~/Scripts/DataPicker/jquery-ui.min.js"></script>
-    @*datepicker Osama Sadek*@
-    <link href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/start/jquery-ui.css" rel="stylesheet" />
+                <img class="logo-with-words" src="~/Design/assets/img/logoWord.png" />
+            </div>
+            @using (Html.BeginForm("Index", "Login", new
+            {
+                Lang = 0,
+                ReturnUrl = ViewBag.ReturnUrl@*, BranchId = 11*@ }, FormMethod.Post, new { @class = "form-horizontal login100-form", role = "form" }))
+            {
 
-    <link href="~/Scripts/DataPicker/jquery-ui.min.css" rel="stylesheet" />
+                <label class="login_label" for="username">@DataMapping.Resources.Resource.UserName</label>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#BrancheId").prop("disabled", true);
+                @Html.TextBoxFor(m => m.Code, new { Value = ViewBag.code, @class = "input", @type = "text", @name = "email", @placeholder = "User Name", @id = "username" })
+                @Html.ValidationMessageFor(model => model.Code)
 
-        });
+                <label class="login_label" for="phone">@DataMapping.Resources.Resource.Password</label>
+                @Html.TextBoxFor(m => m.Password, new { Value = ViewBag.Password, @class = "input", @type = "password", @name = "pass", @placeholder = "Password", @id = "phone" })
+                @Html.ValidationMessageFor(model => model.Password)
+                <input type="submit" value="@DataMapping.Resources.Resource.login" tabindex="4" id="login-button">
+                @*<a href="" id="login-button">Login</a>*@
+                if (ViewBag.TestlicenceType == false)
 
+                {
+                    <p>@Session["IsTrial"]</p><a href="~/Login/Activation" class="btn btn-primary">تفعيل</a>
+                }
 
-        $("#Code").change(function () {
-            $("#BrancheId").prop("disabled", false);
-            $.get("/Login/GetBranchesList/", { code: $("#Code").val() }, function (data) {
-                //$("#BrancheId").show();
-                $("#BrancheId").empty();
-                /* $("#BrancheId").append("<option value = '0'> اختر الفرع  </option>")*/
-                $.each(data, function (index, row) {
+                else if (ViewBag.TestlicenceType == true)
 
-
-
-                    $("#BrancheId").append("<option value='" + row.Id + "'>" + row.BranchesName + "</option>")
-
-                });
-            });
-
-        });
-        $("#submit").click(function () {
-            if ($("#BrancheId").val() == 0) {
-                /*toastr.warning("من فضلك أختر الفرع")*/
-                alert("من فضلك أختر الفرع")
-
+                {
+                    <a href="~/Login/Activation" hidden class="btn btn-primary">تفعيل</a>
+                }
             }
+            
+            </section>
+        </main>
+     
 
-        });
-    </script>
 </body>
 
 </html>

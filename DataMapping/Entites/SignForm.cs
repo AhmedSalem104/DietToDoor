@@ -26,10 +26,10 @@ namespace DataMapping.Entites
         public string Address { get; set; }
 
 
-        [Required(ErrorMessage = "  هذا الحقل مطلوب")]
+        //[Required(ErrorMessage = "  هذا الحقل مطلوب")]
 
-        [Column("Phone")]
-        public string Phone { get; set; }
+        //[Column("Phone")]
+        //public string Phone { get; set; }
         [Required(ErrorMessage = "  هذا الحقل مطلوب")]
 
         [Column("Type")]

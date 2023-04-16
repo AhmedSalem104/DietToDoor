@@ -95,7 +95,7 @@ namespace DiteToDoor.Controllers
                 //    LoggedUser.CreateActionLog(2003, globalData.UserID, 2, record, "Item / الأصناف");
 
                 //}
-                return RedirectToAction(nameof(Index));
+                return Json(true);
             }
             else
             {
@@ -112,7 +112,45 @@ namespace DiteToDoor.Controllers
 
         }
 
+        [HttpPost]
+        public ActionResult AddFoodFerquencey(FoodFrequency _Item)
+        {
+            if (_Item.Id == 0)
+            {
+                var record = db.SignForm.Max(a => a.Id);
 
+                _Item.UserId = record;
+                FoodRepo.Insert(_Item);
+                //if (globalData.UserID != 0)
+                //{
+                //    LoggedUser.CreateActionLog(2003, globalData.UserID, 2, record, "Item / الأصناف");
+
+                //}
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                FoodRepo.Update(_Item);
+                var record = _Item.Id;
+                //if (globalData.UserID != 0)
+                //{
+                //    LoggedUser.CreateActionLog(2003, globalData.UserID, 3, record, "Item / الأصناف");
+
+                //}
+                return RedirectToAction(nameof(Index));
+
+            }
+
+        }
+
+        [HttpPost]
+        public ActionResult AddMyGoals()
+        {
+          
+            var d = db.TempGoals.ToList();
+            MyGoalsRepo.InsertList(d);
+            return Json(true);
+        }
         public ActionResult AddItem(int? id = 0)
         {
             if (id == 0)
@@ -147,11 +185,11 @@ namespace DiteToDoor.Controllers
         public ActionResult Delete(int id)
         {
             var q = rep.Remove(id);
-            if (globalData.UserID != 0)
-            {
-                LoggedUser.CreateActionLog(2003, globalData.UserID, 5, id, "Item / الأصناف");
+            //if (globalData.UserID != 0)
+            //{
+            //    LoggedUser.CreateActionLog(2003, globalData.UserID, 5, id, "Item / الأصناف");
 
-            }
+            //}
 
             return RedirectToAction(nameof(Index));
         }

@@ -1,4 +1,5 @@
 ﻿using DataMapping.Entites;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -39,7 +40,40 @@ namespace DataAccess.Repositories
                 return false;
             }
         }
-
+        public bool InsertList(List<TempGoals> items)
+        {
+            try
+            {
+                using (var db = new ApplicationDbContext())
+                {
+                    var record = db.SignForm.Max(a => a.Id);
+                    foreach (var e in items)
+                    {
+                        MyGoals myGoals = new MyGoals();
+                        myGoals.GoalId = e.GoalId;
+                        myGoals.UserId = record;
+                        myGoals.IsDeleted = false;
+                        db.MyGoals.Add(myGoals);
+                    }
+                    var q = db.TempGoals.ToList();
+                    if (q.Count()!=0)
+                    {
+                        foreach (var i in q) {
+                            db.Entry(i).State = EntityState.Deleted;
+                            db.SaveChanges();
+                        }
+                       
+                    }
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            catch  (Exception ee)
+            {
+                var e = ee.Message;
+                return false;
+            }
+        }
         public bool Update(MyGoals item)
         {
             try

@@ -4,64 +4,122 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
+<main class="main">
+    <section class="about-me">
+        <div class="welcome-text">
+            <div class="img">
+                @*<img src="https://source.unsplash.com/random/?man" alt="" srcset="" />*@
+                <img src="~/Design/assets/img/logoWord.png" />
+            </div>
+            <h1>
+                <span>welcome</span> <br />
+               User Name 
+            </h1>
+        </div>
+        <div class="my-sub">
+            <div class="sub">
+                <div class="active">
+                    <h2>Subscriptions</h2>
+                    <span>Active</span>
+                </div>
+                <a href="">+ Renew</a>
+            </div>
+            <div class="left-of-sub">
+                <h3>5 days <span>left</span></h3>
+                <p>
+                    Note: Subscription renewal payments typically becomes active
+                    between 24 and 48 hours after payment reaches diettodoor bank
+                    account.
+                </p>
+            </div>
+        </div>
+        <div class="info-about-me">
+            <h3>Account Information</h3>
+            <div class="info">
+                <div class="one-info">
+                    <div class="info-label">name</div>
+                    <div class="theinfo">yossef ibrahim mohamed</div>
+                </div>
+                <div class="one-info">
+                    <div class="info-label">Age</div>
+                    <div class="theinfo">19</div>
+                </div>
+                <div class="one-info">
+                    <div class="info-label">Gender</div>
+                    <div class="theinfo">Male</div>
+                </div>
+                <div class="one-info">
+                    <div class="info-label">Occupational</div>
+                    <div class="theinfo">Software Engineer</div>
+                </div>
+                <div class="one-info">
+                    <div class="info-label">Location</div>
+                    <div class="theinfo">Cairo, Zamalek</div>
+                </div>
+                <div class="one-info">
+                    <div class="info-label">Phone number</div>
+                    <div class="theinfo">+2 0102346663</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="my-goals">
+        <div class="goals-title">
+            <h3>Goals</h3>
+            <span>lose weigh</span>
+        </div>
+        <div class="goals">
+            <div class="goal move1">
+                <h3>103 <span>kg</span></h3>
+                <p>Start - 25/3/2022</p>
+            </div>
+            <div class="arrow move2">></div>
+            <div class="goal move3">
+                <h3>91 <span>kg</span></h3>
+                <p>Start - 25/3/2022</p>
+            </div>
+            <div class="arrow move4">></div>
+            <div class="goal move5">
+                <h3>80 <span>kg</span></h3>
+                <p>Start - 25/3/2022</p>
+            </div>
+        </div>
+    </section>
+    <section class="RDI">
+        <div class="title">
+            <img src="./assets/rdi.svg" alt="" srcset="" /> Daily Recommended
+            Dietary Intake (RDI)
+        </div>
+        <div class="text">
+            is the average daily intake level of a particular nutrient that is
+            likely to meet the nutrient requirements of 97-98% of healthy
+            individuals in a particular life stage or gender group
+        </div>
+        <div class="advives">
+            <div class="advice">
+                <img src="./assets/cup.svg" alt="" srcset="" /> 13 Cup of water
+            </div>
+            <div class="advice">
+                <img src="./assets/clock.svg" alt="" srcset="" />Sleep for 8 hours
+            </div>
+            <div class="advice">
+                <img src="./assets/coffe.svg" alt="" srcset="" /> 1 cup of coffee
+            </div>
+        </div>
+    </section>
+</main>
+<img src="./assets/food.svg" id="background-photo" alt="" srcset="" />
 
-    .button-5 {
-        align-items: center;
-        background-clip: padding-box;
-        background-color: #003d68;
-        border: 1px solid transparent;
-        border-radius: .25rem;
-        box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-        box-sizing: border-box;
-        color: #fff;
-        cursor: pointer;
-        display: inline-flex;
-        font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 16px;
-        font-weight: 600;
-        justify-content: center;
-        line-height: 1.25;
-        margin: 0;
-        min-height: 3rem;
-        padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-        position: relative;
-        text-decoration: none;
-        transition: all 250ms;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-        vertical-align: baseline;
-        width: auto;
-        font-weight: bold;
-    }
+@*<div class="container">
+        <button class="button-5" id="exampleModalCenterTitle" role="button" type="button" data-toggle="modal" data-target="#myModal" onclick="showPopupCreate()">
+            Send Email
 
-        .button-5:hover,
-        .button-5:focus {
-            background-color: #003d68;
-            box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-        }
+        </button><br /><br />
 
-        .button-5:hover {
-            transform: translateY(-1px);
-        }
-
-        .button-5:active {
-            background-color: #c85000;
-            box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-            transform: translateY(0);
-        }
-</style>
-<div class="container">
-    <button class="button-5" id="exampleModalCenterTitle" role="button" type="button" data-toggle="modal" data-target="#myModal" onclick="showPopupCreate()">
-        Send Email
-
-    </button><br /><br />
-
-    <span style="text-align: center; font-size: xx-large; font-weight: bold; margin-right: 380px; ">@DataMapping.Resources.Resource.DiteToDoor</span>
+        <span style="text-align: center; font-size: xx-large; font-weight: bold; margin-right: 380px; ">@DataMapping.Resources.Resource.DiteToDoor</span>
 
 
-</div>
+    </div>*@
 @*<div class="row"  >
         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 margin_bottom_20px">
             <div class="card">
@@ -270,64 +328,64 @@
     </div>*@
 
 @section ModelPopup{
-    <div id="mainDiv"></div>
-    <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-12 text-center warning_icon">
-                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+    @*<div id="mainDiv"></div>
+        <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12 text-center warning_icon">
+                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 confirm_text">
+                                <h3>@DataMapping.Resources.Resource.Alert</h3>
+                                <p>@DataMapping.Resources.Resource.Confirm</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 confirm_text">
-                            <h3>@DataMapping.Resources.Resource.Alert</h3>
-                            <p>@DataMapping.Resources.Resource.Confirm</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-whitesmoke br">
-                    <div class="row">
-                        <div class="col-6 text-right">
-                            <button id="btnContinueDelete" type="button" class="btn btn-danger">حذف</button>
-                        </div>
-                        <div class="col-6 text-left">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">رجوع</button>
+                    <div class="bg-whitesmoke br">
+                        <div class="row">
+                            <div class="col-6 text-right">
+                                <button id="btnContinueDelete" type="button" class="btn btn-danger">حذف</button>
+                            </div>
+                            <div class="col-6 text-left">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">رجوع</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div>*@
 }
 
 @section JavaScriptSection{
-    <script>
-        function showPopupCreate() {
-            $.ajax({
-                type: "Get",
-                url: "/Home/SendMessage",
-                contentType: "application/json; charset=utf-8",
-                dataType: "html",
-                success: function (result, status, xhr) {
+    @*<script>
+            function showPopupCreate() {
+                $.ajax({
+                    type: "Get",
+                    url: "/Home/SendMessage",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (result, status, xhr) {
 
-                    $("#mainDiv").html(result);
-                    $('#exampleModalCenter').modal('show');
-                },
-                error: function (xhr, status, error) {
-                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
-                }
-            });
-        }
-
-
+                        $("#mainDiv").html(result);
+                        $('#exampleModalCenter').modal('show');
+                    },
+                    error: function (xhr, status, error) {
+                        $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                    }
+                });
+            }
 
 
 
 
 
-    </script>
+
+
+        </script>*@
 }
 
 

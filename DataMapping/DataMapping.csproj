@@ -192,6 +192,10 @@
     <Compile Include="Migrations\202303302226181_addVegetables.designer.cs">
       <DependentUpon>202303302226181_addVegetables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304050216570_removePhoneFromSignForm.cs" />
+    <Compile Include="Migrations\202304050216570_removePhoneFromSignForm.designer.cs">
+      <DependentUpon>202304050216570_removePhoneFromSignForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procedures\CarDriverPrint_Result.cs" />
     <Compile Include="Procedures\CarModelNo_Result.cs" />
     <Compile Include="Procedures\CarStatus_Result.cs" />
@@ -291,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303302226181_addVegetables.resx">
       <DependentUpon>202303302226181_addVegetables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304050216570_removePhoneFromSignForm.resx">
+      <DependentUpon>202304050216570_removePhoneFromSignForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource.Ar.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
