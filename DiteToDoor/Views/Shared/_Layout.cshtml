@@ -56,23 +56,18 @@
             <img src="~/Design/assets/img/logoWord.png" id="logo" />
         </div>
         <div class="nav-bar">
-            <a href="" class="nav-button active">Home</a>
+            <a href="~/Home/Index" class="nav-button active">Home</a>
             <a href="" class="nav-button">Meal Planner</a>
             <a href="" class="nav-button">Programs</a>
-            <a href="" class="nav-button">About us</a>
-            <a href="" class="nav-button">Contact us</a>
+            <a href="" class="nav-button">@DataMapping.Resources.Resource.AboutUs</a>
+            <a href="" class="nav-button">@DataMapping.Resources.Resource.Contact</a>
 
             <a href="~/SignUpForm/AddOrEdit" class="nav-button">SignUp</a>
 
             <ul class="navbar-nav navbar-left">
-                @{
-                    foreach (var i in ERPWeb.Models.LanguageMang.AvailableLanguages)
-                    {
-                        @Html.ActionLink(i.LanguageFullName, "ChangeLanguage", "Lang", new { lang = i.LanguageCultureName, url = Request.Url.LocalPath }, new { @class = "nav-link fas fa-language" }) <text> </text>
-                    }
-                }
+         
 
-                @*<li class="nav-item dropdown no-arrow">
+                <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-language fa-fw"></i>
                     </a>
@@ -81,7 +76,7 @@
                             {
                                 @Html.ActionLink(i.LanguageFullName, "ChangeLanguage", "Lang", new { lang = i.LanguageCultureName, url = Request.Url.LocalPath }, new { @class = "dropdown-item" }) <text> </text> } }
                     </div>
-                </li>*@
+                </li>
             </ul>
 
         </div>
