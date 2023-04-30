@@ -18,17 +18,20 @@
         {
         }
     }
+
+    ViewBag.SubjectId = new SelectList(db.Subject.ToList(), "SubjectId", "SubjectName");
+
+    
 }
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
           content="diettodoor place for healthy food come to you door" />
-    <link href="~/Design/assets/css/layout.css" rel="stylesheet" />
 
     <!--<link href="~/Design/assets/css/app.min.css" rel="stylesheet" />-->
     <!-- Template CSS -->
@@ -44,57 +47,213 @@
     <link href="~/Scripts/selectMania/src/themes/select-mania-theme-darkblue.css" rel="stylesheet" type="text/css">
     <link href="~/Scripts/Multiple-Select-fSelect/fSelect.css" rel="stylesheet" />
     <script src="~/Design/assets/bundles/tinymce/tinymce.min.js"></script>-->
-
+    <link href="~/Design/assets/css/layout.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
     <script src="~/Design/assets/js/layout.js" defer></script>
     <title>main</title>
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            @*<img src="./assets/logoWord.png" id="logo" alt="" srcset="" />*@
-            <img src="~/Design/assets/img/logoWord.png" id="logo" />
-        </div>
-        <div class="nav-bar">
-            <a href="~/Home/Index" class="nav-button active">Home</a>
-            <a href="" class="nav-button">Meal Planner</a>
-            <a href="" class="nav-button">Programs</a>
-            <a href="" class="nav-button">@DataMapping.Resources.Resource.AboutUs</a>
-            <a href="" class="nav-button">@DataMapping.Resources.Resource.Contact</a>
-
-            <a href="~/SignUpForm/AddOrEdit" class="nav-button">SignUp</a>
-
-            <ul class="navbar-nav navbar-left">
-         
-
-                <li class="nav-item dropdown no-arrow">
-                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-language fa-fw"></i>
-                    </a>
-                    <div class="dropdown-menu Language-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        @{ foreach (var i in ERPWeb.Models.LanguageMang.AvailableLanguages)
-                            {
-                                @Html.ActionLink(i.LanguageFullName, "ChangeLanguage", "Lang", new { lang = i.LanguageCultureName, url = Request.Url.LocalPath }, new { @class = "dropdown-item" }) <text> </text> } }
+    <div class="pop" id="pop-ContactUs">
+        <div class="clouse"></div>
+        <div id="myForm">
+            <div class="header">
+                <h2>contact us</h2>
+                <button id="closeFormContact">
+                    <i class="fa fa-close"></i>
+                </button>
+            </div>
+            <h5>Be Strong, Be Healthy</h5>
+            <form>
+                <div class="rating">
+                    <div class="rating-form">
+                        <label for="super-happy" class="lb">
+                            <input type="radio"
+                                   name="rating"
+                                   class="super-happy"
+                                   id="super-happy"
+                                   value="super-happy"
+                                   checked />
+                            <svg class="svg" viewBox="0 0 24 24">
+                                <path d="M12,17.5C14.33,17.5 16.3,16.04 17.11,14H6.89C7.69,16.04 9.67,17.5 12,17.5M8.5,11A1.5,1.5 0 0,0 10,9.5A1.5,1.5 0 0,0 8.5,8A1.5,1.5 0 0,0 7,9.5A1.5,1.5 0 0,0 8.5,11M15.5,11A1.5,1.5 0 0,0 17,9.5A1.5,1.5 0 0,0 15.5,8A1.5,1.5 0 0,0 14,9.5A1.5,1.5 0 0,0 15.5,11M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path>
+                            </svg>
+                        </label>
+                        <label for="neutral" class="lb">
+                            <input type="radio"
+                                   name="rating"
+                                   class="neutral"
+                                   id="neutral"
+                                   value="neutral" />
+                            <svg class="svg"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 version="1.1"
+                                 width="100%"
+                                 height="100%"
+                                 viewBox="0 0 24 24">
+                                <path d="M8.5,11A1.5,1.5 0 0,1 7,9.5A1.5,1.5 0 0,1 8.5,8A1.5,1.5 0 0,1 10,9.5A1.5,1.5 0 0,1 8.5,11M15.5,11A1.5,1.5 0 0,1 14,9.5A1.5,1.5 0 0,1 15.5,8A1.5,1.5 0 0,1 17,9.5A1.5,1.5 0 0,1 15.5,11M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M9,14H15A1,1 0 0,1 16,15A1,1 0 0,1 15,16H9A1,1 0 0,1 8,15A1,1 0 0,1 9,14Z"></path>
+                            </svg>
+                        </label>
+                        <label for="super-sad" class="lb">
+                            <input type="radio"
+                                   name="rating"
+                                   class="super-sad"
+                                   id="super-sad"
+                                   value="super-sad" />
+                            <svg class="svg" viewBox="0 0 24 24">
+                                <path d="M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M16.18,7.76L15.12,8.82L14.06,7.76L13,8.82L14.06,9.88L13,10.94L14.06,12L15.12,10.94L16.18,12L17.24,10.94L16.18,9.88L17.24,8.82L16.18,7.76M7.82,12L8.88,10.94L9.94,12L11,10.94L9.94,9.88L11,8.82L9.94,7.76L8.88,8.82L7.82,7.76L6.76,8.82L7.82,9.88L6.76,10.94L7.82,12M12,14C9.67,14 7.69,15.46 6.89,17.5H17.11C16.31,15.46 14.33,14 12,14Z"></path>
+                            </svg>
+                        </label>
                     </div>
-                </li>
-            </ul>
+                </div>
+                <label for="weight">Subject </label>
+                @Html.DropDownList("SubjectId", null, "اختار   ", htmlAttributes: new { @id = "activity_level", @class = "select2 form-control" })
 
+                @*<select name="cars" id="activity_level">
+            <option value="1">one</option>
+            <option value="1.2">two</option>
+            <option value="1.375">three</option>
+            <option value="1.55">four</option>
+            <option value="1.725">five</option>
+        </select>*@
+                <!--
+
+    <div class="input-div">
+      <input
+        type="text"
+        id="weight"
+        placeholder=""
+        name="weight"
+        required
+      />
+    </div> -->
+
+                <label for="comments">Comment</label>
+                <textarea id="comments"
+                          placeholder="Please type here..."
+                          name="comments"></textarea>
+
+                <label id="upload-label" class="upload-label1" for="upload1">
+                    <i class="fa fa-paperclip"></i>
+                    <div class="file-info">
+                        <span class="file-name file-name-contact">Other Attachments</span>
+                        <span class="file-size file-size-contact"></span>
+                    </div>
+                </label>
+                <input type="file"
+                       id="upload1"
+                       class="contact_upload"
+                       name="upload" />
+
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+    <div class="pop" id="pop-follow">
+        <div class="clouse"></div>
+        <div id="myForm">
+            <div class="header">
+                <h2>Follow up</h2>
+                <button id="closeForm"><i class="fa fa-close"></i></button>
+            </div>
+            <h5>Be Strong, Be Healthy</h5>
+            <form>
+                <label for="weight">What’s your current weight? </label>
+
+                <div class="input-div">
+                    <input type="text"
+                           id="weight"
+                           placeholder="eg.100"
+                           name="weight"
+                           onkeydown="replace_string(this);"
+                           required /><span>kg</span>
+                </div>
+
+                <label for="circumference">Your Current Center of a circumference</label>
+
+                <div class="input-div">
+                    <input type="text"
+                           placeholder="eg.28"
+                           id="circumference"
+                           name="circumference"
+                           onkeydown="replace_string(this);"
+                           required />
+                    <span>cm</span>
+                </div>
+
+                <label for="comments">Do you’ve any Notes</label>
+                <textarea id="comments"
+                          placeholder="Please type here..."
+                          name="comments"></textarea>
+
+                <label id="upload-label" class="upload-label2" for="upload2">
+                    <i class="fa fa-paperclip"></i>
+                    <div class="file-info">
+                        <span class="file-name file-name-follow">Other Attachments</span>
+                        <span class="file-size file-size-follow"></span>
+                    </div>
+                </label>
+                <input type="file" id="upload2" class="follow_upload" name="upload" />
+
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+
+    <header>
+        <div class="navbar-logo">
+            <div class="logo">
+                <img src="~/Design/assets/img/logoWord.png" id="logo" />
+                <div class="mydict second">
+                    <div>
+                        <label>
+                            <input type="radio" name="radioo" checked="" />
+                            <span>En</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="radioo" />
+                            <span>AR</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-bar">
+                <a href="" class="nav-button active">Home</a>
+                <a href="" class="nav-button">Meal Planner</a>
+                <a href="https://diettodoor.com/programs" class="nav-button">Programs</a>
+                <a href="https://diettodoor.com/about" class="nav-button">@DataMapping.Resources.Resource.AboutUs</a>
+                <a id="contact" class="nav-button">@DataMapping.Resources.Resource.Contact</a>
+            </div>
         </div>
         <div class="bottons-group">
+            <div class="mydict">
+                <div>
+                    <label>
+                        <input type="radio" name="radio" checked />
+                        <span><a href="/Lang/ChangeLanguage?lang=en&amp;url=%2FHome%2FIndex"> EN</a></span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="radio" />
+
+                        <span> <a href="/Lang/ChangeLanguage?lang=Ar&amp;url=%2FHome%2FIndex">  AR</a></span>
+                    </label>
+                </div>
+            </div>
             <a class="follow button">Follow up now</a>
-            <a class="button">
-                <img class="bill" src="./assets/bill.svg" alt="" srcset="" />
-            </a>
-            <a class="button">
-                <img src="./assets/signup.svg" alt="" srcset="" />
+
+            <a href="/Login" title="logOut" class="logout">
+                
+                <img src="~/Design/assets/img/signup.svg" />
             </a>
         </div>
         <div class="responsive-navbar">
-            <a href="" class="nav-button active">Home</a>
+            <a href=""  class="nav-button active">Home</a>
             <a href="" class="nav-button">Meal Planner</a>
             <a href="" class="nav-button">Programs</a>
             <a href="" class="nav-button">About us</a>
-            <a href="" class="nav-button">Contact us</a>
+            <a id="contact" class="nav-button">Contact us</a>
             <hr />
             <a class="follow nav-button">Follow up now</a>
         </div>
@@ -103,103 +262,28 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        @Html.Partial("_LoginPartial")
-    </header>
-   
 
-    @*<div class="main-content">
-        <section class="section">*@
-            @RenderBody()   
-        @*</section>
-    </div>*@
+
+
+
+        @*@{ foreach (var i in ERPWeb.Models.LanguageMang.AvailableLanguages)
+            {
+                @Html.ActionLink(i.LanguageFullName, "ChangeLanguage", "Lang", new { lang = i.LanguageCultureName, url = Request.Url.LocalPath }, new { @class = "dropdown-item" }) <text> </text> } }*@
+
+
+
+        @*@Html.Partial("_LoginPartial")*@
+    </header>
+
+
+    @RenderBody()
+
 
     @RenderSection("ModelPopup")
 
-    @*<footer class="main-footer">
-        <div class="text-center">
-            <a href="#">جميع الحقوق محفوظة © 2022</a>
-        </div>
-    </footer>*@
-
-    <!-- General JS Scripts -->
-    <!--<script src="~/Scripts/AllJS.js"></script>
-    <script src="~/Design/assets/js/app.min.js"></script>-->
-    <!-- JS Libraies -->
-    <!--<script src="~/Design/assets/bundles/datatables/datatables.min.js"></script>
-    <script src="~/Design/assets/bundles/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <script src="~/Design/assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
-    <script src="~/Design/assets/js/semantic.js"></script>
-    <script src="~/Design/assets/bundles/select2/dist/js/select2.full.min.js"></script>
-    <script src="~/Design/assets/bundles/jquery-ui/jquery-ui.min.js"></script>
-    <script src="~/Design/assets/js/page/datatables.js"></script>
-    <script src="~/Design/assets/bundles/apexcharts/apexcharts.min.js"></script>-->
-
-    <!-- Page Specific JS File -->
-
-    <!--<script src="~/Design/assets/js/page/index.js"></script>-->
-    <!-- Template JS File -->
-    <!--<script src="~/Design/assets/js/scripts.js"></script>-->
-    <!-- Custom JS File -->
-    <!--<script src="~/Design/assets/js/custom.js"></script>
-    <script>
-        var path_to_delete;
-
-        $(".deleteItem").click(function (e) {
-            path_to_delete = $(this).data('path');
-        });
-
-        $('#btnContinueDelete').click(function () {
-            window.location = path_to_delete;
-        });
-    </script>-->
 
     @RenderSection("JavaScriptSection")
 
-    @*<script src="~/Scripts/jquery-3.3.1.min.js"></script>*@
-    @*<script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    <script src="~/Content/AdminLayout/js/toastr.js"></script>
-    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-
-
-            toastr.options = {
-                "closeButton": false,
-                "debug": false,
-                "newestOnTop": false,
-                "progressBar": false,
-                "positionClass": "toast-top-center",
-                "preventDuplicates": false,
-                "onclick": null,
-                "showDuration": "300",
-                "hideDuration": "1000",
-                "timeOut": "5000",
-                "extendedTimeOut": "1000",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "fadeIn",
-                "hideMethod": "fadeOut"
-            }
-        });
-    </script>
-
-    <script src="~/Scripts/selectMania/src/select-mania.js"></script>
-    <script src="@Url.Content("~/Scripts/Multiple-Select-fSelect/fSelect.js")"></script>
-    <script>
-        $('.selectMania').selectMania({
-            // size: 'large',
-            themes: ['darkblue'],
-            //placeholder: 'اختر',
-            removable: true,
-            search: true,
-            size: 'tiny' //'tiny' / 'small' / 'medium' / 'large'
-        });
-
-        $('.multiselect').multiselect();
-    </script>*@
 </body>
 </html>
 
@@ -209,18 +293,4 @@
 
 
 
-
-
-
-
-@*<style>
-        body {
-            font-family: Cairo-VariableFont_slnt,wght;
-        }
-        @@font-face {
-            font-family: 'Cairo-VariableFont_slnt,wght';
-            src: url('../../Design/assets/fonts/fonts/Cairo-VariableFont_slnt,wght.ttf') format('truetype');
-        }
-
-    </style>*@
 
