@@ -10,6 +10,9 @@ namespace DataMapping.Entites
         [Key]
         [Column("Id", TypeName = "int")]
         public int Id { get; set; }
+
+        [Column("ClientId", TypeName = "int")]
+        public int? ClientId { get; set; }
         [Required(ErrorMessage = "  الكود مطلوب")]
         [Column("Code", TypeName ="nvarchar(MAX)")]
         public string Code { get; set; }

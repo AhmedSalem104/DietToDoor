@@ -78,26 +78,7 @@ namespace DataAccess.Repositories
 
         }
 
-        //public static void Update(Country item)
-        //{
-
-        //    using (var db = new ApplicationDbContext())
-        //    {
-
-        //        Country Old = db.Country.FirstOrDefault(d => d.Id == item.Id);
-        //        if (Old != null)
-        //        {
-        //            var propInfo = item.GetType().GetProperties();
-        //            foreach (var p in propInfo)
-        //            {
-        //                Old.GetType().GetProperty(p.Name).SetValue(Old, p.GetValue(item, null), null);
-        //            }
-
-        //            db.SaveChanges();
-        //        }
-        //    }
-
-        //}
+     
         public bool Remove(int id)
         {
             try
