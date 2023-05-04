@@ -61,6 +61,15 @@ namespace DataMapping.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AboutUs.
+        /// </summary>
+        public static string AboutUs {
+            get {
+                return ResourceManager.GetString("AboutUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not have permmision.
         /// </summary>
         public static string Access {
@@ -840,6 +849,15 @@ namespace DataMapping.Resources {
         public static string ConnInfoInWork {
             get {
                 return ResourceManager.GetString("ConnInfoInWork", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string Contact {
+            get {
+                return ResourceManager.GetString("Contact", resourceCulture);
             }
         }
         
