@@ -28,66 +28,39 @@ namespace DataMapping.Entites
             return new ApplicationDbContext();
         }
         #region Table
-        //public virtual DbSet<Accounts> Accounts { get; set; }
-        ////public virtual DbSet<test> test { get; set; }
-        //public virtual DbSet<Accounts_Types> Accounts_Types { get; set; }
+
         public virtual DbSet<ActionLog> ActionLog { get; set; }
         public virtual DbSet<Actions> Actions { get; set; }
-        //public virtual DbSet<AssetClassifcation> AssetClassifcation { get; set; }
-        //public virtual DbSet<Attachments> Attachments { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<EmployeeGroups> EmployeeGroups { get; set; }
         public virtual DbSet<EmployeeSecurityRoles> EmployeeSecurityRoles { get; set; }
         public virtual DbSet<ActivationTbl> ActivationTbl { get; set; }
-
         public virtual DbSet<Group> Group { get; set; }
         public virtual DbSet<GroupSecurityRole> GroupSecurityRole { get; set; }
         public virtual DbSet<MainMenu> MainMenu { get; set; }
         public virtual DbSet<SystemFunction> SystemFunction { get; set; }
         public virtual DbSet<SystemFunctionParent> SystemFunctionParent { get; set; }
         public virtual DbSet<Users> Users { get; set; }
-
         public virtual DbSet<Users_Branches> Users_Branches { get; set; }
         public virtual DbSet<Users_Groups> Users_Groups { get; set; }
-        //public virtual DbSet<Branches> Branches { get; set; }
-        //public virtual DbSet<Currencies> Currencies { get; set; }
-        //public virtual DbSet<CurrencyExchangeRates> CurrencyExchangeRates { get; set; }
         public virtual DbSet<CompanyInfo> CompanyInfo { get; set; }
-        //public virtual DbSet<Stations> Stations { get; set; }
-        //public virtual DbSet<Cars> Cars { get; set; }
         public virtual DbSet<Vendor> Vendor { get; set; }
-        public virtual DbSet<VendorClassification> VendorClassification { get; set; }
-        //public virtual DbSet<Service_Tbl> Service_Tbl { get; set; }
-        ////public virtual DbSet<CarsTypes_Tbl> CarsTypes_Tbl { get; set; }
-        //public virtual DbSet<Color_Tbl> Color_Tbl { get; set; }
-        //public virtual DbSet<Suppliers_Tbl> Suppliers_Tbl { get; set; }
-        //public virtual DbSet<Equipments> Equipments { get; set; }
-        //public virtual DbSet<Managments> Managments { get; set; }
-        //public virtual DbSet<SpareParts_Tbl> SpareParts_Tbl { get; set; }
+        public virtual DbSet<VendorClassification> VendorClassification { get; set; }   
         public virtual DbSet<Nationalities_Tbl> Nationalities_Tbl { get; set; }
-        //public virtual DbSet<Drivers> Drivers { get; set; }
-        //public virtual DbSet<LicenseTypes_Tbl> LicenseTypes { get; set; }
-        //public virtual DbSet<StoreTRXTypes> StoreTRXTypes { get; set; }
-        //public virtual DbSet<GasolineTypes> GasolineTypes { get; set; }
-        //public virtual DbSet<StationsTrx> StationsTrx { get; set; }
-        //public virtual DbSet<MachineType> MachineType { get; set; }
-        //public virtual DbSet<CarDrivers> CarDrivers { get; set; }
-        ////public virtual DbSet<CarDriversCompanions> CarDriversCompanions { get; set; }
-        //public virtual DbSet<Days> Days { get; set; }
-        //public virtual DbSet<MaintenanceTrx> MaintenanceTrx { get; set; }
-        //public virtual DbSet<MaintenanceTrxD> MaintenanceTrxD { get; set; }
-        ////public virtual DbSet<CheckTypes> CheckTypes { get; set; }
-        //public virtual DbSet<ServicesTrx> ServicesTrx { get; set; }
-        //public virtual DbSet<ServicesTrxD> ServicesTrxD { get; set; }
         public virtual DbSet<Years> Years { get; set; }
         public virtual DbSet<InvoicesSettings> InvoicesSettings { get; set; }
         public virtual DbSet<Contact> Contact { get; set; }
         public virtual DbSet<SignForm> SignForm { get; set; }
-
         public virtual DbSet<Goals> Goals { get; set; }
         public virtual DbSet<MyGoals> MyGoals { get; set; }
         public virtual DbSet<FoodFrequency> FoodFrequency { get; set; }
         public virtual DbSet<TempGoals> TempGoals { get; set; }
+        public virtual DbSet<Subject> Subject { get; set; }
+        public virtual DbSet<ContactUs> ContactUs { get; set; }
+
+        
+
+
 
 
 

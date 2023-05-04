@@ -34,7 +34,7 @@ namespace Maintanence.Controllers
             }
             if (globalData.UserID != 0)
             {
-                LoggedUser.CreateActionLog(12, globalData.UserID, 1, 0, "Nationalities /  الجنسيات");
+                LoggedUser.CreateActionLog(1004, globalData.UserID, 1, 0, "Nationalities /  الجنسيات");
 
             }
 
@@ -120,7 +120,7 @@ namespace Maintanence.Controllers
                 var record = db.Nationalities_Tbl.Max(a => a.NatCode);
                 if (globalData.UserID != 0)
                 {
-                    LoggedUser.CreateActionLog(12, globalData.UserID, 2, record, "Nationalities / الجنسيات");
+                    LoggedUser.CreateActionLog(1004, globalData.UserID, 2, record, "Nationalities / الجنسيات");
 
                 }
                 return Json(Url.Action("Index", "Bank"));
@@ -132,7 +132,7 @@ namespace Maintanence.Controllers
                 var record = _color.NationalId;
                 if (globalData.UserID != 0)
                 {
-                    LoggedUser.CreateActionLog(12, globalData.UserID, 3, record, "Nationalities / الجنسيات");
+                    LoggedUser.CreateActionLog(1004, globalData.UserID, 3, record, "Nationalities / الجنسيات");
 
                 }
                 return Json(Url.Action("Index", "Bank"));
@@ -151,7 +151,7 @@ namespace Maintanence.Controllers
         {
             if (globalData.UserID != 0)
             {
-                LoggedUser.CreateActionLog(12, globalData.UserID, 4, ID, "Nationalities / الجنسيات");
+                LoggedUser.CreateActionLog(1004, globalData.UserID, 4, ID, "Nationalities / الجنسيات");
 
             }
 

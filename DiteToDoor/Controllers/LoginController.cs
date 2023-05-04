@@ -443,7 +443,7 @@ namespace StoreSystem.Controllers
                 else
                 {
                     userIformationWithDate.LastLoginDate = DateTime.Now;
-                        db.SaveChanges();
+                    db.SaveChanges();
                     
                         //LoggedUser.CreateActionLog(5078, globalData.UserID, "عرض", 0, "Login / تسجيل دخول");
                         return Redirect("/Home/Index");
@@ -453,8 +453,8 @@ namespace StoreSystem.Controllers
             }
             else
             {
-                       userIformationWithDate.LastLoginDate = DateTime.Now;
-                        db.SaveChanges();
+                userIformationWithDate.LastLoginDate = DateTime.Now;
+                db.SaveChanges();
                       return Redirect("/Grou/Index");
             }
 
