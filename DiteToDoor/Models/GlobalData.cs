@@ -11,6 +11,8 @@ namespace ERPWeb.Models
         public string UserCode { get; set; }
         public string Password { get; set; }
         public int? EmployeeId { get; set; }
+        public int? ClientId { get; set; }
+
         public string Image { get; set; }
         public int CompanyID { get; set; }
         public int BranchId { get; set; }

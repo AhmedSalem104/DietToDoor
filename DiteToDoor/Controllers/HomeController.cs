@@ -7,12 +7,15 @@ using System.Web.Mvc;
 using ERPWeb.Models.SecurityRoles;
 using System.Net.Mail;
 using DataMapping.Entites;
+using DataAccess.Repositories;
 
 namespace Maintanence.Controllers
 {
     public class HomeController : MyController
     {
         GlobalData globalData = HelperMethods.globalData;
+        private ApplicationDbContext db = new ApplicationDbContext();
+        FollowUpRepository rep = new FollowUpRepository();
 
         public ActionResult Index()
         {
@@ -76,6 +79,23 @@ namespace Maintanence.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddOrEdit(FollowUp _Item, HttpPostedFileBase file)
+        {
+           
+                rep.Insert(_Item);
+                //var record = db.FollowUp.Max(a => a.Id);
+                //if (globalData.UserID != 0)
+                //{
+                //    LoggedUser.CreateActionLog(2003, globalData.UserID, 2, record, "Item / الأصناف");
+
+                //}
+                return RedirectToAction(nameof(Index));
+            
+          
+
         }
     }
 }
