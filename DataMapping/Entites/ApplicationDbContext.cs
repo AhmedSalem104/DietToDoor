@@ -58,8 +58,8 @@ namespace DataMapping.Entites
         public virtual DbSet<Subject> Subject { get; set; }
         public virtual DbSet<ContactUs> ContactUs { get; set; }
 
-        
 
+        public virtual DbSet<FollowUp> FollowUp { get; set; }
 
 
 
