@@ -1,0 +1,88 @@
+﻿@using DataMapping.Entites
+@model DataMapping.Entites.SystemFunctionParent
+
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+    ViewBag.MainMenuId = new SelectList(db.MainMenu.ToList(), "Id", "NameAr");
+}
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">@DataMapping.Resources.Resource.Add</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal", @id = "ModalForm" }))
+
+            {
+        <div class="modal-body">
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label>@DataMapping.Resources.Resource.SystemFunctionParents</label>
+                    @Html.DropDownList("MainMenuId", null, " اختر ", htmlAttributes: new { @id = "SystemFunctionParentsId", @class = "select2 form-control" })
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label>@DataMapping.Resources.Resource.NameInArabic</label>
+                    @Html.EditorFor(model => model.NameInArabic, new { htmlAttributes = new { @id = "Name", @class = "form-control" } })
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label>@DataMapping.Resources.Resource.NameInEnglish</label>
+                    @Html.EditorFor(model => model.NameInEnglish, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+
+        </div>
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+                        <div class="col-6 text-right">
+                            <button type="button" class="btn btn-success" onclick="Add()">@DataMapping.Resources.Resource.save</button>
+                        </div>
+                        <div class="col-6 text-left">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">@DataMapping.Resources.Resource.Close</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function Add() {
+        var Isvalid = true;
+        if ($("#Name").val() == "" || $("#Name").val() == null) {
+            Isvalid = false;
+            toastr.warning('ادخل البيانات')
+
+        }
+        else {
+            $.ajax({
+
+                type: "POST",
+                url: '/SystemFunctionParents/AddOrEdit',     //your action
+                data: $('#ModalForm').serialize(),   //your form name.it takes all the values of model
+                dataType: 'json',
+                success: function (result) {
+                    loadData();
+                    $('#exampleModalCenter').modal('hide');
+
+                },
+
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('oops, something bad happened')
+                    //toastr.warning('اختر  ...!')
+                }
+
+            });
+        }
+    }
+</script>
+
