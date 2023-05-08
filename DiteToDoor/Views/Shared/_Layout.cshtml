@@ -52,6 +52,7 @@
     <link href="~/Design/assets/css/layout.css" rel="stylesheet" />
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
     <script src="~/Design/assets/js/layout.js" defer></script>
+
     @*<script src="~/Scripts/jquery.validate.min.js"></script>*@
     <title>main</title>
 </head>
@@ -141,7 +142,7 @@
                 <button id="closeForm"><i class="fa fa-close"></i></button>
             </div>
             <h5>Be Strong, Be Healthy</h5>
-            <form>
+            <form action="~/Home/AddOrEdit" method="post">
                 <label for="weight">What’s your current weight? </label>
 
                 <div class="input-div">
@@ -179,6 +180,7 @@
                 </label>
                 <input type="file" id="upload2" class="follow_upload" name="upload" />
 
+                <input type="submit"  value="Submit" id="AddFollowUpp"  />
                 <input type="submit" value="Submit" id="AddFollowUp"  />
             </form>
         </div>
@@ -271,56 +273,54 @@
 
 
     <script type="text/javascript">
-        //function AddFollowUpp() {
-        //    alert("aaa");
-        //    var weight = $("#weight").val();
-        //    var circumference = $("#circumference").val();
-
-
-        //    var Isvalid = true;
-        //    if (weight == "" || weight == null) {
-        //        Isvalid = false;
-        //        toastr.warning('ادخل الوزن الحالى')
-        //    }
-        //    if (circumference == "" || circumference == null) {
-        //        Isvalid = false;
-        //        toastr.warning('ادخل محيط الوسط')
-        //    }
-
-
-        //    if (Isvalid) {
-        //        var data = {
-        //            CurrentWeight: $("#weight").val(),
-        //            CurrentCenterOfCircumference: $("#circumference").val(),
-        //            Notes: $("#comments").val(),
-        //            Attachment: document.getElementByTagName("Upload2").src,
-
-
-        //        }
-        //        /*$("#Save").hide();*/
-        //        //$("#SaveBTN").attr("disabled", true);
-        //        $.ajax({
-
-        //            type: "POST",
-        //            url: '/Home/AddOrEdit',     //your action
-        //            data: JSON.stringify(data),  //your form name.it takes all the values of model
-        //            contentType: 'application/json',
-        //            success: function (data) {
-        //                toastr.success("تم الحفظ بنجاح")
-
-
-
-        //            },
-
-
-
-        //        });
-        //    }
-        //}
-
-        $("#AddFollowUpp").click(function () {
+        function AddFollowUpp() {
             alert("aaa");
-        })
+            var weight = $("#weight").val();
+            var circumference = $("#circumference").val();
+
+
+            var Isvalid = true;
+            if (weight == "" || weight == null) {
+                Isvalid = false;
+                toastr.warning('ادخل الوزن الحالى')
+            }
+            if (circumference == "" || circumference == null) {
+                Isvalid = false;
+                toastr.warning('ادخل محيط الوسط')
+            }
+
+
+            if (Isvalid) {
+                var data = {
+                    CurrentWeight: $("#weight").val(),
+                    CurrentCenterOfCircumference: $("#circumference").val(),
+                    Notes: $("#comments").val(),
+                    Attachment: document.getElementByTagName("Upload2").src,
+
+
+                }
+                /*$("#Save").hide();*/
+                //$("#SaveBTN").attr("disabled", true);
+                $.ajax({
+
+                    type: "POST",
+                    url: '/Home/AddOrEdit',     //your action
+                    data: JSON.stringify(data),  //your form name.it takes all the values of model
+                    contentType: 'application/json',
+                    success: function (data) {
+                        toastr.success("تم الحفظ بنجاح")
+
+
+
+                    },
+
+
+
+                });
+            }
+        }
+
+       
 
     </script>
     <script src="~/Scripts/ERPScript/AddFollwoUp.js"></script>
