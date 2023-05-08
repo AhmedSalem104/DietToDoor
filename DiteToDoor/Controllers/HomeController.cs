@@ -82,9 +82,15 @@ namespace Maintanence.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddOrEdit(FollowUp _Item, HttpPostedFileBase file)
+        public ActionResult AddOrEdit(decimal? weight ,decimal? circumference,string comments,string upload)
         {
-           
+            FollowUp _Item = new FollowUp()
+            {
+                CurrentWeight = weight,
+                CurrentCenterOfCircumference = circumference,
+                Notes = comments,
+                Attachment = upload
+            };
                 rep.Insert(_Item);
                 //var record = db.FollowUp.Max(a => a.Id);
                 //if (globalData.UserID != 0)
