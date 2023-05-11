@@ -60,6 +60,8 @@ namespace DataMapping.Entites
 
 
         public virtual DbSet<FollowUp> FollowUp { get; set; }
+        public virtual DbSet<ServiceOpinion> ServiceOpinion { get; set; }
+
 
 
 

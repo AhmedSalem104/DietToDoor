@@ -7,13 +7,13 @@ namespace DataMapping.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class addClientIdInUsers : IMigrationMetadata
+    public sealed partial class megration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addClientIdInUsers));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(megration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202305041624019_addClientIdInUsers"; }
+            get { return "202305061037043_megration"; }
         }
         
         string IMigrationMetadata.Source

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class addFollowUpTable : DbMigration
+    public partial class megration : DbMigration
     {
         public override void Up()
         {
@@ -21,10 +21,12 @@
                     })
                 .PrimaryKey(t => t.Id);
             
+            AddColumn("Gl.Users", "ClientId", c => c.Int());
         }
         
         public override void Down()
         {
+            DropColumn("Gl.Users", "ClientId");
             DropTable("GL.FollowUp");
         }
     }

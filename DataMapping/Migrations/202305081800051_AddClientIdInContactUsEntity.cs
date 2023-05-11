@@ -3,16 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class addClientIdInUsers : DbMigration
+    public partial class AddClientIdInContactUsEntity : DbMigration
     {
         public override void Up()
         {
-            AddColumn("Gl.Users", "ClientId", c => c.Int());
+            AddColumn("GL.ContactUs", "ClientId", c => c.Int());
         }
         
         public override void Down()
         {
-            DropColumn("Gl.Users", "ClientId");
+            DropColumn("GL.ContactUs", "ClientId");
         }
     }
 }

@@ -15,7 +15,9 @@ namespace Maintanence.Controllers
     {
         GlobalData globalData = HelperMethods.globalData;
         private ApplicationDbContext db = new ApplicationDbContext();
-        FollowUpRepository rep = new FollowUpRepository();
+        FollowUpRepository FollowUprep = new FollowUpRepository();
+        ContactUsRepository ContactUsrep = new ContactUsRepository();
+
 
         public ActionResult Index()
         {
@@ -24,15 +26,14 @@ namespace Maintanence.Controllers
         }
 
 
-        [HttpGet]
-        public ActionResult SendMessage()
-        {
-            return PartialView("ModelCreatePopupPartialView");
-        }
+        //[HttpGet]
+        //public ActionResult SendMessage()
+        //{
+        //    return PartialView("ModelCreatePopupPartialView");
+        //}
         [HttpPost]
-        public ActionResult SendMessage(Contact contact)
+        public ActionResult SendGmailMessageFollowUp(FollowUp followUp)
         {
-
 
 
             if (ModelState.IsValid)
@@ -42,16 +43,53 @@ namespace Maintanence.Controllers
                 var smtpClient = new SmtpClient("smtp.gmail.com", 587);
                 smtpClient.Credentials = new System.Net.NetworkCredential("ahmedalgazar065@gmail.com", "zqwmdjijheatpwnn");
                 //var loginInfo = new NetworkCredential("ahmedalgazar065@gmail.com", "ahmed1041998###");
-                mail.From = new MailAddress("ahmed.java97@gmail.com");
-                mail.To.Add(new MailAddress(contact.Email));
-                mail.Subject = contact.Subject;
+                mail.From = new MailAddress("ahmedsalem1041998@gmail.com");
+                mail.To.Add(new MailAddress("ahmedsalem1041998@gmail.com"));
+                mail.Subject = followUp.Attachment;
                 mail.IsBodyHtml = true;
-                string body = "اسم المرسل:" + contact.Name + "<br>" +
-                              "بريد المرسل:" + contact.Email + "<br>" +
-                              "عنوان الرسالة:" + contact.Subject + "<br>" +
-                              "محتوى الرسالة: <b>" + contact.Message + "<b>";
+                string body = "اسم العميل:" + globalData.LoginName + "<br>" +
+                              "وزن العميل :" + followUp.CurrentWeight  + "<br>" +
+                              "محيط الوسط :" + followUp.CurrentCenterOfCircumference + "<br>" +
+                              "المرفقات : <b>" + followUp.Attachment + "<b>";
                 mail.Body = body;
+                smtpClient.EnableSsl = true;
+                smtpClient.Send(mail);
+                Session["session"] = " تم ارسال رسالتك ";
 
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                Session["session"] = "نعتذر حد خطا يرجى ملى البيانات";
+
+            }
+            return View("Index");
+        }
+
+        [HttpPost]
+        public ActionResult SendGmailMessageContactUs(ContactUs contactUs)
+        {
+            var SubjectName = db.Subject.FirstOrDefault(a => a.SubjectId == contactUs.SubjectId).SubjectName;
+            var ServiceOpinionName = db.ServiceOpinion.FirstOrDefault(a => a.ServiceOpinionId == contactUs.ServiceOpinionId).ServiceOpinionName;
+
+
+            if (ModelState.IsValid)
+            {
+
+                var mail = new MailMessage();
+                var smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                smtpClient.Credentials = new System.Net.NetworkCredential("ahmedalgazar065@gmail.com", "zqwmdjijheatpwnn");
+                //var loginInfo = new NetworkCredential("ahmedalgazar065@gmail.com", "ahmed1041998###");
+                mail.From = new MailAddress("ahmedsalem1041998@gmail.com");
+                mail.To.Add(new MailAddress("ahmedsalem1041998@gmail.com"));
+                mail.Subject = contactUs.Attachment;
+                mail.IsBodyHtml = true;
+                string body = "اسم العميل:<b style:color:red;>" + globalData.LoginName + "<br>" +
+                              "حالة العميل :<b>" + ServiceOpinionName + "<br>" +
+                              "الغرض من التواصل :<b>" + SubjectName + "<br>" +
+                              "المرفقات : <b>" + contactUs.Attachment + "<b>";
+                mail.Body = body;
                 smtpClient.EnableSsl = true;
                 smtpClient.Send(mail);
                 Session["session"] = " تم ارسال رسالتك ";
@@ -82,7 +120,7 @@ namespace Maintanence.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddOrEdit(decimal? weight ,decimal? circumference,string comments,string upload)
+        public ActionResult AddFollowUp(decimal? weight ,decimal? circumference,string comments,string upload)
         {
             FollowUp _Item = new FollowUp()
             {
@@ -91,17 +129,34 @@ namespace Maintanence.Controllers
                 Notes = comments,
                 Attachment = upload
             };
-                rep.Insert(_Item);
-                //var record = db.FollowUp.Max(a => a.Id);
-                //if (globalData.UserID != 0)
-                //{
-                //    LoggedUser.CreateActionLog(2003, globalData.UserID, 2, record, "Item / الأصناف");
+            FollowUprep.Insert(_Item);
+            SendGmailMessageFollowUp(_Item);
 
-                //}
+
+
                 return RedirectToAction(nameof(Index));
             
           
 
         }
+
+        [HttpPost]
+        public ActionResult AddContactUs(int? serviceOpinionId, int? subjectId, string comments, string upload)
+        {
+            ContactUs _Item = new ContactUs()
+            {
+                ServiceOpinionId = serviceOpinionId,
+                 SubjectId = subjectId,
+                Comment = comments,
+                Attachment = upload
+            };
+            ContactUsrep.Insert(_Item);
+            SendGmailMessageContactUs(_Item);
+            return RedirectToAction(nameof(Index));
+
+
+
+        }
+
     }
 }
