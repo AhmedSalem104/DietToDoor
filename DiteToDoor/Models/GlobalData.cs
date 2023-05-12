@@ -41,5 +41,19 @@ namespace ERPWeb.Models
 
         //public string MovementManager { get; set; }
 
+
+        public string CName { get; set; }
+
+
+        public string CTel1 { get; set; }
+
+        public string CTel2 { get; set; }
+
+        public string CAddres { get; set; }
+
+
+        public string CNotes { get; set; }
+        public int? CProgramID { get; set; }
+        public int? CProgramType { get; set; }
     }
 }

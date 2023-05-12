@@ -183,7 +183,10 @@ namespace DataMapping.Entites
         //    return Database.SqlQuery<GetAllCarsAndEquipmentsCarStatus_Result>("GetAllCarsAndEquipmentsCarStatus").ToList();
         //}
 
-
+        public virtual IEnumerable<GetClientsInfo_Result> GetClientsInfo()
+        {
+            return Database.SqlQuery<GetClientsInfo_Result>("GetClientsInfo").ToList();
+        }
         #endregion
 
     }

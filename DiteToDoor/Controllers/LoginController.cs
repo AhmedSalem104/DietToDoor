@@ -311,7 +311,7 @@ namespace StoreSystem.Controllers
 
                         var EmpName = db.Employee.Where(a => a.IsDeleted == false && a.Id == userIformation.EmployeeId).SingleOrDefault()?.EmployeeNameAr;
                         var CompanyName = db.CompanyInfo.FirstOrDefault().CompanyName;
-
+                        var ClientInfo = db.GetClientsInfo().FirstOrDefault(a=>a.ClientId==userIformationWithDate.ClientId);
                         var sett = db.InvoicesSettings.FirstOrDefault();
                         int? year = null;
                         if (sett != null)
@@ -333,6 +333,12 @@ namespace StoreSystem.Controllers
                         globalData.EmpName = EmpName;
                         globalData.CompanyName = CompanyName;
                         globalData.Year = year;
+                        globalData.ClientId = ClientInfo.ClientId;
+                        globalData.CName = ClientInfo.CName;
+                        globalData.CTel1 = ClientInfo.CTel1;
+                        globalData.CTel2 = ClientInfo.CTel2;
+                        globalData.CAddres = ClientInfo.CAddres;
+                        globalData.CNotes = ClientInfo.CNotes;
                         //var ComID = db.CompanyInfo.FirstOrDefault().Id;
                         //globalData.CompanyID = ComID;
                         globalData.DefaultLanguage = 0;
@@ -362,6 +368,7 @@ namespace StoreSystem.Controllers
                 else if (IsActive.LoginCount == null)
                 {
                     var CompanyName = "";
+                    var ClientInfo = db.GetClientsInfo().FirstOrDefault(a => a.ClientId == userIformationWithDate.ClientId);
 
                     var EmpName = db.Employee.Where(a => a.IsDeleted == false && a.Id == userIformation.EmployeeId).SingleOrDefault()?.EmployeeNameAr;
                     var Company = db.CompanyInfo.FirstOrDefault();
@@ -390,7 +397,12 @@ namespace StoreSystem.Controllers
                     globalData.EmpName = EmpName;
                     globalData.CompanyName = CompanyName;
                     globalData.Year = year;
-
+                    globalData.ClientId = ClientInfo.ClientId;
+                    globalData.CName = ClientInfo.CName;
+                    globalData.CTel1 = ClientInfo.CTel1;
+                    globalData.CTel2 = ClientInfo.CTel2;
+                    globalData.CAddres = ClientInfo.CAddres;
+                    globalData.CNotes = ClientInfo.CNotes;
                     //var ComID = db.CompanyInfo.FirstOrDefault().Id;
                     //globalData.CompanyID = ComID;
                     globalData.DefaultLanguage = 0;
