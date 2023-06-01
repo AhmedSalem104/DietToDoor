@@ -1,0 +1,138 @@
+﻿@using DataMapping.Entites
+@model IEnumerable<DataMapping.Entites.MenuByDateWebNutrition>
+
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+
+
+    var today = DateTime.Now.Date; // This can be any date.
+
+
+    var day = (int)today.DayOfWeek + 2; //Number of the day in week. (0 - Sunday, 1 - Monday... and so On)
+
+    const int totalDaysOfWeek = 7; // Number of days in a week stays constant.
+
+}
+<style>
+    #BankNo {
+        border: 2px solid #ebebeb;
+    }
+</style>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">@DataMapping.Resources.Resource.Add</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal", @id = "ModalForm" }))
+
+            {
+                <div class="modal-body">
+                    @foreach (var item in Model)
+                    {
+
+                    <div class="row meals">
+                        <h2>@item.M1NameEng</h2>
+                        <ul style="display:flex">
+                            <li>Kcal&nbsp; @item.M1Calories</li>
+                            <li>Protein &nbsp; @item.ProteinM1</li>
+
+                            <li>Fat &nbsp; @item.FatM1</li>
+
+                            <li>Carbs &nbsp; @item.CarbohydrateM1</li>
+
+                        </ul>
+                        <input type="number" class="Amount" value="0">
+                        <input type="number" class="MealId" hidden value="@item.M1ID">
+                        <input type="number" class="DateDay" hidden value="@item.DateDay">
+
+                    </div>
+                    }
+
+
+
+
+
+                </div>
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+                        <div class="col-6 text-right">
+                            <button type="button" class="btn btn-info" onclick="" id="submit">@DataMapping.Resources.Resource.save</button>
+                        </div>
+                        <div class="col-6 text-left">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">@DataMapping.Resources.Resource.Close</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $("#submit").click(function () {
+
+
+
+       
+        var isValid = true;
+        var itemsList = [];
+        $(".meals").each(function () {
+
+            var item = {
+
+                MealId: $('.MealId', this).val(),
+                Amount: $('.Amount', this).val(),
+                DateDay: $('.DateDay', this).val(),
+
+            }
+            itemsList.push(item);
+            
+        });
+
+     
+
+
+       
+
+        if (isValid) {
+            var data = {
+               
+                Items: itemsList
+            }
+
+
+
+            //AddOrderAndSetails
+            $.ajax({
+                type: 'POST',
+                url: '/Menus/AddOrEdit',
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.status) {
+                        //$('#Ordermessages').text(data.message);
+                        toastr.success("تم الحفظ بنجاح")
+                        $(Element).html(data.view)
+                        window.location = "/DamagedSettlement/Index";
+                    }
+                    else {
+                        //$('#Ordermessages').text(data.message);
+                        toastr.danger("فشل في الحفظ")
+
+                    }
+
+
+                }
+
+            });
+
+        }
+
+
+    });
+
+</script>
+

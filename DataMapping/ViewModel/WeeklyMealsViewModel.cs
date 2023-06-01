@@ -1,18 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataMapping.Entites
+namespace DataMapping.ViewModel
 {
-    [Table("WeeklyMeals", Schema = "GL")]
-
-    public class WeeklyMeals
+   public class WeeklyMealsViewModel
     {
-        [Key]
+        public int? ClientId { get; set; }
+        public DateTime CreateDate { get; set; }
+
+        public List<WeeklyMeals_List> Items { get; set; }
+    }
+    public class WeeklyMeals_List
+    {
+
+
         [Column("Id", TypeName = "int")]
         public int Id { get; set; }
         [Column("ClientId", TypeName = "int")]
@@ -31,6 +36,6 @@ namespace DataMapping.Entites
         [Column("MealType", TypeName = "int")]
         public int? MealType { get; set; }
 
-      
     }
+
 }

@@ -66,6 +66,7 @@ namespace DataMapping.Entites
         public virtual DbSet<WeeklyMeals> WeeklyMeals { get; set; }
 
         public virtual DbSet<MealType> MealType { get; set; }
+        public virtual DbSet<MenuByDateWebNutrition> MenuByDateWebNutrition { get; set; }
 
 
 

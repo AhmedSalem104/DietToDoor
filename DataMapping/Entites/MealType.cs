@@ -15,7 +15,7 @@ namespace DataMapping.Entites
         [Key]
         [Column("Id", TypeName = "int")]
         public int Id { get; set; }
-        [Column("UsersId", TypeName = "int")]
-        public int? UsersId { get; set; }
+        [Column("MealName")]
+        public string MealName { get; set; }
     }
 }

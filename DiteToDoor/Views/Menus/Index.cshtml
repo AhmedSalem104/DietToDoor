@@ -1,0 +1,134 @@
+﻿@using DataMapping.Entites;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ApplicationDbContext db = new ApplicationDbContext();
+    var today = DateTime.Now.Date; // This can be any date.
+
+
+    var day = (int)today.DayOfWeek + 2; //Number of the day in week. (0 - Sunday, 1 - Monday... and so On)
+
+    const int totalDaysOfWeek = 7; // Number of days in a week stays constant.
+
+}
+
+<h1>Your Meal Plan</h1>
+<h3>@today.AddDays(-6).Date.ToString("dd-MMMM-yyyy") / @today.AddDays(0).Date.ToString("dd-MMMM-yyyy") </h3>
+
+@for (var i = -day; i < -day + totalDaysOfWeek; i++)
+{
+    var DateDay = today.AddDays(i).Date.ToString("yyyy-MM-dd");
+
+    <div>@today.AddDays(i).Date.ToString("dddd-MM-yy")</div>
+    <div class="form-control row" style="display:flex">
+       
+        <a href="#" onclick="showPopupCreate('@DateDay')">Breakfast&nbsp;</a>
+        <a>Lunch</a>
+
+    </div>
+}
+@section ModelPopup{
+    <div id="mainDiv"></div>
+    <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 text-center warning_icon">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 confirm_text">
+                            <h3>@DataMapping.Resources.Resource.Alert</h3>
+                            <p>@DataMapping.Resources.Resource.Confirm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+                        <div class="col-6 text-right">
+                            <button id="btnContinueDelete" type="button" class="btn btn-danger">حذف</button>
+                        </div>
+                        <div class="col-6 text-left">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">رجوع</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section JavaScriptSection{
+    <script type="text/javascript">
+        function showPopupCreate(DateDay) {
+            $.ajax({
+                type: "Get",
+                url: "/Menus/AddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                data: { DateDay: DateDay },
+
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+        function showPopupEdit(id) {
+            $.ajax({
+                type: "Get",
+                url: "/Group/AddOrEdit",
+                contentType: "application/json; charset=utf-8",
+                data: { Id: id },
+                dataType: "html",
+                success: function (result, status, xhr) {
+                    8
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+
+
+       
+        //Load Data function
+
+
+        function Delele(ID) {
+            var deletee = $("#delete").val();
+            if (deletee == "false") {
+                alert("عفواً . ليس لديك صلاحية");
+            }
+            else {
+                var ans = confirm("هل  تريد الحذف?");
+                if (ans) {
+                    $.ajax({
+                        url: "/Group/Delete/" + ID,
+                        type: "POST",
+                        contentType: "application/json;charset=UTF-8",
+                        dataType: "json",
+                        success: function (result) {
+
+                            loadData();
+
+                        },
+                        error: function (errormessage) {
+                            alert(errormessage.responseText);
+                        }
+                    });
+                }
+            }
+        }
+
+
+    </script>
+}
