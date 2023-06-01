@@ -1,8 +1,14 @@
 ﻿@using DataMapping.Entites;
+@using ERPWeb.Models;
+@model IEnumerable<DataMapping.Entites.MenuByDateWebNutrition>
+
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     ApplicationDbContext db = new ApplicationDbContext();
+    GlobalData globalData = HelperMethods.globalData;
+
     var today = DateTime.Now.Date; // This can be any date.
 
 
@@ -13,16 +19,28 @@
 }
 
 <h1>Your Meal Plan</h1>
-<h3>@today.AddDays(-6).Date.ToString("dd-MMMM-yyyy") / @today.AddDays(0).Date.ToString("dd-MMMM-yyyy") </h3>
+@*<h3>@today.AddDays(-6).Date.ToString("dd-MMMM-yyyy") / @today.AddDays(0).Date.ToString("dd-MMMM-yyyy") </h3>*@
+<h3>@Model.FirstOrDefault().FromDate / @Model.FirstOrDefault().ToDate </h3>
 
-@for (var i = -day; i < -day + totalDaysOfWeek; i++)
+
+@*@for (var i = -day; i < -day + totalDaysOfWeek; i++)
+    {
+        var DateDay = today.AddDays(i).Date.ToString("yyyy-MM-dd");
+
+        <div>@today.AddDays(i).Date.ToString("dddd-MM-yy")</div>
+        <div class="form-control row" style="display:flex">
+
+            <a href="#" onclick="showPopupCreate('@DateDay')">Breakfast&nbsp;</a>
+            <a>Lunch</a>
+
+        </div>
+    }*@
+@foreach (var item in Model)
 {
-    var DateDay = today.AddDays(i).Date.ToString("yyyy-MM-dd");
-
-    <div>@today.AddDays(i).Date.ToString("dddd-MM-yy")</div>
+    <div>@item.DateDay.Value.ToString("dd-MM-yyyy")</div>
     <div class="form-control row" style="display:flex">
-       
-        <a href="#" onclick="showPopupCreate('@DateDay')">Breakfast&nbsp;</a>
+
+        <a href="#" onclick="showPopupCreate('@item.DateDay')">Breakfast&nbsp;</a>
         <a>Lunch</a>
 
     </div>
@@ -99,7 +117,7 @@
 
 
 
-       
+
         //Load Data function
 
 

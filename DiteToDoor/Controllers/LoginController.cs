@@ -339,6 +339,8 @@ namespace StoreSystem.Controllers
                         globalData.CTel2 = ClientInfo.CTel2;
                         globalData.CAddres = ClientInfo.CAddres;
                         globalData.CNotes = ClientInfo.CNotes;
+                        globalData.CProgramID = ClientInfo.CProgramID;
+                        globalData.CProgramType = ClientInfo.CProgramType;
                         //var ComID = db.CompanyInfo.FirstOrDefault().Id;
                         //globalData.CompanyID = ComID;
                         globalData.DefaultLanguage = 0;
@@ -403,6 +405,8 @@ namespace StoreSystem.Controllers
                     globalData.CTel2 = ClientInfo.CTel2;
                     globalData.CAddres = ClientInfo.CAddres;
                     globalData.CNotes = ClientInfo.CNotes;
+                    globalData.CProgramID = ClientInfo.CProgramID;
+                    globalData.CProgramType = ClientInfo.CProgramType;
                     //var ComID = db.CompanyInfo.FirstOrDefault().Id;
                     //globalData.CompanyID = ComID;
                     globalData.DefaultLanguage = 0;

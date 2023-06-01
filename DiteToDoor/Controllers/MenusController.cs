@@ -20,14 +20,16 @@ namespace DiteToDoor.Controllers
         // GET: Menus
         public ActionResult Index()
         {
-            return View();
+            var mealsDates = db.MenuByDateWebNutrition.Where(a => a.Program == globalData.CProgramID && a.ConvertTProgramType == globalData.CProgramType).ToList();
+
+            return View(mealsDates);
         }
 
         [HttpGet]
         public ActionResult AddOrEdit(string DateDay)
         {
             var date = DateTime.Parse(DateDay);
-            var Meals = db.MenuByDateWebNutrition.Where(a => a.DateDay == date).ToList();
+            var Meals = db.MenuByDateWebNutrition.Where(a => a.DateDay == date && a.Program==globalData.CProgramID&& a.ConvertTProgramType == globalData.CProgramType).ToList();
            return PartialView("ModelCreatePopupBreakfastPartialView",Meals);
              
             }

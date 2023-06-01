@@ -66,31 +66,31 @@ namespace DataAccess.Repositories
             }
         }
 
-        public bool Update(WeeklyMealsViewModel obj)
-        {
-            try
-            {
-                using (var db = new ApplicationDbContext())
-                {
-                    var q = db.WeeklyMeals.FirstOrDefault(m => m.Id == item.Id);
-                    if (q != null)
-                    {
-                        q.Id = item.Id;
-                        q.ClientId = item.ClientId;
-                        q.CreatedDate = item.CreatedDate;
-                        q.MealId = item.MealId;
-                        q.MealType = item.MealType;
-                        db.SaveChanges();
-                    }
-                    return true;
-                }
-            }
-            catch
-            {
-                return false;
-            }
+        //public bool Update(WeeklyMealsViewModel obj)
+        //{
+        //    try
+        //    {
+        //        using (var db = new ApplicationDbContext())
+        //        {
+        //            var q = db.WeeklyMeals.FirstOrDefault(m => m.Id == item.Id);
+        //            if (q != null)
+        //            {
+        //                q.Id = item.Id;
+        //                q.ClientId = item.ClientId;
+        //                q.CreatedDate = item.CreatedDate;
+        //                q.MealId = item.MealId;
+        //                q.MealType = item.MealType;
+        //                db.SaveChanges();
+        //            }
+        //            return true;
+        //        }
+        //    }
+        //    catch
+        //    {
+        //        return false;
+        //    }
 
-        }
+        //}
 
         public bool Remove(int id)
         {
