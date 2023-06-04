@@ -8,6 +8,7 @@ using ERPWeb.Models.SecurityRoles;
 using System.Net.Mail;
 using DataMapping.Entites;
 using DataAccess.Repositories;
+//using MimeKit;
 
 namespace Maintanence.Controllers
 {
@@ -21,19 +22,42 @@ namespace Maintanence.Controllers
 
         public ActionResult Index()
         {
-            
+            Session["ClientName"] = globalData.CName;
+            Session["ClientAddres"] = globalData.CAddres;
+            Session["ClientTel2"] = globalData.CTel2;
+    
             return View();
         }
 
 
-        //[HttpGet]
-        //public ActionResult SendMessage()
-        //{
-        //    return PartialView("ModelCreatePopupPartialView");
-        //}
+
         [HttpPost]
         public ActionResult SendGmailMessageFollowUp(FollowUp followUp)
         {
+
+
+
+            //sending the Message of passwordResetLink
+            //using (var client = new SmtpClient())
+            //{
+            //    client.Connect("smtp.gmail.com", 587);
+            //    client.Authenticate("ahmedalgazar065@gmail.com", "zqwmdjijheatpwnn");
+            //    var bodybuilder = new BodyBuilder
+            //    {
+            //        HtmlBody = $"to Reset Your Password Please Click This link ",
+            //        TextBody = "wellcome",
+            //    };
+            //    var message = new MimeMessage
+            //    {
+            //        Body = bodybuilder.ToMessageBody()
+            //    };
+            //    message.From.Add(new MailboxAddress("Future Team", "mofouad820@gmail.com"));
+            //    message.To.Add(new MailboxAddress("testing", email));
+            //    message.Subject = "new Contact Submitted Data";
+            //    await client.SendAsync(message);
+            //    client.Disconnect(true);
+            //}
+            //end of sending email
 
 
             if (ModelState.IsValid)
@@ -41,16 +65,18 @@ namespace Maintanence.Controllers
 
                 var mail = new MailMessage();
                 var smtpClient = new SmtpClient("smtp.gmail.com", 587);
-                smtpClient.Credentials = new System.Net.NetworkCredential("ahmedalgazar065@gmail.com", "zqwmdjijheatpwnn");
-                //var loginInfo = new NetworkCredential("ahmedalgazar065@gmail.com", "ahmed1041998###");
-                mail.From = new MailAddress("ahmedsalem1041998@gmail.com");
-                mail.To.Add(new MailAddress("ahmedsalem1041998@gmail.com"));
-                mail.Subject = followUp.Attachment;
+                //smtpClient.Credentials = new System.Net.NetworkCredential("ahmedalgazar065@gmail.com", "zqwmdjijheatpwnn");
+                smtpClient.Credentials = new System.Net.NetworkCredential("diettodoor@gmail.com", "ssjihwgqkyowojwz");
+                mail.From = new MailAddress("diettodoor@gmail.com");
+                mail.To.Add(new MailAddress("diettodoor@gmail.com"));
+                mail.Subject = "متابعة من العميل" + globalData.CName ; 
                 mail.IsBodyHtml = true;
-                string body = "اسم العميل:" + globalData.LoginName + "<br>" +
-                              "وزن العميل :" + followUp.CurrentWeight  + "<br>" +
+                string body = "اسم العميل:" + globalData.CName + "<br>" +
+                              "وزن العميل :" + followUp.CurrentWeight + "<br>" +
                               "محيط الوسط :" + followUp.CurrentCenterOfCircumference + "<br>" +
-                              "المرفقات : <b>" + followUp.Attachment + "<b>";
+                               //" ملاحظات : <b>" + followUp.Notes + "<br>" +
+                              "عنوان العميل : <b>" + globalData.CAddres + "<br>"+
+                              "رقم العميل : <b>" + globalData.CTel2 + "<br>";
                 mail.Body = body;
                 smtpClient.EnableSsl = true;
                 smtpClient.Send(mail);
@@ -79,16 +105,17 @@ namespace Maintanence.Controllers
 
                 var mail = new MailMessage();
                 var smtpClient = new SmtpClient("smtp.gmail.com", 587);
-                smtpClient.Credentials = new System.Net.NetworkCredential("ahmedalgazar065@gmail.com", "zqwmdjijheatpwnn");
-                //var loginInfo = new NetworkCredential("ahmedalgazar065@gmail.com", "ahmed1041998###");
-                mail.From = new MailAddress("ahmedsalem1041998@gmail.com");
-                mail.To.Add(new MailAddress("ahmedsalem1041998@gmail.com"));
-                mail.Subject = contactUs.Attachment;
+                smtpClient.Credentials = new System.Net.NetworkCredential("diettodoor@gmail.com", "ssjihwgqkyowojwz");
+                mail.From = new MailAddress("diettodoor@gmail.com");
+                mail.To.Add(new MailAddress("diettodoor@gmail.com"));
+                mail.Subject = " تواصل من العميل " + globalData.CName;
                 mail.IsBodyHtml = true;
-                string body = "اسم العميل:<b style:color:red;>" + globalData.LoginName + "<br>" +
+                string body = "اسم العميل:<b style:color:red;>" + globalData.CName + "<br>" +
                               "حالة العميل :<b>" + ServiceOpinionName + "<br>" +
                               "الغرض من التواصل :<b>" + SubjectName + "<br>" +
-                              "المرفقات : <b>" + contactUs.Attachment + "<b>";
+                               //"ملاحظات :<b>" + contactUs.NotSatissfied + "<br>" +
+                               "عنوان العميل : <b>" + globalData.CAddres + "<br>" +
+                              "رقم العميل : <b>" + globalData.CTel2 + "<b>";
                 mail.Body = body;
                 smtpClient.EnableSsl = true;
                 smtpClient.Send(mail);
@@ -124,6 +151,7 @@ namespace Maintanence.Controllers
         {
             FollowUp _Item = new FollowUp()
             {
+                ClientId = globalData.ClientId,
                 CurrentWeight = weight,
                 CurrentCenterOfCircumference = circumference,
                 Notes = comments,
@@ -131,9 +159,6 @@ namespace Maintanence.Controllers
             };
             FollowUprep.Insert(_Item);
             SendGmailMessageFollowUp(_Item);
-
-
-
                 return RedirectToAction(nameof(Index));
             
           
@@ -145,6 +170,8 @@ namespace Maintanence.Controllers
         {
             ContactUs _Item = new ContactUs()
             {
+                ClientId = globalData.ClientId,
+
                 ServiceOpinionId = serviceOpinionId,
                  SubjectId = subjectId,
                 Comment = comments,

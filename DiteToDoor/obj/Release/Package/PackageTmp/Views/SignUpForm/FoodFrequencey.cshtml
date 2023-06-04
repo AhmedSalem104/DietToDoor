@@ -1,0 +1,247 @@
+﻿@using DataMapping.Entites
+@model DataMapping.Entites.FoodFrequency
+<div class="row ">
+    <div class="col-12">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered" id="save-stage" style="width:100%;">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Never Eat - لا اتناوله مطلقا</td>
+                        <td>Once a week - مره فى الاسبوع</td>
+                        <td>Twice a week - مرتين فى الاسبوع	</td>
+                        <td>
+                            More than Three times a week - اكثر من ثلاث مرات
+                        </td>
+                    </tr>
+                </thead>
+                <tbody class="">
+                    <tr>
+                        <td>
+                            Red Meat - اللحوم الحمراء
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.RedMeat, new { @id = "NeverRedMeat", @class = "form-control", @type = "radio", name = "RedMeat", Value = "Never Eat - لا اتناوله مطلقا" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.RedMeat, new { @id = "OnceRedMeat", @class = "form-control", @type = "radio", name = "RedMeat", Value = "Once a week - مره فى الاسبوع" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.RedMeat, new { @id = "TwiceRedMeat", @class = "form-control", @type = "radio", name = "RedMeat", Value = "Twice a week - مرتين فى الاسبوع" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.RedMeat, new { @id = "MoreRedMeat", @class = "form-control", @type = "radio", name = "RedMeat", Value = " More than Three times a week - اكثر من ثلاث مرات" })
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Chicken - الدجاج
+
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.Chicken, new { @id = "ChickenNever", @class = "form-control", @type = "radio", name = "Chicken", Value = "Never Eat - لا اتناوله مطلقا" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.Chicken, new { @id = "ChickenOnce", @class = "form-control", @type = "radio", name = "Chicken", Value = "Once a week - مره فى الاسبوع" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.Chicken, new { @id = "ChickenTwice", @class = "form-control", @type = "radio", name = "Chicken", Value = "Twice a week - مرتين فى الاسبوع" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.Chicken, new { @id = "ChickenMore", @class = "form-control", @type = "radio", name = "Chicken", Value = " More than Three times a week - اكثر من ثلاث مرات" })
+                        </td>
+
+
+
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Sea Food - سمك
+
+
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.SeaFood, new { @id = "SeaFoodNever", @class = "form-control", @type = "radio", name = "SeaFood", Value = "Never Eat - لا اتناوله مطلقا" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.SeaFood, new { @id = "SeaFoodOnce", @class = "form-control", @type = "radio", name = "SeaFood", Value = "Once a week - مره فى الاسبوع" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.SeaFood, new { @id = "SeaFoodTwice", @class = "form-control", @type = "radio", name = "SeaFood", Value = "Twice a week - مرتين فى الاسبوع" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.SeaFood, new { @id = "SeaFoodMore", @class = "form-control", @type = "radio", name = "SeaFood", Value = " More than Three times a week - اكثر من ثلاث مرات" })
+                        </td>
+
+
+
+                    </tr>
+
+
+
+                    <tr>
+                        <td>
+                            Fruits - فواكه
+
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.Fruits, new { @id = "FruitsNever", @class = "form-control", @type = "radio", name = "Fruits", Value = "Never Eat - لا اتناوله مطلقا" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.Fruits, new { @id = "FruitsOnce", @class = "form-control", @type = "radio", name = "Fruits", Value = "Once a week - مره فى الاسبوع" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.Fruits, new { @id = "FruitsTwice", @class = "form-control", @type = "radio", name = "Fruits", Value = "Twice a week - مرتين فى الاسبوع" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.Fruits, new { @id = "FruitsMore", @class = "form-control", @type = "radio", name = "Fruits", Value = " More than Three times a week - اكثر من ثلاث مرات" })
+                        </td>
+
+
+
+                    </tr>
+
+
+
+                    <tr>
+                        <td>
+                            Vegetables - خضروات
+
+
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.Vegetables, new { @id = "VegetablesNever", @class = "form-control", @type = "radio", name = "Vegetables", Value = "Never Eat - لا اتناوله مطلقا" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.Vegetables, new { @id = "VegetablesOnce", @class = "form-control", @type = "radio", name = "Vegetables", Value = "Once a week - مره فى الاسبوع" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.Vegetables, new { @id = "VegetablesTwice", @class = "form-control", @type = "radio", name = "Vegetables", Value = "Twice a week - مرتين فى الاسبوع" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.Vegetables, new { @id = "VegetablesMore", @class = "form-control", @type = "radio", name = "Vegetables", Value = " More than Three times a week - اكثر من ثلاث مرات" })
+                        </td>
+
+
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    //$("#Save").click(function () {
+    //    AddItemm();
+    //})
+    //function AddItemm() {
+      
+    //    var Isvalid = true;
+       
+       
+    //    if (Isvalid) {
+    //        var RedMeat = "";
+    //        if (document.getElementById('NeverRedMeat').checked) {
+    //            RedMeat = document.getElementById('NeverRedMeat').value;
+    //        }
+    //        if (document.getElementById('OnceRedMeat').checked) {
+    //            RedMeat = document.getElementById('OnceRedMeat').value;
+    //        }
+    //        if (document.getElementById('TwiceRedMeat').checked) {
+    //            RedMeat = document.getElementById('TwiceRedMeat').value;
+    //        }
+    //        if (document.getElementById('MoreRedMeat').checked) {
+    //            RedMeat = document.getElementById('MoreRedMeat').value;
+    //        }
+            
+    //        var Chicken = "";
+    //        if (document.getElementById('ChickenNever').checked) {
+    //            Chicken = document.getElementById('ChickenNever').value;
+    //        }
+    //        if (document.getElementById('ChickenOnce').checked) {
+    //            Chicken = document.getElementById('ChickenOnce').value;
+    //        }
+    //        if (document.getElementById('ChickenTwice').checked) {
+    //            Chicken = document.getElementById('ChickenTwice').value;
+    //        }
+    //        if (document.getElementById('ChickenMore').checked) {
+    //            Chicken = document.getElementById('ChickenMore').value;
+    //        }
+
+
+    //        var SeeFood = "";
+    //        if (document.getElementById('SeaFoodNever').checked) {
+    //            SeeFood = document.getElementById('SeaFoodNever').value;
+    //        }
+    //        if (document.getElementById('SeaFoodOnce').checked) {
+    //            SeeFood = document.getElementById('SeaFoodOnce').value;
+    //        }
+    //        if (document.getElementById('SeaFoodTwice').checked) {
+    //            SeeFood = document.getElementById('SeaFoodTwice').value;
+    //        }
+    //        if (document.getElementById('SeaFoodMore').checked) {
+    //            SeeFood = document.getElementById('SeaFoodMore').value;
+    //        }
+
+    //        var Fruits = "";
+    //        if (document.getElementById('FruitsNever').checked) {
+    //            Fruits = document.getElementById('FruitsNever').value;
+    //        }
+    //        if (document.getElementById('FruitsOnce').checked) {
+    //            Fruits = document.getElementById('FruitsOnce').value;
+    //        }
+    //        if (document.getElementById('FruitsTwice').checked) {
+    //            Fruits = document.getElementById('FruitsTwice').value;
+    //        }
+    //        if (document.getElementById('FruitsMore').checked) {
+    //            Fruits = document.getElementById('FruitsMore').value;
+    //        }
+
+    //         var Vegetables = "";
+    //        if (document.getElementById('VegetablesNever').checked) {
+    //            Vegetables = document.getElementById('VegetablesNever').value;
+    //        }
+    //        if (document.getElementById('VegetablesOnce').checked) {
+    //            Vegetables = document.getElementById('VegetablesOnce').value;
+    //        }
+    //        if (document.getElementById('VegetablesTwice').checked) {
+    //            Vegetables = document.getElementById('VegetablesTwice').value;
+    //        }
+    //        if (document.getElementById('VegetablesMore').checked) {
+    //            Vegetables = document.getElementById('VegetablesMore').value;
+    //        }
+    //        var data = {
+    //            RedMeat: RedMeat,
+    //            Chicken: Chicken,
+    //            SeeFood: SeeFood,
+    //            Fruits: Fruits,
+    //            Vegetables: Vegetables,
+               
+
+    //        }
+        
+    //        $.ajax({
+
+    //            type: "POST",
+    //            url: '/SignUpForm/AddFoodFerquencey',     //your action
+    //            data: JSON.stringify(data),  //your form name.it takes all the values of model
+    //            contentType: 'application/json',
+    //            success: function (data) {
+    //                toastr.success("تم الحفظ بنجاح")
+
+                
+
+    //            },
+
+
+
+    //        });
+    //    }
+    //}
+
+</script>

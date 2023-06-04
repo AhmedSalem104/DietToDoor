@@ -43,8 +43,7 @@ namespace DataAccess.Repositories
                             MealType = 1,
                            CreatedDate = obj.CreateDate,
                            Amount = item.Amount,
-                           DateDay = obj.CreateDate,
-
+                           DateDay = item.DateDay,
 
                         };
                         if (tempDetails.Amount < 1)
@@ -65,6 +64,369 @@ namespace DataAccess.Repositories
                 return false;
             }
         }
+
+        public bool InsertBreakfastSide(WeeklyMealsViewModel obj)
+        {
+            try
+            {
+                using (var db = new ApplicationDbContext())
+                {
+
+                    foreach (var item in obj.Items)
+                    {
+                        WeeklyMeals tempDetails = new WeeklyMeals()
+                        {
+                            //Id = (int)temMainId,
+                            ClientId = obj.ClientId,
+                            MealId = item.MealId,
+                            MealType = 2,
+                            CreatedDate = obj.CreateDate,
+                            Amount = item.Amount,
+                            DateDay = item.DateDay,
+
+                        };
+                        if (tempDetails.Amount < 1)
+                        {
+
+                        }
+                        else
+                        {
+                            db.WeeklyMeals.Add(tempDetails);
+                            db.SaveChanges();
+                        }
+
+                    }
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool InsertMorningSnack(WeeklyMealsViewModel obj)
+        {
+            try
+            {
+                using (var db = new ApplicationDbContext())
+                {
+
+                    foreach (var item in obj.Items)
+                    {
+                        WeeklyMeals tempDetails = new WeeklyMeals()
+                        {
+                            //Id = (int)temMainId,
+                            ClientId = obj.ClientId,
+                            MealId = item.MealId,
+                            MealType = 3,
+                            CreatedDate = obj.CreateDate,
+                            Amount = item.Amount,
+                            DateDay = item.DateDay,
+
+
+                        };
+                        if (tempDetails.Amount < 1)
+                        {
+
+                        }
+                        else
+                        {
+                            db.WeeklyMeals.Add(tempDetails);
+                            db.SaveChanges();
+                        }
+
+                    }
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool InsertLunchProtien(WeeklyMealsViewModel obj)
+        {
+            try
+            {
+                using (var db = new ApplicationDbContext())
+                {
+
+                    foreach (var item in obj.Items)
+                    {
+                        WeeklyMeals tempDetails = new WeeklyMeals()
+                        {
+                            //Id = (int)temMainId,
+                            ClientId = obj.ClientId,
+                            MealId = item.MealId,
+                            MealType = 4,
+                            CreatedDate = obj.CreateDate,
+                            Amount = item.Amount,
+                            DateDay = item.DateDay,
+
+                        };
+                        if (tempDetails.Amount < 1)
+                        {
+
+                        }
+                        else
+                        {
+                            db.WeeklyMeals.Add(tempDetails);
+                            db.SaveChanges();
+                        }
+
+                    }
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool InsertLunchStarchySide(WeeklyMealsViewModel obj)
+        {
+            try
+            {
+                using (var db = new ApplicationDbContext())
+                {
+
+                    foreach (var item in obj.Items)
+                    {
+                        WeeklyMeals tempDetails = new WeeklyMeals()
+                        {
+                            //Id = (int)temMainId,
+                            ClientId = obj.ClientId,
+                            MealId = item.MealId,
+                            MealType = 5,
+                            CreatedDate = obj.CreateDate,
+                            Amount = item.Amount,
+                            DateDay = item.DateDay,
+
+                        };
+                        if (tempDetails.Amount < 1)
+                        {
+
+                        }
+                        else
+                        {
+                            db.WeeklyMeals.Add(tempDetails);
+                            db.SaveChanges();
+                        }
+
+                    }
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+
+        public bool InsertLunchVeggieSide(WeeklyMealsViewModel obj)
+        {
+            try
+            {
+                using (var db = new ApplicationDbContext())
+                {
+
+                    foreach (var item in obj.Items)
+                    {
+                        WeeklyMeals tempDetails = new WeeklyMeals()
+                        {
+                            //Id = (int)temMainId,
+                            ClientId = obj.ClientId,
+                            MealId = item.MealId,
+                            MealType = 6,
+                            CreatedDate = obj.CreateDate,
+                            Amount = item.Amount,
+                            DateDay = item.DateDay,
+
+                        };
+                        if (tempDetails.Amount < 1)
+                        {
+
+                        }
+                        else
+                        {
+                            db.WeeklyMeals.Add(tempDetails);
+                            db.SaveChanges();
+                        }
+
+                    }
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool InsertLunchSalad(WeeklyMealsViewModel obj)
+        {
+            try
+            {
+                using (var db = new ApplicationDbContext())
+                {
+
+                    foreach (var item in obj.Items)
+                    {
+                        WeeklyMeals tempDetails = new WeeklyMeals()
+                        {
+                            //Id = (int)temMainId,
+                            ClientId = obj.ClientId,
+                            MealId = item.MealId,
+                            MealType = 7,
+                            CreatedDate = obj.CreateDate,
+                            Amount = item.Amount,
+                            DateDay = item.DateDay,
+
+                        };
+                        if (tempDetails.Amount < 1)
+                        {
+
+                        }
+                        else
+                        {
+                            db.WeeklyMeals.Add(tempDetails);
+                            db.SaveChanges();
+                        }
+
+                    }
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool InsertAfternoon(WeeklyMealsViewModel obj)
+        {
+            try
+            {
+                using (var db = new ApplicationDbContext())
+                {
+
+                    foreach (var item in obj.Items)
+                    {
+                        WeeklyMeals tempDetails = new WeeklyMeals()
+                        {
+                            //Id = (int)temMainId,
+                            ClientId = obj.ClientId,
+                            MealId = item.MealId,
+                            MealType = 8,
+                            CreatedDate = obj.CreateDate,
+                            Amount = item.Amount,
+                            DateDay = item.DateDay,
+
+                        };
+                        if (tempDetails.Amount < 1)
+                        {
+
+                        }
+                        else
+                        {
+                            db.WeeklyMeals.Add(tempDetails);
+                            db.SaveChanges();
+                        }
+
+                    }
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool InsertDinner(WeeklyMealsViewModel obj)
+        {
+            try
+            {
+                using (var db = new ApplicationDbContext())
+                {
+
+                    foreach (var item in obj.Items)
+                    {
+                        WeeklyMeals tempDetails = new WeeklyMeals()
+                        {
+                            //Id = (int)temMainId,
+                            ClientId = obj.ClientId,
+                            MealId = item.MealId,
+                            MealType = 9,
+                            CreatedDate = obj.CreateDate,
+                            Amount = item.Amount,
+                            DateDay = item.DateDay,
+
+                        };
+                        if (tempDetails.Amount < 1)
+                        {
+
+                        }
+                        else
+                        {
+                            db.WeeklyMeals.Add(tempDetails);
+                            db.SaveChanges();
+                        }
+
+                    }
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool InsertBedtimeSnack(WeeklyMealsViewModel obj)
+        {
+            try
+            {
+                using (var db = new ApplicationDbContext())
+                {
+
+                    foreach (var item in obj.Items)
+                    {
+                        WeeklyMeals tempDetails = new WeeklyMeals()
+                        {
+                            //Id = (int)temMainId,
+                            ClientId = obj.ClientId,
+                            MealId = item.MealId,
+                            MealType = 10,
+                            CreatedDate = obj.CreateDate,
+                            Amount = item.Amount,
+                            DateDay = item.DateDay,
+
+                        };
+                        if (tempDetails.Amount < 1)
+                        {
+
+                        }
+                        else
+                        {
+                            db.WeeklyMeals.Add(tempDetails);
+                            db.SaveChanges();
+                        }
+
+                    }
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
 
         //public bool Update(WeeklyMealsViewModel obj)
         //{
