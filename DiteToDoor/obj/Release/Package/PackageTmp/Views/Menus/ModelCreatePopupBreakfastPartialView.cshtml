@@ -18,6 +18,8 @@
     #BankNo {
         border: 2px solid #ebebeb;
     }
+
+   
 </style>
 
 <input id="DateDay" hidden value="@Model.FirstOrDefault().DateDay.Value.Date">
@@ -44,23 +46,28 @@
 
 
                         <h2>
-                            <img class="card-img-top" style="width:60px;height:80px;" src="~/MealsImgs/foods.png" alt="Card image cap">  @item.M1NameEng
+                            <img class="card-img-top" style="margin-left:30px; width:210px;height:130px;text-align:center" src="~/MealsImgs/foods.png" alt="Card image cap"><span style="text-align:center;">
+    @item.M1NameEng
+    @item.M1NameAr
+</span>
                         </h2>
-                        <ul style="display:flex">
-                            <li>Kcal : @item.M1Calories</li>
+                        <h1></h1>
 
-                            <li>Protein : @item.ProteinM1</li>
+                      <span style="color:darkblue;font-weight:bold;text-align:center;border:ridge">Kcal =  @item.M1Calories</span>
 
-                            <li>Fat : @item.FatM1</li>
+                     <span style="color:darkblue;font-weight:bold;text-align:center;border:ridge;">Protein = @item.ProteinM1</span>
 
-                            <li>Carbs : @item.CarbohydrateM1</li>
+                      <span style="color:darkblue;font-weight:bold;text-align:center;border:ridge;">Fat =  @item.FatM1</span>
 
-                        </ul>
+                      <span style="color:darkblue;font-weight:bold;text-align:center;border:ridge;">Carbs =  @item.CarbohydrateM1</span>
+
+
                         <input type="number" class="Amount" value="0">
                         <input type="number" class="MealId" hidden value="@item.M1ID">
                         <input type="date" class="DateDay" hidden>
 
                     </div>
+                    <hr style="color:black;font-size:x-large;">
                     }
 
 

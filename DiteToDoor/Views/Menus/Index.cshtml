@@ -1,6 +1,6 @@
 ﻿@using DataMapping.Entites;
 @using ERPWeb.Models;
-@model IEnumerable<DataMapping.Entites.MenuByDateWebNutrition>
+@model IEnumerable<DataMapping.Procedures.GetDaysForMenu_Result>
 
 
 @{
@@ -18,10 +18,11 @@
 
 }
 
-<h1>Your Meal Plan</h1>
+<h1 style="text-align:center;font-weight:bold;color:darkblue;">Your Meal Plan</h1>
 @*<h3>@today.AddDays(-6).Date.ToString("dd-MMMM-yyyy") / @today.AddDays(0).Date.ToString("dd-MMMM-yyyy") </h3>*@
-<h3>@Model.FirstOrDefault().FromDate / @Model.FirstOrDefault().ToDate </h3>
+<h2 style="text-align:center;font-weight:bold;color:darkblue;">@Model.FirstOrDefault().FromDate.Value.Year - @Model.FirstOrDefault().FromDate.Value.Month - @Model.FirstOrDefault().FromDate.Value.Day / @Model.FirstOrDefault().ToDate.Value.Year - @Model.FirstOrDefault().ToDate.Value.Month - @Model.FirstOrDefault().ToDate.Value.Day </h2>
 
+<br>
 
 @*@for (var i = -day; i < -day + totalDaysOfWeek; i++)
     {
@@ -37,11 +38,93 @@
     }*@
 @foreach (var item in Model)
 {
-    <div>@item.DateDay.Value.ToString("dd-MM-yyyy")</div>
-    <div class="form-control row" style="display:flex">
+    <div style="text-align:center;font-weight:bold;">@item.DateDay.Value.ToString("dd-MM-yyyy")</div>
+    <br>
+    <div class=" row" style="display:flex">
 
-        <a href="#" onclick="showPopupCreate('@item.DateDay')">Breakfast&nbsp;</a>
-        <a>Lunch</a>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" style="width:60px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">BreakFast</h5>
+                <a href="#" class="btn btn-primary" onclick="showPopupCreateBreakFast('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
+            </div>
+        </div>
+        <div style="color:white;">||</div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">BreakfastSide</h5>
+                <a href="#" class="btn btn-primary" onclick="showPopupCreateBreakfastSide('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
+            </div>
+        </div>
+        <div style="color:white;">||</div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">LunchProtien</h5>
+                <a href="#" class="btn btn-primary" onclick="showPopupCreateMorningSnack('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
+            </div>
+        </div>
+        <div style="color:white;">||</div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">LunchStarchySide</h5>
+                <a href="#" class="btn btn-primary" onclick="showPopupCreateLunchProtien('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
+            </div>
+        </div>
+        <div style="color:white;">||</div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Lunch Veggie Side</h5>
+                <a href="#" class="btn btn-primary" onclick="showPopupCreateLunchStarchySide('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
+            </div>
+        </div>
+        <div style="color:white;">||</div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Lunch Veggie Side</h5>
+                <a href="#" class="btn btn-primary" onclick="showPopupCreateLunchVeggieSide('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
+            </div>
+        </div>
+        <div style="color:white;">||</div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Lunch Salad</h5>
+                <a href="#" class="btn btn-primary" onclick="showPopupCreateLunchSalad('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
+            </div>
+        </div>
+
+        <div style="color:white;">||</div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Afternoon Snack</h5>
+                <a href="#" class="btn btn-primary" onclick="showPopupCreateAfternoonSnack('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
+            </div>
+        </div>
+        <div style="color:white;">||</div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Dinner</h5>
+                <a href="#" class="btn btn-primary" onclick="showPopupCreateDinner('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
+            </div>
+        </div>
+        <div style="color:white;">||</div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Bedtime Snack</h5>
+                <a href="#" class="btn btn-primary" onclick="showPopupCreateBedtimeSnack('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
+            </div>
+        </div>
+
+
+
 
     </div>
 }
@@ -79,10 +162,10 @@
 }
 @section JavaScriptSection{
     <script type="text/javascript">
-        function showPopupCreate(DateDay) {
+        function showPopupCreateBreakFast(DateDay) {
             $.ajax({
                 type: "Get",
-                url: "/Menus/AddOrEdit",
+                url: "/Menus/AddOrEditBreakFast",
                 contentType: "application/json; charset=utf-8",
                 data: { DateDay: DateDay },
 
@@ -97,6 +180,180 @@
                 }
             });
         }
+
+        function showPopupCreateBreakfastSide(DateDay) {
+            $.ajax({
+                type: "Get",
+                url: "/Menus/AddOrEditBreakfastSide",
+                contentType: "application/json; charset=utf-8",
+                data: { DateDay: DateDay },
+
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+        function showPopupCreateMorningSnack(DateDay) {
+            $.ajax({
+                type: "Get",
+                url: "/Menus/AddOrEditMorningSnack",
+                contentType: "application/json; charset=utf-8",
+                data: { DateDay: DateDay },
+
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+        function showPopupCreateLunchProtien(DateDay) {
+            $.ajax({
+                type: "Get",
+                url: "/Menus/AddOrEditLunchProtien",
+                contentType: "application/json; charset=utf-8",
+                data: { DateDay: DateDay },
+
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+        function showPopupCreateLunchStarchySide(DateDay) {
+            $.ajax({
+                type: "Get",
+                url: "/Menus/AddOrEditLunchStarchySide",
+                contentType: "application/json; charset=utf-8",
+                data: { DateDay: DateDay },
+
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+        function showPopupCreateLunchVeggieSide(DateDay) {
+            $.ajax({
+                type: "Get",
+                url: "/Menus/AddOrEditLunchVeggieSide",
+                contentType: "application/json; charset=utf-8",
+                data: { DateDay: DateDay },
+
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+        function showPopupCreateLunchSalad(DateDay) {
+            $.ajax({
+                type: "Get",
+                url: "/Menus/AddOrEditLunchSalad",
+                contentType: "application/json; charset=utf-8",
+                data: { DateDay: DateDay },
+
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+        function showPopupCreateAfternoonSnack(DateDay) {
+            $.ajax({
+                type: "Get",
+                url: "/Menus/AddOrEditAfternoonSnack",
+                contentType: "application/json; charset=utf-8",
+                data: { DateDay: DateDay },
+
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+        function showPopupCreateDinner(DateDay) {
+            $.ajax({
+                type: "Get",
+                url: "/Menus/AddOrEditDinner",
+                contentType: "application/json; charset=utf-8",
+                data: { DateDay: DateDay },
+
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+        function showPopupCreateBedtimeSnack(DateDay) {
+            $.ajax({
+                type: "Get",
+                url: "/Menus/AddOrEditBedtimeSnack",
+                contentType: "application/json; charset=utf-8",
+                data: { DateDay: DateDay },
+
+                dataType: "html",
+                success: function (result, status, xhr) {
+
+                    $("#mainDiv").html(result);
+                    $('#exampleModalCenter').modal('show');
+                },
+                error: function (xhr, status, error) {
+                    $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+
+
+
         function showPopupEdit(id) {
             $.ajax({
                 type: "Get",

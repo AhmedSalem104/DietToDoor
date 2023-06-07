@@ -1,6 +1,6 @@
 ﻿@using DataMapping.Entites;
 @using ERPWeb.Models;
-@model IEnumerable<DataMapping.Entites.MenuByDateWebNutrition>
+@model IEnumerable<DataMapping.Procedures.GetDaysForMenu_Result>
 
 
 @{
@@ -20,7 +20,8 @@
 
 <h1 style="text-align:center;font-weight:bold;color:darkblue;">Your Meal Plan</h1>
 @*<h3>@today.AddDays(-6).Date.ToString("dd-MMMM-yyyy") / @today.AddDays(0).Date.ToString("dd-MMMM-yyyy") </h3>*@
-<h2 style="text-align:center;font-weight:bold;color:darkblue;">@Model.FirstOrDefault().FromDate / @Model.FirstOrDefault().ToDate </h2>
+<h2 style="text-align:center;font-weight:bold;color:darkblue;">@Model.FirstOrDefault().FromDate.Value.Year - @Model.FirstOrDefault().FromDate.Value.Month - @Model.FirstOrDefault().FromDate.Value.Day / @Model.FirstOrDefault().ToDate.Value.Year - @Model.FirstOrDefault().ToDate.Value.Month - @Model.FirstOrDefault().ToDate.Value.Day </h2>
+
 <br>
 
 @*@for (var i = -day; i < -day + totalDaysOfWeek; i++)
@@ -46,7 +47,6 @@
             <div class="card-body">
                 <h5 class="card-title">BreakFast</h5>
                 <a href="#" class="btn btn-primary" onclick="showPopupCreateBreakFast('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
-                @*<h5 class="card-footer">BreakFast</h5>*@
             </div>
         </div>
         <div style="color:white;">||</div>
@@ -54,7 +54,7 @@
             <img class="card-img-top" style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">BreakfastSide</h5>
-                <a href="#" class="btn btn-primary" onclick="showPopupCreateMorningSnack('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
+                <a href="#" class="btn btn-primary" onclick="showPopupCreateBreakfastSide('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
             </div>
         </div>
         <div style="color:white;">||</div>
@@ -62,7 +62,7 @@
             <img class="card-img-top" style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">LunchProtien</h5>
-                <a href="#" class="btn btn-primary" onclick="showPopupCreateLunchProtien('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
+                <a href="#" class="btn btn-primary" onclick="showPopupCreateMorningSnack('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
             </div>
         </div>
         <div style="color:white;">||</div>
@@ -70,6 +70,14 @@
             <img class="card-img-top" style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">LunchStarchySide</h5>
+                <a href="#" class="btn btn-primary" onclick="showPopupCreateLunchProtien('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
+            </div>
+        </div>
+        <div style="color:white;">||</div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Lunch Veggie Side</h5>
                 <a href="#" class="btn btn-primary" onclick="showPopupCreateLunchStarchySide('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
             </div>
         </div>
@@ -89,14 +97,7 @@
                 <a href="#" class="btn btn-primary" onclick="showPopupCreateLunchSalad('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
             </div>
         </div>
-        <div style="color:white;">||</div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Afternoon Snack</h5>
-                <a href="#" class="btn btn-primary" onclick="showPopupCreateAfternoon('@item.DateDay')">@DataMapping.Resources.Resource.Add + &nbsp;</a>
-            </div>
-        </div>
+
         <div style="color:white;">||</div>
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" alt="Card image cap">
@@ -124,41 +125,7 @@
 
 
 
-        @*<h6>--</h6>
-        <img style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" />
-        <a href="#" class="btn btn-primary" onclick="showPopupCreateBreakfastSide('@item.DateDay')">Add + &nbsp;</a>*@
 
-        @*<h6>--</h6>
-        <img style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" />
-        <a href="#" onclick="showPopupCreateMorningSnack('@item.DateDay')">MorningSnack &nbsp;</a>*@
-
-        @*<h6>--</h6>
-        <img style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" />
-        <a href="#" onclick="showPopupCreateLunchProtien('@item.DateDay')">LunchProtien &nbsp;</a>*@
-
-        @*<h6>----</h6>
-        <img style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" />
-        <a href="#" onclick="showPopupCreateLunchStarchySide('@item.DateDay')">LunchStarchySide &nbsp;</a>*@
-
-        @*<h6>--</h6>
-        <img style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" />
-        <a href="#" onclick="showPopupCreateLunchVeggieSide('@item.DateDay')">Lunch Veggie Side &nbsp;</a>*@
-
-        @*<h6>--</h6>
-        <img style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" />
-        <a href="#" onclick="showPopupCreateLunchSalad('@item.DateDay')">Lunch Salad &nbsp;</a>*@
-
-        @*<h6>--</h6>
-        <img style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" />
-        <a href="#" onclick="showPopupCreateAfternoonSnack('@item.DateDay')">Afternoon Snack &nbsp;</a>*@
-
-        @*<h6>--</h6>
-        <img style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" />
-        <a href="#" onclick="showPopupCreateDinner('@item.DateDay')">Dinner &nbsp;</a>
-
-        <h6>--</h6>
-        <img style="width:80px;height:80px;" src="~/Design/assets/img/foods.png" />
-        <a href="#" onclick="showPopupCreateBedtimeSnack('@item.DateDay')">Bedtime Snack &nbsp;</a>*@
     </div>
 }
 @section ModelPopup{
@@ -290,7 +257,6 @@
             });
         }
 
-
         function showPopupCreateLunchVeggieSide(DateDay) {
             $.ajax({
                 type: "Get",
@@ -332,7 +298,7 @@
         function showPopupCreateAfternoonSnack(DateDay) {
             $.ajax({
                 type: "Get",
-                url: "/Menus/AddOrEditAfternoon",
+                url: "/Menus/AddOrEditAfternoonSnack",
                 contentType: "application/json; charset=utf-8",
                 data: { DateDay: DateDay },
 

@@ -18,9 +18,9 @@ namespace DataMapping.Entites
         [Column("MH_NameEng")]
         public string MH_NameEng { get; set; }
         [Column("FromDate")]
-        public string FromDate { get; set; }
+        public DateTime FromDate { get; set; }
         [Column("ToDate")]
-        public string ToDate { get; set; }
+        public DateTime ToDate { get; set; }
         [Column("DateDay", TypeName = "datetime")]
         public DateTime? DateDay { get; set; }
         [Column("Program")]
