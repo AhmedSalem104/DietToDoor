@@ -20,9 +20,14 @@ namespace DiteToDoor.Controllers
         // GET: Menus
         public ActionResult Index()
         {
-            var mealsDates = db.MenuByDateWebNutrition.Where(a => a.Program == globalData.CProgramID && a.ConvertTProgramType == globalData.CProgramType).ToList();
 
+            var fromDateStr = "2023-02-05";
+            var fromDate = DateTime.Parse(fromDateStr);
+            var toDateStr = "2023-02-11";
+            var todate = DateTime.Parse(toDateStr);
+            var mealsDates = db.GetDaysForMenu().Where(a => a.Program == globalData.CProgramID && a.ConvertTProgramType == globalData.CProgramType && a.DateDay >=  fromDate  && a.DateDay <= todate).ToList();
             return View(mealsDates);
+
         }
         // Meal Number 1 
         [HttpGet]
@@ -180,7 +185,7 @@ namespace DiteToDoor.Controllers
         // Meal Number 8
 
         [HttpGet]
-        public ActionResult AddOrEditAfternoon(string DateDay)
+        public ActionResult AddOrEditAfternoonSnack(string DateDay)
         {
             var date = DateTime.Parse(DateDay);
             var Meals = db.MenuByDateWebNutrition.Where(a => a.DateDay == date && a.Program == globalData.CProgramID && a.ConvertTProgramType == globalData.CProgramType).ToList();
@@ -188,7 +193,7 @@ namespace DiteToDoor.Controllers
 
         }
         [HttpPost]
-        public ActionResult AddOrEditAfternoon(WeeklyMealsViewModel item)
+        public ActionResult AddOrEditAfternoonSnack(WeeklyMealsViewModel item)
         {
             bool status = true;
             item.ClientId = globalData.ClientId;
