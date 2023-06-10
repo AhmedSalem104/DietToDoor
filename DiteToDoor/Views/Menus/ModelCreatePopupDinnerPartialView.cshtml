@@ -18,13 +18,8 @@
     #BankNo {
         border: 2px solid #ebebeb;
     }
-
-   
 </style>
-
 <input id="DateDay" hidden value="@Model.FirstOrDefault().DateDay.Value.Date">
-
-
 
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -42,32 +37,25 @@
                     @foreach (var item in Model)
                     {
 
-                    <div class="row meals">
+                        <div class="row meals">
+                            <h2>
+                                <img class="card-img-top" style="margin-left:30px; width:210px;height:130px;text-align:center" src="~/MealsImgs/foods.png" alt="Card image cap"><span style="text-align:center;">
+                                    @item.M9NameEng
+                            </h2>
+                            <ul style="display:flex">
+                                <li>Kcal&nbsp; @item.M9Calories</li>
+                                <li>Protein &nbsp; @item.ProteinM9</li>
 
+                                <li>Fat &nbsp; @item.FatM9</li>
 
-                        <h2>
-                            <img class="card-img-top" style="margin-left:30px; width:210px;height:130px;text-align:center" src="~/MealsImgs/foods.png" alt="Card image cap"><span style="text-align:center;">
-    @item.M1NameEng
-    @item.M1NameAr
-</span>
-                        </h2>
-                        <h1></h1>
+                                <li>Carbs &nbsp; @item.CarbohydrateM9</li>
 
-                      <span style="color:darkblue;font-weight:bold;text-align:center;border:ridge">Kcal =  @item.M1Calories</span>
+                            </ul>
+                            <input type="number" class="Amount" value="0">
+                            <input type="number" class="MealId" hidden value="@item.M9ID">
+                            <input type="datetime" class="DateDay" hidden value="@item.DateDay">
 
-                     <span style="color:darkblue;font-weight:bold;text-align:center;border:ridge;">Protein = @item.ProteinM1</span>
-
-                      <span style="color:darkblue;font-weight:bold;text-align:center;border:ridge;">Fat =  @item.FatM1</span>
-
-                      <span style="color:darkblue;font-weight:bold;text-align:center;border:ridge;">Carbs =  @item.CarbohydrateM1</span>
-
-
-                        <input type="number" class="Amount" value="0">
-                        <input type="number" class="MealId" hidden value="@item.M1ID">
-                        <input type="date" class="DateDay" hidden>
-
-                    </div>
-                    <hr style="color:black;font-size:x-large;">
+                        </div>
                     }
 
 
@@ -75,14 +63,15 @@
 
 
                 </div>
-                <div class="bg-whitesmoke  center">
-                   
+                <div class="bg-whitesmoke br">
+                    <div class="row">
                         <div class="col-6 text-right">
                             <button type="button" class="btn btn-info" onclick="" id="submit">@DataMapping.Resources.Resource.save</button>
                         </div>
                         <div class="col-6 text-left">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">@DataMapping.Resources.Resource.Close</button>
                         </div>
+                    </div>
                 </div>
             }
         </div>
@@ -93,7 +82,6 @@
 
 
         var date = new Date($("#DateDay").val())
-        
         var day = date.getDate();
         var month = date.getMonth() + 1;
         var year = date.getFullYear();
@@ -104,7 +92,6 @@
         var today = year + "-" + month + "-" + day;
         $(".DateDay").attr("value", today);
     });
-
     $("#submit").click(function () {
 
 
@@ -141,7 +128,7 @@
             //AddOrderAndSetails
             $.ajax({
                 type: 'POST',
-                url: '/Menus/AddOrEditBreakFast',
+                url: '/Menus/AddOrEditDinner',
                 data: JSON.stringify(data),
                 contentType: 'application/json',
                 success: function (data) {
@@ -167,10 +154,6 @@
 
 
     });
-
-
- 
-
 
 </script>
 

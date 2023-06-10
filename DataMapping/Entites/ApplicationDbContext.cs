@@ -73,124 +73,19 @@ namespace DataMapping.Entites
         #endregion
 
         #region Stored Procedure
-        //public virtual IEnumerable<Get_Tank_Statment_Result> Get_Tank_Statment()
-        //{
-        //    return Database.SqlQuery<Get_Tank_Statment_Result>("Get_Tank_Statment").ToList();
-        //}
-        //public virtual IEnumerable<Get_Car_Receipt_Result> Get_Car_Receipt()
-        //{
-        //    return Database.SqlQuery<Get_Car_Receipt_Result>("Get_Car_Receipt").ToList();
-        //}
-        //public virtual IEnumerable<FilterCars_Result> FilterCars()
-        //{
-        //    return Database.SqlQuery<FilterCars_Result>("FilterCars").ToList();
-        //}
-        //public virtual IEnumerable<FilterEquipments_Result> FilterEquipments()
-        //{
-        //    return Database.SqlQuery<FilterEquipments_Result>("FilterEquipments").ToList();
-        //}
-
-        //public virtual IEnumerable<FilterExpiredDiversLicenses_Result> FilterExpiredDiversLicenses()
-        //{
-        //    return Database.SqlQuery<FilterExpiredDiversLicenses_Result>("FilterExpiredDiversLicenses").ToList();
-        //}
-        //public virtual IEnumerable<FilterUser_Result> FilterUser()
-        //{
-        //    return Database.SqlQuery<FilterUser_Result>("FilterUser").ToList();
-        //} 
-        //public virtual IEnumerable<FilterVendors_Result> FilterVendors()
-        //{
-        //    return Database.SqlQuery<FilterVendors_Result>("FilterVendors").ToList();
-        //}
-        //public virtual IEnumerable<MaintenanceCard_Result> MaintenanceCard()
-        //{
-        //    return Database.SqlQuery<MaintenanceCard_Result>("MaintenanceCard").ToList();
-        //}
-        //public virtual IEnumerable<PrintChangeOli_Result> PrintChangeOli()
-        //{
-        //    return Database.SqlQuery<PrintChangeOli_Result>("PrintChangeOli").ToList();
-        //}
-        //public virtual IEnumerable<PrintStationsTrxInAndOut_Result> PrintStationsTrxInAndOut()
-        //{
-        //    return Database.SqlQuery<PrintStationsTrxInAndOut_Result>("PrintStationsTrxInAndOut").ToList();
-        //}
-
-
-        //public virtual IEnumerable<GetCarsAndEquipments_Result> GetCarsAndEquipments()
-        //{
-        //    return Database.SqlQuery<GetCarsAndEquipments_Result>("GetCarsAndEquipments").ToList();
-        //}
-
-        //public virtual IEnumerable<GetStationsTRXAndTRXOut_Result> GetStationsTRXAndTRXOut()
-        //{
-        //    return Database.SqlQuery<GetStationsTRXAndTRXOut_Result>("GetStationsTRXAndTRXOut").ToList();
-        //}
-
-        //public virtual IEnumerable<CarStatus_Result>CarStatus()
-        //{
-        //    return Database.SqlQuery<CarStatus_Result>("CarStatus").ToList();
-        //}
-
-        //public virtual IEnumerable<GetDrivers_Result> GetDrivers()
-        //{
-        //    return Database.SqlQuery<GetDrivers_Result>("GetDrivers").ToList();
-        //}
-
-        //public virtual IEnumerable<GetCarDriversDetailsInCarDelivery_Result> GetCarDriversDetailsInCarDelivery()
-        //{
-        //    return Database.SqlQuery<GetCarDriversDetailsInCarDelivery_Result>("GetCarDriversDetailsInCarDelivery").ToList();
-
-        //}
-
-        // public virtual IEnumerable<SelectCars_Result> SelectCars()
-        //{
-        //    return Database.SqlQuery<SelectCars_Result>("SelectCars").ToList();
-        //}
-        //public virtual IEnumerable<GetVendorPrint_Result> GetVendorPrint()
-        //{
-        //    return Database.SqlQuery<GetVendorPrint_Result>("GetVendorPrint").ToList();
-
-        //}
-        //public virtual IEnumerable<CarDriverPrint_Result> CarDriverPrint()
-        //{
-        //    return Database.SqlQuery<CarDriverPrint_Result>("CarDriverPrint").ToList();
-
-        //}
-
-        //public virtual IEnumerable<StationsTrxPrint_Result> StationsTrxPrint()
-        //{
-        //    return Database.SqlQuery<StationsTrxPrint_Result>("StationsTrxPrint").ToList();
-
-        //}
-        //public virtual IEnumerable<StationTrxALLDataIndex_Result> StationTrxALLDataIndex()
-        //{
-        //    return Database.SqlQuery<StationTrxALLDataIndex_Result>("StationTrxALLDataIndex").ToList();
-
-        //}
-        //public virtual IEnumerable<ServicesTrxPrint_Result> ServicesTrxPrint()
-        //{
-        //    return Database.SqlQuery<ServicesTrxPrint_Result>("ServicesTrxPrint").ToList();
-        //}
-        //public virtual IEnumerable<CarModelNo_Result> CarModelNo()
-        //{
-        //    return Database.SqlQuery<CarModelNo_Result>("CarModelNo").ToList();
-        //}
-
-        //public virtual IEnumerable<StationTrxDESC_Result> StationTrxDESC()
-        //{
-        //    return Database.SqlQuery<StationTrxDESC_Result>("StationTrxDESC").ToList();
-        //}
-
-
-        //public virtual IEnumerable<GetAllCarsAndEquipmentsCarStatus_Result>GetAllCarsAndEquipmentsCarStatus()
-        //{
-        //    return Database.SqlQuery<GetAllCarsAndEquipmentsCarStatus_Result>("GetAllCarsAndEquipmentsCarStatus").ToList();
-        //}
+        
 
         public virtual IEnumerable<GetClientsInfo_Result> GetClientsInfo()
         {
             return Database.SqlQuery<GetClientsInfo_Result>("GetClientsInfo").ToList();
         }
+
+        public virtual IEnumerable<GetDaysForMenu_Result> GetDaysForMenu()
+        {
+            return Database.SqlQuery<GetDaysForMenu_Result>("GetDaysForMenu").ToList();
+        }
+
+        
         #endregion
 
     }

@@ -1,0 +1,85 @@
+﻿@using DataMapping.Entites
+@model DataMapping.Entites.MyGoals
+
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+    var UnitName = db.Goals.SingleOrDefault(a => a.Id == Model.GoalId);
+    ViewBag.GoalId = new SelectList(db.Goals.ToList(), "Id", "Name", UnitName.Id);
+
+}
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">@DataMapping.Resources.Resource.Edit</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal", @id = "ModalForm" }))
+
+            {
+
+                @Html.HiddenFor(x => x.Id)
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label>@DataMapping.Resources.Resource.unitName</label>
+                            @Html.DropDownList("GoalId", null, "اختر ", htmlAttributes: new { @id = "GoalId", @class = "select2 form-control" })
+                            @*@Html.TextBoxFor(x => x.ItemId, new { @id = "ItemId", @class = "form-control" })*@
+                        </div>
+
+                    
+                    </div>
+                </div>
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+                        <div class="col-6 text-right">
+                            <button type="button" class="btn btn-info" onclick="Edit()">
+                                @DataMapping.Resources.Resource.save <i class="fa fa-save" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="col-6 text-left">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">
+                                @DataMapping.Resources.Resource.Close <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function Edit() {
+
+        var Isvalid = true;
+        if ($("#GoalId").val() == "" || $("#GoalId").val() == null  ) {
+            Isvalid = false;
+            toastr.warning('ادخل البيانات')
+        }
+        else {
+
+            $.ajax({
+
+                type: "POST",
+                url: '/SignUpForm/SubUintAddOrEdit',     //your action
+                data: $('#ModalForm').serialize(),   //your form name.it takes all the values of model
+                dataType: 'json',
+                success: function (result) {
+                    loadSubUintList();
+                    $('#exampleModalCenter').modal('hide');
+
+                },
+
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('oops, something bad happened')
+                }
+
+            });
+        }
+    }
+</script>
+
+

@@ -11,7 +11,7 @@ using ERPWeb.Models;
 
 namespace DiteToDoor.Controllers
 {
-    public class MenusController : Controller
+    public class MenusController : MyController
     {
         ApplicationDbContext db = new ApplicationDbContext();
         MenusRepository Repo = new MenusRepository();
@@ -20,23 +20,26 @@ namespace DiteToDoor.Controllers
         // GET: Menus
         public ActionResult Index()
         {
-            var mealsDates = db.MenuByDateWebNutrition.Where(a => a.Program == globalData.CProgramID && a.ConvertTProgramType == globalData.CProgramType).ToList();
 
+            var fromDateStr = "2023-02-05";
+            var fromDate = DateTime.Parse(fromDateStr);
+            var toDateStr = "2023-02-11";
+            var todate = DateTime.Parse(toDateStr);
+            var mealsDates = db.GetDaysForMenu().Where(a => a.Program == globalData.CProgramID && a.ConvertTProgramType == globalData.CProgramType && a.DateDay >=  fromDate  && a.DateDay <= todate).ToList();
             return View(mealsDates);
-        }
 
+        }
+        // Meal Number 1 
         [HttpGet]
-        public ActionResult AddOrEdit(string DateDay)
+        public ActionResult AddOrEditBreakFast(string DateDay)
         {
             var date = DateTime.Parse(DateDay);
             var Meals = db.MenuByDateWebNutrition.Where(a => a.DateDay == date && a.Program==globalData.CProgramID&& a.ConvertTProgramType == globalData.CProgramType).ToList();
            return PartialView("ModelCreatePopupBreakfastPartialView",Meals);
              
             }
-
-
         [HttpPost]
-        public ActionResult AddOrEdit(WeeklyMealsViewModel item)
+        public ActionResult AddOrEditBreakFast(WeeklyMealsViewModel item)
         {
             bool status = true;
             item.ClientId = globalData.ClientId;
@@ -47,6 +50,204 @@ namespace DiteToDoor.Controllers
 
         }
 
-        
+        // Meal Number 2
+
+        [HttpGet]
+        public ActionResult AddOrEditBreakfastSide(string DateDay)
+        {
+            var date = DateTime.Parse(DateDay);
+            var Meals = db.MenuByDateWebNutrition.Where(a => a.DateDay == date && a.Program == globalData.CProgramID && a.ConvertTProgramType == globalData.CProgramType).ToList();
+            return PartialView("ModelCreatePopupBreakfastSidePartialView", Meals);
+
+        }
+        [HttpPost]
+        public ActionResult AddOrEditBreakfastSide(WeeklyMealsViewModel item)
+        {
+            bool status = true;
+            item.ClientId = globalData.ClientId;
+            item.CreateDate = DateTime.Now;
+
+            Repo.InsertBreakfastSide(item);
+            return new JsonResult { Data = new { status = status, message = "order add successfully" } };
+
+        }
+
+        // Meal Number 3
+
+        [HttpGet]
+        public ActionResult AddOrEditMorningSnack(string DateDay)
+        {
+            var date = DateTime.Parse(DateDay);
+            var Meals = db.MenuByDateWebNutrition.Where(a => a.DateDay == date && a.Program == globalData.CProgramID && a.ConvertTProgramType == globalData.CProgramType).ToList();
+            return PartialView("ModelCreatePopupMorningSnackPartialView", Meals);
+
+        }
+        [HttpPost]
+        public ActionResult AddOrEditMorningSnack(WeeklyMealsViewModel item)
+        {
+            bool status = true;
+            item.ClientId = globalData.ClientId;
+            item.CreateDate = DateTime.Now;
+
+            Repo.InsertMorningSnack(item);
+            return new JsonResult { Data = new { status = status, message = "order add successfully" } };
+
+        }
+
+        // Meal Number 4
+
+        [HttpGet]
+        public ActionResult AddOrEditLunchProtien(string DateDay)
+        {
+            var date = DateTime.Parse(DateDay);
+            var Meals = db.MenuByDateWebNutrition.Where(a => a.DateDay == date && a.Program == globalData.CProgramID && a.ConvertTProgramType == globalData.CProgramType).ToList();
+            return PartialView("ModelCreatePopupLunchProtienPartialView", Meals);
+
+        }
+        [HttpPost]
+        public ActionResult AddOrEditLunchProtien(WeeklyMealsViewModel item)
+        {
+            bool status = true;
+            item.ClientId = globalData.ClientId;
+            item.CreateDate = DateTime.Now;
+
+            Repo.InsertLunchProtien(item);
+            return new JsonResult { Data = new { status = status, message = "order add successfully" } };
+
+        }
+
+        // Meal Number 5
+
+        [HttpGet]
+        public ActionResult AddOrEditLunchStarchySide(string DateDay)
+        {
+            var date = DateTime.Parse(DateDay);
+            var Meals = db.MenuByDateWebNutrition.Where(a => a.DateDay == date && a.Program == globalData.CProgramID && a.ConvertTProgramType == globalData.CProgramType).ToList();
+            return PartialView("ModelCreatePopupLunchStarchySidePartialView", Meals);
+
+        }
+        [HttpPost]
+        public ActionResult AddOrEditLunchStarchySide(WeeklyMealsViewModel item)
+        {
+            bool status = true;
+            item.ClientId = globalData.ClientId;
+            item.CreateDate = DateTime.Now;
+
+            Repo.InsertLunchStarchySide(item);
+            return new JsonResult { Data = new { status = status, message = "order add successfully" } };
+
+        }
+
+        // Meal Number 6 
+
+        [HttpGet]
+        public ActionResult AddOrEditLunchVeggieSide(string DateDay)
+        {
+            var date = DateTime.Parse(DateDay);
+            var Meals = db.MenuByDateWebNutrition.Where(a => a.DateDay == date && a.Program == globalData.CProgramID && a.ConvertTProgramType == globalData.CProgramType).ToList();
+            return PartialView("ModelCreatePopupLunchVeggieSidePartialView", Meals);
+
+        }
+        [HttpPost]
+        public ActionResult AddOrEditLunchVeggieSide(WeeklyMealsViewModel item)
+        {
+            bool status = true;
+            item.ClientId = globalData.ClientId;
+            item.CreateDate = DateTime.Now;
+
+            Repo.InsertLunchVeggieSide(item);
+            return new JsonResult { Data = new { status = status, message = "order add successfully" } };
+
+        }
+
+        // Meal Number 7
+
+        [HttpGet]
+        public ActionResult AddOrEditLunchSalad(string DateDay)
+        {
+            var date = DateTime.Parse(DateDay);
+            var Meals = db.MenuByDateWebNutrition.Where(a => a.DateDay == date && a.Program == globalData.CProgramID && a.ConvertTProgramType == globalData.CProgramType).ToList();
+            return PartialView("ModelCreatePopupLunchSaladPartialView", Meals);
+
+        }
+        [HttpPost]
+        public ActionResult AddOrEditLunchSalad(WeeklyMealsViewModel item)
+        {
+            bool status = true;
+            item.ClientId = globalData.ClientId;
+            item.CreateDate = DateTime.Now;
+
+            Repo.InsertLunchSalad(item);
+            return new JsonResult { Data = new { status = status, message = "order add successfully" } };
+
+        }
+
+        // Meal Number 8
+
+        [HttpGet]
+        public ActionResult AddOrEditAfternoonSnack(string DateDay)
+        {
+            var date = DateTime.Parse(DateDay);
+            var Meals = db.MenuByDateWebNutrition.Where(a => a.DateDay == date && a.Program == globalData.CProgramID && a.ConvertTProgramType == globalData.CProgramType).ToList();
+            return PartialView("ModelCreatePopupAfternoonPartialView", Meals);
+
+        }
+        [HttpPost]
+        public ActionResult AddOrEditAfternoonSnack(WeeklyMealsViewModel item)
+        {
+            bool status = true;
+            item.ClientId = globalData.ClientId;
+            item.CreateDate = DateTime.Now;
+
+            Repo.InsertAfternoon(item);
+            return new JsonResult { Data = new { status = status, message = "order add successfully" } };
+
+        }
+
+        // Meal Number 9 
+
+        [HttpGet]
+        public ActionResult AddOrEditDinner(string DateDay)
+        {
+            var date = DateTime.Parse(DateDay);
+            var Meals = db.MenuByDateWebNutrition.Where(a => a.DateDay == date && a.Program == globalData.CProgramID && a.ConvertTProgramType == globalData.CProgramType).ToList();
+            return PartialView("ModelCreatePopupDinnerPartialView", Meals);
+
+        }
+        [HttpPost]
+        public ActionResult AddOrEditDinner(WeeklyMealsViewModel item)
+        {
+            bool status = true;
+            item.ClientId = globalData.ClientId;
+            item.CreateDate = DateTime.Now;
+
+            Repo.InsertDinner(item);
+            return new JsonResult { Data = new { status = status, message = "order add successfully" } };
+
+        }
+
+        // Meal Number 10
+
+        [HttpGet]
+        public ActionResult AddOrEditBedtimeSnack(string DateDay)
+        {
+            var date = DateTime.Parse(DateDay);
+            var Meals = db.MenuByDateWebNutrition.Where(a => a.DateDay == date && a.Program == globalData.CProgramID && a.ConvertTProgramType == globalData.CProgramType).ToList();
+            return PartialView("ModelCreatePopupBedtimeSnackPartialView", Meals);
+
+        }
+        [HttpPost]
+        public ActionResult AddOrEditBedtimeSnack(WeeklyMealsViewModel item)
+        {
+            bool status = true;
+            item.ClientId = globalData.ClientId;
+            item.CreateDate = DateTime.Now;
+
+            Repo.InsertBedtimeSnack(item);
+            return new JsonResult { Data = new { status = status, message = "order add successfully" } };
+
+        }
+
+
     }
     }

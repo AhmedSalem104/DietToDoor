@@ -12,7 +12,7 @@
             </div>
             <h1>
                 <span>welcome Client</span> <br />
-                User_Name
+                @Session["ClientName"]
             </h1>
         </div>
         <div class="my-sub">
@@ -37,7 +37,7 @@
             <div class="info">
                 <div class="one-info">
                     <div class="info-label">name</div>
-                    <div class="theinfo">yossef ibrahim mohamed</div>
+                    <div class="theinfo">@Session["ClientName"]</div>
                 </div>
                 <div class="one-info">
                     <div class="info-label">Age</div>
@@ -53,11 +53,11 @@
                 </div>
                 <div class="one-info">
                     <div class="info-label">Location</div>
-                    <div class="theinfo">Cairo, Zamalek</div>
+                    <div class="theinfo">@Session["ClientAddres"]</div>
                 </div>
                 <div class="one-info">
                     <div class="info-label">Phone number</div>
-                    <div class="theinfo">+2 0102346663</div>
+                    <div class="theinfo">@Session["ClientTel2"]</div>
                 </div>
             </div>
         </div>

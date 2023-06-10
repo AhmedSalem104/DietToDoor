@@ -18,30 +18,26 @@
         {
         }
     }
+
+    ViewBag.SubjectId = new SelectList(db.Subject.ToList(), "SubjectId", "SubjectName");
+    ViewBag.ServiceOpinionId = new SelectList(db.ServiceOpinion.ToList(), "ServiceOpinionId", "ServiceOpinionName");
+
+
+
 }
-
-@*<style>
-    body {
-        font-family: Cairo-VariableFont_slnt,wght;
-    }
-    @@font-face {
-        font-family: 'Cairo-VariableFont_slnt,wght';
-        src: url('../../Design/assets/fonts/fonts/Cairo-VariableFont_slnt,wght.ttf') format('truetype');
-    }
-  
-</style>*@
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>نظام الصيانة والتشغيل</title>
-    <!-- General CSS Files -->
-    <link href="~/Design/assets/css/app.min.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+          content="diettodoor place for healthy food come to you door" />
+
+    <!--<link href="~/Design/assets/css/app.min.css" rel="stylesheet" />-->
     <!-- Template CSS -->
-    <link rel="stylesheet" href="~/Design/assets/bundles/bootstrap-daterangepicker/daterangepicker.css">
+    <!--<link rel="stylesheet" href="~/Design/assets/bundles/bootstrap-daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="~/Design/assets/bundles/datatables/datatables.min.css">
     <link rel="stylesheet" href="~/Design/assets/bundles/select2/dist/css/select2.min.css">
     <link rel="stylesheet" href="~/Design/assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
@@ -49,269 +45,224 @@
     <link href="~/Design/assets/css/style.css" rel="stylesheet" />
     <link href="~/Design/assets/css/components.css" rel="stylesheet" />
     <link href="~/Content/AdminLayout/css/toastr.min.css" rel="stylesheet" type="text/css">
-
-    <!-- selectMania Style -->
-    @*<link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>*@
-    @*<link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">*@
-    @*<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />*@
-
-
     <link href="~/Scripts/selectMania/src/select-mania.css" rel="stylesheet" type="text/css">
     <link href="~/Scripts/selectMania/src/themes/select-mania-theme-darkblue.css" rel="stylesheet" type="text/css">
     <link href="~/Scripts/Multiple-Select-fSelect/fSelect.css" rel="stylesheet" />
-    <script src="~/Design/assets/bundles/tinymce/tinymce.min.js"></script>
+    <script src="~/Design/assets/bundles/tinymce/tinymce.min.js"></script>-->
+    @*<script src="~/Scripts/jquery.validate.min.js"></script>*@
+
+
+
+    <link href="~/Design/assets/css/layout.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Design/assets/js/layout.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    @*<script src="~/Scripts/jquery.validate.min.js"></script>*@
+    <title>main</title>
 </head>
+<body>
 
-<body dir="rtl">
-    <div class="loader"></div>
-    <div id="app">
-        <div class="main-wrapper main-wrapper-1">
-            <div class="navbar-bg"></div>
-            <nav class="navbar navbar-expand-lg main-navbar sticky">
-                <div class="form-inline ml-auto theme-setting-options">
-                    <ul class="navbar-nav ml-3">
-                        <li>
-                            <a href="#" data-toggle="sidebar" class="nav-link nav-link-lg collapse-btn">
-                                <i data-feather="align-justify"></i>
-                            </a>
-                        </li>
-                    </ul>
+    <div class="pop" id="pop-ContactUs">
+        <div class="clouse"></div>
+        <div id="myForm">
+            <div class="header">
+                <h2>contact us</h2>
+                <button id="closeFormContact">
+                    <i class="fa fa-close"></i>
+                </button>
+            </div>
+            <h5>Be Strong, Be Healthy</h5>
+            <form action="~/Home/AddContactUs" method="post">
+                <div>
+
                 </div>
 
-                <ul class="navbar-nav navbar-left">
-                    @*@{
-                                foreach (var i in ERPWeb.Models.LanguageMang.AvailableLanguages)
-                                {
-                                    @Html.ActionLink(i.LanguageFullName, "ChangeLanguage", "Lang", new { lang = i.LanguageCultureName, url = Request.Url.LocalPath }, new { @class = "nav-link fas fa-language" }) <text> </text>
-                                }
-                        }*@
+                <label for="ht">Your opinion of our service..? </label>
+                @Html.DropDownList("ServiceOpinionId", null, " ---- ", htmlAttributes: new { @id = "activity_level", @class = "select2 form-control", @required= "required" })
 
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-language fa-fw"></i>
-                        </a>
-                        <div class="dropdown-menu Language-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                            @{ foreach (var i in ERPWeb.Models.LanguageMang.AvailableLanguages)
-                                {
-                                    @Html.ActionLink(i.LanguageFullName, "ChangeLanguage", "Lang", new { lang = i.LanguageCultureName, url = Request.Url.LocalPath }, new { @class = "dropdown-item" }) <text> </text> } }
-                        </div>
-                    </li>
-                </ul>
 
-                <ul class="navbar-nav navbar-right">
-                    <li class="dropdown dropdown-list-toggle">
-                        <a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg">
-                            <i data-feather="bell" class="bell"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
-                            <div class="dropdown-header">
-                                اشعارات
-                            </div>
-                            <div class="dropdown-list-content dropdown-list-icons">
-                                <a href="#" class="dropdown-item dropdown-item-unread">
-                                    <span class="dropdown-item-icon bg-primary text-white">
-                                        <i class="far fa-user"></i>
-                                    </span>
-                                    <span class="dropdown-item-desc">
-                                        هناك حقيقة مثبتة منذ زمن طويل
-                                        <span class="time">منذ 2 دقيقة</span>
-                                    </span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <span class="dropdown-item-icon bg-info text-white">
-                                        <i class="far fa-user"></i>
-                                    </span>
-                                    <span class="dropdown-item-desc">
-                                        هناك حقيقة مثبتة منذ زمن طويل
-                                        <span class="time">منذ 10 ساعات</span>
-                                    </span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <span class="dropdown-item-icon bg-success text-white">
-                                        <i class="far fa-user"></i>
-                                    </span>
-                                    <span class="dropdown-item-desc">
-                                        هناك حقيقة مثبتة منذ زمن طويل
-                                        <span class="time">منذ 16 ساعات</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
 
-                @Html.Partial("_LoginPartial")
-            </nav>
+                <label for="weight">Subject </label>
+                @Html.DropDownList("SubjectId", null, " ---- ", htmlAttributes: new { @id = "activity_level", @class = "select2 form-control", @required= "required" })
 
-            @*Sid nenue*@
+                <label for="comments">Comment</label>
+                <textarea id="comments"
+                          placeholder="Please type here..."
+                          name="comments"
+                          required></textarea>
 
-            <div id="SidMenu" class="main-sidebar sidebar-style-2">
-                <aside id="sidebar-wrapper">
-                    <div class="sidebar-brand">
-                        <a href="#">
-                            <!--<img alt="image" src="assets/img/logo.png" class="header-logo" />-->
-                            <span class="logo-name">نظام الصيانة </span>
-                        </a>
+                <label id="upload-label" class="upload-label1" for="upload1">
+                    <i class="fa fa-paperclip"></i>
+                    <div class="file-info">
+                        <span class="file-name file-name-contact">Other Attachments</span>
+                        <span class="file-size file-size-contact"></span>
                     </div>
+                </label>
+                <input type="file"
+                       id="upload1"
+                       class="contact_upload"
+                       name="upload" />
 
-                    <div class="ui accordion sidebar-menu">
-                        @{
-                            var MainMenu = db.MainMenu.Where(a => a.IsDeleted == false).ToList();
-                            int? EmployeeId = ERPWeb.Models.HelperMethods.globalData.EmployeeId;
-                            var MenuItems = ERPWeb.Models.SecurityRoles.LoggedUser.GetMenuItems(EmployeeId);
-                            foreach (var _Mainitem in MainMenu)
-                            {
-                               
-                                <div class="content">
-                                    <div class="accordion transition drop_item item">
-
-                                        @foreach (var item in MenuItems)
-                                        {
-                                            if (item.SystemFunctions.Count > 0 && _Mainitem.Id == item.MainMenuId)
-                                            {
-
-                                                <div class="title">
-                                                    <span>@item.NameInArabic</span>
-                                                    <i class="dropdown icon"></i>
-                                                </div>
-
-                                                <div class="content">
-                                                    <div class="accordion transition hidden">
-                                                        @foreach (var function in item.SystemFunctions)
-                                                        {
-                                                            var url = function.Controller+"/"+function.AddAction;
-                                                        <div class="title drop_item item">
-                                                            <a class="go" href="@Url.Action(function.Action, function.Controller)">
-                                                                @function.NameInArabic
-                                                            </a>
-                                                            @if (function.AddAction != null)
-                                                            {
-                                                               
-                                                            <a href="@Url.Action(function.AddAction, function.Controller)" class="btn btn-outline-light create" id="add" style="width:auto;">
-
-                                                                <i class="fa fa-plus" aria-hidden="true" style="padding-top: 3px;"></i>
-                                                            </a>
-                                                            }
-                                                        </div>
-                                                        }
-                                                    </div>
-                                                </div>
-                                            }
-
-                                        }
-                                    </div>
-                                </div>
-                            }
-                        }
-                    </div>
-                </aside>
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+    <div class="pop" id="pop-follow">
+        <div class="clouse"></div>
+        <div id="myForm">
+            <div class="header">
+                <h2>Follow up</h2>
+                <button id="closeForm"><i class="fa fa-close"></i></button>
             </div>
+            <h5>Be Strong, Be Healthy</h5>
 
-            <script>
-                function GoToAction(url) {
-                    window.location.href = url;
-                }
-            </script>
+            <form action="~/Home/AddFollowUp" method="post">
+                <label for="weight">What’s your current weight? </label>
 
-            @*@Html.Action("GetMenuList", "Home")*@
-
-            <!-- Main Content -->
-            <div class="main-content">
-                <section class="section">
-                    @RenderBody()
-                </section>
-            </div>
-
-            @RenderSection("ModelPopup")
-
-            <footer class="main-footer">
-                <div class="text-center">
-                    <a href="#">جميع الحقوق محفوظة © 2022</a>
+                <div class="input-div">
+                    <input type="text"
+                           id="weight"
+                           placeholder="eg.100"
+                           name="weight"
+                           onkeydown="replace_string(this);"
+                           required /><span>kg</span>
                 </div>
-            </footer>
+
+                <label for="circumference">Your Current Center of a circumference</label>
+
+                <div class="input-div">
+                    <input type="text"
+                           placeholder="eg.28"
+                           id="circumference"
+                           name="circumference"
+                           onkeydown="replace_string(this);"
+                           required />
+                    <span>cm</span>
+                </div>
+
+                <label for="comments">Do you’ve any Notes</label>
+                <textarea id="comments"
+                          placeholder="Please type here..."
+                          name="comments"></textarea>
+
+                <label id="upload-label" class="upload-label2" for="upload2">
+                    <i class="fa fa-paperclip"></i>
+                    <div class="file-info">
+                        <span class="file-name file-name-follow">Other Attachments</span>
+                        <span class="file-size file-size-follow"></span>
+                    </div>
+                </label>
+                <input type="file" id="upload2" class="follow_upload" name="upload" />
+
+                <input type="submit"  value="Submit" id="AddFollowUpp"  />
+            </form>
         </div>
     </div>
 
-    <!-- General JS Scripts -->
-    <script src="~/Scripts/AllJS.js"></script>
-    <script src="~/Design/assets/js/app.min.js"></script>
-    <!-- JS Libraies -->
-    <script src="~/Design/assets/bundles/datatables/datatables.min.js"></script>
-    <script src="~/Design/assets/bundles/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <script src="~/Design/assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
-    <script src="~/Design/assets/js/semantic.js"></script>
-    <script src="~/Design/assets/bundles/select2/dist/js/select2.full.min.js"></script>
-    <script src="~/Design/assets/bundles/jquery-ui/jquery-ui.min.js"></script>
-    <script src="~/Design/assets/js/page/datatables.js"></script>
-    <script src="~/Design/assets/bundles/apexcharts/apexcharts.min.js"></script>
+    <header>
+        <div class="navbar-logo">
+            <div class="logo">
+                <img src="~/Design/assets/img/logoWord.png" id="logo" />
+                <div class="mydict second">
+                    <div>
+                        <label>
+                            <input type="radio" name="radioo" checked="" />
+                            <span>En</span>
+                        </label>
 
-    <!-- Page Specific JS File -->
+                        <label>
+                            <input type="radio" name="radioo" />
+                            <span>AR</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-bar">
+                <a href="~/Home/Index" class="nav-button active">@DataMapping.Resources.Resource.Home</a>
+                <a href="~/Menus/Index" class="nav-button">@DataMapping.Resources.Resource.MealPlanner</a>
+                <a href="https://diettodoor.com/programs" class="nav-button">@DataMapping.Resources.Resource.Programs</a>
+                <a href="https://diettodoor.com/about" class="nav-button">@DataMapping.Resources.Resource.AboutUs</a>
+                <a id="contact" class="nav-button">@DataMapping.Resources.Resource.ContactUs</a>
+            </div>
+        </div>
+        <div class="bottons-group">
+            <div class="mydict">
+                <div>
+                    <label>
+                        <input type="radio" name="radio" checked />
+                        <span><a href="/Lang/ChangeLanguage?lang=en&amp;url=%2FHome%2FIndex"> EN</a></span>
+                    </label>
 
-    <script src="~/Design/assets/js/page/index.js"></script>
-    <!-- Template JS File -->
-    <script src="~/Design/assets/js/scripts.js"></script>
-    <!-- Custom JS File -->
-    <script src="~/Design/assets/js/custom.js"></script>
-    <script>
-        var path_to_delete;
+                    <label>
+                        <input type="radio" name="radio" />
 
-        $(".deleteItem").click(function (e) {
-            path_to_delete = $(this).data('path');
-        });
+                        <span> <a href="/Lang/ChangeLanguage?lang=Ar&amp;url=%2FHome%2FIndex">  AR</a></span>
+                    </label>
+                </div>
+            </div>
+            <a class="follow button">Follow up now</a>
 
-        $('#btnContinueDelete').click(function () {
-            window.location = path_to_delete;
-        });
-    </script>
+            <a href="/Login" title="logOut" class="logout">
+
+                <img src="~/Design/assets/img/signup.svg" />
+            </a>
+        </div>
+        <div class="responsive-navbar">
+            <a href="" class="nav-button active">Home</a>
+            <a href="" class="nav-button">Meal Planner</a>
+            <a href="" class="nav-button">Programs</a>
+            <a href="" class="nav-button">About us</a>
+            <a id="contact" class="nav-button">Contact us</a>
+            <hr />
+            <a class="follow nav-button">Follow up now</a>
+        </div>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+
+
+
+        @*@{ foreach (var i in ERPWeb.Models.LanguageMang.AvailableLanguages)
+            {
+                @Html.ActionLink(i.LanguageFullName, "ChangeLanguage", "Lang", new { lang = i.LanguageCultureName, url = Request.Url.LocalPath }, new { @class = "dropdown-item" }) <text> </text> } }*@
+
+
+
+        @*@Html.Partial("_LoginPartial")*@
+    </header>
+
+
+    @RenderBody()
+
+
+    @RenderSection("ModelPopup")
+
 
     @RenderSection("JavaScriptSection")
 
-    @*<script src="~/Scripts/jquery-3.3.1.min.js"></script>*@
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    <script src="~/Content/AdminLayout/js/toastr.js"></script>
-    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
 
 
-            toastr.options = {
-                "closeButton": false,
-                "debug": false,
-                "newestOnTop": false,
-                "progressBar": false,
-                "positionClass": "toast-top-center",
-                "preventDuplicates": false,
-                "onclick": null,
-                "showDuration": "300",
-                "hideDuration": "1000",
-                "timeOut": "5000",
-                "extendedTimeOut": "1000",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "fadeIn",
-                "hideMethod": "fadeOut"
-            }
-        });
+    <script type="text/javascript">
+  
+
+     
+
     </script>
-
-    <script src="~/Scripts/selectMania/src/select-mania.js"></script>
-    <script src="@Url.Content("~/Scripts/Multiple-Select-fSelect/fSelect.js")"></script>
-    <script>
-        $('.selectMania').selectMania({
-            // size: 'large',
-            themes: ['darkblue'],
-            //placeholder: 'اختر',
-            removable: true,
-            search: true,
-            size: 'tiny' //'tiny' / 'small' / 'medium' / 'large'
-        });
-
-        $('.multiselect').multiselect();
-    </script>
+    <script src="~/Scripts/ERPScript/AddFollwoUp.js"></script>
+ 
 </body>
-
 </html>
+
+
+
+
+
+
+
+

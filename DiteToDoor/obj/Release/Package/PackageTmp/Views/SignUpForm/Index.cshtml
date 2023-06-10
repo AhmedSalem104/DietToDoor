@@ -1,0 +1,265 @@
+﻿@using DataMapping.Entites
+@model IEnumerable<DataMapping.Entites.SignForm>
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+
+    //ViewBag.ItemGroupId = new SelectList(db.Itemgroups.ToList(), "Id", "ItemgroupsName");
+    //ViewBag.ItemGategoriesId = new SelectList(db.ItemCategories.ToList(), "Id", "ItemCatName");
+    //ViewBag.Title = DataMapping.Resources.Resource.Item;
+}
+
+@*<div class="row heder_title">
+        <div class="col-6">
+            <h3 class="blockquote"> @DataMapping.Resources.Resource.ItemsDetails</h3>
+        </div>
+        <div class="col-6 text-left">
+            <a href="#" class="btn btn-outline-secondary">
+                @DataMapping.Resources.Resource.Print <i class="fas fa-print"></i>
+            </a>
+            @if (ViewBag.CanAdd == false)
+            {
+                <a href="~/Item/AddOrEdit" class="btn btn-icon icon-left success_butn disabled">
+                    @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            }
+            else
+            {
+                <a href="~/Item/AddOrEdit" class="btn btn-icon icon-left success_butn">
+                    @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            }
+
+        </div>
+    </div>*@
+
+@using (Html.BeginForm("PrintDataRDLC", "Item"))
+{
+
+
+    <div class="row heder_title">
+        <div class="col-6">
+            <h3 class="blockquote"> @DataMapping.Resources.Resource.ItemsDetails</h3>
+        </div>
+        <div class="col-6 text-left">
+           
+            @if (ViewBag.CanAdd == false)
+            {
+                <a href="~/Item/AddOrEdit" class="btn btn-icon icon-left success_butn disabled">
+                    @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            }
+            else
+            {
+                <a href="~/Item/AddOrEdit" class="btn btn-icon icon-left success_butn">
+                    @DataMapping.Resources.Resource.Add <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            }
+            <button type="submit" class="btn btn-outline-secondary " formtarget="_blank">
+                طباعة <i class="fa fa-print" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+}
+<div class="row">
+    @*<div class="col-lg-4">
+            @DataMapping.Resources.Resource.Itemgroups:@Html.DropDownList("ItemGroupId", null, " -------- ", htmlAttributes: new { @id = "ClauseTypeId", @class = "ClauseTypeId form-control" })
+
+        </div>
+        <div class="col-lg-4">
+            @DataMapping.Resources.Resource.ItemCategories:@Html.DropDownList("ItemGategoriesId", null, " -------- ", htmlAttributes: new { @id = "GetMainClauseId", @class = "MainClauseId form-control" })
+        </div>*@
+
+</div>
+<!--<div class="row">
+    <div class="col-12">
+        <div class="">
+            <table class="table table-striped table-hover table-bordered" id="save-popstage" style="width:100%;">
+                <thead style="width:100%;">
+                    <tr>
+                        <th> @DataMapping.Resources.Resource.Code</th>
+                        <th> @DataMapping.Resources.Resource.NameAr</th>
+                        <th> @DataMapping.Resources.Resource.Itemgroups</th>-->
+                        @*<th> @DataMapping.Resources.Resource.Uint</th>
+                        <th> @DataMapping.Resources.Resource.openBalance</th>*@
+                        <!--<th> @DataMapping.Resources.Resource.itemCost</th>-->
+                        @*<th> @DataMapping.Resources.Resource.itemPrice</th>*@
+                        @*<th class="th_width_5">@DataMapping.Resources.Resource.Edit</th>
+                        <th class="th_width_5">@DataMapping.Resources.Resource.Delete</th>*@
+                        <!--<th class="col-lg-1">الإجراءات</th>
+
+                    </tr>
+                </thead>
+                <tbody style="width:100%;">
+                    @foreach (var item in Model)
+                    {
+                        var ItemGroupName = db.Itemgroups.SingleOrDefault(a => a.Id == item.ItemGroupId)?.ItemgroupsName;
+                        var ItemUintname = db.Unit.SingleOrDefault(a => a.Id == item.UintID)?.UnitName;
+                        //var ClauseTypeName = db.ClauseType.SingleOrDefault(a => a.Id == item.DealerId)?.Name;
+                        var openBalance = db.StoreTRX.SingleOrDefault(a => a.ItemId == item.Id && a.StoreTRXTypesId == 6);
+                        decimal? openbalancValue = 0;
+                        if (openBalance != null)
+                        {
+                            openbalancValue = openBalance.Amount;
+                        }
+
+                    <tr>
+                        <td style="text-align:center"> @Html.DisplayFor(modelItem => item.Code)</td>
+                        <td> @Html.DisplayFor(modelItem => item.ItemNameAr)</td>
+                        <td>
+                            @if (ItemGroupName == null)
+                            {
+                                <h5>لايوجد</h5>
+                            }
+                            else
+                            {
+                                @ItemGroupName
+                            }
+
+                        </td>-->
+                        @*<td style="text-align:center">
+                            @if (ItemUintname == null)
+                            {
+                                <h5>لايوجد</h5>
+                            }
+                            else
+                            {
+                                @ItemUintname
+                            }
+
+                        </td>*@
+                        @*<td style="text-align:center">
+                            @openbalancValue
+
+                        </td>*@
+                        <!--<td style="text-align:center">@Html.DisplayFor(modelItem => item.ItemCost)</td>-->
+                        @*<td style="text-align:center">@Html.DisplayFor(modelItem => item.ItemPrice1)</td>*@
+                      
+                        <!--<td class="" style="display:flex">
+                            @if (ViewBag.CanEdit == false)
+                            {
+                                <a href="@Url.Action("EditItem", "Item", new { Id = @item.Id })" class="btn btn-icon btn-outline-info disabled">
+                                    <i class="far fa-edit"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("EditItem", "Item", new { Id = @item.Id })" class="btn btn-icon btn-outline-info">
+                                    <i class="far fa-edit"></i>
+                                </a>
+                            }
+                            <Form action="Item/PrintDataRDLCById/@item.Id" method="post"> <button formtarget="_blank" type="submit" class="btn btn-outline-info" title="طباعة" style=" "><i class="fa fa-print" aria-hidden="true"></i></button></Form>
+
+                            @if (ViewBag.CanDelete == false)
+                            {
+                                <a id="deleteItem" class="deleteItem btn btn-icon btn-outline-danger disabled" data-toggle="modal"
+                                   data-path="@Url.Action("Delete", "Item", new { Id = @item.Id })" data-target="#deleteConfirmModal">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a id="deleteItem" class="deleteItem btn btn-icon btn-outline-danger" data-toggle="modal"
+                                   data-path="@Url.Action("Delete", "Item", new { Id = @item.Id })" data-target="#deleteConfirmModal">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            }
+
+                        </td>
+                        
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>-->
+@section ModelPopup{
+    <div id="mainDiv"></div>
+    <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 text-center warning_icon">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 confirm_text">
+                            <h3>تنبيه</h3>
+                            <p>هل انت متأكد من الحذف؟</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-whitesmoke br">
+                    <div class="row">
+                        <div class="col-6 text-right">
+                            <button id="btnContinueDelete" type="button" class="btn btn-icon icon-left btn-danger">
+                                حذف <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="col-6 text-left">
+                            <button type="button" class="btn btn-icon icon-left btn-warning" data-dismiss="modal">
+                                رجوع <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section JavaScriptSection{
+
+    <script>
+        //الفلتره بنوع البند والبنود الرئيسيه
+
+        $(function () {
+
+            $("#GetMainClauseId").change(function () {
+                //debugger;
+
+                var Id = $("#GetMainClauseId").val()
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/SubClause/Index/' + Id,
+                    //data: JSON.stringify(data),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        window.location.href = '/SubClause/Index' + '/' + Id
+                    }
+
+
+                });
+
+
+
+            });
+        });
+        $(function () {
+
+            $("#ClauseTypeId").change(function () {
+                //debugger;
+
+                var Id = $("#ClauseTypeId").val()
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/SubClause/Filter/' + Id,
+                    //data: JSON.stringify(data),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        window.location.href = '/SubClause/Filter' + '/' + Id
+                    }
+
+
+                });
+
+
+
+            });
+        });
+    </script>
+
+}

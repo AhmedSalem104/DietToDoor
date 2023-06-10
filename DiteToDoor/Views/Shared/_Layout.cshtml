@@ -51,6 +51,8 @@
     <script src="~/Design/assets/bundles/tinymce/tinymce.min.js"></script>-->
     @*<script src="~/Scripts/jquery.validate.min.js"></script>*@
 
+
+
     <link href="~/Design/assets/css/layout.css" rel="stylesheet" />
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
     <script src="~/Design/assets/js/layout.js" defer></script>
@@ -179,11 +181,11 @@
                 </div>
             </div>
             <div class="nav-bar">
-                <a href="" class="nav-button active">Home</a>
-                <a href="" class="nav-button">Meal Planner</a>
-                <a href="https://diettodoor.com/programs" class="nav-button">Programs</a>
+                <a href="~/Home/Index" class="nav-button active">@DataMapping.Resources.Resource.Home</a>
+                <a href="~/Menus/Index" class="nav-button">@DataMapping.Resources.Resource.MealPlanner</a>
+                <a href="https://diettodoor.com/programs" class="nav-button">@DataMapping.Resources.Resource.Programs</a>
                 <a href="https://diettodoor.com/about" class="nav-button">@DataMapping.Resources.Resource.AboutUs</a>
-                <a id="contact" class="nav-button">@DataMapping.Resources.Resource.Contact</a>
+                <a id="contact" class="nav-button">@DataMapping.Resources.Resource.ContactUs</a>
             </div>
         </div>
         <div class="bottons-group">
@@ -247,54 +249,9 @@
 
 
     <script type="text/javascript">
-        //function AddFollowUpp() {
-        //    alert("aaa");
-        //    var weight = $("#weight").val();
-        //    var circumference = $("#circumference").val();
+  
 
-
-        //    var Isvalid = true;
-        //    if (weight == "" || weight == null) {
-        //        Isvalid = false;
-        //        toastr.warning('ادخل الوزن الحالى')
-        //    }
-        //    if (circumference == "" || circumference == null) {
-        //        Isvalid = false;
-        //        toastr.warning('ادخل محيط الوسط')
-        //    }
-
-
-        //    if (Isvalid) {
-        //        var data = {
-        //            CurrentWeight: $("#weight").val(),
-        //            CurrentCenterOfCircumference: $("#circumference").val(),
-        //            Notes: $("#comments").val(),
-        //            Attachment: document.getElementByTagName("Upload2").src,
-
-
-        //        }
-        //        /*$("#Save").hide();*/
-        //        //$("#SaveBTN").attr("disabled", true);
-        //        $.ajax({
-
-        //            type: "POST",
-        //            url: '/Home/AddOrEdit',     //your action
-        //            data: JSON.stringify(data),  //your form name.it takes all the values of model
-        //            contentType: 'application/json',
-        //            success: function (data) {
-        //                toastr.success("تم الحفظ بنجاح")
-
-
-
-        //            },
-
-
-
-        //        });
-        //    }
-        //}
-
-       
+     
 
     </script>
     <script src="~/Scripts/ERPScript/AddFollwoUp.js"></script>
