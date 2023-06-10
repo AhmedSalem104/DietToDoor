@@ -16,7 +16,7 @@ namespace Maintanence.Controllers
         GlobalData globalData = HelperMethods.globalData;
         private ApplicationDbContext db = new ApplicationDbContext();
         FollowUpRepository FollowUprep = new FollowUpRepository();
-        ContactUsRepository ContactUsrep = new ContactUsRepository();
+        //ContactUsRepository ContactUsrep = new ContactUsRepository();
 
 
         public ActionResult Index()
@@ -150,7 +150,7 @@ namespace Maintanence.Controllers
                 Comment = comments,
                 Attachment = upload
             };
-            ContactUsrep.Insert(_Item);
+            //ContactUsrep.Insert(_Item);
             SendGmailMessageContactUs(_Item);
             return RedirectToAction(nameof(Index));
 
